@@ -9,21 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-
-{{--     <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="plugins/slick/slick.css">
-    <link rel="stylesheet" href="plugins/venobox/venobox.css">
-    <link rel="stylesheet" href="plugins/animate/animate.css">
-    <link rel="stylesheet" href="plugins/aos/aos.css">
-    <link rel="stylesheet" href="plugins/bootstrap-touchspin-master/jquery.bootstrap-touchspin.min.css">
-    <link rel="stylesheet" href="plugins/nice-select/nice-select.css">
-    <link rel="stylesheet" href="plugins/bootstrap-slider/bootstrap-slider.min.css">
-    <link rel="stylesheet" href="plugins/fontawesome-free-5.15.1-web/css/all.css">
-    <link href="css/style.css" rel="stylesheet"> --}}
     <link href="{{ mix ('css/app.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
 
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+{{--     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon"> --}}
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
 
 </head>
@@ -1064,20 +1053,6 @@
         <!-- /footer -->
 
     </div>
-
-{{--     <script src="plugins/jQuery/jquery.min.js"></script>
-    <script src="plugins/bootstrap/bootstrap.min.js"></script>
-    <script src="plugins/slick/slick.min.js"></script>
-    <script src="plugins/venobox/venobox.min.js"></script>
-    <script src="plugins/aos/aos.js"></script>
-    <script src="plugins/syotimer/jquery.syotimer.js"></script>
-    <script src="plugins/instafeed/instafeed.min.js"></script>
-    <script src="plugins/zoom-master/jquery.zoom.min.js"></script>
-    <script src="plugins/bootstrap-touchspin-master/jquery.bootstrap-touchspin.min.js"></script>
-    <script src="plugins/nice-select/jquery.nice-select.min.js"></script>
-    <script src="plugins/bootstrap-slider/bootstrap-slider.min.js"></script>
-    <script src="plugins/google-map/gmap.js"></script>
-    <script src="js/script.js"></script> --}}
     <script src="{{mix ('js/app.js')}}"></script>
 </body>
 
