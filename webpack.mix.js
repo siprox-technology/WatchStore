@@ -25,8 +25,6 @@ mix.combine([
     'resources/css/style.css'
 ], 'public/css/app.css');
 
-/* mix.combine(['resources/css/style.css'], 'public/css/app.css');
- */
 //js bundle
 mix.combine([
     "resources/plugins/jQuery/jquery.min.js",
