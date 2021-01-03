@@ -1,0 +1,4 @@
+- go to optimize guide links
+- optimize images
+- optimize command php
+-

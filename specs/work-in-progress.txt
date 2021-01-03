@@ -1,0 +1,36 @@
+-specs
+    -db tables
+    -back end functionalities
+    -front end structure
+    -db diagram
+    -class diagram
+
+-HERE-----
+-Front end
+    -choose a template
+        -home page 
+        -register user page
+        -log in page
+        -reset password page
+        -user profile
+                -Update account details.
+                -Change password.
+                -Address Details. add or remove. 
+                -View shopping basket. remove items.
+                -Order history.
+                -Change contact Preferences.
+        -products list page
+        -product details page
+        -checkout page
+        -payment page
+        -payment confirmation page
+        -cookie policy
+
+    -images of products
+    -specifications
+
+
+-Back end
+
+
+

@@ -1,0 +1,93 @@
+Precision Laps watch store website
+------------------------------
+
+Database tables => Product, Brand, Review, 
+User, Address, Order, order_items,Payment
+---------------------------------------------
+Database diagram => (DataBaseDiagram.vsdx)
+---------------------------------------------
+
+Database tables details =>
+
+Product:
+id(product code),brand,model_number,
+name
+category, type, 
+gender, price,discount, color, 
+description, 
+specifications,
+stock
+FK_brand_id_product_brand
+
+------------------------------
+Brand:
+id, Name, company-info
+
+------------------------------
+Review:
+id,star_number,date
+text,
+FK_product_id_review_prod,
+FK_user_id_review_user
+
+---------------------------------
+User has:
+id,email,firstName,lastName,phone
+,password,contact_pref,created_at,act_code
+
+-------------------------------
+Address:
+id,number,address,city,state,country,postCode,
+FK_user_id_addr_user,
+
+--------------------------------
+Order:
+id,date,created_at,updated_at,status,
+delivery_price,
+total_price,
+FK_user_id_order_user,
+FK_address_id_order_address
+
+--------------------------------
+order_items:
+id,
+,quantity,price,
+FK_order_id_items_order,
+FK_product_id_items_product
+
+----------------------------------------
+Payment:
+id,amount,paymen_method,last_four_digit,
+payment_ref,FK_order_id_pay_order
+
+
+*****************************************
+Back end functionalities=>
+
+-User registration and activation by email.
+-Resend activation email if not received.
+-User log in\log out and session time tracking by 5 mins.
+-User reset forgotten password through email.
+-User profile 
+    -Update account details.
+    -Change password.
+    -Address Details. add or remove. 
+    -View shopping basket. remove items.
+    -Order history.
+    -Change contact Preferences.
+-Search products by brand,category,type,name and gender(mens, ladies, kids).
+-Display best selling items.
+-Sort products by brands,gender,category,type,color,price and discount.
+-Display product details page:
+    -brand, category, product number(product_id), name, model_number,
+     type, gender, price, discount, color, description, specifications
+     reviews, Images, stock availability
+-Display related products in product details page.
+-User add and remove items to and from shopping basket.
+-User makes payment using Stripe payment(sandbox) api with a visa card (test card=> '4242 4242 4242 4242' any 'zip' and any 'date').
+-Display Payment information if failed or success.
+-Display order history and orders with failed payment.
+-Retry payment for failed orders.
+-Add and display reviews to items that user has bought.
+-display cookie policy confirmation page
+*****************************************
