@@ -1,28 +1,11 @@
-<!DOCTYPE html>
-<html lang="zxx">
 
-<head>
-    <meta charset="utf-8">
-    <title>Elite Shop</title>
+@extends('layouts.app')
 
-    <!-- mobile responsive meta -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <link href="{{ mix ('css/app.css') }}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-
-{{--     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon"> --}}
-    <link rel="icon" href="images/favicon.png" type="image/x-icon">
-
-</head>
-
-<body>
-
-    <!-- preloader start -->
-{{--     <div class="preloader">
+@section('content')
+      <!-- preloader start -->
+      <div class="preloader">
         <img src="images/preloader.gif" alt="preloader">
-    </div> --}}
+    </div>
     <!-- preloader end -->
 
     <!-- header -->
@@ -1051,9 +1034,7 @@
             </div>
         </footer>
         <!-- /footer -->
-
     </div>
-    <script src="{{mix ('js/app.js')}}"></script>
-</body>
 
-</html>
+@endsection
+  

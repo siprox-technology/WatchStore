@@ -5,13 +5,13 @@
     -db diagram
     -class diagram
 
--HERE-----
+
 -Front end
-    -choose a template
-        -home page 
-        -register user page
-        -log in page
-        -reset password page
+    *choose a template
+        *home page 
+        *register user page
+        *log in page
+        *reset password page
         -user profile
                 -Update account details.
                 -Change password.
