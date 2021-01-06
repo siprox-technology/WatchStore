@@ -12,8 +12,8 @@
         *register user page
         *log in page
         *reset password page
-        -user profile
-                -Update account details.
+        *user profile
+                *Update account details.
                 -Change password.
                 -Address Details. add or remove. 
                 -View shopping basket. remove items.

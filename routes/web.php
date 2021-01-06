@@ -32,3 +32,9 @@ Route::get('/login', function () {
 Route::get('/forgetPassword', function () {
     return view('auth.reset-pass');
 });
+
+//user profile
+Route::get('/dashboard', function () {
+    return view('auth.user-profile');
+});
+
