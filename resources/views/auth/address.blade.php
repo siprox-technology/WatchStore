@@ -205,7 +205,7 @@
                     </div>
                 </div>
             </nav>
-            <!-- user profile -->
+            <!-- change address -->
             <!-- main wrapper -->
             <div class="main-wrapper">
     
@@ -225,84 +225,117 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <ul class="list-inline dashboard-menu text-center">
-                                    <li class="list-inline-item m-1"><a class="active" href="/dashboard">Profile
-                                            Details</a></li>
+                                    <li class="list-inline-item m-1"><a  href="/dashboard">Profile
+                                        Details</a></li>
                                     <li class="list-inline-item m-1"><a href="dashboard/changePassword">Change password</a></li>
-                                    <li class="list-inline-item m-1"><a href="dashboard/changeAddress">Address</a></li>
+                                    <li class="list-inline-item m-1"><a class="active"href="dashboard/changeAddress">Address</a></li>
                                     <li class="list-inline-item m-1"><a href="dashboard/shoppingCart">Basket</a></li>
                                     <li class="list-inline-item m-1"><a href="dashboard/orderHistory">Orders</a></li>
                                     <li class="list-inline-item m-1"><a href="dashboard/contactPref">Contact method</a></li>
+    
                                 </ul>
-                                <div class="dashboard-wrapper dashboard-user-profile">
-                                    <div class="d-md-flex">
+                                <div class="block text-center border border-grey mt-5 py-5 px-sm-5 px-2">
+                                    <h3 class="text-center mb-5">Edit or change current address</h3>
+                                    <form class="text-left clearfix m-auto" style="max-width:350px" action="">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Address line 1">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="City">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="State">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="country">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Postal code">
+                                        </div>
                                         <div class="text-center">
-                                            <img class="media-object user-img" src="images/users-image/avater.jpg"
-                                                alt="Image">
-                                            <a href="#" class="btn btn-sm mt-3 d-block">Change Image</a>
+                                            <button type="submit" class="btn btn-primary">Save</button>
                                         </div>
-                                        <div class="media-body">
-                                            <ul class="user-profile-list">
-                                                <li><span>Full Name:</span>Johanna Doe</li>
-                                                <li><span>Country:</span>USA</li>
-                                                <li><span>Email:</span>mail@gmail.com</li>
-                                                <li><span>Phone:</span>+880123123</li>
-                                                <li><span>Date of Birth:</span>Dec , 22 ,1991</li>
-                                            </ul>
-                                        </div>
-                                        <div class="text-center mt-5 mt-md-0">
-                                            <a class="bg-primary text-white p-3" data-toggle="modal"
-                                                data-target="#edit_acc_details_modal">Edit
-                                                details</a>
-                                        </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <!-- edit account details modal -->
-                <div class="modal fade" id="edit_acc_details_modal" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="">New account details</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <!-- edit user personal details -->
-                                <div class="col-12">
-                                    <div class="heading-title">
-                                        <div class=" flex justify-center">
-                                            <div class=" w-6/12 bg-white p-6 rounded-lg">
-                                                <div class="block text-center">
-                                                    <form class="text-left clearfix" action="index.html">
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control"
-                                                                placeholder="First Name">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" placeholder="Last Name">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" placeholder="phone">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="email" class="form-control"
-                                                                placeholder="contact preferences">
-                                                        </div>
-                                                        <div class="text-center">
-                                                            <button type="submit" class="btn btn-primary">Update</button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                <!-- footer -->
+                <footer class="bg-light">
+                    <div class="section">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-3 col-sm-6 mb-5 mb-md-0 text-center text-sm-left">
+                                    <h4 class="mb-4">Contact</h4>
+                                    <p>20464 Hirthe Curve Suite, Emardton, CT 12471-4107</p>
+                                    <p>+5(305) 785-0437</p>
+                                    <p>info@example.com</p>
+                                    <!--                             <ul class="list-inline social-icons">
+                                    <li class="list-inline-item"><a href="#"><i class="ti-facebook"></i></a></li>
+                                    <li class="list-inline-item"><a href="#"><i class="ti-twitter-alt"></i></a></li>
+                                    <li class="list-inline-item"><a href="#"><i class="ti-vimeo-alt"></i></a></li>
+                                    <li class="list-inline-item"><a href="#"><i class="ti-google"></i></a></li>
+                                </ul> -->
+                                </div>
+                                <div class="col-md-3 col-sm-6 mb-5 mb-md-0 text-center text-sm-left">
+                                    <h4 class="mb-4">Category</h4>
+                                    <ul class="pl-0 list-unstyled">
+                                        <li class="mb-2"><a class="text-color" href="shop.html">Men</a></li>
+                                        <li class="mb-2"><a class="text-color" href="shop.html">Women</a></li>
+                                        <li class="mb-2"><a class="text-color" href="shop.html">Kids</a></li>
+                                        <li class="mb-2"><a class="text-color" href="shop.html">Accessories</a></li>
+                                        <li class="mb-2"><a class="text-color" href="shop.html">Shoe</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-3 col-sm-6 mb-5 mb-md-0 text-center text-sm-left">
+                                    <h4 class="mb-4">Useful Link</h4>
+                                    <ul class="pl-0 list-unstyled">
+                                        <li class="mb-2"><a class="text-color" href="about.html">News & Tips</a></li>
+                                        <li class="mb-2"><a class="text-color" href="about.html">About Us</a></li>
+                                        <li class="mb-2"><a class="text-color" href="address.html">Support</a></li>
+                                        <li class="mb-2"><a class="text-color" href="shop.html">Our Shop</a></li>
+                                        <li class="mb-2"><a class="text-color" href="contact.html">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-3 col-sm-6 text-center text-sm-left">
+                                    <h4 class="mb-4">Our Policies</h4>
+                                    <ul class="pl-0 list-unstyled">
+                                        <li class="mb-2"><a class="text-color" href="404.html">Privacy Policy</a></li>
+                                        <li class="mb-2"><a class="text-color" href="404.html">Terms & Conditions</a></li>
+                                        <li class="mb-2"><a class="text-color" href="404.html">Cookie Policy</a></li>
+                                        <li class="mb-2"><a class="text-color" href="404.html">Terms of Sale</a></li>
+                                        <li class="mb-2"><a class="text-color" href="dashboard.html">Free Shipping &
+                                                Returns</a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>    
+                    <div class="bg-dark py-4">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-5 text-center text-md-left mb-4 mb-md-0 align-self-center">
+                                    <p class="text-white mb-0">Logo &copy; 2018 all right reserved</p>
+                                </div>
+                                <div class="col-md-2 text-center text-md-left mb-4 mb-md-0">
+                                    <img src="images/logo-alt.png" alt="logo">
+                                </div>
+                                <div class="col-md-5 text-center text-md-right mb-4 mb-md-0">
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item"><img class="img-fluid rounded atm-card-img"
+                                                src="images/payment-card/card-1.jpg" alt="card"></li>
+                                        <li class="list-inline-item"><img class="img-fluid rounded atm-card-img"
+                                                src="images/payment-card/card-2.jpg" alt="card"></li>
+                                        <li class="list-inline-item"><img class="img-fluid rounded atm-card-img"
+                                                src="images/payment-card/card-3.jpg" alt="card"></li>
+                                        <li class="list-inline-item"><img class="img-fluid rounded atm-card-img"
+                                                src="images/payment-card/card-4.jpg" alt="card"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>    
 @endsection

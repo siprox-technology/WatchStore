@@ -14,11 +14,11 @@
         *reset password page
         *user profile
                 *Update account details.
-                -Change password.
-                -Address Details. add or remove. 
-                -View shopping basket. remove items.
-                -Order history.
-                -Change contact Preferences.
+                *Change password.
+                *Address Details. add or remove. 
+                *View shopping basket. remove items.
+                *Order history.
+                *Change contact Preferences.
         -products list page
         -product details page
         -checkout page

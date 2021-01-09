@@ -18,7 +18,6 @@ Route::get('/', function () {
 });
 
 //register
-
 Route::get('/register', function () {
     return view('auth.register');
 });
@@ -33,8 +32,28 @@ Route::get('/forgetPassword', function () {
     return view('auth.reset-pass');
 });
 
+
 //user profile
 Route::get('/dashboard', function () {
     return view('auth.user-profile');
 });
-
+//change password
+Route::get('/dashboard/changePassword', function () {
+    return view('auth.change-pass');
+});
+// change address details
+Route::get('/dashboard/changeAddress', function () {
+    return view('auth.address');
+});
+//shopping basket
+Route::get('/dashboard/shoppingCart', function () {
+    return view('auth.cart');
+});
+//order history
+Route::get('/dashboard/orderHistory', function () {
+    return view('auth.order-history');
+});
+//contact preferences
+Route::get('/dashboard/contactPref', function () {
+    return view('auth.contact-pref');
+});
