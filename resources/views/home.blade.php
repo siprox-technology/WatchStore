@@ -4,7 +4,7 @@
 @section('content')
       <!-- preloader start -->
       <div class="preloader">
-        <img src="images/preloader.gif" alt="preloader">
+        <img src="{{asset('images/preloader.gif" alt="preloader">
     </div>
     <!-- preloader end -->
 
@@ -32,7 +32,7 @@
                 </div>
                 <div class="col-lg-6 text-center text-lg-right">
                     <ul class="list-inline">
-                        <li class="list-inline-item"><img src="images/flag.jpg" alt="flag"></li>
+                        <li class="list-inline-item"><img src="{{asset('images/flag.jpg')}}" alt="flag"></li>
                         <li class="list-inline-item"><a href="login.html">My Accounts</a></li>
                         <li class="list-inline-item">
                             <form action="#">
@@ -55,7 +55,7 @@
 
     <!-- navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white w-100" id="navbar">
-        <a class="navbar-brand order-2 order-lg-1" href="index.html"><img class="img-fluid" src="images/logo.png"
+        <a class="navbar-brand order-2 order-lg-1" href="index.html"><img class="img-fluid" src="{{asset('images/logo.png')}}"
                 alt="logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -150,7 +150,7 @@
                             </ul>
                         </div>
                         <div class="mx-3 mega-megu-image">
-                            <img class="img-fluid h-100" src="images/mega-megu.jpg" alt="feature-img">
+                            <img class="img-fluid h-100" src="{{asset('images/mega-megu.jpg')}}" alt="feature-img">
                         </div>
                     </div>
                 </li>
@@ -181,7 +181,7 @@
                         <h4 class="mb-4">Your Cart</h4>
                         <ul class="pl-0 mb-3">
                             <li class="d-flex border-bottom">
-                                <img src="images/cart/product-1.jpg" alt="product-img">
+                                <img src="{{asset('images/cart/product-1.jpg')}}" alt="product-img">
                                 <div class="mx-3">
                                     <h6>Eleven Paris Skinny Jeans</h6>
                                     <span>1</span> X <span>$79.00</span>
@@ -189,7 +189,7 @@
                                 <i class="ti-close"></i>
                             </li>
                             <li class="d-flex border-bottom">
-                                <img src="images/cart/product-2.jpg" alt="product-img">
+                                <img src="{{asset('images/cart/product-2.jpg')}}" alt="product-img">
                                 <div class="mx-3">
                                     <h6>Eleven Paris Skinny Jeans top</h6>
                                     <span>1 X</span> <span>$79.00</span>
@@ -257,7 +257,7 @@
                                         C
                                     </span>
                                     <!-- Slide image -->
-                                    <img class="img-fluid d-unset" src="images/hero-area/converse.png" alt="converse"
+                                    <img class="img-fluid d-unset" src="{{asset('images/hero-area/converse.png')}}" alt="converse"
                                         data-duration-in=".5" data-animation-in="fadeInRight" data-delay-in="1"
                                         data-animation-out="fadeOutRight" data-delay-out="5" data-duration-out=".3">
                                 </div>
@@ -295,7 +295,7 @@
                                         data-animation-out="fadeOutRight" data-delay-out="5" data-duration-out=".3">
                                         B
                                     </span>
-                                    <img class="img-fluid d-unset" src="images/hero-area/bag.png" alt="converse"
+                                    <img class="img-fluid d-unset" src="{{asset('images/hero-area/bag.png')}}" alt="converse"
                                         data-duration-in=".5" data-animation-in="fadeInRight" data-delay-in="1"
                                         data-animation-out="fadeOutRight" data-delay-out="5" data-duration-out=".3">
                                 </div>
@@ -320,20 +320,20 @@
                     <div class="col-lg-4 col-md-6 mb-50">
                         <div class="card p-0">
                             <div class="border-bottom text-center hover-zoom-img">
-                                <a href="shop.html"><img src="images/categories/product-big-1.jpg"
+                                <a href="shop.html"><img src="{{asset('images/categories/product-big-1.jpg')}}"
                                         class="rounded-top img-fluid w-100" alt="product-img"></a>
                             </div>
                             <ul class="d-flex list-unstyled pl-0 categories-list">
                                 <li class="m-0 hover-zoom-img">
-                                    <a href="shop.html"><img src="images/categories/product-sm-1.jpg"
+                                    <a href="shop.html"><img src="{{asset('images/categories/product-sm-1.jpg')}}"
                                             class="img-fluid w-100" alt="product-img"></a>
                                 </li>
                                 <li class="m-0 hover-zoom-img">
-                                    <a href="shop.html"><img src="images/categories/product-sm-2.jpg"
+                                    <a href="shop.html"><img src="{{asset('images/categories/product-sm-2.jpg')}}"
                                             class="img-fluid w-100" alt="product-img"></a>
                                 </li>
                                 <li class="m-0 hover-zoom-img">
-                                    <a href="shop.html"><img src="images/categories/product-sm-3.jpg"
+                                    <a href="shop.html"><img src="{{asset('images/categories/product-sm-3.jpg')}}"
                                             class="img-fluid w-100" alt="product-img"></a>
                                 </li>
                             </ul>
@@ -347,20 +347,20 @@
                     <div class="col-lg-4 col-md-6 mb-50">
                         <div class="card p-0">
                             <div class="border-bottom text-center hover-zoom-img">
-                                <a href="shop.html"><img src="images/categories/product-big-2.jpg"
+                                <a href="shop.html"><img src="{{asset('images/categories/product-big-2.jpg')}}"
                                         class="rounded-top img-fluid w-100" alt="product-img"></a>
                             </div>
                             <ul class="d-flex list-unstyled pl-0 categories-list">
                                 <li class="m-0 hover-zoom-img">
-                                    <a href="shop.html"><img src="images/categories/product-sm-4.jpg"
+                                    <a href="shop.html"><img src="{{asset('images/categories/product-sm-4.jpg')}}"
                                             class="img-fluid w-100" alt="product-img"></a>
                                 </li>
                                 <li class="m-0 hover-zoom-img">
-                                    <a href="shop.html"><img src="images/categories/product-sm-5.jpg"
+                                    <a href="shop.html"><img src="{{asset('images/categories/product-sm-5.jpg')}}"
                                             class="img-fluid w-100" alt="product-img"></a>
                                 </li>
                                 <li class="m-0 hover-zoom-img">
-                                    <a href="shop.html"><img src="images/categories/product-sm-6.jpg"
+                                    <a href="shop.html"><img src="{{asset('images/categories/product-sm-6.jpg')}}"
                                             class="img-fluid w-100" alt="product-img"></a>
                                 </li>
                             </ul>
@@ -374,20 +374,20 @@
                     <div class="col-lg-4 col-md-6 mb-50">
                         <div class="card p-0">
                             <div class="border-bottom text-center hover-zoom-img">
-                                <a href="shop.html"><img src="images/categories/product-big-3.jpg"
+                                <a href="shop.html"><img src="{{asset('images/categories/product-big-3.jpg')}}"
                                         class="rounded-top img-fluid w-100" alt="product-img"></a>
                             </div>
                             <ul class="d-flex list-unstyled pl-0 categories-list">
                                 <li class="m-0 hover-zoom-img">
-                                    <a href="shop.html"><img src="images/categories/product-sm-7.jpg"
+                                    <a href="shop.html"><img src="{{asset('images/categories/product-sm-7.jpg')}}"
                                             class="img-fluid w-100" alt="product-img"></a>
                                 </li>
                                 <li class="m-0 hover-zoom-img">
-                                    <a href="shop.html"><img src="images/categories/product-sm-8.jpg"
+                                    <a href="shop.html"><img src="{{asset('images/categories/product-sm-8.jpg')}}"
                                             class="img-fluid w-100" alt="product-img"></a>
                                 </li>
                                 <li class="m-0 hover-zoom-img">
-                                    <a href="shop.html"><img src="images/categories/product-sm-9.jpg"
+                                    <a href="shop.html"><img src="{{asset('images/categories/product-sm-9.jpg')}}"
                                             class="img-fluid w-100" alt="product-img"></a>
                                 </li>
                             </ul>
@@ -402,7 +402,7 @@
         </section>
         <!-- /categories -->
 
-        <section class="section overlay cta" data-background="images/backgrounds/cta.png">
+        <section class="section overlay cta" data-background="images/backgrounds/cta.png')}}">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
@@ -418,7 +418,7 @@
         <div id="quickView" class="quickview">
             <div class="row w-100">
                 <div class="col-lg-6 col-md-6 mb-5 mb-md-0 pl-5 pt-4 pt-lg-0 pl-lg-0">
-                    <img src="images/feature/product.png" alt="product-img" class="img-fluid">
+                    <img src="{{asset('images/feature/product.png')}}" alt="product-img" class="img-fluid">
                 </div>
                 <div class="col-lg-5 col-md-6 text-center text-md-left align-self-center pl-5">
                     <h3 class="mb-lg-2 mb-2">Woven Crop Cami</h3>
@@ -463,9 +463,9 @@
                                         <div class="overflow-hidden position-relative">
                                             <a href="product-single.html">
                                                 <img class="img-fluid w-100 mb-3 img-first"
-                                                    src="images/collection/product-1.jpg" alt="product-img">
+                                                    src="{{asset('images/collection/product-1.jpg')}}" alt="product-img">
                                                 <img class="img-fluid w-100 mb-3 img-second"
-                                                    src="images/collection/product-4.jpg" alt="product-img">
+                                                    src="{{asset('images/collection/product-4.jpg')}}" alt="product-img">
                                             </a>
                                             <div class="btn-cart">
                                                 <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
@@ -497,9 +497,9 @@
                                         <div class="overflow-hidden position-relative">
                                             <a href="product-single.html">
                                                 <img class="img-fluid w-100 mb-3 img-first"
-                                                    src="images/collection/product-2.jpg" alt="product-img">
+                                                    src="{{asset('images/collection/product-2.jpg')}}" alt="product-img">
                                                 <img class="img-fluid w-100 mb-3 img-second"
-                                                    src="images/collection/product-5.jpg" alt="product-img">
+                                                    src="{{asset('images/collection/product-5.jpg')}}" alt="product-img">
                                             </a>
                                             <div class="btn-cart">
                                                 <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
@@ -535,9 +535,9 @@
                                         <div class="overflow-hidden position-relative">
                                             <a href="product-single.html">
                                                 <img class="img-fluid w-100 mb-3 img-first"
-                                                    src="images/collection/product-3.jpg" alt="product-img">
+                                                    src="{{asset('images/collection/product-3.jpg')}}" alt="product-img">
                                                 <img class="img-fluid w-100 mb-3 img-second"
-                                                    src="images/collection/product-6.jpg" alt="product-img">
+                                                    src="{{asset('images/collection/product-6.jpg')}}" alt="product-img">
                                             </a>
                                             <div class="btn-cart">
                                                 <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
@@ -570,9 +570,9 @@
                                         <div class="overflow-hidden position-relative">
                                             <a href="product-single.html">
                                                 <img class="img-fluid w-100 mb-3 img-first"
-                                                    src="images/collection/product-4.jpg" alt="product-img">
+                                                    src="{{asset('images/collection/product-4.jpg')}}" alt="product-img">
                                                 <img class="img-fluid w-100 mb-3 img-second"
-                                                    src="images/collection/product-2.jpg" alt="product-img">
+                                                    src="{{asset('images/collection/product-2.jpg')}}" alt="product-img">
                                             </a>
                                             <div class="btn-cart">
                                                 <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
@@ -608,9 +608,9 @@
                                         <div class="overflow-hidden position-relative">
                                             <a href="product-single.html">
                                                 <img class="img-fluid w-100 mb-3 img-first"
-                                                    src="images/collection/product-5.jpg" alt="product-img">
+                                                    src="{{asset('images/collection/product-5.jpg')}}" alt="product-img">
                                                 <img class="img-fluid w-100 mb-3 img-second"
-                                                    src="images/collection/product-3.jpg" alt="product-img">
+                                                    src="{{asset('images/collection/product-3.jpg')}}" alt="product-img">
                                             </a>
                                             <div class="btn-cart">
                                                 <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
@@ -643,9 +643,9 @@
                                         <div class="overflow-hidden position-relative">
                                             <a href="product-single.html">
                                                 <img class="img-fluid w-100 mb-3 img-first"
-                                                    src="images/collection/product-6.jpg" alt="product-img">
+                                                    src="{{asset('images/collection/product-6.jpg')}}" alt="product-img">
                                                 <img class="img-fluid w-100 mb-3 img-second"
-                                                    src="images/collection/product-1.jpg" alt="product-img">
+                                                    src="{{asset('images/collection/product-1.jpg')}}" alt="product-img">
                                             </a>
                                             <div class="btn-cart">
                                                 <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
@@ -677,9 +677,9 @@
                                         <div class="overflow-hidden position-relative">
                                             <a href="product-single.html">
                                                 <img class="img-fluid w-100 mb-3 img-first"
-                                                    src="images/collection/product-7.jpg" alt="product-img">
+                                                    src="{{asset('images/collection/product-7.jpg')}}" alt="product-img">
                                                 <img class="img-fluid w-100 mb-3 img-second"
-                                                    src="images/collection/product-3.jpg" alt="product-img">
+                                                    src="{{asset('images/collection/product-3.jpg')}}" alt="product-img">
                                             </a>
                                             <div class="btn-cart">
                                                 <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
@@ -712,9 +712,9 @@
                                         <div class="overflow-hidden position-relative">
                                             <a href="product-single.html">
                                                 <img class="img-fluid w-100 mb-3 img-first"
-                                                    src="images/collection/product-8.jpg" alt="product-img">
+                                                    src="{{asset('images/collection/product-8.jpg')}}" alt="product-img">
                                                 <img class="img-fluid w-100 mb-3 img-second"
-                                                    src="images/collection/product-5.jpg" alt="product-img">
+                                                    src="{{asset('images/collection/product-5.jpg')}}" alt="product-img">
                                             </a>
                                             <div class="btn-cart">
                                                 <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
@@ -747,7 +747,7 @@
         <!-- /collection -->
 
         <!-- deal -->
-        <section class="section bg-cover" data-background="images/backgrounds/deal.jpg">
+        <section class="section bg-cover" data-background="images/backgrounds/deal.jpg')}}">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-left mb-4 mb-md-0">
@@ -760,7 +760,7 @@
                         <a href="shop.html" class="btn btn-primary">shop now</a>
                     </div>
                     <div class="col-md-6 text-center text-md-left align-self-center">
-                        <img src="images/deal/product.png" alt="product-img" class="img-fluid up-down">
+                        <img src="{{asset('images/deal/product.png')}}" alt="product-img" class="img-fluid up-down">
                     </div>
                 </div>
             </div>
@@ -784,7 +784,7 @@
                 <!-- remove this section after link with your instagram account -->
                 <div class="row">
                     <div class="col-lg-2 col-md-3 col-sm-4 col-6 px-0 mb-4">
-                        <div class="instagram-post mx-2"><img class="img-fluid w-100" src="images/instagram/item-1.png"
+                        <div class="instagram-post mx-2"><img class="img-fluid w-100" src="{{asset('images/instagram/item-1.png')}}"
                                 alt="instagram-image">
                             <ul class="list-inline text-center">
                                 <li class="list-inline-item"><a href="" target="_blank" class="text-white"><i
@@ -795,7 +795,7 @@
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-4 col-6 px-0 mb-4">
-                        <div class="instagram-post mx-2"><img class="img-fluid w-100" src="images/instagram/item-2.png"
+                        <div class="instagram-post mx-2"><img class="img-fluid w-100" src="{{asset('images/instagram/item-2.png')}}"
                                 alt="instagram-image">
                             <ul class="list-inline text-center">
                                 <li class="list-inline-item"><a href="" target="_blank" class="text-white"><i
@@ -806,7 +806,7 @@
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-4 col-6 px-0 mb-4">
-                        <div class="instagram-post mx-2"><img class="img-fluid w-100" src="images/instagram/item-3.png"
+                        <div class="instagram-post mx-2"><img class="img-fluid w-100" src="{{asset('images/instagram/item-3.png')}}"
                                 alt="instagram-image">
                             <ul class="list-inline text-center">
                                 <li class="list-inline-item"><a href="" target="_blank" class="text-white"><i
@@ -817,7 +817,7 @@
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-4 col-6 px-0 mb-4">
-                        <div class="instagram-post mx-2"><img class="img-fluid w-100" src="images/instagram/item-4.png"
+                        <div class="instagram-post mx-2"><img class="img-fluid w-100" src="{{asset('images/instagram/item-4.png')}}"
                                 alt="instagram-image">
                             <ul class="list-inline text-center">
                                 <li class="list-inline-item"><a href="" target="_blank" class="text-white"><i
@@ -828,7 +828,7 @@
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-4 col-6 px-0 mb-4">
-                        <div class="instagram-post mx-2"><img class="img-fluid w-100" src="images/instagram/item-5.png"
+                        <div class="instagram-post mx-2"><img class="img-fluid w-100" src="{{asset('images/instagram/item-5.png')}}"
                                 alt="instagram-image">
                             <ul class="list-inline text-center">
                                 <li class="list-inline-item"><a href="" target="_blank" class="text-white"><i
@@ -839,7 +839,7 @@
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-4 col-6 px-0 mb-4">
-                        <div class="instagram-post mx-2"><img class="img-fluid w-100" src="images/instagram/item-6.png"
+                        <div class="instagram-post mx-2"><img class="img-fluid w-100" src="{{asset('images/instagram/item-6.png')}}"
                                 alt="instagram-image">
                             <ul class="list-inline text-center">
                                 <li class="list-inline-item"><a href="" target="_blank" class="text-white"><i
@@ -934,7 +934,7 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                             <div class="col-lg-6 px-0">
-                                <div class="image"><img src="images/newsletter-popup.jpg" alt="products"
+                                <div class="image"><img src="{{asset('images/newsletter-popup.jpg')}}" alt="products"
                                         class="img-fluid w-100 rounded-left"></div>
                             </div>
                             <div class="col-lg-6 align-self-center p-5">
@@ -1015,18 +1015,18 @@
                             <p class="text-white mb-0">Logo &copy; 2018 all right reserved</p>
                         </div>
                         <div class="col-md-2 text-center text-md-left mb-4 mb-md-0">
-                            <img src="images/logo-alt.png" alt="logo">
+                            <img src="{{asset('images/logo-alt.png')}}" alt="logo">
                         </div>
                         <div class="col-md-5 text-center text-md-right mb-4 mb-md-0">
                             <ul class="list-inline">
                                 <li class="list-inline-item"><img class="img-fluid rounded atm-card-img"
-                                        src="images/payment-card/card-1.jpg" alt="card"></li>
+                                        src="{{asset('images/payment-card/card-1.jpg')}}" alt="card"></li>
                                 <li class="list-inline-item"><img class="img-fluid rounded atm-card-img"
-                                        src="images/payment-card/card-2.jpg" alt="card"></li>
+                                        src="{{asset('images/payment-card/card-2.jpg')}}" alt="card"></li>
                                 <li class="list-inline-item"><img class="img-fluid rounded atm-card-img"
-                                        src="images/payment-card/card-3.jpg" alt="card"></li>
+                                        src="{{asset('images/payment-card/card-3.jpg')}}" alt="card"></li>
                                 <li class="list-inline-item"><img class="img-fluid rounded atm-card-img"
-                                        src="images/payment-card/card-4.jpg" alt="card"></li>
+                                        src="{{asset('images/payment-card/card-4.jpg')}}" alt="card"></li>
                             </ul>
                         </div>
                     </div>

@@ -31,7 +31,7 @@
                 </div>
                 <div class="col-lg-6 text-center text-lg-right">
                     <ul class="list-inline">
-                        <li class="list-inline-item"><img src="images/flag.jpg" alt="flag"></li>
+                        <li class="list-inline-item"><img src="{{asset('images/flag.jpg')}}" alt="flag"></li>
                         <li class="list-inline-item"><a href="login.html">My Accounts</a></li>
                         <li class="list-inline-item">
                             <form action="#">
@@ -51,7 +51,7 @@
         </div>
         <!-- navigation -->
         <nav class="navbar navbar-expand-lg navbar-light bg-white w-100" id="navbar">
-            <a class="navbar-brand order-2 order-lg-1" href="index.html"><img class="img-fluid" src="images/logo.png"
+            <a class="navbar-brand order-2 order-lg-1" href="index.html"><img class="img-fluid" src="{{asset('images/logo.png')}}"
                     alt="logo"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -146,7 +146,7 @@
                                 </ul>
                             </div>
                             <div class="mx-3 mega-megu-image">
-                                <img class="img-fluid h-100" src="images/mega-megu.jpg" alt="feature-img">
+                                <img class="img-fluid h-100" src="{{asset('images/mega-megu.jpg')}}" alt="feature-img">
                             </div>
                         </div>
                     </li>
@@ -177,7 +177,7 @@
                             <h4 class="mb-4">Your Cart</h4>
                             <ul class="pl-0 mb-3">
                                 <li class="d-flex border-bottom">
-                                    <img src="images/cart/product-1.jpg" alt="product-img">
+                                    <img src="{{asset('images/cart/product-1.jpg')}}" alt="product-img">
                                     <div class="mx-3">
                                         <h6>Eleven Paris Skinny Jeans</h6>
                                         <span>1</span> X <span>$79.00</span>
@@ -185,7 +185,7 @@
                                     <i class="ti-close"></i>
                                 </li>
                                 <li class="d-flex border-bottom">
-                                    <img src="images/cart/product-2.jpg" alt="product-img">
+                                    <img src="{{asset('images/cart/product-2.jpg')}}" alt="product-img">
                                     <div class="mx-3">
                                         <h6>Eleven Paris Skinny Jeans top</h6>
                                         <span>1 X</span> <span>$79.00</span>
@@ -260,7 +260,7 @@
                                                                     <td>
                                                                         <div class="product-info">
                                                                             <img class="img-fluid"
-                                                                                src="images/cart/product-1.jpg"
+                                                                                src="{{asset('images/cart/product-1.jpg')}}"
                                                                                 alt="product-img">
                                                                             <a href="">Tops</a>
                                                                         </div>
@@ -294,7 +294,7 @@
                                                                     <td>
                                                                         <div class="product-info">
                                                                             <img class="img-fluid"
-                                                                                src="images/cart/product-2.jpg"
+                                                                                src="{{asset('images/cart/product-2.jpg')}}"
                                                                                 alt="product-img">
                                                                             <a href="">Jacket</a>
                                                                         </div>
@@ -328,7 +328,7 @@
                                                                     <td>
                                                                         <div class="product-info">
                                                                             <img class="img-fluid"
-                                                                                src="images/cart/product-1.jpg"
+                                                                                src="{{asset('images/cart/product-1.jpg')}}"
                                                                                 alt="product-img">
                                                                             <a href="">Scarf</a>
                                                                         </div>
@@ -362,7 +362,7 @@
                                                                     <td>
                                                                         <div class="product-info">
                                                                             <img class="img-fluid"
-                                                                                src="images/cart/product-2.jpg"
+                                                                                src="{{asset('images/cart/product-2.jpg')}}"
                                                                                 alt="product-img">
                                                                             <a href="">Tops</a>
                                                                         </div>
@@ -491,18 +491,18 @@
                                 <p class="text-white mb-0">Logo &copy; 2018 all right reserved</p>
                             </div>
                             <div class="col-md-2 text-center text-md-left mb-4 mb-md-0">
-                                <img src="images/logo-alt.png" alt="logo">
+                                <img src="{{asset('images/logo-alt.png')}}" alt="logo">
                             </div>
                             <div class="col-md-5 text-center text-md-right mb-4 mb-md-0">
                                 <ul class="list-inline">
                                     <li class="list-inline-item"><img class="img-fluid rounded atm-card-img"
-                                            src="images/payment-card/card-1.jpg" alt="card"></li>
+                                            src="{{asset('images/payment-card/card-1.jpg')}}" alt="card"></li>
                                     <li class="list-inline-item"><img class="img-fluid rounded atm-card-img"
-                                            src="images/payment-card/card-2.jpg" alt="card"></li>
+                                            src="{{asset('images/payment-card/card-2.jpg')}}" alt="card"></li>
                                     <li class="list-inline-item"><img class="img-fluid rounded atm-card-img"
-                                            src="images/payment-card/card-3.jpg" alt="card"></li>
+                                            src="{{asset('images/payment-card/card-3.jpg')}}" alt="card"></li>
                                     <li class="list-inline-item"><img class="img-fluid rounded atm-card-img"
-                                            src="images/payment-card/card-4.jpg" alt="card"></li>
+                                            src="{{asset('images/payment-card/card-4.jpg')}}" alt="card"></li>
                                 </ul>
                             </div>
                         </div>
