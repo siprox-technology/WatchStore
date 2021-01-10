@@ -26501,6 +26501,10 @@ footer a:hover {
     flex-basis: 55%;
 }
 
+.flex-basis-70 {
+    flex-basis: 70%;
+}
+
 .select {
     padding-left: 0;
     border: 0;

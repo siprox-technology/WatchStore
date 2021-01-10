@@ -4,7 +4,7 @@
 @section('content')
       <!-- preloader start -->
       <div class="preloader">
-        <img src="{{asset('images/preloader.gif" alt="preloader">
+        <img src="{{asset('images/preloader.gif')}}" alt="preloader">
     </div>
     <!-- preloader end -->
 
