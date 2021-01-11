@@ -1,9 +1,12 @@
 -specs
-    -db tables
+    -db tables ---here--
+    -db diagram
     -back end functionalities
     -front end structure
-    -db diagram
     -class diagram
+-Back end
+    -images of products
+    -product specifications
 
 
 -Front end
@@ -19,18 +22,15 @@
                 *View shopping basket. remove items.
                 *Order history.
                 *Change contact Preferences.
-        -products list page
-        -product details page
-        -checkout page
-        -payment page
-        -payment confirmation page
-        -cookie policy
+        *products list page
+        *product details page
+        *checkout page + *payment page --
 
-    -images of products
-    -specifications
+        *payment confirmation page
+        *cookie policy --
 
 
--Back end
+
 
 
 

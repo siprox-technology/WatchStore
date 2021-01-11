@@ -17,14 +17,19 @@ Route::get('/', function () {
     return view('home');
 });
 
-//product list page
+//product list 
 Route::get('/shop', function () {
     return view('shop');
 });
 
-//product details page
+//product details 
 Route::get('/product-details', function () {
     return view('product-details');
+});
+
+//payment confirmation 
+Route::get('/confirm', function () {
+    return view('payment-confirm');
 });
 
 //register
