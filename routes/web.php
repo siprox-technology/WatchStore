@@ -16,9 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
 //product list page
 Route::get('/shop', function () {
     return view('shop');
+});
+
+//product details page
+Route::get('/product-details', function () {
+    return view('product-details');
 });
 
 //register
