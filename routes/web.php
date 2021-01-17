@@ -50,7 +50,7 @@ Route::get('/forgetPassword', function () {
 //user profile
 Route::get('/dashboard', function () {
     return view('auth.user-profile');
-});
+})->name('dashboard');
 //change password
 Route::get('/dashboard/changePassword', function () {
     return view('auth.change-pass');
