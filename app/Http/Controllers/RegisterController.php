@@ -23,6 +23,6 @@ class RegisterController extends Controller
             'contact_pref'=>'required|integer|between:0,2'
         ]);
 
-dd($x);
+dd($x); /* here */
     }
 }
