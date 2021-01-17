@@ -1,5 +1,5 @@
 -specs
-    -db tables ---here--
+    -db tables
     -db diagram
     -back end functionalities
     -front end structure
