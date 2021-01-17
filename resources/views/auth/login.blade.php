@@ -12,16 +12,45 @@
                             <img src="{{asset('images/logo.png')}}" alt="logo">
                         </a>
                         <h2 class="text-center">Welcome Back</h2>
-                        <form class="text-left clearfix" action="index.html">
+
+                        <form class="text-left clearfix" method="POST" action="{{route('login')}}">
+                            @csrf
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email">
+                                <input type="email" name="email" 
+                                class="form-control 
+                                @error('email') border border-danger @enderror 
+                                @error('status') border border-danger @enderror" 
+                                placeholder="Email" value="{{old('email')}}">
+                                @error('email')
+                                <div class=" text-danger mt-2 ">
+                                    {{$message}}
+                                </div>
+                                @enderror
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password">
+                                <input type="password" name="password" 
+                                class="form-control 
+                                @error('password') border border-danger @enderror 
+                                @error('status') border border-danger @enderror"
+                                placeholder="Password">
+                                @error('password')
+                                <div class=" text-danger mt-2 ">
+                                    {{$message}}
+                                </div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="remember" id="remember" class="mr-2">
+                                <label for="remeber">Remember me</label>
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Login</button>
                             </div>
+                            @error('status')
+                                <div class="text-center text-danger mt-2 ">
+                                    {{$message}}
+                                </div>
+                            @enderror           
                         </form>
                         <p class="mt-3">New in this site ?<a href="signin.html"> Create New Account</a></p>
                     </div>

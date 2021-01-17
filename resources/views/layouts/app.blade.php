@@ -44,11 +44,18 @@
                 </div>
                 <div class="col-lg-6 text-center text-lg-right">
                     <ul class="list-inline">
-                        <li class="list-inline-item"><img src="{{asset('images/flag.jpg')}}" alt="flag"></li>
-{{--                         <li class="list-inline-item"><a href="login.html">My Accounts</a></li> --}}
-                        <li class="list-inline-item"><a href="{{route('register')}}">Register</a></li>
-{{--                         <li class="list-inline-item"><a href="login.html">Login</a></li> --}}
-
+                        @guest
+                            <li class="list-inline-item"><a href="{{route('register')}}">Register</a></li>
+                            <li class="list-inline-item"><a href="{{route('login.index')}}">Login</a></li> 
+                        @endguest
+                        @auth
+                            <li class="list-inline-item">
+                                <form action="{{route('logout')}}" method="POST">
+                                    @csrf
+                                    <button type="submit">logout</button>
+                                </form>
+                            </li>
+                        @endauth
                         <li class="list-inline-item">
                             <form action="#">
                                 <select class="country" name="country">
