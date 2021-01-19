@@ -23,7 +23,7 @@ class LoginController extends Controller
             return back()->withErrors(['status'=>'Invalid login details']);
         }
 
-        return \redirect()->route('dashboard');
+        return \redirect()->route('dashboard.index');
     }
     public function logOut()
     {
