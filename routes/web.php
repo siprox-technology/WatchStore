@@ -39,6 +39,7 @@ Route::get('/confirm', function () {
 //register
 Route::get('/register',[RegisterController::class,'index'])->name('register.index');
 Route::post('/register',[RegisterController::class,'store'])->name('register');
+
 /* Auth::routes(['verify' => true]); */
 
 
