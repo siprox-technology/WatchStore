@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Mail\NewUserRegister;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+//
+use Illuminate\Auth\Events\Registered;
 
 class RegisterController extends Controller
 {
@@ -18,7 +22,7 @@ class RegisterController extends Controller
     {
   
         //validate user inputs
-        $x = $this->validate($request,[
+        $this->validate($request,[
             'name'=>'required|max:50',
             'email'=>'required|email|max:50',
             'phone'=>'required|digits:11',
@@ -26,7 +30,7 @@ class RegisterController extends Controller
             'contact_pref'=>'required|integer|between:0,2'
         ]);
         //create user 
-        User::create(
+        $user = User::create(
             [
                 "name"=>$request->name,
                 "email"=>$request->email,
@@ -37,6 +41,6 @@ class RegisterController extends Controller
         );
 
         Auth()->attempt($request->only('email','password'));
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard.index');
     }
 }

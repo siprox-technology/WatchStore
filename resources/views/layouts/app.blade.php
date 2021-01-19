@@ -45,7 +45,7 @@
                 <div class="col-lg-6 text-center text-lg-right">
                     <ul class="list-inline">
                         @guest
-                            <li class="list-inline-item"><a href="{{route('register')}}">Register</a></li>
+                            <li class="list-inline-item"><a href="{{route('register.index')}}">Register</a></li>
                             <li class="list-inline-item"><a href="{{route('login.index')}}">Login</a></li> 
                         @endguest
                         @auth

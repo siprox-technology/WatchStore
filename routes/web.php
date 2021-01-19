@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,8 +37,10 @@ Route::get('/confirm', function () {
 });
 
 //register
-Route::get('/register',[RegisterController::class,'index'])->name('register');
-Route::post('/register',[RegisterController::class,'store']);
+Route::get('/register',[RegisterController::class,'index'])->name('register.index');
+Route::post('/register',[RegisterController::class,'store'])->name('register');
+/* Auth::routes(['verify' => true]); */
+
 
 //login logout
 Route::get('/login', [LoginController::class,'index'])->name('login.index');
@@ -50,9 +54,8 @@ Route::get('/forgetPassword', function () {
 
 
 //user profile
-Route::get('/dashboard', function () {
-    return view('auth.user-profile');
-})->name('dashboard');
+Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard.index');
+
 //change password
 Route::get('/dashboard/changePassword', function () {
     return view('auth.change-pass');
