@@ -40,6 +40,7 @@ class RegisterController extends Controller
             ]
         );
 
+        event(new Registered($user));
         Auth()->attempt($request->only('email','password'));
         return redirect()->route('dashboard.index');
     }

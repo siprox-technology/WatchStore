@@ -39,9 +39,22 @@
                                         </div>
                                         <div class="media-body">
                                             <ul class="user-profile-list">
-                                                <li><span>Full Name:</span>Johanna Doe</li>
+                                                <li><span>Full Name:</span>bbb</li>
                                                 <li><span>Country:</span>USA</li>
                                                 <li><span>Email:</span>mail@gmail.com</li>
+                                                @if (!auth()->user()->email_verified_at)
+                                                    <p class="text-danger">please verify emails address</p>
+                                                    <form action="{{route('verification.send')}}" method="POST">
+                                                        @csrf
+                                                        <button type="submit">resend verification email</button>
+                                                    </form>
+                                                    @if (session('message'))
+                                                        <p class="text-success">{{session('message')}}</p>
+                                                    @endif
+                                                @else
+                                                <p class="text-success">email verified</p>
+                                                @endif
+                                                <li></li>
                                                 <li><span>Phone:</span>+880123123</li>
                                                 <li><span>Date of Birth:</span>Dec , 22 ,1991</li>
                                             </ul>
