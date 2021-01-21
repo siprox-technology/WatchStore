@@ -55,6 +55,7 @@
                                     <button type="submit">logout</button>
                                 </form>
                             </li>
+                            <li class="list-inline-item"><a href="{{route('dashboard.index')}}">Dashboard</a></li> 
                         @endauth
                         <li class="list-inline-item">
                             <form action="#">
