@@ -39,9 +39,8 @@
                                         </div>
                                         <div class="media-body">
                                             <ul class="user-profile-list">
-                                                <li><span>Full Name:</span>bbb</li>
-                                                <li><span>Country:</span>USA</li>
-                                                <li><span>Email:</span>mail@gmail.com</li>
+                                                <li><span>Full Name:</span>{{auth()->user()->name}}</li>
+                                                <li><span>Email:</span>{{auth()->user()->email}}</li>
                                                 @if (!auth()->user()->email_verified_at)
                                                     <p class="text-danger">please verify emails address</p>
                                                     <form action="{{route('verification.send')}}" method="POST">
@@ -55,8 +54,18 @@
                                                 <p class="text-success">email verified</p>
                                                 @endif
                                                 <li></li>
-                                                <li><span>Phone:</span>+880123123</li>
-                                                <li><span>Date of Birth:</span>Dec , 22 ,1991</li>
+                                                <li><span>Phone:</span>{{auth()->user()->phone}}</li>
+                                                <li><span>Contact prefernce:</span>
+                                                    @if ((auth()->user()->contact_pref)== 0)
+                                                        PHONE
+                                                    @endif
+                                                    @if ((auth()->user()->contact_pref)== 1)
+                                                        SMS
+                                                    @endif
+                                                    @if ((auth()->user()->contact_pref)== 2)
+                                                        EMAIL
+                                                    @endif
+                                                </li>
                                             </ul>
                                         </div>
                                         <div class="text-center mt-5 mt-md-0">
@@ -71,7 +80,10 @@
                     </div>
                 </section>
                 <!-- edit account details modal -->
-                <div class="modal fade" id="edit_acc_details_modal" tabindex="-1" role="dialog" aria-hidden="true">
+
+
+
+                <div class='modal fade show' style="d-block" id="edit_acc_details_modal" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -87,20 +99,47 @@
                                         <div class=" flex justify-center">
                                             <div class=" w-6/12 bg-white p-6 rounded-lg">
                                                 <div class="block text-center">
-                                                    <form class="text-left clearfix" action="index.html">
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control"
-                                                                placeholder="First Name">
+                                                {{-- edit user details --}}
+                                                    <form class="text-left clearfix" action="{{route('user.update')}}" method="POST">
+                                                        @csrf
+                                                        <div class="form-group text-left">
+                                                            <label for="contact_pref"><b>Name:</b></label>
+                                                            <input type="text" name="name" id="name" maxlength="50"
+                                                            class="form-control @error('name') border border-danger @enderror" 
+                                                            placeholder="Your name" value="{{auth()->user()->name}}">
+                                                            @error('name')
+                                                                <div class=" text-danger mt-2">
+                                                                    {{$message}}
+                                                                </div>
+                                                            @enderror
                                                         </div>
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" placeholder="Last Name">
+                                                        <div class="form-group text-left">
+                                                            <label for="contact_pref"><b>Phone:</b></label>
+                                                            <input type="text" name="phone" id="phone" maxlength="11" 
+                                                            class="form-control  @error('phone') border border-danger @enderror" 
+                                                            placeholder="Your phone" value="{{auth()->user()->email}}">
+                                                            @error('phone')
+                                                                <div class=" text-danger mt-2">
+                                                                    {{$message}}
+                                                                </div>
+                                                            @enderror
                                                         </div>
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" placeholder="phone">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="email" class="form-control"
-                                                                placeholder="contact preferences">
+                                                        <div class="form-group text-left">
+                                                            @if ($errors->any())
+                                                                <script src="{{mix ('js/app.js')}}"></script>
+                                                            @endif
+                                                            <label for="contact_pref"><b>Contact preference:</b></label>
+                                                            <select name="contact_pref" id="contact_pref" 
+                                                            value="" class="w-100 mb-3">
+                                                                <option value="0">Phone</option>
+                                                                <option value="1">SMS</option>
+                                                                <option value="2">Email</option>
+                                                            </select>                                
+                                                            @error('contact_pref')
+                                                                <div class=" text-danger mt-2">
+                                                                    {{$message}}
+                                                                </div>
+                                                            @enderror
                                                         </div>
                                                         <div class="text-center">
                                                             <button type="submit" class="btn btn-primary">Update</button>
@@ -114,5 +153,9 @@
                             </div>
                         </div>
                     </div>
-                </div>    
+                </div>
+                @if ($errors->any())
+                    <script src="{{mix ('js/app.js')}}"></script>
+                    <script>$('#edit_acc_details_modal').modal();</script>
+                @endif
 @endsection
