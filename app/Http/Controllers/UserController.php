@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -24,5 +25,27 @@ class UserController extends Controller
 
         $user->save();
         return redirect()->route('dashboard.index');
+    }
+
+    public function changePassword(Request $request)/* here */
+    {
+        //check user password
+        if (Hash::check($request->OldPassword, auth()->user()->password)) {            
+            //validate user inputs
+            $this->validate($request,[
+                'OldPassword'=>'required|max:30',
+                'password'=>'required|confirmed'
+            ]);
+            $newPass= Hash::make($request->password);
+            $user = User::find(auth()->user()->id);
+            $user->password = $newPass;
+            $user->save();
+            return back()->with(['status' => 'Password change successfully']);
+        }
+        else
+        {
+            return back()->withErrors(['OldPassword'=>'Invalid current password']);
+        }
+
     }
 }

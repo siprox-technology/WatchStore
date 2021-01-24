@@ -68,11 +68,11 @@ Route::get('/forgetPassword', function () {
 Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard.index');
 //update user details
 Route::post('/dashboard', [UserController::class,'updateDetails'])->name('user.update');
-
 //change password
 Route::get('/dashboard/changePassword', function () {
-    return view('auth.change-pass');
-});
+    return view('auth.change-pass');})->name('changePass.index');
+Route::post('/dashboard/changePassword', [UserController::class,'changePassword'])->name('user.changePass');
+
 // change address details
 Route::get('/dashboard/changeAddress', function () {
     return view('auth.address');
