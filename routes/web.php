@@ -74,7 +74,8 @@ Route::get('/dashboard/changePassword', function () {
 Route::post('/dashboard/changePassword', [UserController::class,'changePassword'])->name('user.changePass');
 // change address details
 Route::get('/dashboard/changeAddress', function () {
-    return view('auth.address');})->middleware('auth')->name('changeAddress.index');
+    return view('auth.address');})->middleware('auth')->name('changeAddress.index');    
+Route::post('/dashboard/changeAddress', [UserController::class,'changeAddress'])->name('user.changeAddress');
 //shopping basket
 Route::get('/dashboard/shoppingCart', function () {
     return view('auth.cart');})->middleware('auth')->name('basket.index');
