@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    //constructor -- middleware?
+
+    
     public function updateDetails(Request $request)
     {
         //validate user inputs

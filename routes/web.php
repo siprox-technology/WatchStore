@@ -70,22 +70,17 @@ Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard.
 Route::post('/dashboard', [UserController::class,'updateDetails'])->name('user.update');
 //change password
 Route::get('/dashboard/changePassword', function () {
-    return view('auth.change-pass');})->name('changePass.index');
+    return view('auth.change-pass');})->middleware('auth')->name('changePass.index');
 Route::post('/dashboard/changePassword', [UserController::class,'changePassword'])->name('user.changePass');
-
 // change address details
 Route::get('/dashboard/changeAddress', function () {
-    return view('auth.address');
-});
+    return view('auth.address');})->middleware('auth')->name('changeAddress.index');
 //shopping basket
 Route::get('/dashboard/shoppingCart', function () {
-    return view('auth.cart');
-});
+    return view('auth.cart');})->middleware('auth')->name('basket.index');
 //order history
 Route::get('/dashboard/orderHistory', function () {
-    return view('auth.order-history');
-});
+    return view('auth.order-history');})->middleware('auth')->name('orderHistory.index');
 //contact preferences
 Route::get('/dashboard/contactPref', function () {
-    return view('auth.contact-pref');
-});
+    return view('auth.contact-pref');})->middleware('auth')->name('contactPref.index');

@@ -22,13 +22,13 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <ul class="list-inline dashboard-menu text-center">
-                                    <li class="list-inline-item m-1"><a class="active" href="/dashboard">Profile
+                                    <li class="list-inline-item m-1"><a class="active" href="{{route('dashboard.index')}}">Profile
                                             Details</a></li>
-                                    <li class="list-inline-item m-1"><a href="dashboard/changePassword">Change password</a></li>
-                                    <li class="list-inline-item m-1"><a href="dashboard/changeAddress">Address</a></li>
-                                    <li class="list-inline-item m-1"><a href="dashboard/shoppingCart">Basket</a></li>
-                                    <li class="list-inline-item m-1"><a href="dashboard/orderHistory">Orders</a></li>
-                                    <li class="list-inline-item m-1"><a href="dashboard/contactPref">Contact method</a></li>
+                                    <li class="list-inline-item m-1"><a href="{{route('changePass.index')}}">Change password</a></li>
+                                    <li class="list-inline-item m-1"><a href="{{route('changeAddress.index')}}">Address</a></li>
+                                    <li class="list-inline-item m-1"><a href="{{route('basket.index')}}">Basket</a></li>
+                                    <li class="list-inline-item m-1"><a href="{{route('orderHistory.index')}}">Orders</a></li>
+                                    <li class="list-inline-item m-1"><a href="{{route('contactPref.index')}}">Contact method</a></li>
                                 </ul>
                                 <div class="dashboard-wrapper dashboard-user-profile">
                                     <div class="d-md-flex">
