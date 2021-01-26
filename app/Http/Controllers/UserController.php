@@ -89,4 +89,14 @@ class UserController extends Controller
         $user->save();
         return back()->with(['status' => 'Your contact preference updated']);
     }
+    
+    public function sendPasswordResetLink(Request $request)
+    {
+        dd($request);/* here */
+
+        //validate email
+        //retrive password
+        //login user
+        //redirect to reset pass page
+    }
 }

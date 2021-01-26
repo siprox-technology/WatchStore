@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <!-- register -->
+    <!-- reset password form -->
     <section class="signin-page account bg-gray">
         <div class="container">
             <div class="row">
@@ -11,29 +11,50 @@
                         <a class="logo" href="index.html">
                             <img src="{{asset('images/logo.png')}}" alt="logo">
                         </a>
-                        <h2 class="text-center">Reset your password</h2>
-                        <form class="text-left clearfix" action="index.html">
+                        <h4 class="text-center mt-3">Reset your password:</h4>
+                        <form class="text-left clearfix" action="{{route('password.update')}}" method="POST">
+                            @csrf
+                            {{-- email --}}
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="First Name">
+                                <input type="text" name="email" 
+                                class="form-control @error('email') border border-danger @enderror" 
+                                placeholder="Your email">
+                                @error('email')
+                                    <div class="text-danger mt-2">
+                                        {{$message}}
+                                    </div>
+                                @enderror
                             </div>
+                            {{-- new password --}}
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Last Name">
+                                <input type="password" name="password" id="password" maxlength="30" 
+                                class="form-control @error('password') border border-danger @enderror" placeholder="Your password">
+                                @error('password')
+                                <div class=" text-danger mt-2">
+                                    {{$message}}
+                                </div>
+                                @enderror
                             </div>
+                            {{-- new password confirm --}}
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Username">
+                                <input type="password" name="password_confirmation" id="password_confirmation" maxlength="30" 
+                                class="form-control @error('password_confirmation') border border-danger @enderror" placeholder="Your password again">
+                                @error('password_confirmation')
+                                <div class=" text-danger mt-2">
+                                    {{$message}}
+                                </div>
+                                @enderror
                             </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email">
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password">
-                            </div>
+                            <input type="hidden" name="token" id="token" value="{{$token}}">
+                            @if (session('status'))
+                                <div class=" text-success mt-2">
+                                    {{session('status')}}
+                                </div>
+                            @endif
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary">Sign In</button>
+                                <button type="submit" class="btn btn-primary">Reset pass</button>
                             </div>
                         </form>
-                        <p class="mt-3">Already hava an account ?<a href="login.html"> Login</a></p>
-                        <p><a href="forget-password.html"> Forgot your password?</a></p>
                     </div>
                 </div>
             </div>

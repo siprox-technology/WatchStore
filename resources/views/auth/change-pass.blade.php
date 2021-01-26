@@ -31,12 +31,6 @@
                             </ul>
                             <div class="block text-center border border-grey mt-5 py-5 px-sm-5 px-2">
                                 <h3 class="text-center mb-5">Change current password</h3>
-                                {{-- status --}}
-{{--                                 @error('status')
-                                    <div class=" text-success mb-5">
-                                        {{$message}}
-                                    </div>
-                                @enderror --}}
                                 @if (session('status'))
                                     <div class=" text-success mb-5">
                                         {{session('status')}}

@@ -12,7 +12,11 @@
                             <img src="{{asset('images/logo.png')}}" alt="logo">
                         </a>
                         <h2 class="text-center">Welcome Back</h2>
-
+                        @if (session('status'))
+                            <div>
+                                {{session('status')}}
+                            </div>   
+                        @endif
                         <form class="text-left clearfix" method="POST" action="{{route('login')}}">
                             @csrf
                             <div class="form-group">
@@ -53,6 +57,7 @@
                             @enderror           
                         </form>
                         <p class="mt-3">New in this site ?<a href="signin.html"> Create New Account</a></p>
+                        <a href="{{route('forgetPassword.index')}}"><p class="mt-3">Forget password ?</p></a>
                     </div>
                 </div>
             </div>

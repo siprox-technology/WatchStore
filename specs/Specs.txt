@@ -69,12 +69,12 @@ Back end functionalities=>
 *Resend activation email if not received.
 -User reset forgotten password through email.
 -User profile 
-    -Update account details.
-    -Change password.
-    -Address Details. add or remove. 
+    *Update account details. 
+    *Change password.
+    *Address Details. add or remove. 
     -View shopping basket. remove items.
     -Order history.
-    -Change contact Preferences.
+    *Change contact Preferences.
 -Search products by brand,category,type,name and gender(mens, ladies, kids).
 -Display best selling items.
 -Sort products by brands,gender,category,type,color,price and discount.
