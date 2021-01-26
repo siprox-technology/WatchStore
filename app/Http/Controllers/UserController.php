@@ -74,4 +74,19 @@ class UserController extends Controller
             $user->save();
             return redirect()->route('changeAddress.index');
     }
+
+    public function changeContactPref(Request $request)
+    {
+            //validate user inputs
+            $this->validate($request,[
+            'contact_pref'=>'required|integer|between:0,2'
+        ]);
+        //update user details
+
+        $user = User::find(auth()->user()->id);
+        $user->contact_pref = $request->contact_pref;
+
+        $user->save();
+        return back()->with(['status' => 'Your contact preference updated']);
+    }
 }

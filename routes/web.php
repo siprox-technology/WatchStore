@@ -82,6 +82,7 @@ Route::get('/dashboard/shoppingCart', function () {
 //order history
 Route::get('/dashboard/orderHistory', function () {
     return view('auth.order-history');})->middleware('auth')->name('orderHistory.index');
-//contact preferences
+//change contact preferences
 Route::get('/dashboard/contactPref', function () {
     return view('auth.contact-pref');})->middleware('auth')->name('contactPref.index');
+Route::post('/dashboard/contactPref', [UserController::class,'changeContactPref'])->name('user.changeContactPref');

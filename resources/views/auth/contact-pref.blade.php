@@ -32,20 +32,34 @@
                             </ul>
                             <div class="block text-center border border-grey mt-5 py-5 px-sm-5 px-2">
                                 <div class="row justify-content-center">
-                                    <form action="">
+                                    {{-- change contact preferences --}}
+                                    <form action="{{route('user.changeContactPref')}}" method="POST">
+                                        @csrf
                                         <div class="form-group text-center" id="contact_pref_options">
                                             <p style="font-size:0.875rem" class="text-center">Contact Preferences: </p>
-                                            <label><input class="m-1" type="radio" name="contactPref"
-                                                    value="0">SMS</label>
-                                            <label><input class="m-1" type="radio" name="contactPref"
-                                                    value="1">Email</label>
-                                            <label><input class="m-1" type="radio" name="contactPref"
-                                                    value="2">Phone</label>
+                                            @if (session('status'))
+                                                <p class="text-center text-success">Your contact method is set to :
+                                                     <b>
+                                                         {{(auth()->user()->contact_pref)=='0'?'SMS':''}}
+                                                         {{(auth()->user()->contact_pref)=='1'?'EMAIL':''}}
+                                                         {{(auth()->user()->contact_pref)=='2'?'PHONE':''}}
+                                                    </b>
+                                                </p>
+                                            @endif
+                                            @error('contact_pref')
+                                                <p class="text-center text-danger">{{$message}}</p>
+                                            @enderror
+                                            <label><input class="m-1" type="radio" name="contact_pref"
+                                                    value="0" {{(auth()->user()->contact_pref)=='0'?'checked':''}}>SMS</label>
+                                            <label><input class="m-1" type="radio" name="contact_pref"
+                                                    value="1" {{(auth()->user()->contact_pref)=='1'?'checked':''}}>Email</label>
+                                            <label><input class="m-1" type="radio" name="contact_pref"
+                                                    value="2" {{(auth()->user()->contact_pref)=='2'?'checked':''}}>Phone</label>
                                         </div>
                                         <div class="row justify-content-center mt-4">
                                             <div class="d-flex flex-column">
                                                 <button class="button btn-primary mb-sm-0 bottom15"
-                                                    id='update_contact_pref_btn' disabled>update</button>
+                                                    id='update_contact_pref_btn' type="submit">update</button>
                                                 <label class="text-success mt-3 float-center text-center d-none"
                                                     id="save-contact-det-result"></label>
                                             </div>
