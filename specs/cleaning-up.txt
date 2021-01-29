@@ -1,4 +1,4 @@
 - go to optimize guide links
 - optimize images
 - optimize command php
--
+- check and optimize db queries on display items

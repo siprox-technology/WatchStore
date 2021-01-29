@@ -2,7 +2,7 @@ Precision Laps watch store website
 ------------------------------
 
 Database tables => Product, Brand, Review, 
-User, Address, Order, order_items,Payment
+User, Order, order_items,Payment
 ---------------------------------------------
 Database diagram => (DataBaseDiagram.vsdx)
 ---------------------------------------------
@@ -32,13 +32,10 @@ FK_user_id_review_user
 
 ---------------------------------
 User has:
-id,email,name,phone
+id,email,name,phone,
+address,city,state,country,post_code
 ,password,contact_pref,created_at,update_at,act_code
 
--------------------------------
-Address:
-id,number,address,city,state,country,postCode,
-FK_user_id_addr_user,
 
 --------------------------------
 Order:
@@ -67,7 +64,7 @@ Back end functionalities=>
 *User registration and activation by email
 *User log in\log out and session time tracking by 5 mins.---
 *Resend activation email if not received.
--User reset forgotten password through email.
+*User reset forgotten password through email.
 -User profile 
     *Update account details. 
     *Change password.
@@ -75,6 +72,7 @@ Back end functionalities=>
     -View shopping basket. remove items.
     -Order history.
     *Change contact Preferences.
+
 -Search products by brand,category,type,name and gender(mens, ladies, kids).
 -Display best selling items.
 -Sort products by brands,gender,category,type,color,price and discount.
@@ -83,6 +81,7 @@ Back end functionalities=>
      type, gender, price, discount, color, description, specifications
      reviews, Images, stock availability
 -Display related products in product details page.
+
 -User add and remove items to and from shopping basket.
 -User makes payment using Stripe payment(sandbox) api with a visa card (test card=> '4242 4242 4242 4242' any 'zip' and any 'date').
 -Display Payment information if failed or success.
