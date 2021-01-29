@@ -10,18 +10,18 @@ Database diagram => (DataBaseDiagram.vsdx)
 Database tables details =>
 
 Product:
-id(product code),brand,model_number,
+id,brand,model_number,
 name
 category, type, 
 gender, price,discount, color, 
 description, 
 specifications,
 stock
-FK_brand_id_product_brand
+brand_id(FK)
 
 ------------------------------
 Brand:
-id, Name, company-info
+id, Name, company_info
 
 ------------------------------
 Review:
