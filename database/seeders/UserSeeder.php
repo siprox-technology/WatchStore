@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert(
+        User::create(
             [
             'name' => 'Jonh Doe',
             'email' => 'email@email.com',
@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
             'contact_pref' => '1'
             ]
         );
-        DB::table('users')->insert(
+        User::create(
             [
             'name' => 'ahmad Doe',
             'email' => 'ahmad@email.com',

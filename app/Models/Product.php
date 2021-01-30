@@ -21,7 +21,7 @@ class Product extends Model
         'discount', 
         'color', 
         'description', 
-        'specifications',
+        'specification',
         'stock',
         'brand_id'
     ];
