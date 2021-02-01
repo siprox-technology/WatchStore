@@ -22,7 +22,7 @@ class CreateProductsTable extends Migration
             $table->string('category',40);
             $table->string('type',40);
             $table->string('gender',10);
-            $table->string('price',8);
+            $table->string('price',10);
             $table->string('discount',3);
             $table->string('color',15);
             $table->longText('description');
