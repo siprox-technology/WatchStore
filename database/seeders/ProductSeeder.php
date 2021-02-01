@@ -40,7 +40,8 @@ class ProductSeeder extends Seeder
                 Chronograph function for elapsed time measurement, adding functionality ', 
                 'specification'=>'Brand,Casio,Alarm,Yes,Analogue/Digital,Analogue,Backlight,Yes,Case depth approx.,14.00mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,48.00mm,Chronograph,Yes,Clasp type,Strap buckle,Dial Colour,Grey,Multiple Time Zones Display,Dual Time,Gender,Gents,Glass,Acrylic,Model Name,G-Steel,Movement Source,Japan,Movement,Tough solar,Radio Controlled,Yes,Strap colour,Black,Strap Type,Rubber Strap,Water Resistance,200 metres,Weight (g),101.00,BARCODE,4549526168178,Guarantee,2 years',
                 'stock'=>'50',
-                'brand_id'=>'16',]
+                'brand_id'=>(DB::table('brands')->where('name', 'Casio')->pluck('id'))[0],
+                ]
         );
         Product::create(
             [
@@ -58,7 +59,7 @@ class ProductSeeder extends Seeder
                 This watch is shipped with an official presentation box and manufacturer's warranty.", 
                 'specification'=>'Brand,Casio,Alarm,Yes,Analogue/Digital,Analogue,Backlight,Yes,Case depth approx.,15.00mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,54.00mm,Chronograph,Yes,Clasp type,Deployment,Dial Colour,Grey,Multiple Time Zones Display,Dual Time,Gender,Gents,Glass,Acrylic,Model Name,G-Steel,Movement Source,Japan,Movement,Tough solar,Strap colour,Silver,Water Resistance,200 metres,Weight (g),190.00,BARCODE,4549526168222,Guarantee,2 years',
                 'stock'=>'60',
-                'brand_id'=>'16',
+                'brand_id'=>(DB::table('brands')->where('name', 'Casio')->pluck('id'))[0],
             ]
         );
         Product::create(
@@ -87,7 +88,7 @@ class ProductSeeder extends Seeder
                 'specification'=>'Brand,Casio,Alarm,Yes,Analogue/Digital,Combination,Backlight,Yes,Case depth approx.,15.00mm,Primary Material,Plastic/Resin,Case Shape,Circle,Case width approx.,45.00mm,Chronograph,Yes,Clasp type,Strap buckle,Dial Colour,Grey,Multiple Time Zones Display,None,Gender,Gents,Glass,Mineral,Luminescent hands,Yes,Model Collection,G-Shock,Model Name,G-Shock Mudmaster,Movement Source,Japan,Movement,Quartz,Strap colour,Black,Strap Type,Plastic/Resin Strap,Water Resistance,200 metres,Weight (g),92.00,BARCODE,4549526235504,Guarantee,2 years
             ',
                 'stock'=>'150',
-                'brand_id'=>'16',
+                'brand_id'=>(DB::table('brands')->where('name', 'Casio')->pluck('id'))[0],
             ]
         );
         Product::create(
@@ -104,7 +105,7 @@ class ProductSeeder extends Seeder
                 'description'=>"This new MUDMASTER model was created especially for this whose work takes it into areas where piles of rubble, dirt, and debris are present. A special vibration-resistant construction lets them stand up to wear while operating cutters, crushers, drills and other heavy machinery to clear way large obstacles. This is CASIO's first analog watch to come with Mud Resist construction, which helps to ensure that nothing gets into the watch when down and dirty work takes you deep into the dirt and sludge. Multiple gaskets are used on the pipes that guide buttons and shafts, which keeps mud out. These pipes not only act to protect buttons from impact, they also enhance button operation. The screw-in force of the screw lock bezel on an internal gasket further increases mud resistance. A new bezel structure lets you visually check whether the bezel has been screwed in adequately. In addition, Triple Sensor Version 3 capabilities provide instant access to direction, barometric pressure, and temperature information when needed under tough conditions. The face of the watch is marked with large Arabian numerals as 12, 3, 6, and 9 o'clock for easy reading. The face is illuminated by a double LED light and protected by a sapphire crystal to ensure high visibility under virtually any conditions imaginable. The band surface is processed to resemble a cloth band texture, and the hour and minute hands are shaped with points that make them resemble warning markers. All buttons have a checkered surface for surer operation and grip even when wet, and the overall design is tough and rugged. Vibration Resistant Structure Digital compass, barometric pressure/altitude, temperature readings Double LED light illuminates the face and digital display for outstanding readability. Screw-in Crown Multiband 6 (Automatically adjusts time settings based on reception of one of six time calibration signals around the globe: Japan (2), China, United States, England, Germany.) Tough Solar", 
                 'specification'=>'Brand,Casio,Alarm,Yes,Analogue/Digital,Combination,Backlight,Yes,Case depth approx.,15.00mm,Primary Material,Plastic/Resin,Case Shape,Circle,Case width approx.,51.00mm,Chronograph,Yes,Clasp type,Strap buckle,Dial Colour,Black,Multiple Time Zones Display,Dual Time,Gender,Gents,Glass,Sapphire,Hour Markers,Batons,Luminescent hands,Yes,Model Name,G-Shock Premium Mudmaster Compass,Movement Source,Japan,Movement,Tough solar,Radio Controlled,Yes,Strap colour,Khaki,Strap Type,Rubber Strap,Water Resistance,200 metres,Weight (g),119.00,BARCODE,4971850028345,Guarantee,2 years',
                 'stock'=>'75',
-                'brand_id'=>'16',
+                'brand_id'=>(DB::table('brands')->where('name', 'Casio')->pluck('id'))[0],
             ]
         );
         Product::create(
@@ -122,7 +123,7 @@ class ProductSeeder extends Seeder
                 'specification'=>'Brand,Casio,Alarm,Yes,Analogue/Digital,Combination,Backlight,Yes,Case depth approx.,15.00mm,Primary Material,Plastic/Resin,Case Shape,Circle,Case width approx.,45.00mm,Chronograph,Yes,Clasp type,Strap buckle,Dial Colour,Grey,Multiple Time Zones Display,World Time,Gender,Gents,Glass,Mineral,Luminescent hands,Yes,Model Collection,G-Shock,Model Name,G-Shock,Movement,Quartz,Radio Controlled,Yes,Strap colour,Orange,Water Resistance,200 metres,BARCODE,4549526235450,Guarantee,2 years
             ',
                 'stock'=>'85',
-                'brand_id'=>'16',
+                'brand_id'=>(DB::table('brands')->where('name', 'Casio')->pluck('id'))[0],
             ]
         );
         Product::create(
@@ -148,7 +149,7 @@ class ProductSeeder extends Seeder
                 Automatic calendar that always displays the correct date', 
                 'specification'=>'Brand,Casio,Alarm,Yes,Analogue/Digital,Combination,Backlight,Yes,Case depth approx.,16.00mm,Primary Material,Plastic/Resin,Case Shape,Circle,Case width approx.,54.00mm,Chronograph,Yes,Dial Colour,Black,Gender,Gents,Model Collection,G-Squad,Model Name,G-Squad,Movement Source,Japanese,Movement,Quartz,Radio Controlled,Yes,Strap colour,Yellow,Strap Type,Rubber Strap,Water Resistance,200 metres,BARCODE,4549526179358,Guarantee,2 years',
                 'stock'=>'65',
-                'brand_id'=>'16',
+                'brand_id'=>(DB::table('brands')->where('name', 'Casio')->pluck('id'))[0],
             ]
         );
         Product::create(
@@ -166,7 +167,7 @@ class ProductSeeder extends Seeder
                 The outer components, including the watch band, case and bezel are entirely made from Stainless Steel while the interior employs a new shock-resistant construction. Complete with Radio Controlled timekeeping and a Bluetooth smart link, this collectors G-Shock is sure to make it's mark in the G-Shock Hall Of Fame.", 
                 'specification'=>'Brand,Casio,Alarm,Yes,Analogue/Digital,Digital,Backlight,Yes,Bezel Type,Fixed,Case depth approx.,13.00mm,Primary Material,Stainless Steel,Case Shape,Rectangle,Case width approx.,49.00mm,Chronograph,Yes,Clasp type,Push-button Deployment,Dial Colour,LCD,Multiple Time Zones Display,None,Gender,Gents,Glass,Mineral,Model Collection,G-Shock,Model Name,G-Shock,Movement Source,Japan,Movement,Tough solar,Radio Controlled,Yes,Strap colour,Silver,Strap Type,Metal bracelet,Water Resistance,200 metres,Weight (g),167.00,BARCODE,4549526187681,Guarantee,2 years,Chronometer,Yes',
                 'stock'=>'95',
-                'brand_id'=>'16',
+                'brand_id'=>(DB::table('brands')->where('name', 'Casio')->pluck('id'))[0],
             ]
         );
         Product::create(
@@ -191,7 +192,7 @@ class ProductSeeder extends Seeder
                 Long lasting and rust-resistant stainless steel case ', 
                 'specification'=>'Brand,Casio,Alarm,Yes,Analogue/Digital,Analogue,Case depth approx.,13.00mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,45.00mm,Chronograph,Yes,Clasp type,Clasp,Dial Colour,Black,Multiple Time Zones Display,None,Gender,Gents,Glass,Mineral,Luminescent hands,Yes,Model Collection,Edifice,Model Name,Chronograph,Movement Source,Japan,Movement,Quartz,Strap colour,Silver,Strap Type,Metal bracelet,Water Resistance,100 metres,Weight (g),151.00,BARCODE,4549526252433,Guarantee,2 YEARS',
                 'stock'=>'85',
-                'brand_id'=>'16',
+                'brand_id'=>(DB::table('brands')->where('name', 'Casio')->pluck('id'))[0],
             ]
         );
         Product::create(
@@ -217,7 +218,7 @@ class ProductSeeder extends Seeder
                 Water resistant to 100m so suitable for everything from a casual swim to a deep dive", 
                 'specification'=>'Brand,Casio,Analogue/Digital,Analogue,Backlight,Yes,Bezel Type,Plain,Case depth approx.,12.10mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,51.00mm,Chronograph,Yes,Clasp type,Clasp,Dial Colour,Black,Multiple Time Zones Display,None,Gender,Gents,Glass,Mineral,Hour Markers,Batons,Luminescent hands,Yes,Model Collection,Edifice,Model Name,Racing,Movement Source,Japanese,Movement,Quartz,Strap colour,Silver,Strap Type,Metal bracelet,Water Resistance,100 metres,Weight (g),172.00,BARCODE,4549526249358,Guarantee,2 years',
                 'stock'=>'95',
-                'brand_id'=>'16',
+                'brand_id'=>(DB::table('brands')->where('name', 'Casio')->pluck('id'))[0],
             ]
         );
         Product::create(
@@ -242,7 +243,7 @@ class ProductSeeder extends Seeder
                 Five alarms, countdown timer, stopwatch and world time functions ', 
                 'specification'=>'Brand,Casio,Alarm,Yes,Analogue/Digital,Combination,Backlight,Yes,Bezel Type,Fixed,Case depth approx.,12.50mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,48.50mm,Chronograph,Yes,Clasp type,Deployment,Dial Colour,Black,Multiple Time Zones Display,None,Gender,Gents,Glass,Mineral,Hour Markers,Batons,Luminescent hands,Yes,Movement Source,Japanese,Movement,Quartz,Strap colour,Silver,Strap Type,Metal bracelet,Water Resistance,100 metres,Weight (g),167.00,BARCODE,4549526252693,Guarantee,2 years',
                 'stock'=>'65',
-                'brand_id'=>'16',
+                'brand_id'=>(DB::table('brands')->where('name', 'Casio')->pluck('id'))[0],
             ]
         );
         Product::create(
@@ -267,7 +268,7 @@ class ProductSeeder extends Seeder
                 Powered by a quartz watch movement for superb time accuracy', 
                 'specification'=>'Brand,Casio,Analogue/Digital,Analogue,Case depth approx.,12.40mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,44.60mm,Chronograph,Yes,Clasp type,Strap buckle,Dial Colour,Black,Multiple Time Zones Display,None,Gender,Gents,Glass,Acrylic,Movement Source,Japan,Movement,Quartz,Strap colour,Navy,Strap Type,Leather strap,Water Resistance,100 metres,Weight (g),84.00,BARCODE,4549526252457,Guarantee,2 years',
                 'stock'=>'105',
-                'brand_id'=>'16',
+                'brand_id'=>(DB::table('brands')->where('name', 'Casio')->pluck('id'))[0],
             ]
         );
         Product::create(
@@ -284,7 +285,7 @@ class ProductSeeder extends Seeder
                 'description'=>'Casio never disappoint, high end features at budget prices. This Casio wave ceptor is no different, no need to worry about adjusting the time - the wave ceptor technology does it for you. Also includes world time, backlight, countdown timer, chronograph and auto-calendar date. The case is a mix of steel and resin, and water resistant to 50 metres, and fastens on a silver steel bracelet with push button deployment clasp.', 
                 'specification'=>'Brand,Casio,Alarm,Yes,Analogue/Digital,Digital,Backlight,Yes,Case depth approx.,11.00mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,43.00mm,Chronograph,Yes,Clasp type,Push-button Deployment,Dial Colour,Grey,Multiple Time Zones Display,None,Gender,Gents,Glass,Acrylic,Model Name,Wave Ceptor,Movement Source,Japanese,Movement,Quartz,Radio Controlled,Yes,Strap colour,Silver,Strap Type,Metal bracelet,Water Resistance,50 metres,Weight (g),88.00,BARCODE,4971850436690,Guarantee,2 years',
                 'stock'=>'75',
-                'brand_id'=>'16',
+                'brand_id'=>(DB::table('brands')->where('name', 'Casio')->pluck('id'))[0],
             ]
         );
         Product::create(
@@ -311,7 +312,7 @@ class ProductSeeder extends Seeder
                 39mm long lasting and rust resistant stainless steel case ', 
                 'specification'=>'Brand,Casio,Alarm,Yes,Analogue/Digital,Combination,Backlight,Yes,Bezel Type,Fixed,Case depth approx.,12.00mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,39.00mm,Chronograph,Yes,Clasp type,Strap buckle,Dial Colour,Black,Multiple Time Zones Display,GMT,Gender,Gents,Glass,Acrylic,Hour Markers,Batons,Luminescent hands,Yes,Model Name,Waveceptor,Movement Source,Japanese,Movement,Tough solar,Radio Controlled,Yes,Stone type,None,Strap colour,Black,Strap Type,Rubber Strap,Water Resistance,100 metres,Weight (g),45.00,BARCODE,4971850924159,Guarantee,2 years',
                 'stock'=>'125',
-                'brand_id'=>'16',
+                'brand_id'=>(DB::table('brands')->where('name', 'Casio')->pluck('id'))[0],
             ]
         );
             //Tissot---
@@ -329,7 +330,7 @@ class ProductSeeder extends Seeder
                     'description'=>"This is not a conventional watch. When purchasing this model, you own a piece of Tissot's Heritage. This automatic chronograph incorporates the very best of past and present technology. While the leather strap versions are more classical, the milanese bracelet gives it a contemporary touch - a Must have for watch lovers and collectors.", 
                     'specification'=>'Brand,Tissot,Analogue/Digital,Analogue,Case depth approx.,13.00mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,39.00mm,Chronograph,Yes,Dial Colour,Cream,Gender,Gents,Glass,Sapphire,Model Collection,Heritage,Model Name,Heritage 1948,Movement Source,Swiss,Movement,Automatic,Strap colour,Brown,Strap Type,Leather strap,Water Resistance,30 metres,BARCODE,7611608282236,Guarantee,2 years',
                     'stock'=>'65',
-                    'brand_id'=>'17',
+                    'brand_id'=>(DB::table('brands')->where('name', 'Tissot')->pluck('id'))[0],
                 ]
             );
             Product::create(
@@ -352,7 +353,7 @@ class ProductSeeder extends Seeder
                     Automatic timing means no more costly battery replacements ', 
                     'specification'=>'Brand,Tissot,Analogue/Digital,Analogue,Case depth approx.,12.00mm,Case Shape,Circle,Case width approx.,40.00mm,Dial Colour,Blue,Gender,Gents,Glass,Sapphire,Model Collection,Heritage,Model Name,Visodate,Movement Source,Swiss,Movement,Automatic,Strap colour,Silver,Water Resistance,30 metres,BARCODE,7611608287736,Guarantee,2 years',
                     'stock'=>'66',
-                    'brand_id'=>'17',
+                    'brand_id'=>(DB::table('brands')->where('name', 'Tissot')->pluck('id'))[0],
                 ]
             );
             Product::create(
@@ -369,7 +370,7 @@ class ProductSeeder extends Seeder
                     'description'=>'Tissot Heritage Visodate Watch', 
                     'specification'=>'Brand,Tissot,Analogue/Digital,Analogue,Case depth approx.,10.00mm,Case Shape,Circle,Case width approx.,40.00mm,Dial Colour,Black,Gender,Gents,Glass,Sapphire,Model Collection,Heritage,Model Name,Heritage Visodate,Movement Source,Swiss,Movement,Quartz,Strap colour,Black,Strap Type,Leather strap,Water Resistance,30 metres,BARCODE,7611608286357,Guarantee,2 years',
                     'stock'=>'125',
-                    'brand_id'=>'17',
+                    'brand_id'=>(DB::table('brands')->where('name', 'Tissot')->pluck('id'))[0],
                 ]
             );
             Product::create(
@@ -386,7 +387,7 @@ class ProductSeeder extends Seeder
                     'description'=>'Mens Tissot Visodate watch in stainless steel and leather, centred on a chic black dial with day and date functions, and baton hour markers.', 
                     'specification'=>'Brand,Tissot,Analogue/Digital,Analogue,Case depth approx.,12.00mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,40.00mm,Clasp type,Fold-over Deployment,Dial Colour,Black,Gender,Gents,Glass,Sapphire,Model Collection,T-Classic,Model Name,Visodate,Movement Source,Swiss,Movement,Automatic,Strap colour,Black,Strap Type,Leather strap,Water Resistance,30 metres,BARCODE,7611608249222,Guarantee,2 years',
                     'stock'=>'120',
-                    'brand_id'=>'17',
+                    'brand_id'=>(DB::table('brands')->where('name', 'Tissot')->pluck('id'))[0],
                 ]
             );
             Product::create(
@@ -410,7 +411,7 @@ class ProductSeeder extends Seeder
                     Compatible with iOS, Android and Harmony mobile operating systems ', 
                     'specification'=>'Brand,Tissot,Analogue/Digital,Digital Quartz,Primary Material,Titanium,Case Shape,Circle,Case width approx.,47.50mm,Dial Colour,Black,Gender,Gents,Glass,Sapphire,Model Collection,T-Touch Connect,Model Name,T-Touch Connect Solar,Movement,Solar,Strap colour,Silver,Strap Type,Mesh Bracelet,Water Resistance,10 ATM,Weight (g),140.00,BARCODE,7611608293560,Guarantee,2 years,NFC,Yes,Step Tracking,Yes',
                     'stock'=>'65',
-                    'brand_id'=>'17',
+                    'brand_id'=>(DB::table('brands')->where('name', 'Tissot')->pluck('id'))[0],
                 ]
             );
             Product::create(
@@ -427,7 +428,7 @@ class ProductSeeder extends Seeder
                     'description'=>'Tissot Watch Chronograph', 
                     'specification'=>'Brand,Tissot,Analogue/Digital,Analogue,Case Shape,Circle,Chronograph,Yes,Dial Colour,Black,Gender,Gents,Movement Source,Swiss,Movement,Quartz,Guarantee,2 years',
                     'stock'=>'104',
-                    'brand_id'=>'17',
+                    'brand_id'=>(DB::table('brands')->where('name', 'Tissot')->pluck('id'))[0],
                 ]
             );
             Product::create(
@@ -444,7 +445,7 @@ class ProductSeeder extends Seeder
                     'description'=>'Tissot Supersport T1256172105100 is a practical and special Gents watch from Supersport collection. Case is made out of Stainless Steel while the dial colour is Black. The features of the watch include (among others) a chronograph. In regards to the water resistance, the watch has a water resistance of 100 metres. This makes it suitable for swimming, but not high impact water sports. We ship it with an original box and a guarantee from the manufacturer.', 
                     'specification'=>'Brand,Tissot,Analogue/Digital,Analogue,Case depth approx.,45.50mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,45.50mm,Chronograph,Yes,Clasp type,Butterfly with push buttons,Dial Colour,Black,Gender,Gents,Glass,Sapphire,Model Collection,Supersport,Model Name,Supersport,Movement Source,Swiss,Movement,Quartz,Strap colour,Silver,Strap Type,Metal bracelet,Water Resistance,100 metres,BARCODE,7611608294307,Guarantee,2 years',
                     'stock'=>'55',
-                    'brand_id'=>'17',
+                    'brand_id'=>(DB::table('brands')->where('name', 'Tissot')->pluck('id'))[0],
                 ]
             );
             Product::create(
@@ -461,7 +462,7 @@ class ProductSeeder extends Seeder
                     'description'=>'Tissot Supersport T1256172105100 is a practical and special Gents watch from Supersport collection. Case is made out of Stainless Steel while the dial colour is Black. The features of the watch include (among others) a chronograph. In regards to the water resistance, the watch has a water resistance of 100 metres. This makes it suitable for swimming, but not high impact water sports. We ship it with an original box and a guarantee from the manufacturer.', 
                     'specification'=>'Brand,Tissot,Analogue/Digital,Analogue,Case depth approx.,45.50mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,45.50mm,Chronograph,Yes,Clasp type,Butterfly with push buttons,Dial Colour,Black,Gender,Gents,Glass,Sapphire,Model Collection,Supersport,Model Name,Supersport,Movement Source,Swiss,Movement,Quartz,Strap colour,Silver,Strap Type,Metal bracelet,Water Resistance,100 metres,BARCODE,7611608294307,Guarantee,2 years',
                     'stock'=>'55',
-                    'brand_id'=>'17',
+                    'brand_id'=>(DB::table('brands')->where('name', 'Tissot')->pluck('id'))[0],
                 ]
             );
             Product::create(
@@ -478,7 +479,7 @@ class ProductSeeder extends Seeder
                     'description'=>'Tissot ladies Everytime Watch', 
                     'specification'=>'Brand,Tissot,Analogue/Digital,Analogue,Case Shape,Circle,Dial Colour,White,Gender,Ladies,Glass,Sapphire,Model Collection,T-Classic,Model Name,Everytime,Movement Source,Swiss,Movement,Quartz,Strap Type,Leather strap,BARCODE,7611608284292,Guarantee,2 years',
                     'stock'=>'85',
-                    'brand_id'=>'17',
+                    'brand_id'=>(DB::table('brands')->where('name', 'Tissot')->pluck('id'))[0],
                 ]
             );
             Product::create(
@@ -495,7 +496,7 @@ class ProductSeeder extends Seeder
                     'description'=>'Tissot T-Wave Ladies Watch', 
                     'specification'=>'Brand,Tissot,Analogue/Digital,Analogue,Case Shape,Circle,Dial Colour,Mother of pearl,Gender,Ladies,Glass,Sapphire,Model Collection,T-Lady,Model Name,T-Wave,Movement Source,Swiss,Movement,Quartz,Strap Type,Metal bracelet,BARCODE,7611608291412,Guarantee,2 years',
                     'stock'=>'65',
-                    'brand_id'=>'17',
+                    'brand_id'=>(DB::table('brands')->where('name', 'Tissot')->pluck('id'))[0],
                 ]
             );
             Product::create(
@@ -512,7 +513,7 @@ class ProductSeeder extends Seeder
                     'description'=>'Ladies Tissot T-Lady Lovely Square Watch', 
                     'specification'=>'Brand,Tissot,Analogue/Digital,Analogue,Case depth approx.,7.00mm,Case Shape,Square,Case width approx.,20.00mm,Dial Colour,Blue,Gender,Ladies,Glass,Sapphire,Model Collection,T-Lady,Model Name,Lovely Square,Movement Source,Swiss,Movement,Quartz,Strap colour,Silver,Strap Type,Metal Bracelet,Water Resistance,30 metres,BARCODE,7611608288269,Guarantee,2 years',
                     'stock'=>'51',
-                    'brand_id'=>'17',
+                    'brand_id'=>(DB::table('brands')->where('name', 'Tissot')->pluck('id'))[0],
                 ]
             );
             Product::create(
@@ -529,10 +530,10 @@ class ProductSeeder extends Seeder
                     'description'=>'Ladies Tissot T-Lady Lovely Square Watch', 
                     'specification'=>'Brand,Tissot,Analogue/Digital,Analogue,Case depth approx.,7.00mm,Case Shape,Square,Case width approx.,20.00mm,Dial Colour,White,Gender,Ladies,Glass,Sapphire,Model Collection,T-Lady,Model Name,Lovely Square,Movement Source,Swiss,Movement,Quartz,Strap colour,Blue,Strap Type,Leather strap,Water Resistance,30 metres,BARCODE,7611608288245,Guarantee,2 years',
                     'stock'=>'55',
-                    'brand_id'=>'17',
+                    'brand_id'=>(DB::table('brands')->where('name', 'Tissot')->pluck('id'))[0],
                 ]
             );
-            //---swatch
+            //---swatch 
             Product::create(
                 [
                     'brand'=>'Swatch',
@@ -547,7 +548,7 @@ class ProductSeeder extends Seeder
                     'description'=>'Unisex Swatch Skin Irony Special 2Q Watch', 
                     'specification'=>'Brand,Swatch,Analogue/Digital,Analogue,Case depth approx.,7.00mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,42.00mm,Clasp type,Strap buckle,Dial Colour,Skeleton,Multiple Time Zones Display,None,Gender,Unisex,Glass,Acrylic,Limited Edition,Yes,Model Collection,Skin Irony Special,Model Name,2Q,Movement Source,Swiss,Movement,Quartz,Strap colour,Brown,Strap Type,Leather strap,Water Resistance,Water resistant,Weight (g),159.00,BARCODE,7610522831230,Guarantee,24 months',
                     'stock'=>'95',
-                    'brand_id'=>'18',
+                    'brand_id'=>(DB::table('brands')->where('name', 'Swatch')->pluck('id'))[0],
                 ]
             );
             Product::create(
@@ -564,7 +565,7 @@ class ProductSeeder extends Seeder
                     'description'=>'Swatch Checkpoint Blue SB02B401 is a practical and handsome Gents watch from Big Bold collection. Material of the case is Plastic/Resin, which stands for a high quality of the item while the dial colour is Black. The features of the watch include (among others) a chronograph. This watch is market as water resistant. It means it can withstand slight splashes and rain, but is NOT to be immersed in water. The watch is shipped with an original box and a guarantee from the manufacturer.', 
                     'specification'=>'Brand,Swatch,Analogue/Digital,Analogue,Case depth approx.,14.00mm,Primary Material,Plastic/Resin,Case Shape,Circle,Case width approx.,47.00mm,Chronograph,Yes,Clasp type,Strap buckle,Dial Colour,Black,Multiple Time Zones Display,None,Gender,Gents,Glass,Acrylic,Luminescent hands,Yes,Model Collection,Big Bold,Model Name,Checkpoint Blue,Movement Source,Swiss,Movement,Quartz,Strap colour,Black,Strap Type,Rubber Strap,Water Resistance,Water resistant,Weight (g),143.00,BARCODE,7610522832190,Guarantee,24months',
                     'stock'=>'120',
-                    'brand_id'=>'18',
+                    'brand_id'=>(DB::table('brands')->where('name', 'Swatch')->pluck('id'))[0],
                 ]
             );
             Product::create(
@@ -581,7 +582,7 @@ class ProductSeeder extends Seeder
                     'description'=>'The ever popular Swatch Once Again watch for men, proving that simple is always effective. This time piece in monochrome style comes with a water resistant resin case, with a reliable Swiss quartz movement with day / date function embedded into it, and an easy change battery cover. It has a minimal white dial with easy to read numeral hour markers in black, and a date magnification bubble in the acrylic glass. This model fastens with a black plastic strap. ', 
                     'specification'=>'Brand,Swatch,Analogue/Digital,Analogue,Case depth approx.,9.00mm,Primary Material,Plastic/Resin,Case Shape,Circle,Case width approx.,34.00mm,Clasp type,Strap buckle,Dial Colour,White,Gender,Gents,Model Collection,Original Gent,Model Name,Once Again,Movement Source,Swiss,Movement,Quartz,Strap colour,Black,Water Resistance,30 metres,BARCODE,7610522115385,Guarantee,2 years',
                     'stock'=>'85',
-                    'brand_id'=>'18',
+                    'brand_id'=>(DB::table('brands')->where('name', 'Swatch')->pluck('id'))[0],
                 ]
             );
             Product::create(
@@ -598,7 +599,7 @@ class ProductSeeder extends Seeder
                     'description'=>'Swatch Bbblanco SO27M102 is a practical and special Gents watch from SS19 Big Bold collection. Case is made out of Plastic/Resin while the dial colour is Khaki. This model has got 30 metres water resistancy - it can be worn in scenarios where it is likely to be splashed but not immersed in water. It can be worn while washing your hands and will be fine in rain. We ship it with an original box and a guarantee from the manufacturer.', 
                     'specification'=>'Brand,Swatch,Analogue/Digital,Analogue,Case depth approx.,11.00mm,Primary Material,Plastic/Resin,Case Shape,Circle,Case width approx.,47.00mm,Dial Colour,Khaki,Gender,Gents,Model Collection,BIG BOLD,Model Name,Bbblanco,Movement Source,Swiss,Movement,Quartz,Strap colour,Two tone,Strap Type,Rubber Strap,Water Resistance,30 metres,BARCODE,7610522811720,Guarantee,2 years',
                     'stock'=>'95',
-                    'brand_id'=>'18',
+                    'brand_id'=>(DB::table('brands')->where('name', 'Swatch')->pluck('id'))[0],
                 ]
             );
             Product::create(
@@ -615,7 +616,7 @@ class ProductSeeder extends Seeder
                     'description'=>'The Swatch Blue Rebel SUON700 is a amazing Unisex watch from New Gent collection. The material of the case is Plastic/Resin and the dial colour is Blue. The features of the watch include (among others) a date function. This watch is marked as water resistant. It means it can withstand slight splashes and rain, but is NOT to be immersed in water. We ship it with an original box and a guarantee from the manufacturer.', 
                     'specification'=>'Brand,Swatch,Analogue/Digital,Analogue,Case depth approx.,10.00mm,Primary Material,Plastic/Resin,Case Shape,Circle,Case width approx.,41.00mm,Clasp type,Strap buckle,Dial Colour,Blue,Gender,Unisex,Model Collection,ORIGINALS,Model Name,Blue Rebel,Movement Source,Swiss,Movement,Quartz,Strap colour,Blue,Strap Type,Rubber Strap,Water Resistance,30 metres,BARCODE,7610522252608,Guarantee,2 years',
                     'stock'=>'120',
-                    'brand_id'=>'18',
+                    'brand_id'=>(DB::table('brands')->where('name', 'Swatch')->pluck('id'))[0],
                 ]
             );
             Product::create(
@@ -632,9 +633,11 @@ class ProductSeeder extends Seeder
                     'description'=>'Swatch Blue Ben GN254 is an attractive Unisex watch from Original Gent collection. Case material is Plastic/Resin while the dial colour is Blue. In regards to the water resistance, the watch has got a resistancy up to 30 metres. It means it can be worn in scenarios where it is likely to be splashed but not immersed in water. It can be worn while washing your hands and will be fine in rain. We ship it with an original box and a guarantee from the manufacturer.', 
                     'specification'=>'Brand,Swatch,Analogue/Digital,Analogue,Case depth approx.,9.00mm,Primary Material,Plastic/Resin,Case Shape,Circle,Case width approx.,34.00mm,Dial Colour,Blue,Gender,Unisex,Model Collection,Original Gent,Model Name,Blue Ben,Movement Source,Swiss,Movement,Quartz,Strap colour,Blue,Strap Type,Rubber Strap,Water Resistance,30 metres,BARCODE,7610522776388,Guarantee,2 years',
                     'stock'=>'95',
-                    'brand_id'=>'18',
+                    'brand_id'=>(DB::table('brands')->where('name', 'Swatch')->pluck('id'))[0],
                 ]
             );
+            //--- seeded@ 1/2/2021 9:10am
+            
 /*             Product::create(
                 [
                     'brand'=>'',
