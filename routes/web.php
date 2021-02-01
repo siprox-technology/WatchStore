@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Password;
 use App\Http\Controllers\LoginController;
 use Illuminate\Auth\Events\PasswordReset;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ForgetPasswordController;
@@ -25,10 +26,12 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-//product list 
-Route::get('/shop', function () {
-    return view('shop');
-});
+
+//product list sort filter search
+Route::get('/shop', [ProductController::class,'index'])->name('shop.index');
+
+
+
 
 //product details 
 Route::get('/product-details', function () {

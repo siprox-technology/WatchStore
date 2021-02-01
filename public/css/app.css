@@ -26498,6 +26498,14 @@ footer a:hover {
     flex-basis: 15%;
 }
 
+.flex-basis-30 {
+    flex-basis: 30%;
+}
+
+.flex-basis-45 {
+    flex-basis: 45%;
+}
+
 .flex-basis-55 {
     flex-basis: 55%;
 }

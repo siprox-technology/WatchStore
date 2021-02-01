@@ -1,169 +1,155 @@
 @extends('layouts.app')
 
 @section('content')
-
     <!-- products -->
     <!-- main wrapper -->
     <div class="main-wrapper">
-
-        <!-- breadcrumb -->
-        <nav class="bg-gray py-3">
-            <div class="container">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">My Accounts</li>
-                </ol>
-            </div>
-        </nav>
-        <!-- /breadcrumb -->
         <section class="section">
             <div class="container">
                 <div class="row">
                     <!-- top bar -->
                     <div class="col-lg-12 mb-50">
                         <div class="d-flex border">
-                            <div class="flex-basis-70 p-2 p-sm-4 align-self-sm-center">
+                            <div class="col-md-9 col-6 p-2 p-sm-4 align-self-sm-center">
                                 <p class="text-gray mb-0">Showing <span class="text-color">1-9 of 20</span> Results
                                 </p>
                             </div>
-                            <div class="flex-basis-15 p-2 p-sm-4 border-right border-left text-center">
-                                <select class="select" name="filter" id="filter" style="display: none;">
-                                    <option value="1">Filter</option>
-                                    <option value="2">Popular</option>
-                                    <option value="3">Top Products</option>
+                            {{-- sort products --}}
+                            <div class="col-md-3 col-6 p-2 p-sm-4 border-right border-left text-center">
+                                <select class="select" name="filter" id="filter">
+                                    <option value="1">Newest</option>
+                                    <option value="2">Best selling</option>
+                                    <option value="3">Discount</option>
+                                    <option value="3">Price</option>
                                 </select>
-                                <div class="nice-select select" tabindex="0"><span class="current">Filter</span>
-                                    <ul class="list">
-                                        <li data-value="1" class="option selected">Filter</li>
-                                        <li data-value="2" class="option">Popular</li>
-                                        <li data-value="3" class="option">Top Products</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="flex-basis-15 p-2 p-sm-4 text-center">
-                                <select class="select" name="short" id="short" style="display: none;">
-                                    <option value="1">Short</option>
-                                    <option value="2">A-Z</option>
-                                    <option value="3">Z-A</option>
-                                </select>
-                                <div class="nice-select select" tabindex="0"><span class="current">Short</span>
-                                    <ul class="list">
-                                        <li data-value="1" class="option selected">Short</li>
-                                        <li data-value="2" class="option">A-Z</li>
-                                        <li data-value="3" class="option">Z-A</li>
-                                    </ul>
-                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- sidebar -->
-                    <div class="col-lg-3">
-                        <!-- search product -->
-                        <div class="position-relative mb-5">
-                            <form action="#">
-                                <input type="search" class="form-control rounded-0" id="search-product"
-                                    placeholder="Search...">
-                                <button type="submit" class="search-icon pr-3 r-0"><i
-                                        class="ti-search text-color"></i></button>
-                            </form>
+                    <!-- filter product sidebar -->
+                    <div class="d-none d-lg-flex flex-lg-column col-lg-3">
+                        <div class="row justify-content-center">
+                            <h4>Filter Products</h4>
                         </div>
-                        <!-- categories -->
-                        <div class="mb-30">
-                            <h4 class="mb-3">Shop by Categories</h4>
+                        <!-- filter by Brand -->
+                        <div class="mb-30 mt-3">
+                            <h4 class="mb-3">Brands</h4>
                             <ul class="pl-0 shop-list list-unstyled">
-                                <li>
-                                    <a href="#" class="d-flex py-2 text-gray justify-content-between">
-                                        <span>Women’s Clothing</span><span>9</span>
-                                    </a>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Brand name</span>
+                                    <input type="checkbox" class="" id="">
                                 </li>
-                                <li>
-                                    <a href="#" class="d-flex py-2 text-gray justify-content-between">
-                                        <span>Man Fashion</span><span>5</span>
-                                    </a>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Brand name</span>
+                                    <input type="checkbox" class="" id="">
                                 </li>
-                                <li>
-                                    <a href="#" class="d-flex py-2 text-gray justify-content-between">
-                                        <span>Kid’s Clothing</span><span>3</span>
-                                    </a>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Brand name</span>
+                                    <input type="checkbox" class="" id="">
                                 </li>
-                                <li>
-                                    <a href="#" class="d-flex py-2 text-gray justify-content-between">
-                                        <span>Watches &amp; Jewelry</span><span>2</span>
-                                    </a>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Brand name</span>
+                                    <input type="checkbox" class="" id="">
                                 </li>
-                                <li>
-                                    <a href="#" class="d-flex py-2 text-gray justify-content-between">
-                                        <span>Bags &amp; Shoes</span><span>7</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex py-2 text-gray justify-content-between">
-                                        <span>Toys &amp; Kids</span><span>1</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex py-2 text-gray justify-content-between">
-                                        <span>Electronics</span><span>8</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex py-2 text-gray justify-content-between">
-                                        <span>Computers</span><span>11</span>
-                                    </a>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Brand name</span>
+                                    <input type="checkbox" class="" id="">
                                 </li>
                             </ul>
+                            <div class="d-flex justify-content-center mt-3">
+                                <button class="btn btn-sm btn-primary">Filter</button>
+                            </div>
                         </div>
-                        <!-- price range -->
+                        <!-- filter by categories -->
+                        <div class="mb-30">
+                            <h4 class="mb-3">Categories</h4>
+                            <ul class="pl-0 shop-list list-unstyled">
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Man Fashion</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Man Fashion</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Man Fashion</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Man Fashion</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Man Fashion</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                            </ul>
+                            <div class="d-flex justify-content-center mt-3">
+                                <button class="btn btn-sm btn-primary">Filter</button>
+                            </div>
+                        </div>
+                        <!-- filter by features -->
+                        <div class="mb-30">
+                            <h4 class="mb-3">Features</h4>
+                            <ul class="pl-0 shop-list list-unstyled">
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Chronograph</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Chronograph</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Chronograph</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Chronograph</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Chronograph</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                            </ul>
+                            <div class="d-flex justify-content-center mt-3">
+                                <button class="btn btn-sm btn-primary">Filter</button>
+                            </div>
+                        </div>
+                        <!-- filter by gender -->
+                        <div class="mb-30">
+                            <h4 class="mb-3">Gender</h4>
+                            <ul class="pl-0 shop-list list-unstyled">
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Mens</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Ladies</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Unisex</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                            </ul>
+                            <div class="d-flex justify-content-center mt-3">
+                                <button class="btn btn-sm btn-primary">Filter</button>
+                            </div>
+                        </div>
+                        <!-- filter by price range -->
                         <div class="mb-30">
                             <h4 class="mb-4">Shop by Price</h4>
                             <input class="range-track" type="text" data-slider-min="0" data-slider-max="1000"
                                 data-slider-step="5" data-slider-value="[0,300]" data-value="0,300" value="0,300"
                                 style="display: none;">
-                            <div class="d-flex justify-content-between">
-                                <button class="btn btn-sm btn-primary">Filter</button>
-                                <span class="value">$0 - $300</span>
+                            <div class="d-flex flex-column">
+                                <span class="value m-auto">$0 - $300</span>
+                                <div class="d-flex justify-content-center mt-3">
+                                    <button class="btn btn-sm btn-primary">Filter</button>
+                                </div>
                             </div>
-                        </div>
-                        <!-- size checkbox -->
-                        <div class="mb-30">
-                            <h4 class="mb-3">Shop by Size</h4>
-                            <form action="#">
-                                <div class="d-flex justify-content-between custom-checkbox">
-                                    <label class="label">L Large
-                                        <input type="checkbox">
-                                        <span class="box"></span>
-                                    </label>
-                                    <span class="mt-2">9</span>
-                                </div>
-                                <div class="d-flex justify-content-between custom-checkbox">
-                                    <label class="label">XL Extra Large
-                                        <input type="checkbox">
-                                        <span class="box"></span>
-                                    </label>
-                                    <span class="mt-2">5</span>
-                                </div>
-                                <div class="d-flex justify-content-between custom-checkbox">
-                                    <label class="label">M Medium
-                                        <input type="checkbox">
-                                        <span class="box"></span>
-                                    </label>
-                                    <span class="mt-2">8</span>
-                                </div>
-                                <div class="d-flex justify-content-between custom-checkbox">
-                                    <label class="label">S Small
-                                        <input type="checkbox">
-                                        <span class="box"></span>
-                                    </label>
-                                    <span class="mt-2">5</span>
-                                </div>
-                                <div class="d-flex justify-content-between custom-checkbox">
-                                    <label class="label">XS Extra Small
-                                        <input type="checkbox">
-                                        <span class="box"></span>
-                                    </label>
-                                    <span class="mt-2">3</span>
-                                </div>
-                            </form>
                         </div>
                         <!-- color selector -->
                         <div class="color">
@@ -171,35 +157,46 @@
                             <ul class="list-inline">
                                 <li class="list-inline-item mr-4">
                                     <label class="radio">
-                                        <input type="radio" name="radio">
+                                        <input type="checkbox" name="radio">
                                         <span class="radio-box bg-magenta"></span>
                                     </label>
                                 </li>
                                 <li class="list-inline-item mr-4">
                                     <label class="radio">
-                                        <input type="radio" name="radio">
+                                        <input type="checkbox" name="radio">
                                         <span class="radio-box bg-dark-green"></span>
                                     </label>
                                 </li>
                                 <li class="list-inline-item mr-4">
                                     <label class="radio">
-                                        <input type="radio" name="radio">
+                                        <input type="checkbox" name="radio">
                                         <span class="radio-box bg-sky-blue"></span>
                                     </label>
                                 </li>
                                 <li class="list-inline-item mr-4">
                                     <label class="radio">
-                                        <input type="radio" name="radio">
+                                        <input type="checkbox" name="radio">
                                         <span class="radio-box bg-red"></span>
                                     </label>
                                 </li>
                                 <li class="list-inline-item mr-4">
                                     <label class="radio">
-                                        <input type="radio" name="radio">
+                                        <input type="checkbox" name="radio">
                                         <span class="radio-box bg-dark"></span>
                                     </label>
                                 </li>
                             </ul>
+                            <div class="d-flex justify-content-center mt-3">
+                                <button class="btn btn-sm btn-primary">Filter</button>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- filter product modal button (mobile view) --}}
+                    <div class="d-flex flex-column col-12 d-lg-none mb-50">
+                        <div class="d-flex justify-content-center">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#filterProductModal">
+                                Filter
+                            </button>
                         </div>
                     </div>
                     <!-- product-list -->
@@ -558,4 +555,181 @@
                 </div>
             </div>
         </section>
-@endsection
+        <!-- Button trigger modal -->
+
+  
+    <!-- filter product Moda(mobile view))  -->
+    <div class="modal fade p-4" id="filterProductModal" tabindex="-1" aria-labelledby="filterProductModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="d-flex justify-content-end mt-3 mr-3">
+                    <button class="btn btn-primary"  data-dismiss="modal" aria-label="Close" style="padding: 5px 11px;">X</button>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div class="col-10 p-4">
+                        <!-- filter by Brand -->
+                        <div class="mb-30 mt-3">
+                            <h4 class="mb-3">Brands</h4>
+                            <ul class="pl-0 shop-list list-unstyled">
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Brand name</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Brand name</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Brand name</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Brand name</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Brand name</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                            </ul>
+                            <div class="d-flex justify-content-center mt-3">
+                                <button class="btn btn-sm btn-primary">Filter</button>
+                            </div>
+                        </div>
+                        <!-- filter by categories -->
+                        <div class="mb-30">
+                            <h4 class="mb-3">Categories</h4>
+                            <ul class="pl-0 shop-list list-unstyled">
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Man Fashion</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Man Fashion</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Man Fashion</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Man Fashion</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Man Fashion</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                            </ul>
+                            <div class="d-flex justify-content-center mt-3">
+                                <button class="btn btn-sm btn-primary">Filter</button>
+                            </div>
+                        </div>
+                        <!-- filter by features -->
+                        <div class="mb-30">
+                            <h4 class="mb-3">Features</h4>
+                            <ul class="pl-0 shop-list list-unstyled">
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Chronograph</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Chronograph</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Chronograph</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Chronograph</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Chronograph</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                            </ul>
+                            <div class="d-flex justify-content-center mt-3">
+                                <button class="btn btn-sm btn-primary">Filter</button>
+                            </div>
+                        </div>
+                        <!-- filter by gender -->
+                        <div class="mb-30">
+                            <h4 class="mb-3">Gender</h4>
+                            <ul class="pl-0 shop-list list-unstyled">
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Mens</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Ladies</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>Unisex</span>
+                                    <input type="checkbox" class="" id="">
+                                </li>
+                            </ul>
+                            <div class="d-flex justify-content-center mt-3">
+                                <button class="btn btn-sm btn-primary">Filter</button>
+                            </div>
+                        </div>
+                        <!-- filter by price range -->
+                        <div class="mb-30">
+                            <h4 class="mb-4">Shop by Price</h4>
+                            <input class="range-track" type="text" data-slider-min="0" data-slider-max="1000"
+                                data-slider-step="5" data-slider-value="[0,300]" data-value="0,300" value="0,300"
+                                style="display: none;">
+                            <div class="d-flex flex-column">
+                                <span class="value m-auto">$0 - $300</span>
+                                <div class="d-flex justify-content-center mt-3">
+                                    <button class="btn btn-sm btn-primary">Filter</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- color selector -->
+                        <div class="color">
+                            <h4 class="mb-3">Shop by Color</h4>
+                            <ul class="list-inline">
+                                <li class="list-inline-item mr-4">
+                                    <label class="radio">
+                                        <input type="checkbox" name="radio">
+                                        <span class="radio-box bg-magenta"></span>
+                                    </label>
+                                </li>
+                                <li class="list-inline-item mr-4">
+                                    <label class="radio">
+                                        <input type="checkbox" name="radio">
+                                        <span class="radio-box bg-dark-green"></span>
+                                    </label>
+                                </li>
+                                <li class="list-inline-item mr-4">
+                                    <label class="radio">
+                                        <input type="checkbox" name="radio">
+                                        <span class="radio-box bg-sky-blue"></span>
+                                    </label>
+                                </li>
+                                <li class="list-inline-item mr-4">
+                                    <label class="radio">
+                                        <input type="checkbox" name="radio">
+                                        <span class="radio-box bg-red"></span>
+                                    </label>
+                                </li>
+                                <li class="list-inline-item mr-4">
+                                    <label class="radio">
+                                        <input type="checkbox" name="radio">
+                                        <span class="radio-box bg-dark"></span>
+                                    </label>
+                                </li>
+                            </ul>
+                            <div class="d-flex justify-content-center mt-3">
+                                <button class="btn btn-sm btn-primary">Filter</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endsection

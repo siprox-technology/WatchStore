@@ -84,15 +84,14 @@
             <div class="collapse navbar-collapse order-1 order-lg-2" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">home</a>
+                        <a class="nav-link" href="{{route('home')}}">home</a>
                     </li>
                     <li class="nav-item dropdown view">
-                        <a class="nav-link dropdown-toggle" href="shop.html" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link" href="{{route('shop.index')}}" role="button">
                             shop
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="shop.html">Shop</a>
+{{--                         <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{route('shop.index')}}">Shop</a>
                             <a class="dropdown-item" href="shop-list.html">Shop List</a>
                             <a class="dropdown-item" href="product-single.html">Product Single</a>
                             <a class="dropdown-item" href="cart.html">Cart</a>
@@ -101,7 +100,7 @@
                             <a class="dropdown-item" href="review.html">Review</a>
                             <a class="dropdown-item" href="confirmation.html">Confirmation</a>
                             <a class="dropdown-item" href="track.html">Track Order</a>
-                        </div>
+                        </div> --}}
                     </li>
                     <li class="nav-item dropdown view">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
@@ -230,7 +229,19 @@
             </div>
         </nav>
         <!-- /navigation -->
-
+        <!-- breadcrumb -->
+        <nav class="bg-gray py-3">
+            <!-- search product -->
+            <div class="row justify-content-center">
+                <form class="col-10 col-md-6 ">
+                    <input type="search" class="form-control" id="search-product"
+                        placeholder="Search...">
+                    <button type="submit" class="search-icon pr-3 r-0"><i
+                            class="ti-search text-color"></i></button>
+                </form>
+            </div>
+        </nav>
+        <!-- /breadcrumb -->
         @yield('content')
 
         <!-- footer -->
