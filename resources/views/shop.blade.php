@@ -9,19 +9,28 @@
                 <div class="row">
                     <!-- top bar -->
                     <div class="col-lg-12 mb-50">
+                        {{-- errors and status --}}
+                        @error('')
+                            <div class="row">
+                                <h5 class="text-danger">{{$message}}</h5>
+                            </div>
+                        @enderror
                         <div class="d-flex border">
                             <div class="col-md-9 col-6 p-2 p-sm-4 align-self-sm-center">
-                                <p class="text-gray mb-0">Showing <span class="text-color">1-9 of 20</span> Results
+                                <p class="text-gray mb-0">Showing <span class="text-color">{{$products->count()}} of {{$products->total()}}</span> Results
                                 </p>
                             </div>
                             {{-- sort products --}}
                             <div class="col-md-3 col-6 p-2 p-sm-4 border-right border-left text-center">
-                                <select class="select" name="filter" id="filter">
-                                    <option value="1">Newest</option>
-                                    <option value="2">Best selling</option>
-                                    <option value="3">Discount</option>
-                                    <option value="3">Price</option>
-                                </select>
+                                <form action="{{route('shop.sort')}}" method="POST">
+                                    @csrf
+                                    <select class="select" name="sortBy" id="filter" onchange="this.form.submit()">
+                                        <option value="1" selected="selected">Newest</option>
+                                        <option value="2">Best selling</option>
+                                        <option value="3">Discount</option>
+                                        <option value="4">Price</option>
+                                    </select>                                    
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -202,354 +211,41 @@
                     <!-- product-list -->
                     <div class="col-lg-9">
                         <div class="row">
-                            <!-- product -->
+                            @foreach ($products as $product)
+                            <!-- products links -->
                             <div class="col-lg-4 col-sm-6 mb-4">
                                 <div class="product text-center">
                                     <div class="product-thumb">
                                         <div class="overflow-hidden position-relative">
                                             <a href="product-single.html">
                                                 <img class="img-fluid w-100 mb-3 img-first"
-                                                    src="images/collection/product-1.jpg" alt="product-img">
+                                                    src="{{asset('images/product-images/'.$product->model_number.'/'.$product->model_number.'-0.jpg')}}" alt="product-img">
                                                 <img class="img-fluid w-100 mb-3 img-second"
-                                                    src="images/collection/product-4.jpg" alt="product-img">
+                                                    src="{{asset('images/product-images/'.$product->model_number.'/'.$product->model_number.'-1.jpg')}}" alt="product-img">
                                             </a>
                                             <div class="btn-cart">
                                                 <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
                                             </div>
                                         </div>
-                                        <!--                                             <div class="product-hover-overlay">
-                                            <a href="#" class="product-icon favorite" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Wishlist"><i
-                                                    class="ti-heart"></i></a>
-                                            <a href="#" class="product-icon cart" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Compare"><i
-                                                    class="ti-direction-alt"></i></a>
-                                            <a data-vbtype="inline" href="#quickView"
-                                                class="product-icon view venobox vbox-item" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Quick View"><i
-                                                    class="ti-search"></i></a>
-                                        </div> -->
                                     </div>
                                     <div class="product-info">
-                                        <h3 class="h5"><a class="text-color" href="product-single.html">Leather
-                                                Backpack</a></h3>
-                                        <span class="h5">$320.79</span>
+                                        <h3 class="h6"><a class="text-color" href="product-single.html">{{$product->name}}</a></h3>
+                                        <span class="h6"><b>{{$product->price}}</b></span>
                                     </div>
                                     <!-- product label badge -->
                                     <div class="product-label sale">
-                                        -8%
+                                        @if ($product->discount !== '0')
+                                        -{{$product->discount}}%
+                                        @endif
                                     </div>
                                 </div>
                             </div>
-                            <!-- //end of product -->
-                            <!-- product -->
-                            <div class="col-lg-4 col-sm-6 mb-4">
-                                <div class="product text-center">
-                                    <div class="product-thumb">
-                                        <div class="overflow-hidden position-relative">
-                                            <a href="product-single.html">
-                                                <img class="img-fluid w-100 mb-3 img-first"
-                                                    src="images/collection/product-2.jpg" alt="product-img">
-                                                <img class="img-fluid w-100 mb-3 img-second"
-                                                    src="images/collection/product-5.jpg" alt="product-img">
-                                            </a>
-                                            <div class="btn-cart">
-                                                <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
-                                            </div>
-                                        </div>
-                                        <!--                                             <div class="product-hover-overlay">
-                                            <a href="#" class="product-icon favorite" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Wishlist"><i
-                                                    class="ti-heart"></i></a>
-                                            <a href="#" class="product-icon cart" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Compare"><i
-                                                    class="ti-direction-alt"></i></a>
-                                            <a data-vbtype="inline" href="#quickView"
-                                                class="product-icon view venobox vbox-item" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Quick View"><i
-                                                    class="ti-search"></i></a>
-                                        </div> -->
-                                    </div>
-                                    <div class="product-info">
-                                        <h3 class="h5"><a class="text-color" href="product-single.html">Box Leather
-                                                Shoulder Bag</a></h3>
-                                        <span class="h5">$520.79</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- //end of product -->
-                            <!-- product -->
-                            <div class="col-lg-4 col-sm-6 mb-4">
-                                <div class="product text-center">
-                                    <div class="product-thumb">
-                                        <div class="overflow-hidden position-relative">
-                                            <a href="product-single.html">
-                                                <img class="img-fluid w-100 mb-3 img-first"
-                                                    src="images/collection/product-3.jpg" alt="product-img">
-                                                <img class="img-fluid w-100 mb-3 img-second"
-                                                    src="images/collection/product-6.jpg" alt="product-img">
-                                            </a>
-                                            <div class="btn-cart">
-                                                <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
-                                            </div>
-                                        </div>
-                                        <!--                                             <div class="product-hover-overlay">
-                                            <a href="#" class="product-icon favorite" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Wishlist"><i
-                                                    class="ti-heart"></i></a>
-                                            <a href="#" class="product-icon cart" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Compare"><i
-                                                    class="ti-direction-alt"></i></a>
-                                            <a data-vbtype="inline" href="#quickView"
-                                                class="product-icon view venobox vbox-item" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Quick View"><i
-                                                    class="ti-search"></i></a>
-                                        </div> -->
-                                    </div>
-                                    <div class="product-info">
-                                        <h3 class="h5"><a class="text-color" href="product-single.html">Sneaky
-                                                Leather Sneakers</a></h3>
-                                        <span class="h5">$270.79</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- //end of product -->
-                            <!-- product -->
-                            <div class="col-lg-4 col-sm-6 mb-4">
-                                <div class="product text-center">
-                                    <div class="product-thumb">
-                                        <div class="overflow-hidden position-relative">
-                                            <a href="product-single.html">
-                                                <img class="img-fluid w-100 mb-3 img-first"
-                                                    src="images/collection/product-4.jpg" alt="product-img">
-                                                <img class="img-fluid w-100 mb-3 img-second"
-                                                    src="images/collection/product-2.jpg" alt="product-img">
-                                            </a>
-                                            <div class="btn-cart">
-                                                <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
-                                            </div>
-                                        </div>
-                                        <!--                                             <div class="product-hover-overlay">
-                                            <a href="#" class="product-icon favorite" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Wishlist"><i
-                                                    class="ti-heart"></i></a>
-                                            <a href="#" class="product-icon cart" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Compare"><i
-                                                    class="ti-direction-alt"></i></a>
-                                            <a data-vbtype="inline" href="#quickView"
-                                                class="product-icon view venobox vbox-item" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Quick View"><i
-                                                    class="ti-search"></i></a>
-                                        </div> -->
-                                    </div>
-                                    <div class="product-info">
-                                        <h3 class="h5"><a class="text-color" href="product-single.html">Puzzle
-                                                leather shoulder bag</a></h3>
-                                        <span class="h5">$400.79</span>
-                                    </div>
-                                    <!-- product label badge -->
-                                    <div class="product-label new">
-                                        new
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- //end of product -->
-                            <!-- product -->
-                            <div class="col-lg-4 col-sm-6 mb-4">
-                                <div class="product text-center">
-                                    <div class="product-thumb">
-                                        <div class="overflow-hidden position-relative">
-                                            <a href="product-single.html">
-                                                <img class="img-fluid w-100 mb-3 img-first"
-                                                    src="images/collection/product-5.jpg" alt="product-img">
-                                                <img class="img-fluid w-100 mb-3 img-second"
-                                                    src="images/collection/product-3.jpg" alt="product-img">
-                                            </a>
-                                            <div class="btn-cart">
-                                                <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
-                                            </div>
-                                        </div>
-                                        <!--                                             <div class="product-hover-overlay">
-                                            <a href="#" class="product-icon favorite" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Wishlist"><i
-                                                    class="ti-heart"></i></a>
-                                            <a href="#" class="product-icon cart" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Compare"><i
-                                                    class="ti-direction-alt"></i></a>
-                                            <a data-vbtype="inline" href="#quickView"
-                                                class="product-icon view venobox vbox-item" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Quick View"><i
-                                                    class="ti-search"></i></a>
-                                        </div> -->
-                                    </div>
-                                    <div class="product-info">
-                                        <h3 class="h5"><a class="text-color" href="product-single.html">Puzzle
-                                                leather shoulder bag</a></h3>
-                                        <span class="h5">$400.79</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- //end of product -->
-                            <!-- product -->
-                            <div class="col-lg-4 col-sm-6 mb-4">
-                                <div class="product text-center">
-                                    <div class="product-thumb">
-                                        <div class="overflow-hidden position-relative">
-                                            <a href="product-single.html">
-                                                <img class="img-fluid w-100 mb-3 img-first"
-                                                    src="images/collection/product-6.jpg" alt="product-img">
-                                                <img class="img-fluid w-100 mb-3 img-second"
-                                                    src="images/collection/product-1.jpg" alt="product-img">
-                                            </a>
-                                            <div class="btn-cart">
-                                                <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
-                                            </div>
-                                        </div>
-                                        <!--                                             <div class="product-hover-overlay">
-                                            <a href="#" class="product-icon favorite" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Wishlist"><i
-                                                    class="ti-heart"></i></a>
-                                            <a href="#" class="product-icon cart" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Compare"><i
-                                                    class="ti-direction-alt"></i></a>
-                                            <a data-vbtype="inline" href="#quickView"
-                                                class="product-icon view venobox vbox-item" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Quick View"><i
-                                                    class="ti-search"></i></a>
-                                        </div> -->
-                                    </div>
-                                    <div class="product-info">
-                                        <h3 class="h5"><a class="text-color" href="product-single.html">Puzzle
-                                                leather shoulder bag</a></h3>
-                                        <span class="h5">$400.79</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- //end of product -->
-                            <!-- product -->
-                            <div class="col-lg-4 col-sm-6 mb-4">
-                                <div class="product text-center">
-                                    <div class="product-thumb">
-                                        <div class="overflow-hidden position-relative">
-                                            <a href="product-single.html">
-                                                <img class="img-fluid w-100 mb-3 img-first"
-                                                    src="images/collection/product-7.jpg" alt="product-img">
-                                                <img class="img-fluid w-100 mb-3 img-second"
-                                                    src="images/collection/product-3.jpg" alt="product-img">
-                                            </a>
-                                            <div class="btn-cart">
-                                                <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
-                                            </div>
-                                        </div>
-                                        <!--                                             <div class="product-hover-overlay">
-                                            <a href="#" class="product-icon favorite" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Wishlist"><i
-                                                    class="ti-heart"></i></a>
-                                            <a href="#" class="product-icon cart" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Compare"><i
-                                                    class="ti-direction-alt"></i></a>
-                                            <a data-vbtype="inline" href="#quickView"
-                                                class="product-icon view venobox vbox-item" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Quick View"><i
-                                                    class="ti-search"></i></a>
-                                        </div> -->
-                                    </div>
-                                    <div class="product-info">
-                                        <h3 class="h5"><a class="text-color" href="product-single.html">Puzzle
-                                                leather shoulder bag</a></h3>
-                                        <span class="h5">$400.79</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- //end of product -->
-                            <!-- product -->
-                            <div class="col-lg-4 col-sm-6 mb-4">
-                                <div class="product text-center">
-                                    <div class="product-thumb">
-                                        <div class="overflow-hidden position-relative">
-                                            <a href="product-single.html">
-                                                <img class="img-fluid w-100 mb-3 img-first"
-                                                    src="images/collection/product-8.jpg" alt="product-img">
-                                                <img class="img-fluid w-100 mb-3 img-second"
-                                                    src="images/collection/product-5.jpg" alt="product-img">
-                                            </a>
-                                            <div class="btn-cart">
-                                                <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="product-hover-overlay">
-                                            <a href="#" class="product-icon favorite" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Wishlist"><i
-                                                    class="ti-heart"></i></a>
-                                            <a href="#" class="product-icon cart" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Compare"><i
-                                                    class="ti-direction-alt"></i></a>
-                                            <a data-vbtype="inline" href="#quickView"
-                                                class="product-icon view venobox vbox-item" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Quick View"><i
-                                                    class="ti-search"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <h3 class="h5"><a class="text-color" href="product-single.html">Puzzle
-                                                leather shoulder bag</a></h3>
-                                        <span class="h5">$400.79</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- //end of product -->
-                            <!-- product -->
-                            <div class="col-lg-4 col-sm-6 mb-4">
-                                <div class="product text-center">
-                                    <div class="product-thumb">
-                                        <div class="overflow-hidden position-relative">
-                                            <a href="product-single.html">
-                                                <img class="img-fluid w-100 mb-3 img-first"
-                                                    src="images/collection/product-9.jpg" alt="product-img">
-                                                <img class="img-fluid w-100 mb-3 img-second"
-                                                    src="images/collection/product-2.jpg" alt="product-img">
-                                            </a>
-                                            <div class="btn-cart">
-                                                <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
-                                            </div>
-                                        </div>
-                                        <!--                                             <!--                                             <div class="product-hover-overlay">
-                                            <a href="#" class="product-icon favorite" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Wishlist"><i
-                                                    class="ti-heart"></i></a>
-                                            <a href="#" class="product-icon cart" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Compare"><i
-                                                    class="ti-direction-alt"></i></a>
-                                            <a data-vbtype="inline" href="#quickView"
-                                                class="product-icon view venobox vbox-item" data-toggle="tooltip"
-                                                data-placement="left" title="" data-original-title="Quick View"><i
-                                                    class="ti-search"></i></a>
-                                        </div> --> -->
-                                    </div>
-                                    <div class="product-info">
-                                        <h3 class="h5"><a class="text-color" href="product-single.html">Puzzle
-                                                leather shoulder bag</a></h3>
-                                        <span class="h5">$400.79</span>
-                                    </div>
-                                    <!-- product label badge -->
-                                    <div class="product-label sale">
-                                        -25%
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- //end of product -->
 
-                            <div class="col-12 mt-5">
-                                <nav>
-                                    <ul class="pagination justify-content-center">
-                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="#"><i
-                                                    class="ti-arrow-right"></i></a></li>
-                                    </ul>
-                                </nav>
-                            </div>
+                            @endforeach
+                        </div>
+                        {{-- pagination links --}}
+                        <div class="row justify-content-center">
+                            {{ $products->links() }}
                         </div>
                     </div>
                 </div>

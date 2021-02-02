@@ -16,7 +16,8 @@ category, type,
 gender, price,discount, color, 
 description, 
 specifications,
-stock
+stock,
+sale_number
 brand_id(FK)
 
 ------------------------------

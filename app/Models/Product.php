@@ -23,7 +23,8 @@ class Product extends Model
         'description', 
         'specification',
         'stock',
-        'brand_id'
+        'brand_id',
+        'sale_number'
     ];
 
     public function brand()

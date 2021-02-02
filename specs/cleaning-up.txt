@@ -1,4 +1,7 @@
 - go to optimize guide links
-- optimize images
-- optimize command php
+- remove unnecessary files from project
 - check and optimize db queries on display items
+- optimize images
+- npm run production
+- optimize command php
+- learn about server deployment

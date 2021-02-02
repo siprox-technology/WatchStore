@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
-
+use Illuminate\Database\Eloquent\Collection;
 class ProductController extends Controller
 {
     /**
@@ -14,9 +14,34 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('shop');
+        $products = Product::latest()->paginate(9);
+        return view('shop',['products'=>$products]);/* here */
     }
 
+    public function sort(Request $request)
+    {
+        //validate user inputs
+        $this->validate($request,[
+            'sortBy'=>'required|integer|between:0,5',
+        ]);
+        //switch sortBy inputs
+
+        switch($request->sortBy)
+        {
+            case '1':
+                $products = Product::latest()->paginate(9);
+                return back()->with(['products'=>$products]);
+            break;
+            case '2':
+                $products = Product::orderBy('sale_number','desc')->paginate(9);
+                return back()->with('shop',['products'=>$products]);/* here */
+            break;
+            case '3':
+            break;
+            case '4':
+            break;
+        }
+    }
     /**
      * Show the form for creating a new resource.
      *

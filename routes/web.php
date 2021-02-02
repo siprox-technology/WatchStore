@@ -29,7 +29,9 @@ Route::get('/', function () {
 
 //product list sort filter search
 Route::get('/shop', [ProductController::class,'index'])->name('shop.index');
-
+//sort products
+Route::post('/shop/sort', [ProductController::class,'sort'])->name('shop.sort');
+/*  */
 
 
 

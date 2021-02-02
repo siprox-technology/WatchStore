@@ -41,6 +41,7 @@ class ProductSeeder extends Seeder
                 'specification'=>'Brand,Casio,Alarm,Yes,Analogue/Digital,Analogue,Backlight,Yes,Case depth approx.,14.00mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,48.00mm,Chronograph,Yes,Clasp type,Strap buckle,Dial Colour,Grey,Multiple Time Zones Display,Dual Time,Gender,Gents,Glass,Acrylic,Model Name,G-Steel,Movement Source,Japan,Movement,Tough solar,Radio Controlled,Yes,Strap colour,Black,Strap Type,Rubber Strap,Water Resistance,200 metres,Weight (g),101.00,BARCODE,4549526168178,Guarantee,2 years',
                 'stock'=>'50',
                 'brand_id'=>(DB::table('brands')->where('name', 'Casio')->pluck('id'))[0],
+                'sale_number'=>rand(25,850)
                 ]
         );
         Product::create(
@@ -60,6 +61,7 @@ class ProductSeeder extends Seeder
                 'specification'=>'Brand,Casio,Alarm,Yes,Analogue/Digital,Analogue,Backlight,Yes,Case depth approx.,15.00mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,54.00mm,Chronograph,Yes,Clasp type,Deployment,Dial Colour,Grey,Multiple Time Zones Display,Dual Time,Gender,Gents,Glass,Acrylic,Model Name,G-Steel,Movement Source,Japan,Movement,Tough solar,Strap colour,Silver,Water Resistance,200 metres,Weight (g),190.00,BARCODE,4549526168222,Guarantee,2 years',
                 'stock'=>'60',
                 'brand_id'=>(DB::table('brands')->where('name', 'Casio')->pluck('id'))[0],
+                'sale_number'=>rand(25,850)
             ]
         );
         Product::create(
@@ -89,6 +91,7 @@ class ProductSeeder extends Seeder
             ',
                 'stock'=>'150',
                 'brand_id'=>(DB::table('brands')->where('name', 'Casio')->pluck('id'))[0],
+                'sale_number'=>rand(25,850)
             ]
         );
         Product::create(
@@ -106,6 +109,7 @@ class ProductSeeder extends Seeder
                 'specification'=>'Brand,Casio,Alarm,Yes,Analogue/Digital,Combination,Backlight,Yes,Case depth approx.,15.00mm,Primary Material,Plastic/Resin,Case Shape,Circle,Case width approx.,51.00mm,Chronograph,Yes,Clasp type,Strap buckle,Dial Colour,Black,Multiple Time Zones Display,Dual Time,Gender,Gents,Glass,Sapphire,Hour Markers,Batons,Luminescent hands,Yes,Model Name,G-Shock Premium Mudmaster Compass,Movement Source,Japan,Movement,Tough solar,Radio Controlled,Yes,Strap colour,Khaki,Strap Type,Rubber Strap,Water Resistance,200 metres,Weight (g),119.00,BARCODE,4971850028345,Guarantee,2 years',
                 'stock'=>'75',
                 'brand_id'=>(DB::table('brands')->where('name', 'Casio')->pluck('id'))[0],
+                'sale_number'=>rand(25,850)
             ]
         );
         Product::create(
@@ -124,6 +128,7 @@ class ProductSeeder extends Seeder
             ',
                 'stock'=>'85',
                 'brand_id'=>(DB::table('brands')->where('name', 'Casio')->pluck('id'))[0],
+                'sale_number'=>rand(25,850)
             ]
         );
         Product::create(
@@ -150,6 +155,7 @@ class ProductSeeder extends Seeder
                 'specification'=>'Brand,Casio,Alarm,Yes,Analogue/Digital,Combination,Backlight,Yes,Case depth approx.,16.00mm,Primary Material,Plastic/Resin,Case Shape,Circle,Case width approx.,54.00mm,Chronograph,Yes,Dial Colour,Black,Gender,Gents,Model Collection,G-Squad,Model Name,G-Squad,Movement Source,Japanese,Movement,Quartz,Radio Controlled,Yes,Strap colour,Yellow,Strap Type,Rubber Strap,Water Resistance,200 metres,BARCODE,4549526179358,Guarantee,2 years',
                 'stock'=>'65',
                 'brand_id'=>(DB::table('brands')->where('name', 'Casio')->pluck('id'))[0],
+                'sale_number'=>rand(25,850)
             ]
         );
         Product::create(
@@ -168,6 +174,7 @@ class ProductSeeder extends Seeder
                 'specification'=>'Brand,Casio,Alarm,Yes,Analogue/Digital,Digital,Backlight,Yes,Bezel Type,Fixed,Case depth approx.,13.00mm,Primary Material,Stainless Steel,Case Shape,Rectangle,Case width approx.,49.00mm,Chronograph,Yes,Clasp type,Push-button Deployment,Dial Colour,LCD,Multiple Time Zones Display,None,Gender,Gents,Glass,Mineral,Model Collection,G-Shock,Model Name,G-Shock,Movement Source,Japan,Movement,Tough solar,Radio Controlled,Yes,Strap colour,Silver,Strap Type,Metal bracelet,Water Resistance,200 metres,Weight (g),167.00,BARCODE,4549526187681,Guarantee,2 years,Chronometer,Yes',
                 'stock'=>'95',
                 'brand_id'=>(DB::table('brands')->where('name', 'Casio')->pluck('id'))[0],
+                'sale_number'=>rand(25,850)
             ]
         );
         Product::create(
@@ -193,6 +200,7 @@ class ProductSeeder extends Seeder
                 'specification'=>'Brand,Casio,Alarm,Yes,Analogue/Digital,Analogue,Case depth approx.,13.00mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,45.00mm,Chronograph,Yes,Clasp type,Clasp,Dial Colour,Black,Multiple Time Zones Display,None,Gender,Gents,Glass,Mineral,Luminescent hands,Yes,Model Collection,Edifice,Model Name,Chronograph,Movement Source,Japan,Movement,Quartz,Strap colour,Silver,Strap Type,Metal bracelet,Water Resistance,100 metres,Weight (g),151.00,BARCODE,4549526252433,Guarantee,2 YEARS',
                 'stock'=>'85',
                 'brand_id'=>(DB::table('brands')->where('name', 'Casio')->pluck('id'))[0],
+                'sale_number'=>rand(25,850)
             ]
         );
         Product::create(
@@ -219,6 +227,7 @@ class ProductSeeder extends Seeder
                 'specification'=>'Brand,Casio,Analogue/Digital,Analogue,Backlight,Yes,Bezel Type,Plain,Case depth approx.,12.10mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,51.00mm,Chronograph,Yes,Clasp type,Clasp,Dial Colour,Black,Multiple Time Zones Display,None,Gender,Gents,Glass,Mineral,Hour Markers,Batons,Luminescent hands,Yes,Model Collection,Edifice,Model Name,Racing,Movement Source,Japanese,Movement,Quartz,Strap colour,Silver,Strap Type,Metal bracelet,Water Resistance,100 metres,Weight (g),172.00,BARCODE,4549526249358,Guarantee,2 years',
                 'stock'=>'95',
                 'brand_id'=>(DB::table('brands')->where('name', 'Casio')->pluck('id'))[0],
+                'sale_number'=>rand(25,850)
             ]
         );
         Product::create(
@@ -244,6 +253,7 @@ class ProductSeeder extends Seeder
                 'specification'=>'Brand,Casio,Alarm,Yes,Analogue/Digital,Combination,Backlight,Yes,Bezel Type,Fixed,Case depth approx.,12.50mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,48.50mm,Chronograph,Yes,Clasp type,Deployment,Dial Colour,Black,Multiple Time Zones Display,None,Gender,Gents,Glass,Mineral,Hour Markers,Batons,Luminescent hands,Yes,Movement Source,Japanese,Movement,Quartz,Strap colour,Silver,Strap Type,Metal bracelet,Water Resistance,100 metres,Weight (g),167.00,BARCODE,4549526252693,Guarantee,2 years',
                 'stock'=>'65',
                 'brand_id'=>(DB::table('brands')->where('name', 'Casio')->pluck('id'))[0],
+                'sale_number'=>rand(25,850)
             ]
         );
         Product::create(
@@ -269,6 +279,7 @@ class ProductSeeder extends Seeder
                 'specification'=>'Brand,Casio,Analogue/Digital,Analogue,Case depth approx.,12.40mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,44.60mm,Chronograph,Yes,Clasp type,Strap buckle,Dial Colour,Black,Multiple Time Zones Display,None,Gender,Gents,Glass,Acrylic,Movement Source,Japan,Movement,Quartz,Strap colour,Navy,Strap Type,Leather strap,Water Resistance,100 metres,Weight (g),84.00,BARCODE,4549526252457,Guarantee,2 years',
                 'stock'=>'105',
                 'brand_id'=>(DB::table('brands')->where('name', 'Casio')->pluck('id'))[0],
+                'sale_number'=>rand(25,850)
             ]
         );
         Product::create(
@@ -286,6 +297,7 @@ class ProductSeeder extends Seeder
                 'specification'=>'Brand,Casio,Alarm,Yes,Analogue/Digital,Digital,Backlight,Yes,Case depth approx.,11.00mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,43.00mm,Chronograph,Yes,Clasp type,Push-button Deployment,Dial Colour,Grey,Multiple Time Zones Display,None,Gender,Gents,Glass,Acrylic,Model Name,Wave Ceptor,Movement Source,Japanese,Movement,Quartz,Radio Controlled,Yes,Strap colour,Silver,Strap Type,Metal bracelet,Water Resistance,50 metres,Weight (g),88.00,BARCODE,4971850436690,Guarantee,2 years',
                 'stock'=>'75',
                 'brand_id'=>(DB::table('brands')->where('name', 'Casio')->pluck('id'))[0],
+                'sale_number'=>rand(25,850)
             ]
         );
         Product::create(
@@ -313,6 +325,7 @@ class ProductSeeder extends Seeder
                 'specification'=>'Brand,Casio,Alarm,Yes,Analogue/Digital,Combination,Backlight,Yes,Bezel Type,Fixed,Case depth approx.,12.00mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,39.00mm,Chronograph,Yes,Clasp type,Strap buckle,Dial Colour,Black,Multiple Time Zones Display,GMT,Gender,Gents,Glass,Acrylic,Hour Markers,Batons,Luminescent hands,Yes,Model Name,Waveceptor,Movement Source,Japanese,Movement,Tough solar,Radio Controlled,Yes,Stone type,None,Strap colour,Black,Strap Type,Rubber Strap,Water Resistance,100 metres,Weight (g),45.00,BARCODE,4971850924159,Guarantee,2 years',
                 'stock'=>'125',
                 'brand_id'=>(DB::table('brands')->where('name', 'Casio')->pluck('id'))[0],
+                'sale_number'=>rand(25,850)
             ]
         );
             //Tissot---
@@ -331,6 +344,7 @@ class ProductSeeder extends Seeder
                     'specification'=>'Brand,Tissot,Analogue/Digital,Analogue,Case depth approx.,13.00mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,39.00mm,Chronograph,Yes,Dial Colour,Cream,Gender,Gents,Glass,Sapphire,Model Collection,Heritage,Model Name,Heritage 1948,Movement Source,Swiss,Movement,Automatic,Strap colour,Brown,Strap Type,Leather strap,Water Resistance,30 metres,BARCODE,7611608282236,Guarantee,2 years',
                     'stock'=>'65',
                     'brand_id'=>(DB::table('brands')->where('name', 'Tissot')->pluck('id'))[0],
+                    'sale_number'=>rand(25,850)
                 ]
             );
             Product::create(
@@ -354,6 +368,7 @@ class ProductSeeder extends Seeder
                     'specification'=>'Brand,Tissot,Analogue/Digital,Analogue,Case depth approx.,12.00mm,Case Shape,Circle,Case width approx.,40.00mm,Dial Colour,Blue,Gender,Gents,Glass,Sapphire,Model Collection,Heritage,Model Name,Visodate,Movement Source,Swiss,Movement,Automatic,Strap colour,Silver,Water Resistance,30 metres,BARCODE,7611608287736,Guarantee,2 years',
                     'stock'=>'66',
                     'brand_id'=>(DB::table('brands')->where('name', 'Tissot')->pluck('id'))[0],
+                    'sale_number'=>rand(25,850)
                 ]
             );
             Product::create(
@@ -371,6 +386,7 @@ class ProductSeeder extends Seeder
                     'specification'=>'Brand,Tissot,Analogue/Digital,Analogue,Case depth approx.,10.00mm,Case Shape,Circle,Case width approx.,40.00mm,Dial Colour,Black,Gender,Gents,Glass,Sapphire,Model Collection,Heritage,Model Name,Heritage Visodate,Movement Source,Swiss,Movement,Quartz,Strap colour,Black,Strap Type,Leather strap,Water Resistance,30 metres,BARCODE,7611608286357,Guarantee,2 years',
                     'stock'=>'125',
                     'brand_id'=>(DB::table('brands')->where('name', 'Tissot')->pluck('id'))[0],
+                    'sale_number'=>rand(25,850)
                 ]
             );
             Product::create(
@@ -388,6 +404,7 @@ class ProductSeeder extends Seeder
                     'specification'=>'Brand,Tissot,Analogue/Digital,Analogue,Case depth approx.,12.00mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,40.00mm,Clasp type,Fold-over Deployment,Dial Colour,Black,Gender,Gents,Glass,Sapphire,Model Collection,T-Classic,Model Name,Visodate,Movement Source,Swiss,Movement,Automatic,Strap colour,Black,Strap Type,Leather strap,Water Resistance,30 metres,BARCODE,7611608249222,Guarantee,2 years',
                     'stock'=>'120',
                     'brand_id'=>(DB::table('brands')->where('name', 'Tissot')->pluck('id'))[0],
+                    'sale_number'=>rand(25,850)
                 ]
             );
             Product::create(
@@ -412,6 +429,7 @@ class ProductSeeder extends Seeder
                     'specification'=>'Brand,Tissot,Analogue/Digital,Digital Quartz,Primary Material,Titanium,Case Shape,Circle,Case width approx.,47.50mm,Dial Colour,Black,Gender,Gents,Glass,Sapphire,Model Collection,T-Touch Connect,Model Name,T-Touch Connect Solar,Movement,Solar,Strap colour,Silver,Strap Type,Mesh Bracelet,Water Resistance,10 ATM,Weight (g),140.00,BARCODE,7611608293560,Guarantee,2 years,NFC,Yes,Step Tracking,Yes',
                     'stock'=>'65',
                     'brand_id'=>(DB::table('brands')->where('name', 'Tissot')->pluck('id'))[0],
+                    'sale_number'=>rand(25,850)
                 ]
             );
             Product::create(
@@ -429,6 +447,7 @@ class ProductSeeder extends Seeder
                     'specification'=>'Brand,Tissot,Analogue/Digital,Analogue,Case Shape,Circle,Chronograph,Yes,Dial Colour,Black,Gender,Gents,Movement Source,Swiss,Movement,Quartz,Guarantee,2 years',
                     'stock'=>'104',
                     'brand_id'=>(DB::table('brands')->where('name', 'Tissot')->pluck('id'))[0],
+                    'sale_number'=>rand(25,850)
                 ]
             );
             Product::create(
@@ -446,12 +465,13 @@ class ProductSeeder extends Seeder
                     'specification'=>'Brand,Tissot,Analogue/Digital,Analogue,Case depth approx.,45.50mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,45.50mm,Chronograph,Yes,Clasp type,Butterfly with push buttons,Dial Colour,Black,Gender,Gents,Glass,Sapphire,Model Collection,Supersport,Model Name,Supersport,Movement Source,Swiss,Movement,Quartz,Strap colour,Silver,Strap Type,Metal bracelet,Water Resistance,100 metres,BARCODE,7611608294307,Guarantee,2 years',
                     'stock'=>'55',
                     'brand_id'=>(DB::table('brands')->where('name', 'Tissot')->pluck('id'))[0],
+                    'sale_number'=>rand(25,850)
                 ]
             );
             Product::create(
                 [
                     'brand'=>'Tissot',
-                    'model_number'=>'T1256172105100',
+                    'model_number'=>'T1256173605101',
                     'name'=>'Tissot Supersport Watch',
                     'category'=>'Supersport ', 
                     'type'=>'chronograph', 
@@ -463,6 +483,7 @@ class ProductSeeder extends Seeder
                     'specification'=>'Brand,Tissot,Analogue/Digital,Analogue,Case depth approx.,45.50mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,45.50mm,Chronograph,Yes,Clasp type,Butterfly with push buttons,Dial Colour,Black,Gender,Gents,Glass,Sapphire,Model Collection,Supersport,Model Name,Supersport,Movement Source,Swiss,Movement,Quartz,Strap colour,Silver,Strap Type,Metal bracelet,Water Resistance,100 metres,BARCODE,7611608294307,Guarantee,2 years',
                     'stock'=>'55',
                     'brand_id'=>(DB::table('brands')->where('name', 'Tissot')->pluck('id'))[0],
+                    'sale_number'=>rand(25,850)
                 ]
             );
             Product::create(
@@ -480,6 +501,7 @@ class ProductSeeder extends Seeder
                     'specification'=>'Brand,Tissot,Analogue/Digital,Analogue,Case Shape,Circle,Dial Colour,White,Gender,Ladies,Glass,Sapphire,Model Collection,T-Classic,Model Name,Everytime,Movement Source,Swiss,Movement,Quartz,Strap Type,Leather strap,BARCODE,7611608284292,Guarantee,2 years',
                     'stock'=>'85',
                     'brand_id'=>(DB::table('brands')->where('name', 'Tissot')->pluck('id'))[0],
+                    'sale_number'=>rand(25,850)
                 ]
             );
             Product::create(
@@ -497,6 +519,7 @@ class ProductSeeder extends Seeder
                     'specification'=>'Brand,Tissot,Analogue/Digital,Analogue,Case Shape,Circle,Dial Colour,Mother of pearl,Gender,Ladies,Glass,Sapphire,Model Collection,T-Lady,Model Name,T-Wave,Movement Source,Swiss,Movement,Quartz,Strap Type,Metal bracelet,BARCODE,7611608291412,Guarantee,2 years',
                     'stock'=>'65',
                     'brand_id'=>(DB::table('brands')->where('name', 'Tissot')->pluck('id'))[0],
+                    'sale_number'=>rand(25,850)
                 ]
             );
             Product::create(
@@ -514,6 +537,7 @@ class ProductSeeder extends Seeder
                     'specification'=>'Brand,Tissot,Analogue/Digital,Analogue,Case depth approx.,7.00mm,Case Shape,Square,Case width approx.,20.00mm,Dial Colour,Blue,Gender,Ladies,Glass,Sapphire,Model Collection,T-Lady,Model Name,Lovely Square,Movement Source,Swiss,Movement,Quartz,Strap colour,Silver,Strap Type,Metal Bracelet,Water Resistance,30 metres,BARCODE,7611608288269,Guarantee,2 years',
                     'stock'=>'51',
                     'brand_id'=>(DB::table('brands')->where('name', 'Tissot')->pluck('id'))[0],
+                    'sale_number'=>rand(25,850)
                 ]
             );
             Product::create(
@@ -531,6 +555,7 @@ class ProductSeeder extends Seeder
                     'specification'=>'Brand,Tissot,Analogue/Digital,Analogue,Case depth approx.,7.00mm,Case Shape,Square,Case width approx.,20.00mm,Dial Colour,White,Gender,Ladies,Glass,Sapphire,Model Collection,T-Lady,Model Name,Lovely Square,Movement Source,Swiss,Movement,Quartz,Strap colour,Blue,Strap Type,Leather strap,Water Resistance,30 metres,BARCODE,7611608288245,Guarantee,2 years',
                     'stock'=>'55',
                     'brand_id'=>(DB::table('brands')->where('name', 'Tissot')->pluck('id'))[0],
+                    'sale_number'=>rand(25,850)
                 ]
             );
             //---swatch 
@@ -549,6 +574,7 @@ class ProductSeeder extends Seeder
                     'specification'=>'Brand,Swatch,Analogue/Digital,Analogue,Case depth approx.,7.00mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,42.00mm,Clasp type,Strap buckle,Dial Colour,Skeleton,Multiple Time Zones Display,None,Gender,Unisex,Glass,Acrylic,Limited Edition,Yes,Model Collection,Skin Irony Special,Model Name,2Q,Movement Source,Swiss,Movement,Quartz,Strap colour,Brown,Strap Type,Leather strap,Water Resistance,Water resistant,Weight (g),159.00,BARCODE,7610522831230,Guarantee,24 months',
                     'stock'=>'95',
                     'brand_id'=>(DB::table('brands')->where('name', 'Swatch')->pluck('id'))[0],
+                    'sale_number'=>rand(25,850)
                 ]
             );
             Product::create(
@@ -566,6 +592,7 @@ class ProductSeeder extends Seeder
                     'specification'=>'Brand,Swatch,Analogue/Digital,Analogue,Case depth approx.,14.00mm,Primary Material,Plastic/Resin,Case Shape,Circle,Case width approx.,47.00mm,Chronograph,Yes,Clasp type,Strap buckle,Dial Colour,Black,Multiple Time Zones Display,None,Gender,Gents,Glass,Acrylic,Luminescent hands,Yes,Model Collection,Big Bold,Model Name,Checkpoint Blue,Movement Source,Swiss,Movement,Quartz,Strap colour,Black,Strap Type,Rubber Strap,Water Resistance,Water resistant,Weight (g),143.00,BARCODE,7610522832190,Guarantee,24months',
                     'stock'=>'120',
                     'brand_id'=>(DB::table('brands')->where('name', 'Swatch')->pluck('id'))[0],
+                    'sale_number'=>rand(25,850)
                 ]
             );
             Product::create(
@@ -583,6 +610,7 @@ class ProductSeeder extends Seeder
                     'specification'=>'Brand,Swatch,Analogue/Digital,Analogue,Case depth approx.,9.00mm,Primary Material,Plastic/Resin,Case Shape,Circle,Case width approx.,34.00mm,Clasp type,Strap buckle,Dial Colour,White,Gender,Gents,Model Collection,Original Gent,Model Name,Once Again,Movement Source,Swiss,Movement,Quartz,Strap colour,Black,Water Resistance,30 metres,BARCODE,7610522115385,Guarantee,2 years',
                     'stock'=>'85',
                     'brand_id'=>(DB::table('brands')->where('name', 'Swatch')->pluck('id'))[0],
+                    'sale_number'=>rand(25,850)
                 ]
             );
             Product::create(
@@ -600,6 +628,7 @@ class ProductSeeder extends Seeder
                     'specification'=>'Brand,Swatch,Analogue/Digital,Analogue,Case depth approx.,11.00mm,Primary Material,Plastic/Resin,Case Shape,Circle,Case width approx.,47.00mm,Dial Colour,Khaki,Gender,Gents,Model Collection,BIG BOLD,Model Name,Bbblanco,Movement Source,Swiss,Movement,Quartz,Strap colour,Two tone,Strap Type,Rubber Strap,Water Resistance,30 metres,BARCODE,7610522811720,Guarantee,2 years',
                     'stock'=>'95',
                     'brand_id'=>(DB::table('brands')->where('name', 'Swatch')->pluck('id'))[0],
+                    'sale_number'=>rand(25,850)
                 ]
             );
             Product::create(
@@ -617,6 +646,7 @@ class ProductSeeder extends Seeder
                     'specification'=>'Brand,Swatch,Analogue/Digital,Analogue,Case depth approx.,10.00mm,Primary Material,Plastic/Resin,Case Shape,Circle,Case width approx.,41.00mm,Clasp type,Strap buckle,Dial Colour,Blue,Gender,Unisex,Model Collection,ORIGINALS,Model Name,Blue Rebel,Movement Source,Swiss,Movement,Quartz,Strap colour,Blue,Strap Type,Rubber Strap,Water Resistance,30 metres,BARCODE,7610522252608,Guarantee,2 years',
                     'stock'=>'120',
                     'brand_id'=>(DB::table('brands')->where('name', 'Swatch')->pluck('id'))[0],
+                    'sale_number'=>rand(25,850)
                 ]
             );
             Product::create(
@@ -634,6 +664,7 @@ class ProductSeeder extends Seeder
                     'specification'=>'Brand,Swatch,Analogue/Digital,Analogue,Case depth approx.,9.00mm,Primary Material,Plastic/Resin,Case Shape,Circle,Case width approx.,34.00mm,Dial Colour,Blue,Gender,Unisex,Model Collection,Original Gent,Model Name,Blue Ben,Movement Source,Swiss,Movement,Quartz,Strap colour,Blue,Strap Type,Rubber Strap,Water Resistance,30 metres,BARCODE,7610522776388,Guarantee,2 years',
                     'stock'=>'95',
                     'brand_id'=>(DB::table('brands')->where('name', 'Swatch')->pluck('id'))[0],
+                    'sale_number'=>rand(25,850)
                 ]
             );
             //--- seeded@ 1/2/2021 9:10am
