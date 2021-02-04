@@ -27,11 +27,12 @@ Route::get('/', function () {
 })->name('home');
 
 
-//product list sort filter search
+//all products list sorted by newest
 Route::get('/shop', [ProductController::class,'index'])->name('shop.index');
-//sort products
-Route::post('/shop/sort', [ProductController::class,'sort'])->name('shop.sort');
-/*  */
+//sort and filter products
+Route::post('/shop/sort_filter',[ProductController::class,'show'])->name('shop.sort_filter');
+Route::get('/shop/sort_filter', [ProductController::class,'show'])->name('shop.sort_filter.index');
+
 
 
 

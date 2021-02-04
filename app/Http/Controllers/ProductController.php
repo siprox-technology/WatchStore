@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Collection;
+
 class ProductController extends Controller
 {
     /**
@@ -15,94 +17,76 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::latest()->paginate(9);
-        return view('shop',['products'=>$products]);/* here */
+        $brands = DB::table('brands')
+            ->join('products', 'brands.id', '=', 'products.brand_id')
+            ->select('brands.name')->distinct()
+            ->get();
+        $colors = DB::table('products')->select('color as name')->distinct()->get();
+        $categories = DB::table('products')->select('category as name')->distinct()->get();
+        $features = DB::table('products')->select('feature as name')->distinct()->get();
+        return view('shop.index',
+        [
+            'products'=>$products,
+            'brands'=>$brands,
+            'colors'=>$colors,
+            'categories'=>$categories,
+            'features'=>$features
+        ]);
     }
-
-    public function sort(Request $request)
+    public function show(Request $request)
     {
+  
         //validate user inputs
         $this->validate($request,[
-            'sortBy'=>'required|integer|between:0,5',
+            'sortBy'=>'string',
+            'brand'=>'string',
         ]);
-        //switch sortBy inputs
-
-        switch($request->sortBy)
-        {
-            case '1':
-                $products = Product::latest()->paginate(9);
-                return back()->with(['products'=>$products]);
-            break;
-            case '2':
-                $products = Product::orderBy('sale_number','desc')->paginate(9);
-                return back()->with('shop',['products'=>$products]);/* here */
-            break;
-            case '3':
-            break;
-            case '4':
-            break;
-        }
+/* here */
+        $products =DB::table('products')
+        ->join('brands', 'products.brand_id', '=', 'brands.id')
+        ->where('brands.name','Casio')->orderBy('products.created_at','ASC')
+        ->paginate(9);
+        $brands = DB::table('brands')
+        ->join('products', 'brands.id', '=', 'products.brand_id')
+        ->select('brands.name')->distinct()
+        ->get();
+        $colors = DB::table('products')->select('color as name')->distinct()->get();
+        $categories = DB::table('products')->select('category as name')->distinct()->get();
+        $features = DB::table('products')->select('feature as name')->distinct()->get();
+        return view('shop.sort_filter',
+        [
+            'products'=>$products,
+            'brands'=>$brands,
+            'colors'=>$colors,
+            'categories'=>$categories,
+            'features'=>$features
+        
+        ]);
     }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Product $product)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Product $product)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, Product $product)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(Product $product)
     {
         //
