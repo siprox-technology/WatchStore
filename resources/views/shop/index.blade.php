@@ -18,6 +18,9 @@
                                     <span class="text-color">
                                         {{$products->count()}} of {{$products->total()}}
                                     </span> Results 
+{{--                                     <a href="{{route('shop.sort_filter.test.index',['filter'=>'Casio'])}}">Filter test casio</a>
+                                    <a href="{{route('shop.sort_filter.test.index',['filter'=>'Tissot'])}}">Filter test tissot</a> --}}
+
                                 </p>
                             </div>
                             {{-- sort products --}}
@@ -25,9 +28,9 @@
                             <div class="col-md-3 col-6 p-2 p-sm-4 border-right border-left text-center">
                                 <select class="select" name="sortBy" id="sortBy" onchange="this.form.submit()">
                                     <option value="created_at">Newest</option>
-                                    <option value="2">Best selling</option>
-                                    <option value="3">Discount</option>
-                                    <option value="4">Price</option>
+                                    <option value="sale_number">Best selling</option>
+                                    <option value="discount">Discount</option>
+                                    <option value="price">Price</option>
                                 </select>   
                             </div>
                         </div>
@@ -49,7 +52,7 @@
                                     @foreach ($brands as $brand)
                                     <li class="d-flex py-2 text-gray justify-content-between">
                                         <span>{{$brand->name}}</span>
-                                        <input type="checkbox"name="brand" value="{{$brand->name}}"onclick="this.form.submit()" 
+                                        <input type="checkbox" name="{{$brand->name}}" value="brand" onclick="this.form.submit()" 
                                         class="" id="">
                                     </li>
                                     @endforeach

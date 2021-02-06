@@ -11,11 +11,11 @@ class Product extends Model
     use HasFactory;
 
     protected $fillable = [
-        'brand',
+        'sub_brand',
         'model_number',
         'name',
         'category', 
-        'type', 
+        'feature', 
         'gender', 
         'price',
         'discount', 

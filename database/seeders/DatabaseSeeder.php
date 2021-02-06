@@ -8,6 +8,7 @@ use Illuminate\Database\Seeder;
 use Database\Seeders\UserSeeder;
 use Database\Seeders\BrandSeeder;
 use Illuminate\Support\Facades\DB;
+use Database\Seeders\ProductSeeder;
 use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
@@ -20,8 +21,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            //1.
-            BrandSeeder::class
+            //1.brands
+            BrandSeeder::class,
+            //2.products
+            ProductSeeder::class
             
         ]);
     }

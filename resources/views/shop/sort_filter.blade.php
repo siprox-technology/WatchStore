@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+<form action="{{route('shop.sort_filter')}}" method="POST">
+    @csrf
     <!-- products -->
     <!-- main wrapper -->
     <div class="main-wrapper">
@@ -16,20 +18,19 @@
                                     <span class="text-color">
                                         {{$products->count()}} of {{$products->total()}}
                                     </span> Results 
+{{--                                     <a href="{{route('shop.sort_filter.test.index',['filter'=>'Casio'])}}">Filter test casio</a>
+                                    <a href="{{route('shop.sort_filter.test.index',['filter'=>'Tissot'])}}">Filter test tissot</a> --}}
                                 </p>
                             </div>
                             {{-- sort products --}}
                 
                             <div class="col-md-3 col-6 p-2 p-sm-4 border-right border-left text-center">
-                                <form action="{{route('shop.sort_filter')}}" method="POST">
-                                    @csrf
-                                    <select class="select" name="sortBy" id="sortBy" onchange="this.form.submit()">
-                                        <option value="1">Newest</option>
-                                        <option value="2">Best selling</option>
-                                        <option value="3">Discount</option>
-                                        <option value="4">Price</option>
-                                    </select>   
-                                </form>                                 
+                                <select class="select" name="sortBy" id="sortBy" onchange="this.form.submit()">
+                                    <option value="created_at">Newest</option>
+                                    <option value="2">Best selling</option>
+                                    <option value="3">Discount</option>
+                                    <option value="4">Price</option>
+                                </select>   
                             </div>
                         </div>
                     </div>
@@ -37,6 +38,10 @@
                     <div class="d-none d-lg-flex flex-lg-column col-lg-3">
                         <div class="row justify-content-center">
                             <h4>Filter Products</h4>
+                            @error('brand')
+                               <h4>{{$message}}</h4>     
+                            @enderror
+                            
                         </div>
                         <form action="">
                             <!-- filter by Brand -->
@@ -46,7 +51,9 @@
                                     @foreach ($brands as $brand)
                                     <li class="d-flex py-2 text-gray justify-content-between">
                                         <span>{{$brand->name}}</span>
-                                        <input type="checkbox" class="" id="">
+                                        <input type="checkbox" name="{{$brand->name}}" value="brand" onclick="this.form.submit()" 
+                                        class="" id="" {{-- @if (request()->brand == $brand->name)
+                                        checked = "checked"@endif --}}>
                                     </li>
                                     @endforeach
                                 </ul>
@@ -61,7 +68,9 @@
                                     @foreach ($categories as $category)
                                         <li class="d-flex py-2 text-gray justify-content-between">
                                             <span>{{$category->name}}</span>
-                                            <input type="checkbox" class="" id="">
+                                            <input type="checkbox" name="category" value="{{$category->name}}" onclick="this.form.submit()"
+                                             class="" id="" @if (request()->category == $category->name)
+                                             checked = "checked"@endif>
                                         </li>
                                     @endforeach
                                 </ul>
@@ -345,4 +354,7 @@
             </div>
         </div>
     </div>
-    @endsection
+</form>
+
+    
+@endsection

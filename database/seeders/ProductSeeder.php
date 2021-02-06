@@ -19,11 +19,11 @@ class ProductSeeder extends Seeder
         //--casio
         Product::create(
             [
-                'brand'=>'G Shock',
+                'sub_brand'=>'G Shock',
                 'model_number'=>'GST-B100-1AER',
                 'name'=>'Mens Casio G-Steel Bluetooth Triple Connect Chronograph Radio Controlled Watch',
                 'category'=>'G-Steel', 
-                'type'=>'Bluetooth Chronograph Radio Controlled', 
+                'feature'=>'Bluetooth Chronograph Radio Controlled', 
                 'gender'=>'Mens', 
                 'price'=>'337.80',
                 'discount'=>'25', 
@@ -46,11 +46,11 @@ class ProductSeeder extends Seeder
         );
         Product::create(
             [
-                'brand'=>'G Shock',
+                'sub_brand'=>'G Shock',
                 'model_number'=>'GST-B100D-1AER',
                 'name'=>'Mens Casio G-Steel Bluetooth Triple Connect Chronograph Watch',
                 'category'=>'G-Steel', 
-                'type'=>'Bluetooth Chronograph', 
+                'feature'=>'Bluetooth Chronograph', 
                 'gender'=>'Mens', 
                 'price'=>'394.99',
                 'discount'=>'25', 
@@ -66,11 +66,11 @@ class ProductSeeder extends Seeder
         );
         Product::create(
             [
-                'brand'=>'G Shock',
+                'sub_brand'=>'G Shock',
                 'model_number'=>'GG-B100-1AER',
                 'name'=>'Casio G-Shock Mudmaster Watch',
                 'category'=>'Masters of G', 
-                'type'=>'Mudmaster ', 
+                'feature'=>'Mudmaster ', 
                 'gender'=>'Mens', 
                 'price'=>'369.99',
                 'discount'=>'25', 
@@ -96,11 +96,11 @@ class ProductSeeder extends Seeder
         );
         Product::create(
             [
-                'brand'=>'G Shock',
+                'sub_brand'=>'G Shock',
                 'model_number'=>'GWG-1000-1A3ER',
                 'name'=>'Casio G-Shock Mudmaster Premium Compass Mens Watch',
                 'category'=>'Masters of G', 
-                'type'=>'Mudmaster', 
+                'feature'=>'Mudmaster', 
                 'gender'=>'Mens', 
                 'price'=>'745.99',
                 'discount'=>'25', 
@@ -114,11 +114,11 @@ class ProductSeeder extends Seeder
         );
         Product::create(
             [
-                'brand'=>'G Shock',
+                'sub_brand'=>'G Shock',
                 'model_number'=>'GG-B100-1A9ER',
                 'name'=>'Casio G-Shock Watch',
                 'category'=>'Bluetooth', 
-                'type'=>'Bluetooth', 
+                'feature'=>'Bluetooth', 
                 'gender'=>'Mens', 
                 'price'=>'367.99',
                 'discount'=>'30', 
@@ -133,11 +133,11 @@ class ProductSeeder extends Seeder
         );
         Product::create(
             [
-                'brand'=>'G Shock',
+                'sub_brand'=>'G Shock',
                 'model_number'=>'GBA-800-9AER',
                 'name'=>'Casio G-Shock Bluetooth Step Tracker Watch',
                 'category'=>'Bluetooth', 
-                'type'=>'Step Tracker', 
+                'feature'=>'Step Tracker', 
                 'gender'=>'Mens', 
                 'price'=>'134.99',
                 'discount'=>'25', 
@@ -160,11 +160,11 @@ class ProductSeeder extends Seeder
         );
         Product::create(
             [
-                'brand'=>'G Shock',
+                'sub_brand'=>'G Shock',
                 'model_number'=>'GMW-B5000D-1ER',
                 'name'=>'Casio G-Shock Full Metal Silver Watch',
                 'category'=>'35th Anniversary', 
-                'type'=>'Full Metal', 
+                'feature'=>'Full Metal', 
                 'gender'=>'Mens', 
                 'price'=>'508.99',
                 'discount'=>'0', 
@@ -179,11 +179,11 @@ class ProductSeeder extends Seeder
         );
         Product::create(
             [
-                'brand'=>'Edifice',
+                'sub_brand'=>'Edifice',
                 'model_number'=>'EFR-570DB-1BVUEF',
                 'name'=>'Casio Chronograph Watch',
                 'category'=>'Chronograph', 
-                'type'=>'Chronograph', 
+                'feature'=>'Chronograph', 
                 'gender'=>'Mens', 
                 'price'=>'155.99',
                 'discount'=>'10', 
@@ -205,11 +205,11 @@ class ProductSeeder extends Seeder
         );
         Product::create(
             [
-                'brand'=>'Edifice',
+                'sub_brand'=>'Edifice',
                 'model_number'=>'EFR-569DB-1AVUEF',
                 'name'=>'Casio Edifice Racing Design Chronograph Watch',
                 'category'=>'chronograph', 
-                'type'=>'Racing', 
+                'feature'=>'Racing', 
                 'gender'=>'Mens', 
                 'price'=>'186.99',
                 'discount'=>'20', 
@@ -232,11 +232,11 @@ class ProductSeeder extends Seeder
         );
         Product::create(
             [
-                'brand'=>'Edifice',
+                'sub_brand'=>'Edifice',
                 'model_number'=>'ECB-10DB-1AEF',
                 'name'=>'Casio Edifice Chronograph Watch',
                 'category'=>'chronograph', 
-                'type'=>'Bluetooth', 
+                'feature'=>'Bluetooth', 
                 'gender'=>'Mens', 
                 'price'=>'179.99',
                 'discount'=>'30', 
@@ -258,11 +258,11 @@ class ProductSeeder extends Seeder
         );
         Product::create(
             [
-                'brand'=>'Edifice',
+                'sub_brand'=>'Edifice',
                 'model_number'=>'EFR-570BL-1AVUEF',
                 'name'=>' Casio Edifice Collection Mens Chronograph Watch ',
                 'category'=>'chronograph', 
-                'type'=>'chronograph', 
+                'feature'=>'chronograph', 
                 'gender'=>'Mens', 
                 'price'=>'145.99',
                 'discount'=>'25', 
@@ -284,11 +284,11 @@ class ProductSeeder extends Seeder
         );
         Product::create(
             [
-                'brand'=>'Wave Ceptor',
+                'sub_brand'=>'Wave Ceptor',
                 'model_number'=>'WV-58DU-1AVES',
                 'name'=>'Mens Casio Wave Ceptor Alarm Chronograph Radio Controlled Watch',
                 'category'=>'Radio Controlled', 
-                'type'=>'Alarm Chronograph', 
+                'feature'=>'Alarm Chronograph', 
                 'gender'=>'Mens', 
                 'price'=>'67.99',
                 'discount'=>'25', 
@@ -302,11 +302,11 @@ class ProductSeeder extends Seeder
         );
         Product::create(
             [
-                'brand'=>'Wave Ceptor',
+                'sub_brand'=>'Wave Ceptor',
                 'model_number'=>'WVA-M640-1AER',
                 'name'=>'Mens Casio Waveceptor Alarm Chronograph Radio Controlled Watch',
                 'category'=>'Radio Controlled', 
-                'type'=>'Solar Powered', 
+                'feature'=>'Solar Powered', 
                 'gender'=>'Mens', 
                 'price'=>'134.99',
                 'discount'=>'25', 
@@ -331,11 +331,11 @@ class ProductSeeder extends Seeder
             //Tissot---
             Product::create(
                 [
-                    'brand'=>'Tissot',
+                    'sub_brand'=>'Tissot',
                     'model_number'=>'T66171233',
                     'name'=>'Mens Tissot Heritage 1948 Automatic Chronograph Watch',
                     'category'=>'Heritage', 
-                    'type'=>'Automatic Chronograph', 
+                    'feature'=>'Automatic Chronograph', 
                     'gender'=>'Mens', 
                     'price'=>'1406.99',
                     'discount'=>'0', 
@@ -349,11 +349,11 @@ class ProductSeeder extends Seeder
             );
             Product::create(
                 [
-                    'brand'=>'Tissot',
+                    'sub_brand'=>'Tissot',
                     'model_number'=>'T0194301104100',
                     'name'=>'Gents Tissot Visodate Automatic Watch',
                     'category'=>'Heritage', 
-                    'type'=>'Automatic', 
+                    'feature'=>'Automatic', 
                     'gender'=>'Mens', 
                     'price'=>'632.99',
                     'discount'=>'0', 
@@ -373,11 +373,11 @@ class ProductSeeder extends Seeder
             );
             Product::create(
                 [
-                    'brand'=>'Tissot',
+                    'sub_brand'=>'Tissot',
                     'model_number'=>'T1184101605701',
                     'name'=>'Tissot Heritage Visodate Watch',
                     'category'=>'Heritage', 
-                    'type'=>'Quartz', 
+                    'feature'=>'Quartz', 
                     'gender'=>'Mens', 
                     'price'=>'299.99',
                     'discount'=>'5', 
@@ -391,11 +391,11 @@ class ProductSeeder extends Seeder
             );
             Product::create(
                 [
-                    'brand'=>'Tissot',
+                    'sub_brand'=>'Tissot',
                     'model_number'=>'T0194301605101',
                     'name'=>'Mens Tissot Visodate Automatic Watch ',
                     'category'=>'Heritage', 
-                    'type'=>'Automatic', 
+                    'feature'=>'Automatic', 
                     'gender'=>'Mens', 
                     'price'=>'572.99',
                     'discount'=>'25', 
@@ -409,11 +409,11 @@ class ProductSeeder extends Seeder
             );
             Product::create(
                 [
-                    'brand'=>'Tissot',
+                    'sub_brand'=>'Tissot',
                     'model_number'=>'T1214204405100',
                     'name'=>'Tissot T-Touch Connect Solar Watch',
                     'category'=>'T-Touch Connect', 
-                    'type'=>'Solar Powered', 
+                    'feature'=>'Solar Powered', 
                     'gender'=>'Mens', 
                     'price'=>'1101.99',
                     'discount'=>'0', 
@@ -434,11 +434,11 @@ class ProductSeeder extends Seeder
             );
             Product::create(
                 [
-                    'brand'=>'Tissot',
+                    'sub_brand'=>'Tissot',
                     'model_number'=>'T1016171605100',
                     'name'=>'Tissot Watch',
                     'category'=>'Chronograph', 
-                    'type'=>'Quartz', 
+                    'feature'=>'Quartz', 
                     'gender'=>'Mens', 
                     'price'=>'384.99',
                     'discount'=>'0', 
@@ -452,11 +452,11 @@ class ProductSeeder extends Seeder
             );
             Product::create(
                 [
-                    'brand'=>'Tissot',
+                    'sub_brand'=>'Tissot',
                     'model_number'=>'T1256172105100',
                     'name'=>'Tissot Supersport Watch',
                     'category'=>'Supersport ', 
-                    'type'=>'chronograph', 
+                    'feature'=>'chronograph', 
                     'gender'=>'Mens', 
                     'price'=>'446.99',
                     'discount'=>'0', 
@@ -470,11 +470,11 @@ class ProductSeeder extends Seeder
             );
             Product::create(
                 [
-                    'brand'=>'Tissot',
+                    'sub_brand'=>'Tissot',
                     'model_number'=>'T1256173605101',
                     'name'=>'Tissot Supersport Watch',
                     'category'=>'Supersport ', 
-                    'type'=>'chronograph', 
+                    'feature'=>'chronograph', 
                     'gender'=>'Mens', 
                     'price'=>'434.99',
                     'discount'=>'0', 
@@ -488,11 +488,11 @@ class ProductSeeder extends Seeder
             );
             Product::create(
                 [
-                    'brand'=>'Tissot',
+                    'sub_brand'=>'Tissot',
                     'model_number'=>'T1092103603300',
                     'name'=>'Tissot ladies Everytime Watch',
                     'category'=>'T-Classic', 
-                    'type'=>'Quartz', 
+                    'feature'=>'Quartz', 
                     'gender'=>'Ladies', 
                     'price'=>'248.99',
                     'discount'=>'0', 
@@ -506,11 +506,11 @@ class ProductSeeder extends Seeder
             );
             Product::create(
                 [
-                    'brand'=>'Tissot',
+                    'sub_brand'=>'Tissot',
                     'model_number'=>'T1122101111300',
                     'name'=>'Tissot T-Wave Watch',
                     'category'=>'T-Lady', 
-                    'type'=>'Quartz', 
+                    'feature'=>'Quartz', 
                     'gender'=>'Ladies', 
                     'price'=>'344.99',
                     'discount'=>'0',
@@ -524,11 +524,11 @@ class ProductSeeder extends Seeder
             );
             Product::create(
                 [
-                    'brand'=>'Tissot',
+                    'sub_brand'=>'Tissot',
                     'model_number'=>'T0581091104100',
                     'name'=>'Ladies Tissot Lovely Square Watch',
                     'category'=>'T-Lady', 
-                    'type'=>'Quartz', 
+                    'feature'=>'Quartz', 
                     'gender'=>'Ladies', 
                     'price'=>'271.99',
                     'discount'=>'0', 
@@ -542,11 +542,11 @@ class ProductSeeder extends Seeder
             );
             Product::create(
                 [
-                    'brand'=>'Tissot',
+                    'sub_brand'=>'Tissot',
                     'model_number'=>'T0581091603100',
                     'name'=>'Ladies Tissot T-Lady Lovely Square Watch',
                     'category'=>'T-Lady', 
-                    'type'=>'Quartz', 
+                    'feature'=>'Quartz', 
                     'gender'=>'Ladies', 
                     'price'=>'248.99',
                     'discount'=>'0', 
@@ -561,11 +561,11 @@ class ProductSeeder extends Seeder
             //---swatch 
             Product::create(
                 [
-                    'brand'=>'Swatch',
+                    'sub_brand'=>'Swatch',
                     'model_number'=>'SS07Z102',
                     'name'=>'Unisex Swatch 2Q Watch',
                     'category'=>'Skin Irony Special 2Q', 
-                    'type'=>'Quartz', 
+                    'feature'=>'Quartz', 
                     'gender'=>'Unisex', 
                     'price'=>'180.99',
                     'discount'=>'25', 
@@ -579,11 +579,11 @@ class ProductSeeder extends Seeder
             );
             Product::create(
                 [
-                    'brand'=>'Swatch',
+                    'sub_brand'=>'Swatch',
                     'model_number'=>'SB02B401',
                     'name'=>'Mens Swatch Checkpoint Blue Chronograph Watch',
                     'category'=>'Big Bold', 
-                    'type'=>'Chronograph', 
+                    'feature'=>'Chronograph', 
                     'gender'=>'Mens', 
                     'price'=>'120.99',
                     'discount'=>'0', 
@@ -597,11 +597,11 @@ class ProductSeeder extends Seeder
             );
             Product::create(
                 [
-                    'brand'=>'Swatch',
+                    'sub_brand'=>'Swatch',
                     'model_number'=>'GB743',
                     'name'=>'Swatch Once Again Watch',
                     'category'=>'Original Gent', 
-                    'type'=>'Quartz', 
+                    'feature'=>'Quartz', 
                     'gender'=>'Mens', 
                     'price'=>'46.99',
                     'discount'=>'0', 
@@ -615,11 +615,11 @@ class ProductSeeder extends Seeder
             );
             Product::create(
                 [
-                    'brand'=>'Swatch',
+                    'sub_brand'=>'Swatch',
                     'model_number'=>'SO27M102',
                     'name'=>'Mens Swatch Bbblanco Watch',
                     'category'=>'BIG BOLD', 
-                    'type'=>'Quartz', 
+                    'feature'=>'Quartz', 
                     'gender'=>'Mens', 
                     'price'=>'80.99',
                     'discount'=>'25', 
@@ -633,11 +633,11 @@ class ProductSeeder extends Seeder
             );
             Product::create(
                 [
-                    'brand'=>'Swatch',
+                    'sub_brand'=>'Swatch',
                     'model_number'=>'SUON700',
                     'name'=>'Unisex Swatch Blue Rebel Watch',
                     'category'=>'ORIGINALS', 
-                    'type'=>'Quartz', 
+                    'feature'=>'Quartz', 
                     'gender'=>'Unisex', 
                     'price'=>'66.99',
                     'discount'=>'0', 
@@ -651,11 +651,11 @@ class ProductSeeder extends Seeder
             );
             Product::create(
                 [
-                    'brand'=>'Swatch',
+                    'sub_brand'=>'Swatch',
                     'model_number'=>'GN254',
                     'name'=>'Swatch Blue Ben Watch',
                     'category'=>'Original Gent', 
-                    'type'=>'Quartz', 
+                    'feature'=>'Quartz', 
                     'gender'=>'Unisex', 
                     'price'=>'57.99',
                     'discount'=>'25', 
@@ -671,11 +671,11 @@ class ProductSeeder extends Seeder
             
 /*             Product::create(
                 [
-                    'brand'=>'',
+                    'sub_brand'=>'',
                     'model_number'=>'',
                     'name'=>'',
                     'category'=>'', 
-                    'type'=>'', 
+                    'feature'=>'', 
                     'gender'=>'', 
                     'price'=>'',
                     'discount'=>'', 
@@ -688,11 +688,11 @@ class ProductSeeder extends Seeder
             );
             Product::create(
                 [
-                    'brand'=>'',
+                    'sub_brand'=>'',
                     'model_number'=>'',
                     'name'=>'',
                     'category'=>'', 
-                    'type'=>'', 
+                    'feature'=>'', 
                     'gender'=>'', 
                     'price'=>'',
                     'discount'=>'', 
@@ -705,11 +705,11 @@ class ProductSeeder extends Seeder
             );
             Product::create(
                 [
-                    'brand'=>'',
+                    'sub_brand'=>'',
                     'model_number'=>'',
                     'name'=>'',
                     'category'=>'', 
-                    'type'=>'', 
+                    'feature'=>'', 
                     'gender'=>'', 
                     'price'=>'',
                     'discount'=>'', 
@@ -722,11 +722,11 @@ class ProductSeeder extends Seeder
             );
             Product::create(
                 [
-                    'brand'=>'',
+                    'sub_brand'=>'',
                     'model_number'=>'',
                     'name'=>'',
                     'category'=>'', 
-                    'type'=>'', 
+                    'feature'=>'', 
                     'gender'=>'', 
                     'price'=>'',
                     'discount'=>'', 
