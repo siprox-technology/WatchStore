@@ -30,13 +30,7 @@ Route::get('/', function () {
 //all products list sorted by newest
 Route::get('/shop', [ProductController::class,'index'])->name('shop.index');
 //sort and filter products
-Route::post('/shop/sort_filter',[ProductController::class,'show'])->name('shop.sort_filter');
 Route::get('/shop/sort_filter', [ProductController::class,'show'])->name('shop.sort_filter.index');
-
-//test here
-
-/* Route::get('/shop/sort_filter/test/', [ProductController::class,'test'])->name('shop.sort_filter.test');
-Route::get('/shop/sort_filter/test/{filter}', [ProductController::class,'test'])->name('shop.sort_filter.test.index');  */
 
 
 //product details 

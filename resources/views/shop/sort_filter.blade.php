@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<form action="{{route('shop.sort_filter')}}" method="POST">
+<form action="{{route('shop.sort_filter.index')}}" method="GET">
     @csrf
     <!-- products -->
     <!-- main wrapper -->
@@ -11,15 +11,12 @@
                 <div class="row">
                     <!-- top bar -->
                     <div class="col-lg-12 mb-50">
-                        {{--  --}}
                         <div class="d-flex border">
                             <div class="col-md-9 col-6 p-2 p-sm-4 align-self-sm-center">
                                 <p class="text-gray mb-0">Showing 
                                     <span class="text-color">
                                         {{$products->count()}} of {{$products->total()}}
                                     </span> Results 
-{{--                                     <a href="{{route('shop.sort_filter.test.index',['filter'=>'Casio'])}}">Filter test casio</a>
-                                    <a href="{{route('shop.sort_filter.test.index',['filter'=>'Tissot'])}}">Filter test tissot</a> --}}
                                 </p>
                             </div>
                             {{-- sort products --}}
@@ -27,9 +24,9 @@
                             <div class="col-md-3 col-6 p-2 p-sm-4 border-right border-left text-center">
                                 <select class="select" name="sortBy" id="sortBy" onchange="this.form.submit()">
                                     <option value="created_at">Newest</option>
-                                    <option value="2">Best selling</option>
-                                    <option value="3">Discount</option>
-                                    <option value="4">Price</option>
+                                    <option value="sale_number">Best selling</option>
+                                    <option value="discount">Discount</option>
+                                    <option value="price">Price</option>
                                 </select>   
                             </div>
                         </div>
@@ -43,55 +40,53 @@
                             @enderror
                             
                         </div>
-                        <form action="">
                             <!-- filter by Brand -->
                             <div class="mb-30 mt-3">
                                 <h4 class="mb-3">Brands</h4>
                                 <ul class="pl-0 shop-list list-unstyled">
-                                    @foreach ($brands as $brand)
-                                    <li class="d-flex py-2 text-gray justify-content-between">
-                                        <span>{{$brand->name}}</span>
-                                        <input type="checkbox" name="{{$brand->name}}" value="brand" onclick="this.form.submit()" 
-                                        class="" id="" {{-- @if (request()->brand == $brand->name)
-                                        checked = "checked"@endif --}}>
-                                    </li>
-                                    @endforeach
+                                    @for ($i=0; $i<count($brands);$i++)
+                                        <li class="d-flex py-2 text-gray justify-content-between">
+                                            <span>{{$brands[$i]->name}}</span>
+                                            <input type="checkbox" 
+                                            name="{{'brand'.$i}}" 
+                                            value="{{$brands[$i]->name}}" 
+                                            onclick="this.form.submit()"
+                                            @if ((request()['brand'.$i]))
+                                                checked = "checked"
+                                            @endif 
+                                            class="" id="">
+                                        </li>
+                                    @endfor
                                 </ul>
-                                <div class="d-flex justify-content-center mt-3">
-                                    <button class="btn btn-sm btn-primary">Filter</button>
-                                </div>
                             </div>
                             <!-- filter by categories -->
                             <div class="mb-30">
                                 <h4 class="mb-3">Categories</h4>
                                 <ul class="pl-0 shop-list list-unstyled">
-                                    @foreach ($categories as $category)
+                                    @for ($i=0; $i<count($categories);$i++)
                                         <li class="d-flex py-2 text-gray justify-content-between">
-                                            <span>{{$category->name}}</span>
-                                            <input type="checkbox" name="category" value="{{$category->name}}" onclick="this.form.submit()"
-                                             class="" id="" @if (request()->category == $category->name)
-                                             checked = "checked"@endif>
+                                            <span>{{$categories[$i]->name}}</span>
+                                            <input type="checkbox" name="{{'category'.$i}}" value="{{$categories[$i]->name}}" onclick="this.form.submit()"
+                                             class="" id=""                                            
+{{--                                             @if (!(request()->category.$i))
+                                                checked = "checked"
+                                            @endif --}} >
                                         </li>
-                                    @endforeach
+                                    @endfor
                                 </ul>
-                                <div class="d-flex justify-content-center mt-3">
-                                    <button class="btn btn-sm btn-primary">Filter</button>
-                                </div>
                             </div>
                             <!-- filter by features -->
                             <div class="mb-30">
                                 <h4 class="mb-3">Features</h4>
                                 <ul class="pl-0 shop-list list-unstyled">
-                                    @foreach ($features as $feature)
+                                    @for ($i=0; $i<count($features);$i++)
                                         <li class="d-flex py-2 text-gray justify-content-between">
-                                            <span>{{$feature->name}}</span>
-                                            <input type="checkbox" class="" id="">
+                                            <span>{{$features[$i]->name}}</span>
+                                            <input type="checkbox" name="{{'feature'.$i}}" value="{{$features[$i]->name}}" onclick="this.form.submit()" 
+                                            class="" id="">
                                         </li>
-                                    @endforeach
+                                    @endfor
                                 </ul>
-                                <div class="d-flex justify-content-center mt-3">
-                                    <button class="btn btn-sm btn-primary">Filter</button>
-                                </div>
                             </div>
                             <!-- filter by gender -->
                             <div class="mb-30">
@@ -99,33 +94,43 @@
                                 <ul class="pl-0 shop-list list-unstyled">
                                     <li class="d-flex py-2 text-gray justify-content-between">
                                         <span>Mens</span>
-                                        <input type="checkbox" class="" id="">
+                                        <input type="checkbox" name="gender0" value="Mens"class="" id="" onclick="this.form.submit()">
                                     </li>
                                     <li class="d-flex py-2 text-gray justify-content-between">
                                         <span>Ladies</span>
-                                        <input type="checkbox" class="" id="">
+                                        <input type="checkbox" name="gender1"value="Ladies"class="" id="" onclick="this.form.submit()">
                                     </li>
                                     <li class="d-flex py-2 text-gray justify-content-between">
                                         <span>Unisex</span>
-                                        <input type="checkbox" class="" id="">
+                                        <input type="checkbox" name="gender2" value="Unisex"class="" id="" onclick="this.form.submit()">
                                     </li>
                                 </ul>
-                                <div class="d-flex justify-content-center mt-3">
-                                    <button class="btn btn-sm btn-primary">Filter</button>
-                                </div>
                             </div>
                             <!-- filter by price range -->
                             <div class="mb-30">
                                 <h4 class="mb-4">Shop by Price</h4>
-                                <input class="range-track" type="text" data-slider-min="0" data-slider-max="1000"
-                                    data-slider-step="5" data-slider-value="[0,300]" data-value="0,300" value="0,300"
-                                    style="display: none;">
-                                <div class="d-flex flex-column">
-                                    <span class="value m-auto">$0 - $300</span>
-                                    <div class="d-flex justify-content-center mt-3">
-                                        <button class="btn btn-sm btn-primary">Filter</button>
-                                    </div>
-                                </div>
+                                <ul class="pl-0 shop-list list-unstyled">
+                                    <li class="d-flex py-2 text-gray justify-content-between">
+                                        <span>up to $100</span>
+                                        <input type="checkbox" name="price0" value="100"class="" id="" onclick="this.form.submit()">
+                                    </li>
+                                    <li class="d-flex py-2 text-gray justify-content-between">
+                                        <span>up to $200</span>
+                                        <input type="checkbox" name="price1" value="200"class="" id="" onclick="this.form.submit()">
+                                    </li>
+                                    <li class="d-flex py-2 text-gray justify-content-between">
+                                        <span>up to $500</span>
+                                        <input type="checkbox" name="price2"value="300"class="" id="" onclick="this.form.submit()">
+                                    </li>
+                                    <li class="d-flex py-2 text-gray justify-content-between">
+                                        <span>up to $1000</span>
+                                        <input type="checkbox" name="price3" value="1000"class="" id="" onclick="this.form.submit()">
+                                    </li>
+                                    <li class="d-flex py-2 text-gray justify-content-between">
+                                        <span>more than $1000</span>
+                                        <input type="checkbox" name="price0" value="1001"class="" id="" onclick="this.form.submit()">
+                                    </li>
+                                </ul>
                             </div>
                             <!-- color selector -->
                             <div class="color">
