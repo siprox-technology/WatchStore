@@ -16,7 +16,7 @@
                                 <p class="text-gray mb-0">Showing 
                                     <span class="text-color">
                                         {{$products->count()}} of {{$products->total()}}
-                                    </span> Results 
+                                    </span> Results
                                 </p>
                             </div>
                             {{-- sort products --}}
@@ -133,22 +133,25 @@
                                 </ul>
                             </div>
                             <!-- color selector -->
-                            <div class="color">
+                            <div class="">
                                 <h4 class="mb-3">Shop by Color</h4>
                                 <ul class="list-inline">
+                                    @for ($i = 0; $i < count($colors); $i++)
                                     <li class="list-inline-item mr-4">
                                         <label class="radio">
                                             <input type="checkbox" name="radio">
                                             <span class="radio-box bg-magenta"></span>
                                         </label>
                                     </li>
-                                    <li class="list-inline-item mr-4">
+                                    @endfor
+
+{{--                                     <li class="list-inline-item mr-4">
                                         <label class="radio">
                                             <input type="checkbox" name="radio">
                                             <span class="radio-box bg-dark-green"></span>
                                         </label>
-                                    </li>
-                                    <li class="list-inline-item mr-4">
+                                    </li> --}}
+{{--                                     <li class="list-inline-item mr-4">
                                         <label class="radio">
                                             <input type="checkbox" name="radio">
                                             <span class="radio-box bg-sky-blue"></span>
@@ -165,11 +168,8 @@
                                             <input type="checkbox" name="radio">
                                             <span class="radio-box bg-dark"></span>
                                         </label>
-                                    </li>
+                                    </li> --}}
                                 </ul>
-                                <div class="d-flex justify-content-center mt-3">
-                                    <button class="btn btn-sm btn-primary">Filter</button>
-                                </div>
                             </div>
                         </form>
                     </div>
@@ -305,15 +305,28 @@
                         <!-- filter by price range -->
                         <div class="mb-30">
                             <h4 class="mb-4">Shop by Price</h4>
-                            <input class="range-track" type="text" data-slider-min="0" data-slider-max="1000"
-                                data-slider-step="5" data-slider-value="[0,300]" data-value="0,300" value="0,300"
-                                style="display: none;">
-                            <div class="d-flex flex-column">
-                                <span class="value m-auto">$0 - $300</span>
-                                <div class="d-flex justify-content-center mt-3">
-                                    <button class="btn btn-sm btn-primary">Filter</button>
-                                </div>
-                            </div>
+                            <ul class="pl-0 shop-list list-unstyled">
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>up to $100</span>
+                                    <input type="checkbox" name="price0" value="100"class="" id="" onclick="this.form.submit()">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>up to $200</span>
+                                    <input type="checkbox" name="price1" value="200"class="" id="" onclick="this.form.submit()">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>up to $500</span>
+                                    <input type="checkbox" name="price2"value="300"class="" id="" onclick="this.form.submit()">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>up to $1000</span>
+                                    <input type="checkbox" name="price3" value="1000"class="" id="" onclick="this.form.submit()">
+                                </li>
+                                <li class="d-flex py-2 text-gray justify-content-between">
+                                    <span>more than $1000</span>
+                                    <input type="checkbox" name="price0" value="1001"class="" id="" onclick="this.form.submit()">
+                                </li>
+                            </ul>
                         </div>
                         <!-- color selector -->
                         <div class="color">
@@ -325,7 +338,7 @@
                                         <span class="radio-box bg-magenta"></span>
                                     </label>
                                 </li>
-                                <li class="list-inline-item mr-4">
+{{--                                 <li class="list-inline-item mr-4">
                                     <label class="radio">
                                         <input type="checkbox" name="radio">
                                         <span class="radio-box bg-dark-green"></span>
@@ -348,11 +361,9 @@
                                         <input type="checkbox" name="radio">
                                         <span class="radio-box bg-dark"></span>
                                     </label>
-                                </li>
+                                </li> --}}
                             </ul>
-                            <div class="d-flex justify-content-center mt-3">
-                                <button class="btn btn-sm btn-primary">Filter</button>
-                            </div>
+
                         </div>
                     </div>
                 </div>
