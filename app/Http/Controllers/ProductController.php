@@ -65,6 +65,7 @@ class ProductController extends Controller
         }
         else
         {
+            
             //all filters
             $brands = DB::table('brands')
             ->join('products', 'brands.id', '=', 'products.brand_id')
@@ -74,10 +75,9 @@ class ProductController extends Controller
             $features = DB::table('products')->select('feature as name')->distinct()->get();
             $genders = DB::table('products')->select('gender as name')->distinct()->get();
             $colors = DB::table('products')->select('color as name')->distinct()->get();
+            
             //extract parameters from request
-
             $params = $request->except(['_token']);
-/*             $params_sort = $params['sortBy']; */
             $params_brands = [];
             $params_categories = [];
             $params_features = [];
@@ -137,7 +137,7 @@ class ProductController extends Controller
             {
                 $params_colors = $colors->pluck('name')->toArray();
             }
-
+            
 
             //extract gender filter
             for($i=0; $i<count($genders->toArray()); $i++)
