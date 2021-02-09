@@ -19,6 +19,15 @@ class UserSeeder extends Seeder
     {
         User::create(
             [
+            'name' => 'Soroosh Modarresi',
+            'email' => 'siproxtech@gmail.com',
+            'phone' => rand(11111111,9999999999),
+            'password' => Hash::make('1111'), // password
+            'contact_pref' => '2'
+            ]
+        );
+        User::create(
+            [
             'name' => 'Jonh Doe',
             'email' => 'email@email.com',
             'phone' => rand(11111111,9999999999),

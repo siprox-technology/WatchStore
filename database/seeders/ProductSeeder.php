@@ -266,7 +266,7 @@ class ProductSeeder extends Seeder
                 'gender'=>'Mens', 
                 'price'=>'145.99',
                 'discount'=>'25', 
-                'color'=>'black/navi',
+                'color'=>'black/yellow',
                 'description'=>'Part of the Casio Edifice Collection, the Mens Casio Edifice Chronograph Watch is a luxurious accessory with plenty of cool features to match its obvious style.
 
                 Water resistant to 100 metres, it’ll handle getting wet with ease, while the three-dial chronograph is great for keeping accurate timing. There’s also a stopwatch for timing your workouts, and a date function on the dial, while tough mineral glass keeps everything looking fantastic.
@@ -339,7 +339,7 @@ class ProductSeeder extends Seeder
                     'gender'=>'Mens', 
                     'price'=>'1406.99',
                     'discount'=>'0', 
-                    'color'=>'cream/brown', 
+                    'color'=>'cornsilk/brown', 
                     'description'=>"This is not a conventional watch. When purchasing this model, you own a piece of Tissot's Heritage. This automatic chronograph incorporates the very best of past and present technology. While the leather strap versions are more classical, the milanese bracelet gives it a contemporary touch - a Must have for watch lovers and collectors.", 
                     'specification'=>'Brand,Tissot,Analogue/Digital,Analogue,Case depth approx.,13.00mm,Primary Material,Stainless Steel,Case Shape,Circle,Case width approx.,39.00mm,Chronograph,Yes,Dial Colour,Cream,Gender,Gents,Glass,Sapphire,Model Collection,Heritage,Model Name,Heritage 1948,Movement Source,Swiss,Movement,Automatic,Strap colour,Brown,Strap Type,Leather strap,Water Resistance,30 metres,BARCODE,7611608282236,Guarantee,2 years',
                     'stock'=>'65',

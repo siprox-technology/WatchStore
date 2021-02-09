@@ -21,10 +21,10 @@ class ProductController extends Controller
             ->join('products', 'brands.id', '=', 'products.brand_id')
             ->select('brands.name')->distinct()
             ->get();
-        $colors = DB::table('products')->select('color as name')->distinct()->get();
         $categories = DB::table('products')->select('category as name')->distinct()->get();
         $features = DB::table('products')->select('feature as name')->distinct()->get();
         $genders = DB::table('products')->select('gender as name')->distinct()->get();
+        $colors = DB::table('products')->select('color as name')->distinct()->get();
 
         return view('shop.index',
         [
@@ -41,27 +41,26 @@ class ProductController extends Controller
 
         if(count($request->request)<3)
         {
+            //products
             $products = Product::latest()->paginate(9);
             $brands = DB::table('brands')
                 ->join('products', 'brands.id', '=', 'products.brand_id')
                 ->select('brands.name')->distinct()
                 ->get();
-            $colors = DB::table('products')->select('color as name')->distinct()->get();
+            //all filters    
             $categories = DB::table('products')->select('category as name')->distinct()->get();
             $features = DB::table('products')->select('feature as name')->distinct()->get();
             $genders = DB::table('products')->select('gender as name')->distinct()->get();
-
-            //--price--//
+            $colors = DB::table('products')->select('color as name')->distinct()->get();
 
             return view('shop.index',
             [
                 'products'=>$products,
                 'brands'=>$brands,
-                'colors'=>$colors,
                 'categories'=>$categories,
                 'features'=>$features,
-                'genders'=>$genders
-                //--price
+                'genders'=>$genders,
+                'colors'=>$colors
             ]);
         }
         else
@@ -71,23 +70,22 @@ class ProductController extends Controller
             ->join('products', 'brands.id', '=', 'products.brand_id')
             ->select('brands.name')->distinct()
             ->get();
-            $colors = DB::table('products')->select('color as name')->distinct()->get();
             $categories = DB::table('products')->select('category as name')->distinct()->get();
             $features = DB::table('products')->select('feature as name')->distinct()->get();
             $genders = DB::table('products')->select('gender as name')->distinct()->get();
-            //--price--//
-            //extract sort and filter parameters from request
+            $colors = DB::table('products')->select('color as name')->distinct()->get();
+            //extract parameters from request
 
             $params = $request->except(['_token']);
+/*             $params_sort = $params['sortBy']; */
             $params_brands = [];
             $params_categories = [];
             $params_features = [];
-            $params_colors = [];
             $params_gender = [];
-            $params_sort = $params['sortBy'];
+            $params_colors = [];
 
-            //--price--//
-            //extract brands filter
+
+            //extract brands 
             for($i=0; $i<count($brands->toArray()); $i++)
             {
                 if(isset($params['brand'.$i]))
@@ -95,7 +93,12 @@ class ProductController extends Controller
                     array_push($params_brands,$params['brand'.$i]);
                 }
             }
-            //extract categories filter
+            if(count($params_brands)<1)
+            {
+                $params_brands = $brands->pluck('name')->toArray();
+            }
+
+            //extract categories 
             for($i=0; $i<count($categories->toArray()); $i++)
             {
                 if(isset($params['category'.$i]))
@@ -103,7 +106,12 @@ class ProductController extends Controller
                     array_push($params_categories,$params['category'.$i]);
                 }
             }
-            //extract features filter
+            if(count($params_categories)<1)
+            {
+                $params_categories = $categories->pluck('name')->toArray();
+            }
+
+            //extract features 
             for($i=0; $i<count($features->toArray()); $i++)
             {
                 if(isset($params['feature'.$i]))
@@ -111,6 +119,12 @@ class ProductController extends Controller
                     array_push($params_features,$params['feature'.$i]);
                 }
             }
+            if(count($params_features)<1)
+            {
+                $params_features = $features->pluck('name')->toArray();
+            }
+
+
             //extract color filter
             for($i=0; $i<count($colors->toArray()); $i++)
             {
@@ -119,6 +133,12 @@ class ProductController extends Controller
                     array_push($params_colors,$params['color'.$i]);
                 }
             }
+            if(count($params_colors)<1)
+            {
+                $params_colors = $colors->pluck('name')->toArray();
+            }
+
+
             //extract gender filter
             for($i=0; $i<count($genders->toArray()); $i++)
             {
@@ -127,14 +147,23 @@ class ProductController extends Controller
                     array_push($params_gender,$params['gender'.$i]);
                 }
             }
-            //extract price filter
-                        //--price--//
+            if(count($params_gender)<1)
+            {
+                $params_gender = $genders->pluck('name')->toArray();
+            }
 
             //filter and sort products to display
             $products = DB::table('products')
             ->join('brands', 'products.brand_id', '=', 'brands.id')
-            ->whereIn('brands.name',$params_brands)->orderBy('products.created_at','ASC')
+            ->whereIn('brands.name',$params_brands)
+            ->whereIn('products.category',$params_categories)
+            ->whereIn('products.feature',$params_features)
+            ->whereIn('products.color',$params_colors)
+            ->whereIn('products.gender',$params_gender)
+            ->where('products.price', '<', $request->price)
+            ->orderBy($request->sortBy,'ASC')
             ->paginate(9);
+        
             return view('shop.sort_filter',
             [
                 'products'=>$products->appends(request()->input()),
@@ -143,62 +172,10 @@ class ProductController extends Controller
                 'categories'=>$categories,
                 'features'=>$features,
                 'genders'=>$genders
-                //--price
-            ]);
-        }
-
-
-
-    }
-
-
-    public function test()
-    {
-        
-        if(request()->filter)
-        {
-            dd(request());
-            $products =DB::table('products')
-            ->join('brands', 'products.brand_id', '=', 'brands.id')
-            ->where('brands.name',request()->filter)->orderBy('products.created_at','ASC')
-            ->paginate(9);
-            $brands = DB::table('brands')
-            ->join('products', 'brands.id', '=', 'products.brand_id')
-            ->select('brands.name')->distinct()
-            ->get();
-            $colors = DB::table('products')->select('color as name')->distinct()->get();
-            $categories = DB::table('products')->select('category as name')->distinct()->get();
-            $features = DB::table('products')->select('feature as name')->distinct()->get();
-            return view('shop.sort_filter',
-            [
-                'products'=>$products,
-                'brands'=>$brands,
-                'colors'=>$colors,
-                'categories'=>$categories,
-                'features'=>$features
-            
-            ]);
-        }
-        else
-        {
-            $products = Product::latest()->paginate(9);
-            $brands = DB::table('brands')
-                ->join('products', 'brands.id', '=', 'products.brand_id')
-                ->select('brands.name')->distinct()
-                ->get();
-            $colors = DB::table('products')->select('color as name')->distinct()->get();
-            $categories = DB::table('products')->select('category as name')->distinct()->get();
-            $features = DB::table('products')->select('feature as name')->distinct()->get();
-            return view('shop.index',
-            [
-                'products'=>$products,
-                'brands'=>$brands,
-                'colors'=>$colors,
-                'categories'=>$categories,
-                'features'=>$features
             ]);
         }
     }
+
 
     public function store(Request $request)
     {
