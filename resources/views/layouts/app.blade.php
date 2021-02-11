@@ -232,7 +232,7 @@
         <!-- breadcrumb -->
         <nav class="bg-gray py-3">
             <!-- search product -->
-            <div class="row justify-content-center">
+            <div class="row justify-content-center w-100">
                 <form class="col-10 col-md-6 ">
                     <input type="search" class="form-control" id="search-product"
                         placeholder="Search...">

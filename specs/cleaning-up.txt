@@ -5,3 +5,4 @@
 - npm run production
 - optimize command php
 - learn about server deployment
+-optimize links like google font link

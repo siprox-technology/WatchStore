@@ -9,19 +9,21 @@
         <section class="section">
             <div class="container">
                 <div class="row">
-                    <!-- top bar -->
-                    <div class="col-lg-12 mb-50">
+                    {{-- number of items shown  -  sort by--}}
+                    <div class="col-lg-12 mb-3">
                         <div class="d-flex border">
-                            <div class="col-md-9 col-6 p-2 p-sm-4 align-self-sm-center">
-                                <p class="text-gray mb-0">Showing 
-                                    <span class="text-color">
-                                        {{$products->count()}} of {{$products->total()}}
-                                    </span> Results
-                                </p>
+                            <div class="col-md-9 col-6 my-auto align-self-sm-center">
+                                <div class="row w-100">
+                                    <p class="text-gray mb-0 p-2">Showing 
+                                        <span class="text-color">
+                                            {{$products->count()}} of {{$products->total()}}
+                                        </span> Results 
+                                    </p>
+
+                                </div>
                             </div>
                             {{-- sort products --}}
-                
-                            <div class="col-md-3 col-6 p-2 p-sm-4 border-right border-left text-center">
+                            <div class="col-md-3 col-6 my-auto border-right border-left text-center">
                                 <select class="select" name="sortBy" id="sortBy" onchange="this.form.submit()">
                                     <option value="created_at"
                                         @if (request()->sortBy == 'created_at')
@@ -47,14 +49,30 @@
                             </div>
                         </div>
                     </div>
+                    {{-- filters selected--}}
+                    {{-- <form action=""></form> --}}
+                        <div class="col-lg-12 mb-50">
+                            <div class="d-flex border">
+                                <div class="col-md-9 col-6 my-auto align-self-sm-center">
+                                    <div class="row w-100">
+{{--                                         @foreach ($params as $key => $value)
+                                            @if ($key !== 'sortBy')
+                                                <p class="px-3 py-2 border">
+                                                    {{$value}}
+                                                </p>
+                                            @endif
+                                        @endforeach --}}
+{{-- <p>{{dd($params['brand'])}}</p> --}}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     <!-- filter and product sidebar -->
                     <div class="d-none d-lg-flex flex-lg-column col-lg-3">
                         <div class="row justify-content-center">
-                            <h4>Filter Products</h4>
-                            @error('brand')
-                               <h4>{{$message}}</h4>     
-                            @enderror
-                            
+                            <h4>Filter Products</h4>             
                         </div>
                             <!-- filter by Brand -->
                             <div class="mb-30 mt-3">
@@ -64,13 +82,13 @@
                                         <li class="d-flex py-2 text-gray justify-content-between">
                                             <span>{{$brands[$i]->name}}</span>
                                             <input class="mt-1" type= "checkbox" 
-                                            name="{{'brand'.$i}}" 
+                                            name="brand[]" 
                                             value="{{$brands[$i]->name}}" 
                                             onclick="this.form.submit()"
-                                            @if ((request()['brand'.$i]))
+                                            @if(isset($params['brand'])&&(array_search($brands[$i]->name,$params['brand'])!==false))
                                                 checked = "checked"
                                             @endif 
-                                             id="">
+                                            id="">
                                         </li>
                                     @endfor
                                 </ul>
@@ -82,9 +100,9 @@
                                     @for ($i=0; $i<count($categories);$i++)
                                         <li class="d-flex py-2 text-gray justify-content-between">
                                             <span>{{$categories[$i]->name}}</span>
-                                            <input class="mt-1" type= "checkbox" name="{{'category'.$i}}" value="{{$categories[$i]->name}}" onclick="this.form.submit()"
+                                            <input class="mt-1" type= "checkbox" name="category[]" value="{{$categories[$i]->name}}" onclick="this.form.submit()"
                                               id=""                                            
-                                            @if ((request()['category'.$i]))
+                                            @if (isset($params['category'])&&(array_search($categories[$i]->name,$params['category'])!==false))
                                               checked = "checked"
                                             @endif >
                                         </li>
@@ -98,9 +116,9 @@
                                     @for ($i=0; $i<count($features);$i++)
                                         <li class="d-flex py-2 text-gray justify-content-between">
                                             <span>{{$features[$i]->name}}</span>
-                                            <input class="mt-1" type= "checkbox" name="{{'feature'.$i}}" value="{{$features[$i]->name}}" onclick="this.form.submit()" 
+                                            <input class="mt-1" type= "checkbox" name="feature[]" value="{{$features[$i]->name}}" onclick="this.form.submit()" 
                                              id=""
-                                             @if ((request()['feature'.$i]))
+                                             @if (isset($params['feature'])&&(array_search($features[$i]->name,$params['feature'])!==false))
                                                 checked = "checked"
                                              @endif>
                                         </li>
@@ -113,22 +131,22 @@
                                 <ul class="pl-0 shop-list list-unstyled">
                                     <li class="d-flex py-2 text-gray justify-content-between">
                                         <span>Mens</span>
-                                        <input class="mt-1" type= "checkbox" name="gender0" value="Mens" id="" onclick="this.form.submit()"
-                                        @if ((request()['gender0']))
+                                        <input class="mt-1" type= "checkbox" name="gender[0]" value="Mens" id="" onclick="this.form.submit()"
+                                        @if (isset($params['gender'][0]))                                           
                                             checked = "checked"
                                         @endif>
                                     </li>
                                     <li class="d-flex py-2 text-gray justify-content-between">
                                         <span>Ladies</span>
-                                            <input class="mt-1" type= "checkbox" name="gender1"value="Ladies" id="" onclick="this.form.submit()"
-                                        @if ((request()['gender1']))
+                                            <input class="mt-1" type= "checkbox" name="gender[1]"value="Ladies" id="" onclick="this.form.submit()"
+                                        @if (isset($params['gender'][1]))
                                             checked = "checked"
                                         @endif>
                                     </li>
                                     <li class="d-flex py-2 text-gray justify-content-between">
                                         <span>Unisex</span>
-                                        <input class="mt-1" type= "checkbox" name="gender2" value="Unisex" id="" onclick="this.form.submit()"
-                                        @if ((request()['gender2']))
+                                        <input class="mt-1" type= "checkbox" name="gender[2]" value="Unisex" id="" onclick="this.form.submit()"
+                                        @if (isset($params['gender'][2]))
                                             checked = "checked"
                                         @endif>
                                     </li>
@@ -139,27 +157,27 @@
                                 <h4 class="mb-4">Shop by Price</h4>
                                 <select class="select" name="price" id="price" onchange="this.form.submit()">
                                     <option value="1000000"
-                                        @if (request()->price == '1000000')
+                                        @if ($params['price'] == '1000000')
                                             selected = "selected"
                                         @endif
                                     >All prices</option>
                                     <option value="100"
-                                        @if (request()->price == '100')
+                                        @if ($params['price'] == '100')
                                             selected = "selected"
                                         @endif
                                     >Up to $100</option>
                                     <option value="200"
-                                        @if (request()->price == '200')
+                                        @if ($params['price'] == '200')
                                             selected = "selected"
                                         @endif
                                     >Up to $200</option>
                                     <option value="500"
-                                        @if (request()->price == '500')
+                                        @if ($params['price'] == '500')
                                             selected = "selected"
                                         @endif
                                     >Up to $500</option>
                                     <option value="1000"
-                                        @if (request()->price == '1000')
+                                        @if ($params['price'] == '1000')
                                             selected = "selected"
                                         @endif
                                     >Up to $1000</option>
@@ -190,8 +208,8 @@
                                             border: 1px solid black;
                                             @endif
                                             "></span>
-                                            <input class="mt-1 ml-4" type= "checkbox" name="{{'color'.$i}}" value="{{$colors[$i]->name}}" id="" onclick="this.form.submit()"
-                                            @if (request()['color'.$i])
+                                            <input class="mt-1 ml-4" type= "checkbox" name="color[]" value="{{$colors[$i]->name}}" id="" onclick="this.form.submit()"
+                                            @if (isset($params['color'])&&(array_search($colors[$i]->name,$params['color'])!==false))
                                                 checked = "checked"
                                             @endif>
                                         </li>
@@ -273,15 +291,18 @@
                                         <li class="d-flex py-2 text-gray justify-content-between">
                                             <span>{{$brands[$i]->name}}</span>
                                             <input class="mt-1" type= "checkbox" 
-                                            name="{{'brand'.$i}}" 
+                                            name="brand[]" 
                                             value="{{$brands[$i]->name}}" 
-                                            @if ((request()['brand'.$i]))
+                                            @if(isset($params['brand'])&&(array_search($brands[$i]->name,$params['brand'])!==false))
                                                 checked = "checked"
                                             @endif 
                                             id="">
                                         </li>
                                     @endfor
                                 </ul>
+                                <div class="d-flex justify-content-center mt-5">
+                                    <button type="submit" class="btn btn-sm btn-primary">Filter</button>
+                                </div>
                             </div>
                             <!-- filter by categories -->
                             <div class="mb-30">
@@ -290,13 +311,16 @@
                                     @for ($i=0; $i<count($categories);$i++)
                                         <li class="d-flex py-2 text-gray justify-content-between">
                                             <span>{{$categories[$i]->name}}</span>
-                                            <input class="mt-1" type= "checkbox" name="{{'category'.$i}}" value="{{$categories[$i]->name}}" id=""                                            
-                                            @if ((request()['category'.$i]))
+                                            <input class="mt-1" type= "checkbox" name="category[]" value="{{$categories[$i]->name}}" id=""                                            
+                                            @if (isset($params['category'])&&(array_search($categories[$i]->name,$params['category'])!==false))
                                               checked = "checked"
                                             @endif >
                                         </li>
                                     @endfor
                                 </ul>
+                                <div class="d-flex justify-content-center mt-5">
+                                    <button type="submit" class="btn btn-sm btn-primary">Filter</button>
+                                </div>
                             </div>
                             <!-- filter by features -->
                             <div class="mb-30">
@@ -305,14 +329,17 @@
                                     @for ($i=0; $i<count($features);$i++)
                                         <li class="d-flex py-2 text-gray justify-content-between">
                                             <span>{{$features[$i]->name}}</span>
-                                            <input class="mt-1" type= "checkbox" name="{{'feature'.$i}}" value="{{$features[$i]->name}}" 
+                                            <input class="mt-1" type= "checkbox" name="feature[]" value="{{$features[$i]->name}}" 
                                              id=""
-                                             @if ((request()['feature'.$i]))
+                                             @if (isset($params['feature'])&&(array_search($features[$i]->name,$params['feature'])!==false))
                                                 checked = "checked"
                                              @endif>
                                         </li>
                                     @endfor
                                 </ul>
+                                <div class="d-flex justify-content-center mt-5">
+                                    <button type="submit" class="btn btn-sm btn-primary">Filter</button>
+                                </div>
                             </div>
                             <!-- filter by gender -->
                             <div class="mb-30">
@@ -320,57 +347,62 @@
                                 <ul class="pl-0 shop-list list-unstyled">
                                     <li class="d-flex py-2 text-gray justify-content-between">
                                         <span>Mens</span>
-                                        <input class="mt-1" type= "checkbox" name="gender0" value="Mens" id=""
-                                        @if ((request()['gender0']))
+                                        <input class="mt-1" type= "checkbox" name="gender[0]" value="Mens" id=""
+                                        @if (isset($params['gender'][0]))                                           
                                             checked = "checked"
                                         @endif>
                                     </li>
                                     <li class="d-flex py-2 text-gray justify-content-between">
                                         <span>Ladies</span>
-                                            <input class="mt-1" type= "checkbox" name="gender1"value="Ladies" id=""
-                                        @if ((request()['gender1']))
+                                            <input class="mt-1" type= "checkbox" name="gender[1]"value="Ladies" id=""
+                                        @if (isset($params['gender'][1]))
                                             checked = "checked"
                                         @endif>
                                     </li>
                                     <li class="d-flex py-2 text-gray justify-content-between">
                                         <span>Unisex</span>
-                                        <input class="mt-1" type= "checkbox" name="gender2" value="Unisex" id=""
-                                        @if ((request()['gender2']))
+                                        <input class="mt-1" type= "checkbox" name="gender[2]" value="Unisex" id=""
+                                        @if (isset($params['gender'][2]))
                                             checked = "checked"
                                         @endif>
                                     </li>
                                 </ul>
+                                <div class="d-flex justify-content-center mt-5">
+                                    <button type="submit" class="btn btn-sm btn-primary">Filter</button>
+                                </div>
                             </div>
                             <!-- filter by price range -->
                             <div class="mb-30">
-                                <h4 class="mb-4">Shop by Price</h4>
-                                <select class="select" name="price" id="price" onchange="this.form.submit()">
+                                <select class="select" name="price" id="price">
                                     <option value="1000000"
-                                        @if (request()->price == '1000000')
+                                        @if ($params['price'] == '1000000')
                                             selected = "selected"
                                         @endif
                                     >All prices</option>
                                     <option value="100"
-                                        @if (request()->price == '100')
+                                        @if ($params['price'] == '100')
                                             selected = "selected"
                                         @endif
                                     >Up to $100</option>
                                     <option value="200"
-                                        @if (request()->price == '200')
+                                        @if ($params['price'] == '200')
                                             selected = "selected"
                                         @endif
                                     >Up to $200</option>
                                     <option value="500"
-                                        @if (request()->price == '500')
+                                        @if ($params['price'] == '500')
                                             selected = "selected"
                                         @endif
                                     >Up to $500</option>
                                     <option value="1000"
-                                        @if (request()->price == '1000')
+                                        @if ($params['price'] == '1000')
                                             selected = "selected"
                                         @endif
                                     >Up to $1000</option>
-                                </select>   
+                                </select>    
+                                <div class="d-flex justify-content-center mt-5">
+                                    <button type="submit" class="btn btn-sm btn-primary">Filter</button>
+                                </div>
                             </div>
                             <!-- color selector -->
                             <div class="color mb-30">
@@ -397,13 +429,17 @@
                                             border: 1px solid black;
                                             @endif
                                             "></span>
-                                            <input class="mt-1 ml-4" type= "checkbox" name="{{'color'.$i}}" value="{{$colors[$i]->name}}" id="" onclick="this.form.submit()"
-                                            @if (request()['color'.$i])
+                                            <input class="mt-1 ml-4" type= "checkbox" name="color[]" value="{{$colors[$i]->name}}" id=""
+                                            @if (isset($params['color'])&&(array_search($colors[$i]->name,$params['color'])!==false))
                                                 checked = "checked"
                                             @endif>
                                         </li>
                                     @endfor
                                 </ul>
+                                
+                                <div class="d-flex justify-content-center mt-5">
+                                    <button type="submit" class="btn btn-sm btn-primary">Filter</button>
+                                </div>
                             </div>
 
                             <div class="mb-30">
