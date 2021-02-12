@@ -95,7 +95,7 @@ class ProductController extends Controller
             ->where('products.price', '<', $request->price)
             ->orderBy('products.'.$request->sortBy,'desc')
             ->paginate(9);
-
+/* dd($params); */
             return view('shop.sort_filter',
             [
                 'products'=>$products->appends(request()->input()),

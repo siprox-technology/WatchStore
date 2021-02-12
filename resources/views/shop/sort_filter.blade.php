@@ -14,8 +14,8 @@
                         <div class="d-flex border">
                             <div class="col-md-9 col-6 my-auto align-self-sm-center">
                                 <div class="row w-100">
-                                    <p class="text-gray mb-0 p-2">Showing 
-                                        <span class="text-color">
+                                    <p class="text-color mb-0 p-2">Showing 
+                                        <span class=" text-gray">
                                             {{$products->count()}} of {{$products->total()}}
                                         </span> Results 
                                     </p>
@@ -50,20 +50,61 @@
                         </div>
                     </div>
                     {{-- filters selected--}}
-                    {{-- <form action=""></form> --}}
                         <div class="col-lg-12 mb-50">
                             <div class="d-flex border">
-                                <div class="col-md-9 col-6 my-auto align-self-sm-center">
-                                    <div class="row w-100">
-{{--                                         @foreach ($params as $key => $value)
-                                            @if ($key !== 'sortBy')
-                                                <p class="px-3 py-2 border">
-                                                    {{$value}}
-                                                </p>
+                                <div class="col-12 my-auto align-self-sm-center px-0">
+                                    <div class="row w-100 m-0 p-0">
+                                        <p class="text-dark m-0 p-2 border">Filters :</p>
+                                        {{-- brands filter --}}
+                                        @if (isset($params['brand']))
+                                            @for ($i = 0; $i < count($params['brand']); $i++)
+                                                <span class="text-gray m-0 p-2 border">
+                                                    {{$params['brand'][$i]}}
+                                                </span>
+                                            @endfor
+                                        @endif
+                                        {{-- categories filter --}}
+                                        @if (isset($params['category']))
+                                            @for ($i = 0; $i < count($params['category']); $i++)
+                                                <span class="text-gray m-0 p-2 border">
+                                                    {{$params['category'][$i]}}
+                                                </span>
+                                            @endfor
+                                        @endif     
+                                        {{-- features --}}
+                                        @if (isset($params['feature']))
+                                            @for ($i = 0; $i < count($params['feature']); $i++)
+                                                <span class="text-gray m-0 p-2 border">
+                                                    {{$params['feature'][$i]}}
+                                                </span>
+                                            @endfor
+                                        @endif
+                                        {{-- gender --}}
+                                        @if (isset($params['gender']))
+                                            @for ($i = 0; $i < count($params['gender']); $i++)
+                                                <span class="text-gray m-0 p-2 border">
+                                                    {{$params['gender'][$i]}}
+                                                </span>
+                                            @endfor                                          
+                                        @endif
+                                        {{-- color --}}
+                                        @if (isset($params['color']))
+                                            @for ($i = 0; $i < count($params['color']); $i++)
+                                                <span class="text-gray m-0 p-2 border">
+                                                    {{$params['color'][$i]}}
+                                                </span>
+                                            @endfor                                          
+                                        @endif
+                                        {{-- price filters --}}
+                                        <span class="text-gray m-0 p-2 border">
+                                            @if ($params['price']=='1000000')
+                                                All prices
+                                            @else
+                                                {{'up to $'.$params['price']}}
                                             @endif
-                                        @endforeach --}}
-{{-- <p>{{dd($params['brand'])}}</p> --}}
-
+                                        </span>
+                                        {{-- clear all filter --}}
+                                        <a href="{{route('shop.index')}}" class="text-warning border px-4 py-2 border-right">Clear all filters</a>
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +122,7 @@
                                     @for ($i=0; $i<count($brands);$i++)
                                         <li class="d-flex py-2 text-gray justify-content-between">
                                             <span>{{$brands[$i]->name}}</span>
-                                            <input class="mt-1" type= "checkbox" 
+                                            <input class="mt-1" type= "checkbox" autocomplete='off' 
                                             name="brand[]" 
                                             value="{{$brands[$i]->name}}" 
                                             onclick="this.form.submit()"
@@ -100,7 +141,7 @@
                                     @for ($i=0; $i<count($categories);$i++)
                                         <li class="d-flex py-2 text-gray justify-content-between">
                                             <span>{{$categories[$i]->name}}</span>
-                                            <input class="mt-1" type= "checkbox" name="category[]" value="{{$categories[$i]->name}}" onclick="this.form.submit()"
+                                            <input class="mt-1" type= "checkbox" autocomplete='off' name="category[]" value="{{$categories[$i]->name}}" onclick="this.form.submit()"
                                               id=""                                            
                                             @if (isset($params['category'])&&(array_search($categories[$i]->name,$params['category'])!==false))
                                               checked = "checked"
@@ -116,7 +157,7 @@
                                     @for ($i=0; $i<count($features);$i++)
                                         <li class="d-flex py-2 text-gray justify-content-between">
                                             <span>{{$features[$i]->name}}</span>
-                                            <input class="mt-1" type= "checkbox" name="feature[]" value="{{$features[$i]->name}}" onclick="this.form.submit()" 
+                                            <input class="mt-1" type= "checkbox" autocomplete='off' name="feature[]" value="{{$features[$i]->name}}" onclick="this.form.submit()" 
                                              id=""
                                              @if (isset($params['feature'])&&(array_search($features[$i]->name,$params['feature'])!==false))
                                                 checked = "checked"
@@ -131,21 +172,21 @@
                                 <ul class="pl-0 shop-list list-unstyled">
                                     <li class="d-flex py-2 text-gray justify-content-between">
                                         <span>Mens</span>
-                                        <input class="mt-1" type= "checkbox" name="gender[0]" value="Mens" id="" onclick="this.form.submit()"
+                                        <input class="mt-1" type= "checkbox" autocomplete='off' name="gender[0]" value="Mens" id="" onclick="this.form.submit()"
                                         @if (isset($params['gender'][0]))                                           
                                             checked = "checked"
                                         @endif>
                                     </li>
                                     <li class="d-flex py-2 text-gray justify-content-between">
                                         <span>Ladies</span>
-                                            <input class="mt-1" type= "checkbox" name="gender[1]"value="Ladies" id="" onclick="this.form.submit()"
+                                            <input class="mt-1" type= "checkbox" autocomplete='off' name="gender[1]"value="Ladies" id="" onclick="this.form.submit()"
                                         @if (isset($params['gender'][1]))
                                             checked = "checked"
                                         @endif>
                                     </li>
                                     <li class="d-flex py-2 text-gray justify-content-between">
                                         <span>Unisex</span>
-                                        <input class="mt-1" type= "checkbox" name="gender[2]" value="Unisex" id="" onclick="this.form.submit()"
+                                        <input class="mt-1" type= "checkbox" autocomplete='off' name="gender[2]" value="Unisex" id="" onclick="this.form.submit()"
                                         @if (isset($params['gender'][2]))
                                             checked = "checked"
                                         @endif>
@@ -208,7 +249,7 @@
                                             border: 1px solid black;
                                             @endif
                                             "></span>
-                                            <input class="mt-1 ml-4" type= "checkbox" name="color[]" value="{{$colors[$i]->name}}" id="" onclick="this.form.submit()"
+                                            <input class="mt-1 ml-4" type= "checkbox" autocomplete='off' name="color[]" value="{{$colors[$i]->name}}" id="" onclick="this.form.submit()"
                                             @if (isset($params['color'])&&(array_search($colors[$i]->name,$params['color'])!==false))
                                                 checked = "checked"
                                             @endif>
@@ -290,7 +331,7 @@
                                     @for ($i=0; $i<count($brands);$i++)
                                         <li class="d-flex py-2 text-gray justify-content-between">
                                             <span>{{$brands[$i]->name}}</span>
-                                            <input class="mt-1" type= "checkbox" 
+                                            <input class="mt-1" type= "checkbox" autocomplete='off' 
                                             name="brand[]" 
                                             value="{{$brands[$i]->name}}" 
                                             @if(isset($params['brand'])&&(array_search($brands[$i]->name,$params['brand'])!==false))
@@ -311,7 +352,7 @@
                                     @for ($i=0; $i<count($categories);$i++)
                                         <li class="d-flex py-2 text-gray justify-content-between">
                                             <span>{{$categories[$i]->name}}</span>
-                                            <input class="mt-1" type= "checkbox" name="category[]" value="{{$categories[$i]->name}}" id=""                                            
+                                            <input class="mt-1" type= "checkbox" autocomplete='off' name="category[]" value="{{$categories[$i]->name}}" id=""                                            
                                             @if (isset($params['category'])&&(array_search($categories[$i]->name,$params['category'])!==false))
                                               checked = "checked"
                                             @endif >
@@ -329,7 +370,7 @@
                                     @for ($i=0; $i<count($features);$i++)
                                         <li class="d-flex py-2 text-gray justify-content-between">
                                             <span>{{$features[$i]->name}}</span>
-                                            <input class="mt-1" type= "checkbox" name="feature[]" value="{{$features[$i]->name}}" 
+                                            <input class="mt-1" type= "checkbox" autocomplete='off' name="feature[]" value="{{$features[$i]->name}}" 
                                              id=""
                                              @if (isset($params['feature'])&&(array_search($features[$i]->name,$params['feature'])!==false))
                                                 checked = "checked"
@@ -347,21 +388,21 @@
                                 <ul class="pl-0 shop-list list-unstyled">
                                     <li class="d-flex py-2 text-gray justify-content-between">
                                         <span>Mens</span>
-                                        <input class="mt-1" type= "checkbox" name="gender[0]" value="Mens" id=""
+                                        <input class="mt-1" type= "checkbox" autocomplete='off' name="gender[0]" value="Mens" id=""
                                         @if (isset($params['gender'][0]))                                           
                                             checked = "checked"
                                         @endif>
                                     </li>
                                     <li class="d-flex py-2 text-gray justify-content-between">
                                         <span>Ladies</span>
-                                            <input class="mt-1" type= "checkbox" name="gender[1]"value="Ladies" id=""
+                                            <input class="mt-1" type= "checkbox" autocomplete='off' name="gender[1]"value="Ladies" id=""
                                         @if (isset($params['gender'][1]))
                                             checked = "checked"
                                         @endif>
                                     </li>
                                     <li class="d-flex py-2 text-gray justify-content-between">
                                         <span>Unisex</span>
-                                        <input class="mt-1" type= "checkbox" name="gender[2]" value="Unisex" id=""
+                                        <input class="mt-1" type= "checkbox" autocomplete='off' name="gender[2]" value="Unisex" id=""
                                         @if (isset($params['gender'][2]))
                                             checked = "checked"
                                         @endif>
@@ -429,7 +470,7 @@
                                             border: 1px solid black;
                                             @endif
                                             "></span>
-                                            <input class="mt-1 ml-4" type= "checkbox" name="color[]" value="{{$colors[$i]->name}}" id=""
+                                            <input class="mt-1 ml-4" type= "checkbox" autocomplete='off' name="color[]" value="{{$colors[$i]->name}}" id=""
                                             @if (isset($params['color'])&&(array_search($colors[$i]->name,$params['color'])!==false))
                                                 checked = "checked"
                                             @endif>
