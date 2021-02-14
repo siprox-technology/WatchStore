@@ -95,7 +95,7 @@ class ProductController extends Controller
             ->where('products.price', '<', $request->price)
             ->orderBy('products.'.$request->sortBy,'desc')
             ->paginate(9);
-/* dd($params); */
+
             return view('shop.sort_filter',
             [
                 'products'=>$products->appends(request()->input()),
@@ -109,9 +109,29 @@ class ProductController extends Controller
         }
     }
 
-    public function store(Request $request)
+    public function search(Request $request)
     {
-        //
+
+        if(isset($request->key))
+        {
+            $key = '%'.$request->key.'%';
+            //search for products to display
+            $products = DB::table('products')
+            ->join('brands', 'products.brand_id', '=', 'brands.id')
+            ->Orwhere('brands.name','like',$key)
+            ->Orwhere('products.name','like',$key)
+            ->Orwhere('products.category','like',$key)
+            ->Orwhere('products.feature','like',$key)
+            ->orderBy('price','desc')
+            ->paginate(9);
+            return view('shop.search',['products'=>$products->appends(request()->input())]);
+        }
+        else
+        {
+            return redirect()->route('shop.index');
+        }
+
+
     }
 
     public function edit(Product $product)

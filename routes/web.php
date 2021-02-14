@@ -31,7 +31,8 @@ Route::get('/', function () {
 Route::get('/shop', [ProductController::class,'index'])->name('shop.index');
 //sort and filter products
 Route::get('/shop/sort_filter', [ProductController::class,'show'])->name('shop.sort_filter.index');
-//remove filters
+//search products
+Route::get('/shop/search', [ProductController::class,'search'])->name('shop.search');
 
 //product details 
 Route::get('/product-details', function () {

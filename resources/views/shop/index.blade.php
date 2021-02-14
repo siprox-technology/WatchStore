@@ -55,7 +55,7 @@
                             <div class="col-12 my-auto align-self-sm-center px-0">
                                 <div class="row w-100 m-0 p-0">
                                     <p class="text-dark m-0 p-2 border">Filters :</p>
-                                    <p class="text-gray m-0 p-2 border">All</p>
+                                    <p class="text-gray m-0 ml-2 p-2 border">All</p>
                                </div>
                             </div>
                         </div>

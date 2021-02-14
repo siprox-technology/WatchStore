@@ -233,11 +233,9 @@
         <nav class="bg-gray py-3">
             <!-- search product -->
             <div class="row justify-content-center w-100">
-                <form class="col-10 col-md-6 ">
+                <form class="col-10 col-md-6 " action="{{route('shop.search')}}">
                     <input type="search" class="form-control" id="search-product"
-                        placeholder="Search...">
-                    <button type="submit" class="search-icon pr-3 r-0"><i
-                            class="ti-search text-color"></i></button>
+                        placeholder="Search..." name="key" value="{{old('key')}}">
                 </form>
             </div>
         </nav>

@@ -58,7 +58,7 @@
                                         {{-- brands filter --}}
                                         @if (isset($params['brand']))
                                             @for ($i = 0; $i < count($params['brand']); $i++)
-                                                <span class="text-gray m-0 p-2 border">
+                                                <span class="text-gray m-0 ml-2 p-2 border">
                                                     {{$params['brand'][$i]}}
                                                 </span>
                                             @endfor
@@ -66,7 +66,7 @@
                                         {{-- categories filter --}}
                                         @if (isset($params['category']))
                                             @for ($i = 0; $i < count($params['category']); $i++)
-                                                <span class="text-gray m-0 p-2 border">
+                                                <span class="text-gray m-0 ml-2 p-2 border">
                                                     {{$params['category'][$i]}}
                                                 </span>
                                             @endfor
@@ -74,7 +74,7 @@
                                         {{-- features --}}
                                         @if (isset($params['feature']))
                                             @for ($i = 0; $i < count($params['feature']); $i++)
-                                                <span class="text-gray m-0 p-2 border">
+                                                <span class="text-gray m-0 ml-2 p-2 border">
                                                     {{$params['feature'][$i]}}
                                                 </span>
                                             @endfor
@@ -82,7 +82,7 @@
                                         {{-- gender --}}
                                         @if (isset($params['gender']))
                                             @for ($i = 0; $i < count($params['gender']); $i++)
-                                                <span class="text-gray m-0 p-2 border">
+                                                <span class="text-gray m-0 ml-2 p-2 border">
                                                     {{$params['gender'][$i]}}
                                                 </span>
                                             @endfor                                          
@@ -90,13 +90,13 @@
                                         {{-- color --}}
                                         @if (isset($params['color']))
                                             @for ($i = 0; $i < count($params['color']); $i++)
-                                                <span class="text-gray m-0 p-2 border">
+                                                <span class="text-gray m-0 ml-2 p-2 border">
                                                     {{$params['color'][$i]}}
                                                 </span>
                                             @endfor                                          
                                         @endif
                                         {{-- price filters --}}
-                                        <span class="text-gray m-0 p-2 border">
+                                        <span class="text-gray m-0 ml-2 p-2 border">
                                             @if ($params['price']=='1000000')
                                                 All prices
                                             @else
@@ -104,7 +104,7 @@
                                             @endif
                                         </span>
                                         {{-- clear all filter --}}
-                                        <a href="{{route('shop.index')}}" class="text-warning border px-4 py-2 border-right">Clear all filters</a>
+                                        <a href="{{route('shop.index')}}" class="text-warning border ml-2 px-4 py-2 border-right">Clear all filters</a>
                                     </div>
                                 </div>
                             </div>
