@@ -33,11 +33,10 @@ Route::get('/shop', [ProductController::class,'index'])->name('shop.index');
 Route::get('/shop/sort_filter', [ProductController::class,'show'])->name('shop.sort_filter.index');
 //search products
 Route::get('/shop/search', [ProductController::class,'search'])->name('shop.search');
+//show product details
+Route::get('/shop/product_details/{product:model_number}', [ProductController::class,'showDetails'])->name('shop.product_details.index');
 
-//product details 
-Route::get('/product-details', function () {
-    return view('product-details');
-});
+
 
 //payment confirmation 
 Route::get('/confirm', function () {

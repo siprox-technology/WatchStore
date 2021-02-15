@@ -14,6 +14,7 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //display all products
     public function index()
     {
         $products = Product::latest()->paginate(9);
@@ -36,13 +37,15 @@ class ProductController extends Controller
             'genders'=>$genders
         ]);
     }
+    //display products based on request
     public function show(Request $request)
     {
-
         if(count($request->request)<3)
         {
             //products
-            $products = Product::latest()->paginate(9);
+            $products = Product::latest()
+            ->select('products.id as product_id','products.model_number','products.price','products.discount','products.name as name')
+            ->paginate(9);
             $brands = DB::table('brands')
                 ->join('products', 'brands.id', '=', 'products.brand_id')
                 ->select('brands.name')->distinct()
@@ -87,6 +90,7 @@ class ProductController extends Controller
             //filter sort and paginate products to display
             $products = DB::table('products')
             ->join('brands', 'products.brand_id', '=', 'brands.id')
+            ->select('products.id as product_id','products.model_number','products.price','products.discount','products.name as name')
             ->whereIn('brands.name',$params_brands)
             ->whereIn('products.category',$params_categories)
             ->whereIn('products.feature',$params_features)
@@ -95,7 +99,6 @@ class ProductController extends Controller
             ->where('products.price', '<', $request->price)
             ->orderBy('products.'.$request->sortBy,'desc')
             ->paginate(9);
-
             return view('shop.sort_filter',
             [
                 'products'=>$products->appends(request()->input()),
@@ -108,16 +111,16 @@ class ProductController extends Controller
             ]);
         }
     }
-
+    //search products
     public function search(Request $request)
     {
-
         if(isset($request->key))
         {
             $key = '%'.$request->key.'%';
             //search for products to display
             $products = DB::table('products')
             ->join('brands', 'products.brand_id', '=', 'brands.id')
+            ->select('products.id as product_id','products.model_number','products.price','products.discount','products.name as name')
             ->Orwhere('brands.name','like',$key)
             ->Orwhere('products.name','like',$key)
             ->Orwhere('products.category','like',$key)
@@ -133,10 +136,11 @@ class ProductController extends Controller
 
 
     }
-
-    public function edit(Product $product)
+    //show product details page
+    public function showDetails($model_number)
     {
-        //
+        $product = DB::table('products')->where('model_number', $model_number)->first();
+        return view('product-details',['product'=>$product]);/* here */
     }
 
 

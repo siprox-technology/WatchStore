@@ -276,7 +276,7 @@
                                 <div class="product text-center">
                                     <div class="product-thumb">
                                         <div class="overflow-hidden position-relative">
-                                            <a href="product-single.html">
+                                            <a href="{{route('shop.product_details.index',$product->model_number)}}">
                                                 <img class="img-fluid w-100 mb-3 img-first"
                                                     src="{{asset('images/product-images/'.$product->model_number.'/'.$product->model_number.'-0.jpg')}}" alt="product-img">
                                                 <img class="img-fluid w-100 mb-3 img-second"
@@ -288,7 +288,7 @@
                                         </div>
                                     </div>
                                     <div class="product-info">
-                                        <h3 class="h6"><a class="text-color" href="product-single.html">{{$product->name}}</a></h3>
+                                        <h3 class="h6"><a class="text-color" href="{{route('shop.product_details.index',$product->model_number)}}">{{$product->name}}</a></h3>
                                         <span class="h6"><b>{{$product->price}}</b></span>
                                     </div>
                                     <!-- product label badge -->
