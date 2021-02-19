@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Collection;
 
+
 class ProductController extends Controller
 {
     /**
@@ -139,8 +140,34 @@ class ProductController extends Controller
     //show product details page
     public function showDetails($model_number)
     {
-        $product = DB::table('products')->where('model_number', $model_number)->first();
-        return view('product-details',['product'=>$product]);/* here */
+        //product model
+        $product = Product::where('model_number', $model_number)->first();
+        $numOfImages = count(\File::allFiles(public_path("images/product-images/".$model_number)));
+        //product specs array
+        $product_specs = explode(',',(DB::table('products')->
+        select('specification')->
+        where('model_number',$model_number)->first())->specification);
+        $specs = [];
+        $i = 0;
+        while($i<count($product_specs))
+        {
+            $specs += [$product_specs[$i] => $product_specs[$i+1]];
+            $i+=2; 
+        }
+        //related items
+        $related_products = DB::table('products')
+        ->select('id','model_number','price','discount','name')
+        ->where('feature','like',(explode(' ',$product->feature))[0].'%')
+        ->where('gender','=',$product->gender)
+        ->orderBy('price','desc')->get();
+/* dd($related_products); */
+        return view('product-details',
+        [
+            'product'=>$product,
+            'numOfImages'=>$numOfImages,
+            'specs'=>$specs,
+            'related_products'=>$related_products
+        ]);
     }
 
 

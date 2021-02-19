@@ -5,17 +5,6 @@
         <!-- main wrapper -->
         <div class="main-wrapper">
 
-            <!-- breadcrumb -->
-            <nav class="bg-gray py-3">
-                <div class="container">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">My Accounts</li>
-                    </ol>
-                </div>
-            </nav>
-            <!-- /breadcrumb -->
-
             <section class="user-dashboard section">
                 <div class="container">
                     <div class="row">
@@ -25,7 +14,6 @@
                                         Details</a></li>
                                 <li class="list-inline-item m-1"><a class="active" href="{{route('changePass.index')}}">Change password</a></li>
                                 <li class="list-inline-item m-1"><a href="{{route('changeAddress.index')}}">Address</a></li>
-                                <li class="list-inline-item m-1"><a href="{{route('basket.index')}}">Basket</a></li>
                                 <li class="list-inline-item m-1"><a href="{{route('orderHistory.index')}}">Orders</a></li>
                                 <li class="list-inline-item m-1"><a href="{{route('contactPref.index')}}">Contact method</a></li>
                             </ul>

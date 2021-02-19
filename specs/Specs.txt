@@ -66,7 +66,7 @@ Back end functionalities=>
 *User log in\log out and session time tracking by 5 mins.---
 *Resend activation email if not received.
 *User reset forgotten password through email.
--User profile 
+-*User profile 
     *Update account details. 
     *Change password.
     *Address Details. add or remove. 
@@ -78,16 +78,17 @@ Back end functionalities=>
 *Display best selling items.
 *Sort products by brands,gender,category,type,color,price and discount.
 -Display product details page:
-    -brand, category, product number(product_id), name, model_number,
-     type, gender, price, discount, color, description, specifications
-     reviews, Images, stock availability
--Display related products in product details page.
+-*brand,*category,*product number(product_id),*name,*model_number,
+     *type,*gender,*price,*discount,*color,*description,*specifications
+     reviews, *Images, *stock availability.
+*Display related products in product details page.
 
--User add and remove items to and from shopping basket.
+-User add,remove and update items in shopping basket.
 -User makes payment using Stripe payment(sandbox) api with a visa card (test card=> '4242 4242 4242 4242' any 'zip' and any 'date').
 -Display Payment information if failed or success.
--Display order history and orders with failed payment.
 -Retry payment for failed orders.
+
+-Display order history and orders with failed payment.
 -Add and display reviews to items that user has bought.
--display cookie policy confirmation page
+-display cookie policy confirmation page.
 *****************************************

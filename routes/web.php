@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Password;
 use App\Http\Controllers\LoginController;
@@ -35,6 +36,11 @@ Route::get('/shop/sort_filter', [ProductController::class,'show'])->name('shop.s
 Route::get('/shop/search', [ProductController::class,'search'])->name('shop.search');
 //show product details
 Route::get('/shop/product_details/{product:model_number}', [ProductController::class,'showDetails'])->name('shop.product_details.index');
+
+
+//shopping cart
+Route::get('/cart', [CartController::class,'index'])->name('cart.index');
+//add items to cart
 
 
 

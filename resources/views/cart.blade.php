@@ -6,30 +6,10 @@
         <!-- main wrapper -->
         <div class="main-wrapper">
 
-            <!-- breadcrumb -->
-            <nav class="bg-gray py-3">
-                <div class="container">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">My Accounts</li>
-                    </ol>
-                </div>
-            </nav>
-            <!-- /breadcrumb -->
-
             <section class="user-dashboard section">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <ul class="list-inline dashboard-menu text-center">
-                                <li class="list-inline-item m-1"><a  href="{{route('dashboard.index')}}">Profile
-                                        Details</a></li>
-                                <li class="list-inline-item m-1"><a href="{{route('changePass.index')}}">Change password</a></li>
-                                <li class="list-inline-item m-1"><a href="{{route('changeAddress.index')}}">Address</a></li>
-                                <li class="list-inline-item m-1"><a class="active" href="{{route('basket.index')}}">Basket</a></li>
-                                <li class="list-inline-item m-1"><a href="{{route('orderHistory.index')}}">Orders</a></li>
-                                <li class="list-inline-item m-1"><a href="{{route('contactPref.index')}}">Contact method</a></li>
-                            </ul>
                             <div class="block text-center border border-grey mt-5 py-5 px-sm-5 px-2">
                                 <div class="row">
                                     <div class="col-md-10 mx-auto">
