@@ -1,18 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-
         <!-- shopping basket-->
         <!-- main wrapper -->
         <div class="main-wrapper">
-
             <section class="user-dashboard section">
-                <div class="container">
-                    <div class="row">
+                    <div class="row px-lg-5 px-md-4 p-3">
                         <div class="col-md-12">
-                            <div class="block text-center border border-grey mt-5 py-5 px-sm-5 px-2">
+                            <div class="block text-center border border-grey mt-5 p-3">
                                 <div class="row">
-                                    <div class="col-md-10 mx-auto">
+                                    <div class="col-12 mx-auto">
                                         <div class="block">
                                             <div class="product-list">
                                                 <form method="#">
@@ -27,143 +24,39 @@
                                                                     <th>Sub Total</th>
                                                                 </tr>
                                                             </thead>
+                                                            {{-- items in the cart  --}}
                                                             <tbody>
+                                                                @if (Session::has('cart'))
+                                                                    @foreach (Session::get('cart')->items as $item)
+                                                                    <tr>
+                                                                        {{-- delete icon --}}
+                                                                        <td>
+                                                                            <a class="product-remove" href="{{route('cart.remove',$item['item'])}}">×</a>
+                                                                        </td>
+                                                                        {{-- images and name --}}
+                                                                        <td>
+                                                                            <div class="row">
+                                                                                    <img class="" style="height:75px;width:75px;"
+                                                                                    src="{{asset('images/product-images/'.$item['item']['model_number'].'/'.$item['item']['model_number'].'-0.jpg')}}"
+                                                                                    alt="product-img">
+                                                                                <div class="col-10 text-left">
+                                                                                    <a href="">{{$item['item']['name']}}</a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                        {{-- price --}}
+                                                                        <td>${{($item['price'])/($item['quantity'])}}</td>
+                                                                        <td>{{$item['quantity']}}</td>
+                                                                        <td>${{$item['price']}}</td>
+                                                                    </tr>
+                                                                    @endforeach
+                                                                @else
                                                                 <tr>
                                                                     <td>
-                                                                        <a class="product-remove" href="">×</a>
+                                                                        <p class="text-danger">Shopping cart empty !</p>
                                                                     </td>
-                                                                    <td>
-                                                                        <div class="product-info">
-                                                                            <img class="img-fluid"
-                                                                                src="{{asset('images/cart/product-1.jpg')}}"
-                                                                                alt="product-img">
-                                                                            <a href="">Tops</a>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>$200.00</td>
-                                                                    <td>
-                                                                        <div
-                                                                            class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
-                                                                            <span
-                                                                                class="input-group-btn input-group-prepend"><button
-                                                                                    class="btn btn-primary bootstrap-touchspin-down"
-                                                                                    type="button">-</button><button
-                                                                                    class="btn btn-primary bootstrap-touchspin-down bootstrap-touchspin-injected"
-                                                                                    type="button">-</button></span><input
-                                                                                type="text" value="1"
-                                                                                name="cart-quantity"
-                                                                                class="form-control"><span
-                                                                                class="input-group-btn input-group-append"><button
-                                                                                    class="btn btn-primary bootstrap-touchspin-up bootstrap-touchspin-injected"
-                                                                                    type="button">+</button><button
-                                                                                    class="btn btn-primary bootstrap-touchspin-up"
-                                                                                    type="button">+</button></span>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>$200.00</td>
                                                                 </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <a class="product-remove" href="">×</a>
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="product-info">
-                                                                            <img class="img-fluid"
-                                                                                src="{{asset('images/cart/product-2.jpg')}}"
-                                                                                alt="product-img">
-                                                                            <a href="">Jacket</a>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>$200.00</td>
-                                                                    <td>
-                                                                        <div
-                                                                            class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
-                                                                            <span
-                                                                                class="input-group-btn input-group-prepend"><button
-                                                                                    class="btn btn-primary bootstrap-touchspin-down"
-                                                                                    type="button">-</button><button
-                                                                                    class="btn btn-primary bootstrap-touchspin-down bootstrap-touchspin-injected"
-                                                                                    type="button">-</button></span><input
-                                                                                type="text" value="1"
-                                                                                name="cart-quantity"
-                                                                                class="form-control"><span
-                                                                                class="input-group-btn input-group-append"><button
-                                                                                    class="btn btn-primary bootstrap-touchspin-up bootstrap-touchspin-injected"
-                                                                                    type="button">+</button><button
-                                                                                    class="btn btn-primary bootstrap-touchspin-up"
-                                                                                    type="button">+</button></span>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>$200.00</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <a class="product-remove" href="">×</a>
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="product-info">
-                                                                            <img class="img-fluid"
-                                                                                src="{{asset('images/cart/product-1.jpg')}}"
-                                                                                alt="product-img">
-                                                                            <a href="">Scarf</a>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>$200.00</td>
-                                                                    <td>
-                                                                        <div
-                                                                            class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
-                                                                            <span
-                                                                                class="input-group-btn input-group-prepend"><button
-                                                                                    class="btn btn-primary bootstrap-touchspin-down"
-                                                                                    type="button">-</button><button
-                                                                                    class="btn btn-primary bootstrap-touchspin-down bootstrap-touchspin-injected"
-                                                                                    type="button">-</button></span><input
-                                                                                type="text" value="1"
-                                                                                name="cart-quantity"
-                                                                                class="form-control"><span
-                                                                                class="input-group-btn input-group-append"><button
-                                                                                    class="btn btn-primary bootstrap-touchspin-up bootstrap-touchspin-injected"
-                                                                                    type="button">+</button><button
-                                                                                    class="btn btn-primary bootstrap-touchspin-up"
-                                                                                    type="button">+</button></span>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>$200.00</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <a class="product-remove" href="">×</a>
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="product-info">
-                                                                            <img class="img-fluid"
-                                                                                src="{{asset('images/cart/product-2.jpg')}}"
-                                                                                alt="product-img">
-                                                                            <a href="">Tops</a>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>$200.00</td>
-                                                                    <td>
-                                                                        <div
-                                                                            class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
-                                                                            <span
-                                                                                class="input-group-btn input-group-prepend"><button
-                                                                                    class="btn btn-primary bootstrap-touchspin-down"
-                                                                                    type="button">-</button><button
-                                                                                    class="btn btn-primary bootstrap-touchspin-down bootstrap-touchspin-injected"
-                                                                                    type="button">-</button></span><input
-                                                                                type="text" value="1"
-                                                                                name="cart-quantity"
-                                                                                class="form-control"><span
-                                                                                class="input-group-btn input-group-append"><button
-                                                                                    class="btn btn-primary bootstrap-touchspin-up bootstrap-touchspin-injected"
-                                                                                    type="button">+</button><button
-                                                                                    class="btn btn-primary bootstrap-touchspin-up"
-                                                                                    type="button">+</button></span>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>$200.00</td>
-                                                                </tr>
+                                                                @endif
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -177,20 +70,22 @@
                                                             class="btn btn-outline-primary ml-md-3 w-100 mb-3 mb-md-0">Apply
                                                             Coupon</button>
                                                         <a href="#" class="btn ml-md-4 btn-dark w-100">Update Cart</a>
+                                                        <a href="{{route('cart.removeAll')}}" class="btn ml-md-4 btn-danger w-100">Delete Cart</a>
                                                     </div>
                                                     <hr>
                                                     <div class="row">
                                                         <div class="col-12">
                                                             <ul class="list-unstyled text-right">
-                                                                <li>Sub Total <span
-                                                                        class="d-inline-block w-100px">$800.00</span>
+                                                                 {{-- total price and tax  --}}
+{{--                                                                 <li>Sub Total <span
+                                                                        class="d-inline-block w-100px">{{Session::get('cart')->totalPrice}}</span>
                                                                 </li>
-                                                                <li>UK Vat <span
-                                                                        class="d-inline-block w-100px">$10.00</span>
+                                                                <li>Tax@ 10%<span
+                                                                        class="d-inline-block w-100px">{{round((Session::get('cart')->totalPrice)*10/100,2)}}</span>
                                                                 </li>
                                                                 <li>Grand Total <span
-                                                                        class="d-inline-block w-100px">$10.00</span>
-                                                                </li>
+                                                                        class="d-inline-block w-100px">${{round((Session::get('cart')->totalPrice)+((Session::get('cart')->totalPrice)*10/100),2)}}</span>
+                                                                </li> --}}
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -205,6 +100,5 @@
                             </div>
                         </div>
                     </div>
-                </div>
             </section>
 @endsection

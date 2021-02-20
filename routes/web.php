@@ -41,6 +41,14 @@ Route::get('/shop/product_details/{product:model_number}', [ProductController::c
 //shopping cart
 Route::get('/cart', [CartController::class,'index'])->name('cart.index');
 //add items to cart
+Route::get('/cart/{id}/add', [CartController::class,'store'])->name('cart.add');
+//remove items from cart
+Route::get('/cart/{id}/remove', [CartController::class,'destroy'])->name('cart.remove');
+//remove all items in cart
+Route::get('/cart/removeAll', function(){
+    Session::forget('cart');
+    return back();
+})->name('cart.removeAll');
 
 
 

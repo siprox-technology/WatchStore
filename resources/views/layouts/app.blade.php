@@ -193,32 +193,36 @@
                         <div class="cart">
                             <button id="cartOpen" class="cart-btn"><i class="fas fa-shopping-cart"></i><span
                                     class="d-xs-none">CART</span>
-                                3</button>
+                                    {{Session::has('cart')?Session::get('cart')->totalQty:'0'}}
+                            </button>
                                 {{-- cart links --}}
                             <div class="cart-wrapper">
-                                <i id="cartClose" class="ti-close cart-close"></i>
+                                <i id="cartClose" class="cart-close">X</i>
                                 <h4 class="mb-4">Your Cart</h4>
                                 <ul class="pl-0 mb-3">
+                                    @if (Session::has('cart'))
+                                        @foreach (Session::get('cart')->items as $item)
+                                            <li class="d-flex border-bottom">
+                                                <img class="" style="width:50px; height:50px;" src="{{asset('images/product-images/'.$item['item']['model_number'].'/'.$item['item']['model_number'].'-0.jpg')}}" alt="product-img">
+                                                <div class="mx-3">
+                                                    <p class="mb-0">{{$item['item']['model_number']}}</p>
+                                                    <h6>{{$item['item']['name']}}</h6>
+                                                    <span>{{$item['quantity']}}</span> X <span>${{$item['price']}}</span>
+                                                </div>
+                                                {{-- remove item --}}
+                                                <a href ="{{route('cart.remove',$item['item'])}}" class="text-danger">X</a>
+                                            </li>
+                                        @endforeach
+                                    @else
                                     <li class="d-flex border-bottom">
-                                        <img src="{{asset('images/cart/product-1.jpg')}}" alt="product-img">
-                                        <div class="mx-3">
-                                            <h6>Eleven Paris Skinny Jeans</h6>
-                                            <span>1</span> X <span>$79.00</span>
-                                        </div>
-                                        <i class="ti-close"></i>
+                                        <p class="text-center">Shopping cart empty !</p>
                                     </li>
-                                    <li class="d-flex border-bottom">
-                                        <img src="{{asset('images/cart/product-2.jpg')}}" alt="product-img">
-                                        <div class="mx-3">
-                                            <h6>Eleven Paris Skinny Jeans top</h6>
-                                            <span>1 X</span> <span>$79.00</span>
-                                        </div>
-                                        <i class="ti-close"></i>
-                                    </li>
+                                    @endif
+
                                 </ul>
                                 <div class="mb-3">
                                     <span>Cart Total</span>
-                                    <span class="float-right">$79.00</span>
+                                    <span class="float-right">{{(Session::has('cart'))?Session::get('cart')->totalPrice:'0'}}</span>
                                 </div>
                                 <div class="text-center">
                                     <a href="{{route('cart.index')}}" class="btn btn-dark btn-mobile rounded-0">view cart</a>
