@@ -112,6 +112,7 @@
                                 <button type="submit" class="btn btn-primary">Pay</button>
                             </div>
                         </form>
+                        
                     </div>
                 </div>
                 <div class="col-md-4">
