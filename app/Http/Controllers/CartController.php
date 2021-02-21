@@ -12,8 +12,6 @@ class CartController extends Controller
 
     public function index()
     {
-/*         Session::forget('cart'); */
-/*         dd(Session::get('cart')); */
         return view('cart');
     }
 
@@ -24,7 +22,6 @@ class CartController extends Controller
         $cart = new Cart($oldCart);
         $cart->add($product,$id);
         $request->session()->put('cart',$cart);
-/*         dd($request->session()->get('cart')); */
         return back();  
     }
     public function destroy($id)
@@ -35,31 +32,4 @@ class CartController extends Controller
         return back(); 
     }
 
-    public function show(Cart $cart)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Cart  $cart
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Cart $cart)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Cart  $cart
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Cart $cart)
-    {
-        //
-    }
 }

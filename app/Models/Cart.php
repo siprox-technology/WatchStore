@@ -2,12 +2,8 @@
 
 namespace App\Models;
 
-/* use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model; */
-
 class Cart 
 {
-/*     use HasFactory; */
     public $items = null;
     public $totalQty = 0;
     public $totalPrice = 0;

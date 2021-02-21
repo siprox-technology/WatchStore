@@ -37,14 +37,12 @@ id,email,name,phone,
 address,city,state,country,post_code
 ,password,contact_pref,created_at,update_at,act_code
 
-
 --------------------------------
 Order:
 id,date,created_at,updated_at,status,
 delivery_price,
 total_price,
 FK_user_id_order_user,
-FK_address_id_order_address
 
 --------------------------------
 order_items:
@@ -82,8 +80,8 @@ Back end functionalities=>
      *type,*gender,*price,*discount,*color,*description,*specifications
      reviews, *Images, *stock availability.
 *Display related products in product details page.
+*User add,remove items in shopping basket.
 
--User add,remove and update items in shopping basket.
 -User makes payment using Stripe payment(sandbox) api with a visa card (test card=> '4242 4242 4242 4242' any 'zip' and any 'date').
 -Display Payment information if failed or success.
 -Retry payment for failed orders.

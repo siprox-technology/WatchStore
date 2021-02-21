@@ -160,7 +160,7 @@ class ProductController extends Controller
         ->where('feature','like',(explode(' ',$product->feature))[0].'%')
         ->where('gender','=',$product->gender)
         ->orderBy('price','desc')->get();
-/* dd($related_products); */
+        
         return view('product-details',
         [
             'product'=>$product,

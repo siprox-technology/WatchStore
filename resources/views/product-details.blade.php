@@ -81,7 +81,7 @@
                                 "></span>
                             </div>
 
-                            <a href="#" class="btn btn-primary mb-4">add to cart</a>
+                            <a href="{{route('cart.add',$product->id)}}" class="btn btn-primary mb-4">add to cart</a>
                             <h4 class="mb-3"><span class="text-primary">Harry up!</span> Sale ends in</h4>
                             <!-- syo-timer -->
                             <div class="syotimer dark">
