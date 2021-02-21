@@ -161,7 +161,7 @@ class ProductController extends Controller
         ->where('gender','=',$product->gender)
         ->orderBy('price','desc')->get();
         
-        return view('product-details',
+        return view('shop.product-details',
         [
             'product'=>$product,
             'numOfImages'=>$numOfImages,

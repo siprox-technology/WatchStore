@@ -6,3 +6,4 @@
 - optimize command php
 - learn about server deployment
 -optimize links like google font link
+-display numbers decimal points

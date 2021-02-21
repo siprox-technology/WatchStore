@@ -61,14 +61,7 @@
                                                         </table>
                                                     </div>
                                                     <hr>
-                                                    <div class="d-flex flex-column flex-md-row align-items-center">
-                                                        <input type="text"
-                                                            class="form-control text-md-left text-center mb-3 mb-md-0"
-                                                            name="coupon" id="coupon"
-                                                            placeholder="I have a discout coupon">
-                                                        <button
-                                                            class="btn btn-outline-primary ml-md-3 w-100 mb-3 mb-md-0">Apply
-                                                            Coupon</button>
+                                                    <div class="d-flex flex-column flex-md-row align-items-center ">
                                                         <a href="#" class="btn ml-md-4 btn-dark w-100">Update Cart</a>
                                                         <a href="{{route('cart.removeAll')}}" class="btn ml-md-4 btn-danger w-100">Delete Cart</a>
                                                     </div>
@@ -77,20 +70,20 @@
                                                         <div class="col-12">
                                                             <ul class="list-unstyled text-right">
                                                                  {{-- total price and tax  --}}
-{{--                                                                 <li>Sub Total <span
-                                                                        class="d-inline-block w-100px">{{Session::get('cart')->totalPrice}}</span>
+                                                                <li>Sub Total <span
+                                                                        class="d-inline-block w-100px">{{(Session::has('cart'))?Session::get('cart')->totalPrice:'0'}}</span>
                                                                 </li>
                                                                 <li>Tax@ 10%<span
-                                                                        class="d-inline-block w-100px">{{round((Session::get('cart')->totalPrice)*10/100,2)}}</span>
+                                                                        class="d-inline-block w-100px">{{(Session::has('cart'))?round((Session::get('cart')->totalPrice)*10/100,2):'0'}}</span>
                                                                 </li>
                                                                 <li>Grand Total <span
-                                                                        class="d-inline-block w-100px">${{round((Session::get('cart')->totalPrice)+((Session::get('cart')->totalPrice)*10/100),2)}}</span>
-                                                                </li> --}}
+                                                                        class="d-inline-block w-100px">${{(Session::has('cart'))?round((Session::get('cart')->totalPrice)+((Session::get('cart')->totalPrice)*10/100),2):'0'}}</span>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                     <hr>
-                                                    <a href="checkout.html"
+                                                    <a href="{{route('checkout.index')}}"
                                                         class="btn btn-primary float-right">Checkout</a>
                                                 </form>
                                             </div>
