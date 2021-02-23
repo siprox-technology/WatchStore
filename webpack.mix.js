@@ -41,3 +41,5 @@ mix.combine([
     "resources/plugins/google-map/gmap.js",
     "resources/js/script.js",
 ], 'public/js/app.js');
+
+mix.combine(["resources/js/charge.js"], 'public/js/charge.js');
