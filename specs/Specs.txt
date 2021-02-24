@@ -39,8 +39,9 @@ address,city,state,country,post_code
 
 --------------------------------
 Order:
-id,date,created_at,updated_at,status,
+id,created_at,updated_at,status,
 delivery_price,
+deliver_address, deliver_city,delivery_state, deliver_postal_code, delivery_country
 total_price,
 FK_user_id_order_user,
 
@@ -55,8 +56,13 @@ FK_product_id_items_product
 Payment:
 id,amount,paymen_method,last_four_digit,
 payment_ref,FK_order_id_pay_order
+---------------------------------------
+dynamic objects in session:
 
-
+Cart:
+items =>Product:class,
+totalQty,
+totalPrice,
 *****************************************
 Back end functionalities=>
 

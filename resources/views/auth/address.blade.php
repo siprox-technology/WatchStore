@@ -60,7 +60,7 @@
                                             <div class="form-group">
                                                 <input type="text" name ="state" maxlength="29"
                                                 class="form-control @error('state') border border-danger @enderror" placeholder="State"
-                                                value="{{old('city')}}">
+                                                value="{{old('state')}}">
                                                 @error('state')
                                                     <div class="text-danger">
                                                         {{$message}}

@@ -6,10 +6,13 @@ use Illuminate\Http\Request;
 use Session;
 class PaymentController extends Controller
 {
+    public function index()
+    {
+        return view('orders.payment');
+    }
     
     public function store(Request $request)
     {
-
         // This is your real test secret API key.
         \Stripe\Stripe::setApiKey('sk_test_51HcWlxGzZBtnGj1lUdweCw4OboX34Ku0oaXsjzQ06qygmZRlileOThhDPjB3nF2PMjeCdEoCstRi3CvUTFLrR5KP00A7XFd8hP');
         //get order from session 

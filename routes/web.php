@@ -6,6 +6,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Password;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Auth\Events\PasswordReset;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
@@ -56,6 +57,10 @@ Route::get('/cart/removeAll', function(){
 
 //checkout page
 Route::get('/checkout', [CheckoutController::class,'index'])->name('checkout.index');
+//save order
+Route::post('/checkout/saveOrder',[OrderController::class,'store'])->name('order.submit');
+//order confirmation page
+Route::get('/checkout/orderConfirmation/{order}',[OrderController::class,'displayConfirmation'])->name('order.confirmation');
 
 //payment request to stripe
 Route::post('/payment',[PaymentController::class,'store'])->name('payment.submit');
