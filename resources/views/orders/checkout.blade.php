@@ -8,7 +8,7 @@
                 <!-- shipping-information -->
                 <div class="col-12 col-md-10">
                     <div class="inner-wrapper border-box">
-                        <h3 class="mb-5 border-bottom pb-2">Shipping Information</h3>
+                        <h3 class="mb-5 border-bottom pb-2">Confirm shipping Information</h3>
                         <form class="row mb-5" action="{{route('order.submit')}}" method="POST">
                             @csrf
                             {{-- delivery address --}}

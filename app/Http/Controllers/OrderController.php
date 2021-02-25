@@ -33,7 +33,9 @@ class OrderController extends Controller
       'delivery_method'=>'required|int|min:0|max:1']);   
       //save order
       $delivery_price = (($request->delivery_method)==0?'9.99':'19.99');
-      $total_price = $delivery_price + Session::get('cart')->totalPrice; 
+      $price = $delivery_price + Session::get('cart')->totalPrice;
+      $tax = ($price)*10/100;
+      $total_price = $price + $tax;
       $order = Order::create(
          [
          'status' => 'pending',
@@ -61,11 +63,13 @@ class OrderController extends Controller
          );
          array_push($order_items,$items);   
       }
-     return \redirect()->route('order.confirmation',['order'=>$order]);
+      //remove cart items
+      Session::forget('cart');
+      return \redirect()->route('order.confirmation',['order'=>$order]);
 
    }
    return \redirect()->route('cart.index');
-/* here */
+
  }
  public function displayConfirmation(Order $order)
  {

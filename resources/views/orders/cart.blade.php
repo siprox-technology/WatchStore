@@ -73,12 +73,12 @@
                                                                 <li>Sub Total <span
                                                                         class="d-inline-block w-100px">{{(Session::has('cart'))?Session::get('cart')->totalPrice:'0'}}</span>
                                                                 </li>
-                                                                <li>Tax@ 10%<span
+{{--                                                                 <li>Tax@ 10%<span
                                                                         class="d-inline-block w-100px">{{(Session::has('cart'))?round((Session::get('cart')->totalPrice)*10/100,2):'0'}}</span>
                                                                 </li>
                                                                 <li>Grand Total <span
                                                                         class="d-inline-block w-100px">${{(Session::has('cart'))?round((Session::get('cart')->totalPrice)+((Session::get('cart')->totalPrice)*10/100),2):'0'}}</span>
-                                                                </li>
+                                                                </li> --}}
                                                             </ul>
                                                         </div>
                                                     </div>
