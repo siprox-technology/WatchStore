@@ -56,6 +56,7 @@ FK_product_id_items_product
 Payment:
 id,amount,paymen_method,last_four_digit,
 payment_ref,FK_order_id_pay_order
+FK_user_id_pay_user
 ---------------------------------------
 dynamic objects in session:
 

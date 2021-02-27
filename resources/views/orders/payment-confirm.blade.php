@@ -11,8 +11,8 @@
                     <div class="row">
                         <div class="col-md-6 mx-auto">
                             <div class="block text-center">
-                                <h3 class="text-center mb-3">Thank you! For your payment</h3>
-                                <p class="text-color">Your order has been placed and will be processed as soon as
+                                <h3 class="text-center mb-3">Thank you! For your payment:</h3>
+                                <p class="text-color">Your order number : {{-- {{$order[0]->id}} --}} has been placed and will be processed as soon as
                                     possible. Make sure you make note of your order number, which is <span
                                         class="text-primary">34VB5540K83</span> You will be receiving an email shortly
                                     with confirmation of your order. You can now:</p>

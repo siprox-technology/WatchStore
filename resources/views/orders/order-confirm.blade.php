@@ -53,7 +53,7 @@
                                 <div class="col-md-5">
                                     <h4 class="mb-3">Shipping Method</h4>
                                     <ul class="list-unstyled">
-                                        @if (($order->deliver_price)=='9.99')
+                                        @if (($order->delivery_price)=='9.99')
                                             <li>Standard 8-10 business days - $9.99 </li>
                                         @else
                                             <li>Express 1-2 business days - 19.99 </li>
@@ -64,8 +64,8 @@
         
                             <!-- buttons -->
                             <div class="p-4 bg-gray d-flex justify-content-between">
-                                    <a href="payment.html" class="btn btn-dark">Back</a>
-                                <a href="confirmation.html" class="btn btn-primary">Continue</a>
+                                <a href="payment.html" class="btn btn-dark">Back</a>
+                                <a href="{{route('payment.index',$order->id)}}" class="btn btn-primary">Payment</a>
                             </div>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                             <hr>
                             <div class="d-flex justify-content-between">
                                 <span>Total</span>
-                                <strong>${{$order->total_price}}</strong> {{--  --}}
+                                <strong>${{$order->total_price}}</strong> 
                             </div>
                         </div>
                     </div>

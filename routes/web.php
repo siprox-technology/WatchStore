@@ -63,8 +63,12 @@ Route::post('/checkout/saveOrder',[OrderController::class,'store'])->name('order
 Route::get('/checkout/orderConfirmation/{order}',[OrderController::class,'displayConfirmation'])->name('order.confirmation');
 
 //payment request to stripe
+Route::get('/payment/{order:id}',[PaymentController::class,'index'])->name('payment.index');
 Route::post('/payment',[PaymentController::class,'store'])->name('payment.submit');
 
+Route::get('/payment',function(){/* here */
+    return view('orders.payment-confirm');
+})->name('payment.confirmation');
 
 //register
 Route::get('/register',[RegisterController::class,'index'])->name('register.index');
