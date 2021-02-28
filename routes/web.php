@@ -57,16 +57,20 @@ Route::get('/cart/removeAll', function(){
 
 //checkout page
 Route::get('/checkout', [CheckoutController::class,'index'])->name('checkout.index');
+
+//order history
+Route::get('/dashboard/orders',[OrderController::class,'index'])->name('orders.index');
 //save order
 Route::post('/checkout/saveOrder',[OrderController::class,'store'])->name('order.submit');
 //order confirmation page
 Route::get('/checkout/orderConfirmation/{order}',[OrderController::class,'displayConfirmation'])->name('order.confirmation');
-
+//get back to cart from order confirmation
+Route::post('/checkout/orderConfirmation/',[OrderController::class,'backToCart'])->name('order.backToCart');
 //payment request to stripe
-Route::get('/payment/{order:id}',[PaymentController::class,'index'])->name('payment.index');
-Route::post('/payment',[PaymentController::class,'store'])->name('payment.submit');
 
-Route::get('/payment',function(){/* here */
+Route::get('/payment/{order:id}/paymentPage',[PaymentController::class,'index'])->name('payment.index');
+Route::post('/payment',[PaymentController::class,'store'])->name('payment.submit');
+Route::get('/payment/confirmation',function(){
     return view('orders.payment-confirm');
 })->name('payment.confirmation');
 
@@ -109,12 +113,6 @@ Route::post('/dashboard/changePassword', [UserController::class,'changePassword'
 Route::get('/dashboard/changeAddress', function () {
     return view('auth.address');})->middleware('auth')->name('changeAddress.index');    
 Route::post('/dashboard/changeAddress', [UserController::class,'changeAddress'])->name('user.changeAddress');
-//shopping basket
-Route::get('/dashboard/shoppingCart', function () {
-    return view('auth.cart');})->middleware('auth')->name('basket.index');
-//order history
-Route::get('/dashboard/orderHistory', function () {
-    return view('auth.order-history');})->middleware('auth')->name('orderHistory.index');
 //change contact preferences
 Route::get('/dashboard/contactPref', function () {
     return view('auth.contact-pref');})->middleware('auth')->name('contactPref.index');

@@ -62,7 +62,7 @@
                                                     </div>
                                                     <hr>
                                                     <div class="d-flex flex-column flex-md-row align-items-center ">
-                                                        <a href="#" class="btn ml-md-4 btn-dark w-100">Update Cart</a>
+                                                        <a href="{{route('shop.index')}}" class="btn ml-md-4 btn-dark w-100">Continue shopping</a>
                                                         <a href="{{route('cart.removeAll')}}" class="btn ml-md-4 btn-danger w-100">Delete Cart</a>
                                                     </div>
                                                     <hr>
@@ -73,12 +73,6 @@
                                                                 <li>Sub Total <span
                                                                         class="d-inline-block w-100px">{{(Session::has('cart'))?Session::get('cart')->totalPrice:'0'}}</span>
                                                                 </li>
-{{--                                                                 <li>Tax@ 10%<span
-                                                                        class="d-inline-block w-100px">{{(Session::has('cart'))?round((Session::get('cart')->totalPrice)*10/100,2):'0'}}</span>
-                                                                </li>
-                                                                <li>Grand Total <span
-                                                                        class="d-inline-block w-100px">${{(Session::has('cart'))?round((Session::get('cart')->totalPrice)+((Session::get('cart')->totalPrice)*10/100),2):'0'}}</span>
-                                                                </li> --}}
                                                             </ul>
                                                         </div>
                                                     </div>

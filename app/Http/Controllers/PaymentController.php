@@ -12,7 +12,6 @@ class PaymentController extends Controller
 
       public function index($order_id)
       {
-        
           $order = Order::where('id',$order_id)->
           where('user_id',auth()->user()->id)->
           where('status','pending')->get();
@@ -22,8 +21,8 @@ class PaymentController extends Controller
           }
           else
           {
-            //-go to orders list in profile page
-/*             return view('home'); */
+            //go home
+            return redirect()->route('orders.index');
           }
 
       }
@@ -112,9 +111,6 @@ class PaymentController extends Controller
           var_dump($payment_status);
         }
       }
-/*       public function displayConfirmation(Order $order, Payment $payment)
-      {
-        return redirect()->route('payment.confirmation',['order'=>$order,'payment'=>$payment]);
-      } */
     
+      
 }

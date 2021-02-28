@@ -1,3 +1,4 @@
+- reduce product stocks
 - go to optimize guide links
 - remove unnecessary files from project
 - check and optimize db queries on display items

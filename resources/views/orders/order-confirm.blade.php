@@ -64,7 +64,12 @@
         
                             <!-- buttons -->
                             <div class="p-4 bg-gray d-flex justify-content-between">
-                                <a href="payment.html" class="btn btn-dark">Back</a>
+                                <form action="{{route('order.backToCart')}}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="order_id" value="{{$order->id}}">
+                                    <button type="submit" class="btn btn-dark">Back to cart</button>
+                                </form>
+
                                 <a href="{{route('payment.index',$order->id)}}" class="btn btn-primary">Payment</a>
                             </div>
                         </div>
