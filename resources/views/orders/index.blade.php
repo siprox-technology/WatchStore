@@ -17,7 +17,6 @@
                                 <li class="list-inline-item m-1"><a class="active"  href="{{route('orders.index')}}">Orders</a></li>
                                 <li class="list-inline-item m-1"><a href="{{route('contactPref.index')}}">Contact method</a></li>
                             </ul>
-                            {{-- here --}}
                             <div class="row mt-5">
                                 <div class="col-md-12 cart_table wow fadeInUp details-box" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
                                     <div class="table-responsive">
@@ -34,7 +33,57 @@
                                             </thead>
                                             <tbody id="order_history">
                                             <!-- order information goes here -->
-                                            <tr id="279"><td class="p-2"><h4 class="default-color text-center">279</h4></td><td class="text-center p-2"><h4 class="default-color text-center">123.72</h4></td><td class="p-2"><h4 class="default-color text-center">2020-12-08 11:28:44</h4></td><td class="p-2"><h4 class="default-color text-center">visa****4242</h4></td><td class="p-2"><h4 class="default-color text-center">ch_1Hw16BGzZBtnGj1lEMLG7ZFM</h4></td><td class="p-2"><h4 class="text-center text-success">Complete</h4></td><td class="p-2"><button id="279" type="button" class="button btn-primary detailsBtn">Details</button></td></tr><tr id="278"><td class="p-2"><h4 class="default-color text-center">278</h4></td><td class="text-center p-2"><h4 class="default-color text-center">44.98</h4></td><td class="p-2"><h4 class="default-color text-center">2020-12-08 09:59:15</h4></td><td class="p-2"><h4 class="default-color text-center">visa****4242</h4></td><td class="p-2"><h4 class="default-color text-center">ch_1HvzhaGzZBtnGj1lqHSp9Zz8</h4></td><td class="p-2"><h4 class="text-center text-success">Complete</h4></td><td class="p-2"><button id="278" type="button" class="button btn-primary detailsBtn">Details</button></td></tr><tr id="276"><td class="p-2"><h4 class="default-color text-center">276</h4></td><td class="text-center p-2"><h4 class="default-color text-center">79.97</h4></td><td class="p-2"><h4 class="default-color text-center">2020-12-08 09:45:27</h4></td><td class="p-2"><h4 class="default-color text-center">visa****4242</h4></td><td class="p-2"><h4 class="default-color text-center">ch_1HvzU8GzZBtnGj1ltm990jm7</h4></td><td class="p-2"><h4 class="text-center text-success">Complete</h4></td><td class="p-2"><button id="276" type="button" class="button btn-primary detailsBtn">Details</button></td></tr><tr id="275"><td class="p-2"><h4 class="default-color text-center">275</h4></td><td class="text-center p-2"><h4 class="default-color text-center">36.94</h4></td><td class="p-2"><h4 class="default-color text-center">2020-12-07 13:41:51</h4></td><td class="p-2"><h4 class="default-color text-center">visa****4242</h4></td><td class="p-2"><h4 class="default-color text-center">ch_1Hvgi7GzZBtnGj1lg8rLPBRk</h4></td><td class="p-2"><h4 class="text-center text-success">Complete</h4></td><td class="p-2"><button id="275" type="button" class="button btn-primary detailsBtn">Details</button></td></tr><tr id="274"><td class="p-2"><h4 class="default-color text-center">274</h4></td><td class="text-center p-2"><h4 class="default-color text-center">58.12</h4></td><td class="p-2"><h4 class="default-color text-center">2020-12-07 12:41:10</h4></td><td class="p-2"><h4 class="default-color text-center">visa****4242</h4></td><td class="p-2"><h4 class="default-color text-center">ch_1HvflRGzZBtnGj1lxauKHeAy</h4></td><td class="p-2"><h4 class="text-center text-success">Complete</h4></td><td class="p-2"><button id="274" type="button" class="button btn-primary detailsBtn">Details</button></td></tr></tbody>
+                                            @foreach ($payments as $payment)
+                                                <tr>
+                                                    <td class="p-2">
+                                                        <h4 class="default-color text-center">{{$payment->order->id}}</h4>
+                                                    </td>
+                                                    <td class="text-center p-2">
+                                                        <h4 class="default-color text-center">{{$payment->order->total_price}}</h4>
+                                                    </td>
+                                                    <td class="p-2">
+                                                        <h4 class="default-color text-center">{{$payment->order->created_at}}</h4>
+                                                    </td>
+                                                    <td class="p-2">
+                                                        <h4 class="default-color text-center">{{$payment->payment_method}}****{{$payment->last_four_digit}}</h4>
+                                                    </td>
+                                                    <td class="p-2">
+                                                        <h4 class="default-color text-center">{{$payment->payment_ref}}</h4>
+                                                    </td>
+                                                    <td class="p-2">
+                                                        <h4 class="text-center text-success">Complete</h4>
+                                                    </td>
+                                                    <td class="p-2">
+                                                        <a href="{{route('order.details',$payment->order->id)}}" class="button btn-primary detailsBtn">Details</a>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                            @foreach ($orders as $order)
+                                                <tr>
+                                                    <td class="p-2">
+                                                        <h4 class="default-color text-center">{{$order->id}}</h4>
+                                                    </td>
+                                                    <td class="text-center p-2">
+                                                        <h4 class="default-color text-center">{{$order->total_price}}</h4>
+                                                    </td>
+                                                    <td class="p-2">
+                                                        <h4 class="default-color text-center">{{$order->created_at}}</h4>
+                                                    </td>
+                                                    <td class="p-2">
+                                                        <h4 class="text-warning text-center">Pending payment</h4>
+                                                    </td>
+                                                    <td class="p-2">
+                                                        <h4 class="text-warning text-center">Pending payment</h4>
+                                                    </td>
+                                                    <td class="p-2">
+                                                        <h4 class="text-center text-warning">Pending payment</h4>
+                                                    </td>
+                                                    <td class="p-2">
+                                                        <a href="{{route('order.details',$order->id)}}"class="button btn-primary detailsBtn">Details</a>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                            </tbody>
                                         </table>
                                     </div>
                                 </div>

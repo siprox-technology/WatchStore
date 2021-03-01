@@ -17,7 +17,7 @@ class PaymentController extends Controller
           where('status','pending')->get();
           if(count($order)==1)
           {
-            return view('orders.payment',['order'=>$order]);
+            return view('payments.index',['order'=>$order]);
           }
           else
           {
@@ -93,9 +93,9 @@ class PaymentController extends Controller
               $order = Order::find($request->order_id);
               $order->status = 'completed';
               $order->save();
-              //reduce product stocks
+              //reduce product stocks 
               //----------
-              return redirect()->route('payment.confirmation',['order'=>$order,'payment'=>$payment]);
+              return redirect()->route('payment.confirmation',['order_number'=>$payment['order_id'],'payment_ref'=>$payment['payment_ref']]);
 
         }catch(\Stripe\Exception\CardException $e)
         {

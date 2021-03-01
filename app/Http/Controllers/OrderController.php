@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Session;
 use App\Models\Cart;
 use App\Models\Order;
+use App\Models\Payment;
 use App\Models\Product;
 use App\Models\Order_items;
 use Illuminate\Http\Request;
@@ -19,8 +20,9 @@ class OrderController extends Controller
 
    public function index()
    {
-      $orders = Order::where('user_id',auth()->user()->id)->get();
-      return view('orders.index',['orders'=>$orders]);
+      $orders = Order::where('user_id',auth()->user()->id)->where('status','pending')->get();
+      $payments =Payment::where('user_id',auth()->user()->id)->get();
+      return view('orders.index',['orders'=>$orders,'payments'=>$payments]);
    }
    public function store(Request $request)
    {
@@ -68,18 +70,18 @@ class OrderController extends Controller
          }
          //remove cart items
          Session::forget('cart');
-         return \redirect()->route('order.confirmation',['order'=>$order]);
+         return \redirect()->route('order.details',['order'=>$order]);
 
       }
       return \redirect()->route('cart.index');
 
    }
-   public function displayConfirmation(Order $order)
+   public function displayDetails(Order $order)
    {
-         return view ('orders.order-confirm',['order'=>$order]);
+         return view ('orders.details',['order'=>$order]);
    }
 
-   public function backToCart(Request $request)
+   public function edit(Request $request)
    {
       if(!(Session::has('cart')))
       {

@@ -9,7 +9,7 @@
                     <div class="col-md-8">
                         <div class="inner-wrapper border-box">
                             <!-- review -->
-                            <h3>Order Review</h3>
+                            <h3>Order detials</h3>
 {{--                             {{dd($order->order_items[0]->product->model_number)}} --}}
                             <div class="table-responsive">
                                 <table class="table">
@@ -64,13 +64,16 @@
         
                             <!-- buttons -->
                             <div class="p-4 bg-gray d-flex justify-content-between">
-                                <form action="{{route('order.backToCart')}}" method="POST">
-                                    @csrf
-                                    <input type="hidden" name="order_id" value="{{$order->id}}">
-                                    <button type="submit" class="btn btn-dark">Back to cart</button>
-                                </form>
-
-                                <a href="{{route('payment.index',$order->id)}}" class="btn btn-primary">Payment</a>
+                                @if ($order->status == 'pending')
+                                    <form action="{{route('order.edit')}}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="order_id" value="{{$order->id}}">
+                                        <button type="submit" class="btn btn-dark">Edit order</button>
+                                    </form>
+                                    <a href="{{route('payment.index',$order->id)}}" class="btn btn-primary">Payment</a>
+                                @else
+                                    <a href="{{route('orders.index')}}" class="btn btn-dark">Back to orders</a>
+                                @endif
                             </div>
                         </div>
                     </div>

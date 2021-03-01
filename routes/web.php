@@ -62,16 +62,16 @@ Route::get('/checkout', [CheckoutController::class,'index'])->name('checkout.ind
 Route::get('/dashboard/orders',[OrderController::class,'index'])->name('orders.index');
 //save order
 Route::post('/checkout/saveOrder',[OrderController::class,'store'])->name('order.submit');
-//order confirmation page
-Route::get('/checkout/orderConfirmation/{order}',[OrderController::class,'displayConfirmation'])->name('order.confirmation');
-//get back to cart from order confirmation
-Route::post('/checkout/orderConfirmation/',[OrderController::class,'backToCart'])->name('order.backToCart');
-//payment request to stripe
+//order details page
+Route::get('/checkout/orderDetails/{order}',[OrderController::class,'displayDetails'])->name('order.details');
+// edit pending orders
+Route::post('/checkout/editOrder/',[OrderController::class,'edit'])->name('order.edit');
 
+//payment request to stripe
 Route::get('/payment/{order:id}/paymentPage',[PaymentController::class,'index'])->name('payment.index');
 Route::post('/payment',[PaymentController::class,'store'])->name('payment.submit');
 Route::get('/payment/confirmation',function(){
-    return view('orders.payment-confirm');
+    return view('payments.confirm');
 })->name('payment.confirmation');
 
 //register
