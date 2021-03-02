@@ -36,50 +36,50 @@
                                             @foreach ($payments as $payment)
                                                 <tr>
                                                     <td class="p-2">
-                                                        <h4 class="default-color text-center">{{$payment->order->id}}</h4>
+                                                        <h6 class="default-color text-center mt-1">{{$payment->order->id}}</h6>
                                                     </td>
                                                     <td class="text-center p-2">
-                                                        <h4 class="default-color text-center">{{$payment->order->total_price}}</h4>
+                                                        <h6 class="default-color text-center mt-1">{{$payment->order->total_price}}</h6>
                                                     </td>
                                                     <td class="p-2">
-                                                        <h4 class="default-color text-center">{{$payment->order->created_at}}</h4>
+                                                        <h6 class="default-color text-center mt-1">{{$payment->order->created_at}}</h6>
                                                     </td>
                                                     <td class="p-2">
-                                                        <h4 class="default-color text-center">{{$payment->payment_method}}****{{$payment->last_four_digit}}</h4>
+                                                        <h6 class="default-color text-center mt-1">{{$payment->payment_method}}****{{$payment->last_four_digit}}</h6>
                                                     </td>
                                                     <td class="p-2">
-                                                        <h4 class="default-color text-center">{{$payment->payment_ref}}</h4>
+                                                        <h6 class="default-color text-center mt-1">{{$payment->payment_ref}}</h6>
                                                     </td>
                                                     <td class="p-2">
-                                                        <h4 class="text-center text-success">Complete</h4>
+                                                        <h6 class="text-center text-success mt-1">Complete</h6>
                                                     </td>
                                                     <td class="p-2">
-                                                        <a href="{{route('order.details',$payment->order->id)}}" class="button btn-primary detailsBtn">Details</a>
+                                                        <a href="{{route('order.details',$payment->order->id)}}" class="btn-details btn-primary mt-1">Details</a>
                                                     </td>
                                                 </tr>
                                             @endforeach
                                             @foreach ($orders as $order)
                                                 <tr>
                                                     <td class="p-2">
-                                                        <h4 class="default-color text-center">{{$order->id}}</h4>
+                                                        <h6 class="default-color text-center mt-1">{{$order->id}}</h6>
                                                     </td>
                                                     <td class="text-center p-2">
-                                                        <h4 class="default-color text-center">{{$order->total_price}}</h4>
+                                                        <h6 class="default-color text-center mt-1">{{$order->total_price}}</h6>
                                                     </td>
                                                     <td class="p-2">
-                                                        <h4 class="default-color text-center">{{$order->created_at}}</h4>
+                                                        <h6 class="default-color text-center mt-1">{{$order->created_at}}</h6>
                                                     </td>
                                                     <td class="p-2">
-                                                        <h4 class="text-warning text-center">Pending payment</h4>
+                                                        <h6 class="text-warning text-center mt-1">Pending payment</h6>
                                                     </td>
                                                     <td class="p-2">
-                                                        <h4 class="text-warning text-center">Pending payment</h4>
+                                                        <h6 class="text-warning text-center mt-1">Pending payment</h6>
                                                     </td>
                                                     <td class="p-2">
-                                                        <h4 class="text-center text-warning">Pending payment</h4>
+                                                        <h6 class="text-center text-warning mt-1">Pending payment</h6>
                                                     </td>
                                                     <td class="p-2">
-                                                        <a href="{{route('order.details',$order->id)}}"class="button btn-primary detailsBtn">Details</a>
+                                                        <a href="{{route('order.details',$order->id)}} "class="btn-details btn-primary mt-1">Details</a>
                                                     </td>
                                                 </tr>
                                             @endforeach

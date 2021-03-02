@@ -19630,7 +19630,7 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
     display: block;
     float: left;
     font-family: inherit;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: normal;
     height: 42px;
     line-height: 50px;
@@ -24870,6 +24870,18 @@ h6,
 .btn-primary {
     background: #ff4135;
     color: #fff;
+}
+
+.btn-details {
+    font-size: 10px;
+    text-transform: uppercase;
+    padding: 7.5px 33px;
+    font-weight: 400;
+    border: 0;
+    border-radius: 40px;
+    position: relative;
+    transition: .2s ease;
+
 }
 
 .btn-primary:active {

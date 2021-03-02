@@ -6,15 +6,15 @@
         <div class="container">
             <div class="row justify-content-center">
                 <!-- shipping-information -->
-                <div class="col-12 col-md-10">
-                    <div class="inner-wrapper border-box">
-                        <h3 class="mb-5 border-bottom pb-2">Confirm shipping Information</h3>
-                        <form class="row mb-5" action="{{route('order.submit')}}" method="POST">
+                <div class="col-12 col-md-8">
+                    <div class="inner-wrapper border-box p-5">
+                        <h3 class="mb-5 border-bottom pb-2 text-center">Confirm shipping</h3>
+                        <form class="row mb-5 justify-content-center" action="{{route('order.submit')}}" method="POST">
                             @csrf
                             {{-- delivery address --}}
-                            <div class="col-md-12">
+                            <div class="col-12">
                                 {{-- delivery address --}}
-                                <h4 class="mb-3">Shipping Address</h4> 
+                                <h4 class="mb-3">Shipping Address:</h4> 
                                 <div class="form-group">
                                     <input type="text" name="address" maxlength="149"
                                     class="form-control @error('address') border border-danger @enderror" placeholder="Address line 1" 
@@ -66,19 +66,26 @@
                                     @enderror
                                 </div>
                                 {{-- shipping method --}}
-                                <div class="col-md-6">
-                                    <h4 class="mb-3">Shipping Method</h4>
-                                    <ul class="">
-                                        <li> <input type="radio" name="delivery_method" value="0"> Standard in 8-10 business days- $9.99 </li>
-                                        <li> <input type="radio" name="delivery_method" value="1"> Express in 1-2 business days- 19.99 </li>
-                                    </ul>
+                                <div class="col-md-12 pl-0">
+                                    <h4 class="mb-3 ">Shipping Method</h4>
+                                    <div class="col-12 ">
+                                        <div class="row justify-content-start">
+                                            <input type="radio" name="delivery_method" class="mt-2 mr-2" value="0"> 
+                                            <p class="">Standard in 8-10 business days- $9.99</p> 
+                                        </div>
+                                        <div class="row justify-content-start">
+                                            <input type="radio" name="delivery_method" class="mt-2 mr-2" value="1"> 
+                                            <p class="">Express in 1-2 business days- 19.99</p>     
+                                        </div>
+
+                                    </div>
                                     @error('delivery_method')
                                     <div class="text-danger">
                                         {{$message}}
                                     </div>
                                 @enderror
                                 </div>
-                                <div class="row mx-auto">
+                                <div class="row justify-content-center mt-4">
                                     <button type="submit" class="btn btn-primary">Confirm shipping</button>
                                 </div>
                             </div>

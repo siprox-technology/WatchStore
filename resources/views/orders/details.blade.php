@@ -9,16 +9,15 @@
                     <div class="col-md-8">
                         <div class="inner-wrapper border-box">
                             <!-- review -->
-                            <h3>Order detials</h3>
-{{--                             {{dd($order->order_items[0]->product->model_number)}} --}}
+                            <h3>Order details</h3>
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <td></td>
-                                            <td>Product Name</td>
-                                            <td>Quantity</td>
-                                            <td>Sub Total</td>
+                                            <td><b>Image</b></td>
+                                            <td><b>Product Name</b></td>
+                                            <td><b>Quantity</b></td>
+                                            <td><b>Sub Total</b></td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -41,7 +40,7 @@
                             <h3 class="mb-5 border-bottom pb-2">Shipping Information</h3>
                             <div class="row mb-5">
                                 <div class="col-md-5">
-                                    <h4 class="mb-3">Shipping Address</h4>
+                                    <h4 class="mb-3"><b>Shipping Address</b></h4>
                                     <ul class="list-unstyled">
                                         <li>{{$order->delivery_address}}</li>
                                         <li>{{$order->delivery_city}}</li>
@@ -51,7 +50,7 @@
                                     </ul>
                                 </div>
                                 <div class="col-md-5">
-                                    <h4 class="mb-3">Shipping Method</h4>
+                                    <h4 class="mb-3"><b>Shipping Method</b></h4>
                                     <ul class="list-unstyled">
                                         @if (($order->delivery_price)=='9.99')
                                             <li>Standard 8-10 business days - $9.99 </li>
@@ -63,14 +62,16 @@
                             </div>
         
                             <!-- buttons -->
-                            <div class="p-4 bg-gray d-flex justify-content-between">
+                            <div class="p-4 bg-gray">
                                 @if ($order->status == 'pending')
-                                    <form action="{{route('order.edit')}}" method="POST">
-                                        @csrf
-                                        <input type="hidden" name="order_id" value="{{$order->id}}">
-                                        <button type="submit" class="btn btn-dark">Edit order</button>
-                                    </form>
-                                    <a href="{{route('payment.index',$order->id)}}" class="btn btn-primary">Payment</a>
+                                    <div class="d-flex flex-column flex-sm-row justify-content-sm-between w-100">
+                                        <form action="{{route('order.edit')}}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="order_id" value="{{$order->id}}">
+                                            <button type="submit" class="btn btn-dark w-100 mb-2">Edit order</button>
+                                        </form>
+                                        <a href="{{route('payment.index',$order->id)}}" class="btn btn-primary mb-2">Payment</a>
+                                    </div>
                                 @else
                                     <a href="{{route('orders.index')}}" class="btn btn-dark">Back to orders</a>
                                 @endif
@@ -79,7 +80,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="border-box p-4">
-                            <h4>Order Summery</h4>
+                            <h4><b>Order Summery</b></h4>
                             <ul class="list-unstyled">
                                 <li class="d-flex justify-content-between">
                                     <span>Subtotal</span>

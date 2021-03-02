@@ -5,7 +5,7 @@
     <!-- payment confirmation -->
     <script src="https://js.stripe.com/v3/"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
-    <section>
+    <section class="my-5">
         <div class="container">
 
             <div class="row justify-content-center">
@@ -14,10 +14,8 @@
                     <form class="border-box p-4" action="{{route('payment.submit')}}" id="payment-form" method="POST">
                         @csrf
                         <div class="text-center">
-                            <label class="h4 text-center">Bank card information</label>
+                            <label class="h4 text-center">Card information</label>
                         </div>
-
-
                         {{-- name on card --}}
                         <div class="form-group mt-4">
                             <input type="text" name="name" id="name" maxlength="50"
@@ -30,16 +28,15 @@
                             @enderror
                         </div>    
                         <!-- a Stripe Element will be inserted here. -->
-                        <div id="card-element" class="form-control mb-2">
-
+                        <div id="card-element" class="form-control px-4 pt-3 mb-3">
                         </div>
                         {{-- order price --}}
-                        <input type="hidden" name="amount"  class="form-control mb-3 StripeElement StripeElement--empty" id="amount_for_payment" 
+                        <input type="hidden" name="amount"  class="form-control StripeElement StripeElement--empty" id="amount_for_payment" 
                             value="{{$order[0]->total_price}}" readonly>
                         {{-- email --}}
                         <div class="form-group">
                             <input type="text" name="email" id="email" maxlength="50"
-                            class="form-control mb-2 StripeElement StripeElement--empty @error('email') border border-danger @enderror" 
+                            class="form-control mb-3 StripeElement StripeElement--empty @error('email') border border-danger @enderror" 
                             placeholder="Email address" value="{{old('email')}}">
                             @error('email')
                             <div class=" text-danger ">
@@ -58,6 +55,8 @@
                             </div>
                             @enderror
                         </div>
+                        {{-- country --}}
+                        {{-- zip code--}}
                         <div class="form-group">
                             <div class="row justify-content-end">
                                 {{-- country --}}
@@ -321,11 +320,11 @@
                                     </div>
                                     @enderror
                                 </div>
-                                {{-- zip code--}}
+
                                 <div class="col-6">
                                     <input type="text" name="postal_code" id="postal_code" maxlength="20"
                                     class="form-control mb-2 StripeElement StripeElement--empty @error('postal_code') border border-danger @enderror" 
-                                    placeholder="Zip/Postal code" value="{{old('postal_code')}}">
+                                    placeholder="Zip code" value="{{old('postal_code')}}">
                                     @error('postal_code')
                                     <div class=" text-danger ">
                                         *{{$message}}

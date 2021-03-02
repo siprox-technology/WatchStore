@@ -5,8 +5,13 @@
         <!-- main wrapper -->
         <div class="main-wrapper">
             <section class="user-dashboard section">
-                    <div class="row px-lg-5 px-md-4 p-3">
-                        <div class="col-md-12">
+                    <div class="row justify-content-center px-lg-5 px-md-4 p-3">
+                        <div class="col-md-10">
+                            <div class="row m-0 w-100 justify-content-center">
+                                <h2 class="m-0">Shopping basket</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-10">
                             <div class="block text-center border border-grey mt-5 p-3">
                                 <div class="row">
                                     <div class="col-12 mx-auto">
@@ -31,7 +36,7 @@
                                                                     <tr>
                                                                         {{-- delete icon --}}
                                                                         <td>
-                                                                            <a class="product-remove" href="{{route('cart.remove',$item['item'])}}">×</a>
+                                                                            <a class="product-remove text-danger" href="{{route('cart.remove',$item['item'])}}">X</a>
                                                                         </td>
                                                                         {{-- images and name --}}
                                                                         <td>
@@ -40,7 +45,7 @@
                                                                                     src="{{asset('images/product-images/'.$item['item']['model_number'].'/'.$item['item']['model_number'].'-0.jpg')}}"
                                                                                     alt="product-img">
                                                                                 <div class="col-10 text-left">
-                                                                                    <a href="">{{$item['item']['name']}}</a>
+                                                                                    <a class="text-dark" href="{{route('shop.product_details.index',$item['item']['model_number'])}}">{{$item['item']['name']}}</a>
                                                                                 </div>
                                                                             </div>
                                                                         </td>
@@ -61,9 +66,13 @@
                                                         </table>
                                                     </div>
                                                     <hr>
-                                                    <div class="d-flex flex-column flex-md-row align-items-center ">
-                                                        <a href="{{route('shop.index')}}" class="btn ml-md-4 btn-dark w-100">Continue shopping</a>
-                                                        <a href="{{route('cart.removeAll')}}" class="btn ml-md-4 btn-danger w-100">Delete Cart</a>
+                                                    <div class="d-flex flex-column flex-md-row align-items-center justify-content-md-between ">
+                                                        <div class="col-lg-4 col-md-6 col-12 mb-2 mb-md-0">
+                                                            <a href="{{route('cart.removeAll')}}" class="btn btn-danger w-100">Delete Cart</a>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-6 col-12 ">
+                                                            <a href="{{route('shop.index')}}" class="btn btn-dark w-100">Continue shopping</a>
+                                                        </div>
                                                     </div>
                                                     <hr>
                                                     <div class="row">
@@ -71,7 +80,7 @@
                                                             <ul class="list-unstyled text-right">
                                                                  {{-- total price and tax  --}}
                                                                 <li>Sub Total <span
-                                                                        class="d-inline-block w-100px">{{(Session::has('cart'))?Session::get('cart')->totalPrice:'0'}}</span>
+                                                                        class="d-inline-block w-100px">${{(Session::has('cart'))?Session::get('cart')->totalPrice:'0'}}</span>
                                                                 </li>
                                                             </ul>
                                                         </div>
