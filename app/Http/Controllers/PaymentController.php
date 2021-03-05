@@ -5,13 +5,18 @@ namespace App\Http\Controllers;
 use Session;
 use App\Models\Order;
 use App\Models\Payment;
+use App\Models\Product;
+use App\Models\Order_items;
 use Illuminate\Http\Request;
+use App\Mail\OrderConfirmation;
+use Illuminate\Support\Facades\Mail;
 
 class PaymentController extends Controller
 {
 
       public function index($order_id)
       {
+
           $order = Order::where('id',$order_id)->
           where('user_id',auth()->user()->id)->
           where('status','pending')->get();
@@ -21,7 +26,7 @@ class PaymentController extends Controller
           }
           else
           {
-            //go home
+            //go orders list
             return redirect()->route('orders.index');
           }
 
@@ -29,10 +34,13 @@ class PaymentController extends Controller
     
       public function store(Request $request)
       {
+
           // This is your real test secret API key.
           \Stripe\Stripe::setApiKey('sk_test_51HcWlxGzZBtnGj1lUdweCw4OboX34Ku0oaXsjzQ06qygmZRlileOThhDPjB3nF2PMjeCdEoCstRi3CvUTFLrR5KP00A7XFd8hP');
+          //get order total price
+          $order_price = Order::select('total_price')->where('user_id',auth()->user()->id)
+          ->where('id',$request->order_id)->where('status','pending')->get();
           //validate user inputs
-
           $this->validate($request,[
               'name'=>'required|max:50',
               'email'=>'required|email|max:50',
@@ -43,8 +51,6 @@ class PaymentController extends Controller
               'order_id'=>'required'
           ]);
 
-          $stripe_customer_id = '';
-          $payment_status = '';
           /* address array for customer*/
           $address = [
             "line1"=>$request->line1,
@@ -60,11 +66,8 @@ class PaymentController extends Controller
               "source" => $request->stripeToken
               ));
 
-              $stripe_customer_id = $customer->id;
-
-              header('Content-Type: application/json');
               $charge = \Stripe\Charge::create(array(
-              "amount" => (Order::find($request->order_id)->total_price)*100,
+              "amount" => ($order_price['0']['total_price'])*100,
               "currency" => "usd",
               "description" => "order number:".$request->order_id,
               "customer" => $customer->id,
@@ -93,8 +96,20 @@ class PaymentController extends Controller
               $order = Order::find($request->order_id);
               $order->status = 'completed';
               $order->save();
-              //reduce product stocks 
-              //----------
+              //update product stocks and sale number 
+              $sold_products = Order_items::select('product_id','quantity')->where('order_id',$request->order_id)->get()->toArray();
+              for($i=0; $i<count($sold_products);$i++)
+              {
+                $sold_item = Product::find($sold_products[$i]['product_id']);
+                $sold_item->stock-= $sold_products[$i]['quantity'];
+                $sold_item->sale_number+=$sold_products[$i]['quantity'];
+                $sold_item->save();
+              }
+              //--email user the confirmation
+              $newMail = new OrderConfirmation($payment);
+              $newMail->build();
+
+              Mail::to(auth()->user()->email)->send($newMail);
               return redirect()->route('payment.confirmation',['order_number'=>$payment['order_id'],'payment_ref'=>$payment['payment_ref']]);
 
         }catch(\Stripe\Exception\CardException $e)
@@ -107,8 +122,8 @@ class PaymentController extends Controller
           //Your card's security code is incorrect.
           //An error occurred while processing your card. Try again in a little bit.
           
-          $payment_status = 'Payment failed: '.$e->getMessage();
-          var_dump($payment_status);
+          $payment_status = $e->getMessage();
+          return redirect()->route('payment.confirmation',['payment_status'=>$payment_status,]);
         }
       }
     

@@ -9,7 +9,6 @@ var elements = stripe.elements();
 var style = {
     base: {
         color: '#495057',
-        /*         fontFamily: '"Helvetica Neue", Helvetica, sans-serif', */
         fontSmoothing: 'antialiased',
         fontSize: '16px',
         '::placeholder': {
@@ -20,17 +19,7 @@ var style = {
         color: '#fa755a',
         iconColor: '#fa755a'
     }
-    /*     display: block;
-        width: 100%;
-        padding: .375rem .75rem;
-        font-size: 1rem;
-        line-height: 1.5;
-        color: #495057;
-        background-color: #fff;
-        background-clip: padding-box;
-        border: 1px solid #ced4da;
-        border-radius: .25rem;
-        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out; */
+
 };
 
 // Style button with BS
@@ -50,6 +39,7 @@ card.addEventListener('change', function (event) {
     var displayError = document.getElementById('card-errors');
     if (event.error) {
         displayError.textContent = event.error.message;
+        displayError.style.color = 'red';
     } else {
         displayError.textContent = '';
     }
