@@ -34,7 +34,6 @@ class PaymentController extends Controller
     
       public function store(Request $request)
       {
-
           // This is your real test secret API key.
           \Stripe\Stripe::setApiKey('sk_test_51HcWlxGzZBtnGj1lUdweCw4OboX34Ku0oaXsjzQ06qygmZRlileOThhDPjB3nF2PMjeCdEoCstRi3CvUTFLrR5KP00A7XFd8hP');
           //get order total price
@@ -105,11 +104,11 @@ class PaymentController extends Controller
                 $sold_item->sale_number+=$sold_products[$i]['quantity'];
                 $sold_item->save();
               }
-              //--email user the confirmation
-              $newMail = new OrderConfirmation($payment);
-              $newMail->build();
+              //--email user order confirmation
+              $order_confirmation = new OrderConfirmation($payment);
+              $order_confirmation->build();
 
-              Mail::to(auth()->user()->email)->send($newMail);
+              Mail::to(auth()->user()->email)->send($order_confirmation);
               return redirect()->route('payment.confirmation',['order_number'=>$payment['order_id'],'payment_ref'=>$payment['payment_ref']]);
 
         }catch(\Stripe\Exception\CardException $e)
