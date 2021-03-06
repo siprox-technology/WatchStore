@@ -86,7 +86,7 @@ Route::post('/email/verification-notification',[RegisterController::class,'sendV
 //login logout
 Route::get('/login', [LoginController::class,'index'])->name('login.index');
 Route::post('/login',[LoginController::class,'login'])->name('login');
-Route::post('/logout',[LoginController::class,'logOut'])->name('logout');
+Route::get('/logout',[LoginController::class,'logOut'])->name('logout');
 
 
 //forget password form

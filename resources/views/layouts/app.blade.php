@@ -50,10 +50,7 @@
                         @endguest
                         @auth
                             <li class="list-inline-item">
-                                <form action="{{route('logout')}}" method="POST">
-                                    @csrf
-                                    <button type="submit">logout</button>
-                                </form>
+                                <a href="{{route('logout')}}">Logout</a>
                             </li>
                             <li class="list-inline-item"><a href="{{route('dashboard.index')}}">Dashboard</a></li> 
                         @endauth

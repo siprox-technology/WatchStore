@@ -8,3 +8,4 @@
 - learn about server deployment
 -optimize links like google font link
 -display numbers decimal points
+-check to see if all unused get routes can be directed to home page
