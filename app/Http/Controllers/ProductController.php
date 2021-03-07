@@ -160,13 +160,20 @@ class ProductController extends Controller
         ->where('feature','like',(explode(' ',$product->feature))[0].'%')
         ->where('gender','=',$product->gender)
         ->orderBy('price','desc')->get();
-        
+        //average review star
+        $average_review_star = 0;
+        for($i=0; $i<count($product->reviews->toArray());$i++)
+        {
+            $average_review_star+= $product->reviews->toArray()[$i]['star_number'];
+        }
+
         return view('shop.product-details',
         [
             'product'=>$product,
             'numOfImages'=>$numOfImages,
             'specs'=>$specs,
-            'related_products'=>$related_products
+            'related_products'=>$related_products,
+            'average_review_star'=>$average_review_star/count($product->reviews->toArray())
         ]);
     }
 

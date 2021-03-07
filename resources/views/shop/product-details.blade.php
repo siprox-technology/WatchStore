@@ -38,22 +38,198 @@
                             <i class="ti-check-box text-success"></i>
                             <span class="{{(($product->stock) > 0 )? 'text-success':'text-danger'}}">{{(($product->stock) > 0 )? 'instock':'sold out'}}</span>
                             <ul class="list-inline mb-4">
-                                <li class="list-inline-item mx-0"><a href="#" class="rated"><i
-                                            class="fas fa-star yellow-star"></i></a>
-                                </li>
-                                <li class="list-inline-item mx-0"><a href="#" class="rated"><i
-                                            class="fas fa-star yellow-star"></i></a>
-                                </li>
-                                <li class="list-inline-item mx-0"><a href="#" class="rated"><i
-                                            class="fas fa-star yellow-star"></i></a>
-                                </li>
-                                <li class="list-inline-item mx-0"><a href="#" class="rated"><i
-                                            class="fa text-warning fa-star-half-alt"></i></a>
-                                </li>
-                                <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                @switch($average_review_star)
+                                    @case($average_review_star==0)
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
                                             class="far fa-star text-warning"></i></a>
-                                </li>
-                                <li class="list-inline-item"><a href="#" class="text-gray ml-3">( 3 Reviews )</a></li>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="far fa-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="far fa-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="far fa-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="far fa-star text-warning"></i></a>
+                                        </li>                                    
+                                        @break
+                                    @case($average_review_star<1)
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star fa-star-half-alt"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="far fa-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="far fa-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="far fa-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="far fa-star text-warning"></i></a>
+                                        </li> 
+                                        @break
+                                    @case($average_review_star==1)
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="far fa-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="far fa-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="far fa-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="far fa-star text-warning"></i></a>
+                                        </li> 
+                                        @break
+                                    @case($average_review_star<2)
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star fa-star-half-alt"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="far fa-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="far fa-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="far fa-star text-warning"></i></a>
+                                        </li> 
+                                        @break
+                                    @case($average_review_star==2)
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="far fa-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="far fa-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="far fa-star text-warning"></i></a>
+                                        </li> 
+                                        @break
+                                    @case($average_review_star<3)
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star yellow-star yellow-star"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star yellow-star yellow-star"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star fa-star-half-alt"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="far fa-star text-warning "></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="far fa-star text-warning"></i></a>
+                                        </li>
+                                        @break
+                                    @case($average_review_star==3)
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="far fa-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="far fa-star text-warning"></i></a>
+                                        </li> 
+                                        @break
+                                    @case($average_review_star<4)
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star yellow-star"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star yellow-star"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star yellow-star"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fa text-warning fa-star-half-alt"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="far fa-star text-warning"></i></a>
+                                        </li>
+                                        @break
+                                    @case($average_review_star==4)
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="far fa-star text-warning"></i></a>
+                                        </li> 
+                                        @break
+                                    @case($average_review_star<5)
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star fa-star-half-alt"></i></a>
+                                        </li> 
+                                        @break
+                                    @case($average_review_star==5)
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                        </li>
+                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                        </li> 
+                                        @break
+                                        
+                                @endswitch
+                                {{-- product review count and average star --}}
+                                <li class="list-inline-item"><a href="#" class="text-gray ml-3">( {{count($product->reviews)}} Reviews )</a></li>
                             </ul>
                             {{-- price and discount --}}
                             <h4 class="text-primary h3">${{($product->price)-($product->price)*($product->discount)/100}} <s class="text-color ml-2">${{$product->price}}</s></h4>

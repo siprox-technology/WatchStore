@@ -2,19 +2,19 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
+use App\Models\Review;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class UserFactory extends Factory
+class ReviewFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = User::class;
+    protected $model = Review::class;
 
     /**
      * Define the model's default state.
@@ -24,11 +24,10 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
-            'email' => $this->faker->unique()->safeEmail,
-            'phone' => rand(11111111,9999999999),
-            'password' => Hash::make('1111'), // password
-            'contact_pref' => '1'
+            'star_number'=>rand(1,5),
+            'text'=>'hjASBFSBCJSKDBKJBFCSKJZDLFASNDLJBFKHAESBDJKDASJDXSJGDKASBFUFDlknvsdjbdjkfbsdjfbsdjfb',
+            'product_id'=> rand(1,31),
+            'user_id'=> rand(1,3)
         ];
     }
 }
