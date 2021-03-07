@@ -125,6 +125,6 @@ class PaymentController extends Controller
           return redirect()->route('payment.confirmation',['payment_status'=>$payment_status,]);
         }
       }
-    
+
       
 }
