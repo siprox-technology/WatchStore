@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use App\Models\Payment;
 use App\Models\Order_items;
 use Illuminate\Database\Eloquent\Model;
@@ -25,5 +26,10 @@ class Order extends Model
     public function order_items()
     {
         return $this->hasMany(Order_items::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

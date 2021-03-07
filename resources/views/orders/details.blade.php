@@ -25,7 +25,7 @@
                                     <tr>
                                         <td class="align-middle"><img style="width:35px; height:35px;" 
                                         src="{{asset('images/product-images/'.$item->product->model_number.'/'.$item->product->model_number.'-0.jpg')}}" alt="product-img"></td>
-                                        <td class="align-middle">{{$item->product->name}}</td>
+                                        <td class="align-middle"> <a class="text-dark" href="{{route('shop.product_details.index',$item->product->model_number)}}">{{$item->product->name}}</a></td>
                                         <td class="align-middle">{{$item->quantity}}</td>
                                         <td class="align-middle">{{$item->price}}</td>
                                     </tr>

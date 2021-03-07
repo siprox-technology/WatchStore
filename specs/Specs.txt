@@ -71,12 +71,12 @@ Back end functionalities=>
 *User log in\log out and session time tracking by 5 mins.---
 *Resend activation email if not received.
 *User reset forgotten password through email.
--*User profile 
+*User profile 
     *Update account details. 
     *Change password.
     *Address Details. add or remove. 
-    -View shopping basket. remove items.
-    -Order history.
+    *View shopping basket. remove items.
+    *Order history.
     *Change contact Preferences.
 
 *Search products by brand,category,name, feature.
@@ -89,11 +89,11 @@ Back end functionalities=>
 *Display related products in product details page.
 *User add,remove items in shopping basket.
 
--User makes payment using Stripe payment(sandbox) api with a visa card (test card=> '4242 4242 4242 4242' any 'zip' and any 'date').
--Display Payment information if failed or success.
--Retry payment for failed orders.
+*User makes payment using Stripe payment(sandbox) api with a visa card (test card=> '4242 4242 4242 4242' any 'zip' and any 'date').
+*Display Payment information if failed or success.
+*Retry payment for failed orders.
+*Display order history and orders with failed payment.
 
--Display order history and orders with failed payment.
 -Add and display reviews to items that user has bought.
 -display cookie policy confirmation page.
 *****************************************
