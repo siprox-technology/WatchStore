@@ -85,11 +85,6 @@
                                             @endforeach
                                             </tbody>
                                         </table>
-                                        <form action="{{route('test.email')}}" method="POST">
-                                            @csrf
-                                            <input type="text" name="id" value="53">
-                                            <button type="submit">cilick </button>
-                                        </form>
                                     </div>
                                 </div>
                             </div>
