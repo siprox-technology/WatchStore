@@ -124,6 +124,7 @@ class ProductController extends Controller
             ->select('products.id as product_id','products.model_number','products.price','products.discount','products.name as name')
             ->Orwhere('brands.name','like',$key)
             ->Orwhere('products.name','like',$key)
+            ->Orwhere('products.sub_brand','like',$key)
             ->Orwhere('products.category','like',$key)
             ->Orwhere('products.feature','like',$key)
             ->orderBy('price','desc')

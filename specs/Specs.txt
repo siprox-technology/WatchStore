@@ -80,8 +80,8 @@ Back end functionalities=>
     *Change contact Preferences.
     -change account image
 
-*Search products by brand,category,name, feature.
-*Display best selling items.
+**Search products by brand,category,name, feature.
+**Display best selling items.
 *Sort products by brands,gender,category,type,color,price and discount.
 -Display product details page:
 -*brand,*category,*product number(product_id),*name,*model_number,
