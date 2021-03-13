@@ -9,3 +9,5 @@
 -optimize links like google font link
 -display numbers decimal points
 -check to see if all unused get routes can be directed to home page
+-change mail server to ssl configuration after getting ssl
+-change email verification link inside the email sent to user to https at the beginning

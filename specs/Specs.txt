@@ -67,8 +67,8 @@ totalPrice,
 *****************************************
 Back end functionalities=>
 
-*User registration and activation by email
-*User log in\log out and session time tracking by 5 mins.---
+**User registration and activation by email
+**User log in\log out and session time tracking by 5 mins.---
 *Resend activation email if not received.
 *User reset forgotten password through email.
 *User profile 
@@ -78,6 +78,7 @@ Back end functionalities=>
     *View shopping basket. remove items.
     *Order history.
     *Change contact Preferences.
+    -change account image
 
 *Search products by brand,category,name, feature.
 *Display best selling items.

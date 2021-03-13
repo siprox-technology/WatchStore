@@ -383,7 +383,7 @@
 
         </div>
     </section>
-    <script src="{{mix ('js/charge.js')}}"></script>
+    <script src="{{asset ('js/charge.js')}}"></script>
 
 
 @endsection
