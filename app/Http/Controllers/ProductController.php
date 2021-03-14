@@ -143,7 +143,7 @@ class ProductController extends Controller
     {
         //product model
         $product = Product::where('model_number', $model_number)->first();
-        $numOfImages = count(\File::allFiles(public_path("images/product-images/".$model_number)));
+        $numOfImages = count(\File::allFiles("images/product-images/".$model_number));
         //product specs array
         $product_specs = explode(',',(DB::table('products')->
         select('specification')->
