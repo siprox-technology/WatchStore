@@ -174,7 +174,7 @@ class ProductController extends Controller
             'numOfImages'=>$numOfImages,
             'specs'=>$specs,
             'related_products'=>$related_products,
-            'average_review_star'=>($average_review_star)==0?'0':($average_review_star/count($product->reviews->toArray()))
+            'average_review_star'=> ($average_review_star)==0?'0.0':($average_review_star/count($product->reviews->toArray()))
         ]);
     }
 

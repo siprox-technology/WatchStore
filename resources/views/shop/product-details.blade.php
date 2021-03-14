@@ -39,7 +39,7 @@
                             <span class="{{(($product->stock) > 0 )? 'text-success':'text-danger'}}">{{(($product->stock) > 0 )? 'instock':'sold out'}}</span>
                             <ul class="list-inline mb-4">
                                 @switch($average_review_star)
-                                    @case($average_review_star==0)
+                                    @case($average_review_star == 0)
                                         <li class="list-inline-item mx-0"><a href="#" class="rated"><i
                                             class="far fa-star text-warning"></i></a>
                                         </li>
@@ -54,7 +54,7 @@
                                         </li>
                                         <li class="list-inline-item mx-0"><a href="#" class="rated"><i
                                             class="far fa-star text-warning"></i></a>
-                                        </li>                                    
+                                        </li>
                                         @break
                                     @case($average_review_star<1)
                                         <li class="list-inline-item mx-0"><a href="#" class="rated"><i
@@ -71,7 +71,7 @@
                                         </li>
                                         <li class="list-inline-item mx-0"><a href="#" class="rated"><i
                                             class="far fa-star text-warning"></i></a>
-                                        </li> 
+                                        </li>   
                                         @break
                                     @case($average_review_star==1)
                                         <li class="list-inline-item mx-0"><a href="#" class="rated"><i
@@ -88,7 +88,7 @@
                                         </li>
                                         <li class="list-inline-item mx-0"><a href="#" class="rated"><i
                                             class="far fa-star text-warning"></i></a>
-                                        </li> 
+                                        </li>  
                                         @break
                                     @case($average_review_star<2)
                                         <li class="list-inline-item mx-0"><a href="#" class="rated"><i
