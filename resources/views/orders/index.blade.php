@@ -15,7 +15,6 @@
                                 <li class="list-inline-item m-1"><a href="{{route('changePass.index')}}">Change password</a></li>
                                 <li class="list-inline-item m-1"><a href="{{route('changeAddress.index')}}">Address</a></li>
                                 <li class="list-inline-item m-1"><a class="active"  href="{{route('orders.index')}}">Orders</a></li>
-                                <li class="list-inline-item m-1"><a href="{{route('contactPref.index')}}">Contact method</a></li>
                             </ul>
                             <div class="row mt-5">
                                 <div class="col-md-12 cart_table wow fadeInUp details-box" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">

@@ -17,7 +17,6 @@
                                     <li class="list-inline-item m-1"><a href="{{route('changePass.index')}}">Change password</a></li>
                                     <li class="list-inline-item m-1"><a href="{{route('changeAddress.index')}}">Address</a></li>
                                     <li class="list-inline-item m-1"><a href="{{route('orders.index')}}">Orders</a></li>
-                                    <li class="list-inline-item m-1"><a href="{{route('contactPref.index')}}">Contact method</a></li>
                                 </ul>
                                 <div class="dashboard-wrapper dashboard-user-profile">
                                     <div class="d-md-flex">
@@ -106,7 +105,7 @@
                                                             <label for="contact_pref"><b>Phone:</b></label>
                                                             <input type="text" name="phone" id="phone" maxlength="11" 
                                                             class="form-control  @error('phone') border border-danger @enderror" 
-                                                            placeholder="Your phone" value="{{auth()->user()->email}}">
+                                                            placeholder="Your phone" value="{{auth()->user()->phone}}">
                                                             @error('phone')
                                                                 <div class=" text-danger mt-2">
                                                                     {{$message}}
@@ -119,10 +118,22 @@
                                                             @endif
                                                             <label for="contact_pref"><b>Contact preference:</b></label>
                                                             <select name="contact_pref" id="contact_pref" 
-                                                            value="" class="w-100 mb-3">
-                                                                <option value="0">Phone</option>
-                                                                <option value="1">SMS</option>
-                                                                <option value="2">Email</option>
+                                                             class="w-100 mb-3">
+                                                                <option value="0"
+                                                                    @if ((auth()->user()->contact_pref) == '0')
+                                                                    selected = "selected"
+                                                                    @endif
+                                                                >Phone</option>
+                                                                <option value="1"
+                                                                    @if ((auth()->user()->contact_pref) == '1')
+                                                                    selected = "selected"
+                                                                    @endif>SMS
+                                                                </option>
+                                                                <option value="2"
+                                                                    @if ((auth()->user()->contact_pref) == '2')
+                                                                        selected = "selected"
+                                                                    @endif>Email
+                                                                </option>
                                                             </select>                                
                                                             @error('contact_pref')
                                                                 <div class=" text-danger mt-2">

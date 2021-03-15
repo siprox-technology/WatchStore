@@ -15,7 +15,6 @@
                                 <li class="list-inline-item m-1"><a class="active" href="{{route('changePass.index')}}">Change password</a></li>
                                 <li class="list-inline-item m-1"><a href="{{route('changeAddress.index')}}">Address</a></li>
                                 <li class="list-inline-item m-1"><a href="{{route('orders.index')}}">Orders</a></li>
-                                <li class="list-inline-item m-1"><a href="{{route('contactPref.index')}}">Contact method</a></li>
                             </ul>
                             <div class="block text-center border border-grey mt-5 py-5 px-sm-5 px-2">
                                 <h3 class="text-center mb-5">Change current password</h3>
