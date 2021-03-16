@@ -345,16 +345,16 @@
                     <div class="col-12">
                         <div class="collection-slider">
                             <!-- product -->
-                            @foreach ($related_products as $product)
-                                <div class="col-lg-3 col-sm-6 mb-4">
+                            @foreach ($related_products as $items)
+                                <div class="col-sm-6 mb-4">
                                     <div class="product text-center">
                                         <div class="product-thumb">
                                             <div class="overflow-hidden position-relative">
-                                                <a href="{{route('shop.product_details.index',$product->model_number)}}">
+                                                <a href="{{route('shop.product_details.index',$items->model_number)}}">
                                                     <img class="img-fluid w-100 mb-3 img-first"
-                                                        src="{{asset('images/product-images/'.$product->model_number.'/'.$product->model_number.'-0.jpg')}}" alt="product-img">
+                                                        src="{{asset('images/product-images/'.$items->model_number.'/'.$items->model_number.'-0.jpg')}}" alt="product-img">
                                                     <img class="img-fluid w-100 mb-3 img-second"
-                                                        src="{{asset('images/product-images/'.$product->model_number.'/'.$product->model_number.'-1.jpg')}}" alt="product-img">
+                                                        src="{{asset('images/product-images/'.$items->model_number.'/'.$items->model_number.'-1.jpg')}}" alt="product-img">
                                                 </a>
                                                 <div class="btn-cart">
                                                     <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
@@ -362,13 +362,13 @@
                                             </div>
                                         </div>
                                         <div class="product-info">
-                                            <h3 class="h6"><a class="text-color" href="{{route('shop.product_details.index',$product->model_number)}}">{{$product->name}}</a></h3>
-                                            <span class="h6"><b>{{$product->price}}</b></span>
+                                            <h3 class="h6"><a class="text-color" href="{{route('shop.product_details.index',$items->model_number)}}">{{$items->name}}</a></h3>
+                                            <span class="h6"><b>{{$items->price}}</b></span>
                                         </div>
                                         <!-- product label badge -->
                                         <div class="product-label sale">
-                                            @if ($product->discount !== '0')
-                                            -{{$product->discount}}%
+                                            @if ($items->discount !== '0')
+                                            -{{$items->discount}}%
                                             @endif
                                         </div>
                                     </div>
@@ -380,5 +380,60 @@
             </div>
         </section>
         <!-- /collection -->
+        {{-- product reviews --}}
+{{--         <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-title">What our customer think</h2>
+                    </div>
+                    <div class="col-12">
+                        <div class="collection-slider">
+                            @foreach ($product->reviews as $items)
+                                <div class="col-sm-6 mb-4">
+                                    <div class="product text-center">
+                                        <div class="product-thumb">
+                                            <div class="overflow-hidden position-relative">
+                                                <a href="{{route('shop.product_details.index',$items->model_number)}}">
+                                                    <img class="img-fluid w-100 mb-3 img-first"
+                                                        src="{{asset('images/product-images/'.$items->model_number.'/'.$items->model_number.'-0.jpg')}}" alt="product-img">
+                                                    <img class="img-fluid w-100 mb-3 img-second"
+                                                        src="{{asset('images/product-images/'.$items->model_number.'/'.$items->model_number.'-1.jpg')}}" alt="product-img">
+                                                </a>
+                                                <div class="btn-cart">
+                                                    <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-info">
+                                            <h3 class="h6"><a class="text-color" href="{{route('shop.product_details.index',$items->model_number)}}">{{$items->name}}</a></h3>
+                                            <span class="h6"><b>{{$items->price}}</b></span>
+                                        </div>
+                                        <!-- product label badge -->
+                                        <div class="product-label sale">
+                                            @if ($items->discount !== '0')
+                                            -{{$items->discount}}%
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> --}}
+        {{-- submit review form --}}
+        @auth
+            @for ($i = 0; $i < count(auth()->user()->orders); $i++)
+                @if (count(auth()->user()->orders[$i]->order_items->where('product_id',$product->id))>0)
+            
+                @break
+                @endif
+            @endfor
+        
+        @endauth
+
+
 
 @endsection

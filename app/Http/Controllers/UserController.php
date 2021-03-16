@@ -75,13 +75,4 @@ class UserController extends Controller
             return redirect()->route('changeAddress.index');
     }
     
-    public function sendPasswordResetLink(Request $request)
-    {
-        dd($request);/* here */
-
-        //validate email
-        //retrive password
-        //login user
-        //redirect to reset pass page
-    }
 }
