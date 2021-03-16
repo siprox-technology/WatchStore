@@ -37,7 +37,7 @@ return [
 
         'images'=>[
             'driver' => 'local',
-            'root' => public_path('images'),
+            'root' => 'images',
         ],
 
         'public' => [
