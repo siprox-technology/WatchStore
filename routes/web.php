@@ -117,6 +117,8 @@ Route::post('/dashboard/changeAddress', [UserController::class,'changeAddress'])
 Route::get('/dashboard/contactPref', function () {
     return view('auth.contact-pref');})->middleware('auth')->name('contactPref.index');
 Route::post('/dashboard/contactPref', [UserController::class,'changeContactPref'])->name('user.changeContactPref');
+//upload image
+Route::post('/dashboard/upload-image',[UserController::class,'uploadUserImage'])->name('user.uploadImage');
 
 
 //reviews

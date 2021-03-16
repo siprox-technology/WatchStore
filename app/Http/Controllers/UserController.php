@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -75,4 +76,17 @@ class UserController extends Controller
             return redirect()->route('changeAddress.index');
     }
     
+    public function uploadUserImage(Request $request)
+    {
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+        $imageName = auth()->user()->id.'.jpg';  
+        Storage::disk('images')->delete('users-image/'.$imageName);
+        $path = $request->file('image')->storeAs(
+            'users-image', $imageName,'images'
+        );
+        return back(); 
+    
+    }
 }

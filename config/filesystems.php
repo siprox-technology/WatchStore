@@ -32,7 +32,12 @@ return [
 
         'local' => [
             'driver' => 'local',
-            'root' => storage_path('app'),
+            'root' => public_path('app'),
+        ],
+
+        'images'=>[
+            'driver' => 'local',
+            'root' => public_path('images'),
         ],
 
         'public' => [

@@ -21,7 +21,7 @@
                                 <div class="dashboard-wrapper dashboard-user-profile">
                                     <div class="d-md-flex">
                                         <div class="text-center">
-                                            <img class="media-object user-img" src="{{asset('images/users-image/avater.jpg')}}"
+                                            <img class="media-object user-img" src="{{asset('images/users-image/'.auth()->user()->id.'.jpg')}}"
                                                 alt="Image">
                                             <a href="#" class="btn btn-sm mt-3 d-block">Change Image</a>
                                         </div>
@@ -67,9 +67,21 @@
                         </div>
                     </div>
                 </section>
+                <form action="{{ route('user.uploadImage') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="row">
+            
+                        <div class="col-md-6">
+                            <input type="file" name="image" class="form-control">
+                        </div>
+             
+                        <div class="col-md-6">
+                            <button type="submit" class="btn btn-success">Upload</button>
+                        </div>
+             
+                    </div>
+                </form>
                 <!-- edit account details modal -->
-
-
 
                 <div class='modal fade show' style="d-block" id="edit_acc_details_modal" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
