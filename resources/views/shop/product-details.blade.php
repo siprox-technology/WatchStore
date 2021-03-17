@@ -381,7 +381,7 @@
         </section>
         <!-- /collection -->
         {{-- product reviews --}}
-{{--         <section class="section">
+        <section class="section">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
@@ -389,31 +389,215 @@
                     </div>
                     <div class="col-12">
                         <div class="collection-slider">
-                            @foreach ($product->reviews as $items)
-                                <div class="col-sm-6 mb-4">
-                                    <div class="product text-center">
-                                        <div class="product-thumb">
-                                            <div class="overflow-hidden position-relative">
-                                                <a href="{{route('shop.product_details.index',$items->model_number)}}">
-                                                    <img class="img-fluid w-100 mb-3 img-first"
-                                                        src="{{asset('images/product-images/'.$items->model_number.'/'.$items->model_number.'-0.jpg')}}" alt="product-img">
-                                                    <img class="img-fluid w-100 mb-3 img-second"
-                                                        src="{{asset('images/product-images/'.$items->model_number.'/'.$items->model_number.'-1.jpg')}}" alt="product-img">
-                                                </a>
-                                                <div class="btn-cart">
-                                                    <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <h3 class="h6"><a class="text-color" href="{{route('shop.product_details.index',$items->model_number)}}">{{$items->name}}</a></h3>
-                                            <span class="h6"><b>{{$items->price}}</b></span>
-                                        </div>
-                                        <!-- product label badge -->
-                                        <div class="product-label sale">
-                                            @if ($items->discount !== '0')
-                                            -{{$items->discount}}%
+                            @foreach ($product->reviews as $item)
+                                <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+                                    <div class="d-flex">
+                                        <div>
+                                            @if (file_exists('images/users-image/'.$item->user_id.'.jpg'))
+                                                <img class="rounded-circle mr-4" style="height:35px; width:35px;" src="{{asset('images/users-image/'.$item->user_id.'.jpg')}}" alt="customer-img">
+                                            @else
+                                                <img class="rounded-circle mr-4" style="height:35px; width:35px;" src="{{asset('images/users-image/default.jpg')}}" alt="customer-img">
                                             @endif
+                                        </div>
+                                        <div>
+                                            <ul class="list-inline">
+                                                @switch($item->star_number)
+                                                    @case($item->star_number == 0)
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="far fa-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="far fa-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="far fa-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="far fa-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="far fa-star text-warning"></i></a>
+                                                        </li>
+                                                        @break
+                                                    @case($item->star_number<1)
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star fa-star-half-alt"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="far fa-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="far fa-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="far fa-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="far fa-star text-warning"></i></a>
+                                                        </li>   
+                                                        @break
+                                                    @case($item->star_number==1)
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="far fa-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="far fa-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="far fa-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="far fa-star text-warning"></i></a>
+                                                        </li>  
+                                                        @break
+                                                    @case($item->star_number<2)
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star fa-star-half-alt"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="far fa-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="far fa-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="far fa-star text-warning"></i></a>
+                                                        </li> 
+                                                        @break
+                                                    @case($item->star_number==2)
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="far fa-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="far fa-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="far fa-star text-warning"></i></a>
+                                                        </li> 
+                                                        @break
+                                                    @case($item->star_number<3)
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star yellow-star yellow-star"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star yellow-star yellow-star"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star fa-star-half-alt"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="far fa-star text-warning "></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="far fa-star text-warning"></i></a>
+                                                        </li>
+                                                        @break
+                                                    @case($item->star_number==3)
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="far fa-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="far fa-star text-warning"></i></a>
+                                                        </li> 
+                                                        @break
+                                                    @case($item->star_number<4)
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star yellow-star"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star yellow-star"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star yellow-star"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fa text-warning fa-star-half-alt"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="far fa-star text-warning"></i></a>
+                                                        </li>
+                                                        @break
+                                                    @case($item->star_number==4)
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="far fa-star text-warning"></i></a>
+                                                        </li> 
+                                                        @break
+                                                    @case($item->star_number<5)
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star fa-star-half-alt"></i></a>
+                                                        </li> 
+                                                        @break
+                                                    @case($item->star_number==5)
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item mx-0"><a href="#" class="rated"><i
+                                                            class="fas fa-star yellow-star text-warning"></i></a>
+                                                        </li> 
+                                                        @break
+                                                        
+                                                @endswitch                                    
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-12">
+                                            <textarea disabled="true"class="text-gray border-0 bg-white w-100">{{$item->text}}</textarea>
+                                            <h5 class="customer-name text-dark">{{$item->user->name}}</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -422,7 +606,7 @@
                     </div>
                 </div>
             </div>
-        </section> --}}
+        </section>
         {{-- submit review form --}}
         @auth
             @for ($i = 0; $i < count(auth()->user()->orders); $i++)
