@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Cache;
 
 class UserController extends Controller
 {
@@ -86,6 +87,7 @@ class UserController extends Controller
         $path = $request->file('image')->storeAs(
             'users-image', $imageName,'images'
         );
+        Cache::flush();
         return back(); 
     
     }

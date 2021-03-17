@@ -23,7 +23,6 @@
                                         <div class="text-center">
                                             <img class="media-object user-img" src="{{asset('images/users-image/'.auth()->user()->id.'.jpg')}}"
                                                 alt="Image">
-                                            <a href="#" class="btn btn-sm mt-3 d-block">Change Image</a>
                                         </div>
                                         <div class="media-body">
                                             <ul class="user-profile-list">
@@ -67,20 +66,22 @@
                         </div>
                     </div>
                 </section>
-                <form action="{{ route('user.uploadImage') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="row">
-            
-                        <div class="col-md-6">
-                            <input type="file" name="image" class="form-control">
+                
+                <div class="container mb-5">
+                    <form action="{{ route('user.uploadImage') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <h4 class="ml-3">Upload profile image</h4>
+                        <div class="row justify-content-center">
+                            <div class="col-sm-6">
+                                <input type="file" name="image" class="py-2 px-3">
+                            </div>
+                            <div class="col-sm-6 mt-2 mt-sm-0 ml-3 ml-sm-0">
+                                <button type="submit" class="py-2 px-3 border-0 btn-primary">Upload</button>
+                            </div>
                         </div>
-             
-                        <div class="col-md-6">
-                            <button type="submit" class="btn btn-success">Upload</button>
-                        </div>
-             
-                    </div>
-                </form>
+                    </form>
+                </div>
+
                 <!-- edit account details modal -->
 
                 <div class='modal fade show' style="d-block" id="edit_acc_details_modal" tabindex="-1" role="dialog" aria-hidden="true">
