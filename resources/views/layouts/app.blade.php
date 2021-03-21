@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link href="{{ mix ('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset ('css/app.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link rel="icon" href="{{asset('images/favicon.png')}}" type="image/x-icon">
 </head>
@@ -19,11 +19,13 @@
             <img src="{{asset('images/preloader.gif')}}" alt="preloader">
         </div>
         <!-- preloader end -->
+
+
     
         <!-- header -->
         <header>
             <!-- top advertise -->
-            <!-- <div class="alert alert-secondary alert-dismissible fade show rounded-0 pb-0 mb-0" role="alert">
+{{--        <div class="alert alert-secondary alert-dismissible fade show rounded-0 pb-0 mb-0" role="alert">
         <div class="d-flex justify-content-between">
           <p>SAVE UP TO $50</p>
           <h4>SALE!</h4>
@@ -34,7 +36,42 @@
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div> -->
+      </div> --}}
+
+        {{-- cookie accept message --}}
+        <?php 
+        if(isset($_COOKIE["accepted-user"]))
+        {
+            if($_COOKIE["accepted-user"] != $_SERVER['REMOTE_ADDR'])
+            {
+                setcookie("accepted-user",$_SERVER['REMOTE_ADDR']);
+                echo '<div class="alert alert-secondary fade show rounded-0 mb-0" role="alert">
+                        <div class="d-flex justify-content-center">
+                            <h5 class="text-center text-danger">All cookies in this website are used for providing a better user experience and WILL NOT be shared with other parties.</h5>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="button" style="font-size:11px;" class="btn btn-primary py-2 px-3" data-dismiss="alert" aria-label="Close">
+                            I accept
+                            </button>                                
+                        </div>
+                    </div>';
+            }
+        }
+        else {
+            setcookie("accepted-user",$_SERVER['REMOTE_ADDR']);
+            echo '<div class="alert alert-secondary fade show rounded-0 mb-0" role="alert">
+                        <div class="d-flex justify-content-center">
+                            <h5 class="text-center text-danger">All cookies in this website are used for providing a better user experience and WILL NOT be shared with other parties.</h5>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="button" style="font-size:11px;" class="btn btn-primary py-2 px-3" data-dismiss="alert" aria-label="Close">
+                            I accept
+                            </button>                                
+                        </div>
+                    </div>';
+        }
+        ?>
+
     
         <!-- top header -->
         <div class="top-header">
@@ -325,6 +362,6 @@
         </footer>
         <!-- /footer -->
 
-    <script src="{{mix ('js/app.js')}}"></script>
+    <script src="{{asset ('js/app.js')}}"></script>
 </body>
 </html>

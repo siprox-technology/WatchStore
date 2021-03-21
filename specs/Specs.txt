@@ -97,6 +97,6 @@ Back end functionalities=>
 **Retry payment for failed orders.
 **Display order history and orders with failed payment.
 
--Add and display reviews to items that user has bought.
+**Add and display reviews to items that user has bought.
 -display cookie policy confirmation page.
 *****************************************
