@@ -634,11 +634,6 @@
                                 <input type="hidden" name="product_id" value="{{$product->id}}">
                                 <input type="hidden" id="star_number" name="star_number" value="">
 
-                                @error('star_number')
-                                <div class=" text-danger mt-2 ">
-                                    {{$message}}
-                                </div>
-                                @enderror
                                 <div class="form-group col-10 mx-auto text-center">
                                     <h5 class="pb-1">Your Rating : <span id="ratingText" class="text-warning">Please Select</span></h5>
                                     <ul class="comment bottom15 top10">
@@ -653,6 +648,11 @@
                                         </li>
                                     </ul>
                                 </div>
+                                @error('star_number')
+                                <div class=" text-danger text-center mb-4">
+                                    {{$message}}
+                                </div>
+                                @enderror
 
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary">Submit</button>
