@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Password;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OrderController;
 use Illuminate\Auth\Events\PasswordReset;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CheckoutController;
@@ -123,4 +124,6 @@ Route::post('/dashboard/upload-image',[UserController::class,'uploadUserImage'])
 
 //reviews
 
-/* here */
+//submit a reviews
+
+Route::post('/shop/review',[ReviewController::class,'store'])->name('review.add');

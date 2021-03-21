@@ -388,9 +388,9 @@
                         <h2 class="section-title">What our customer think</h2>
                     </div>
                     <div class="col-12">
-                        <div class="collection-slider">
+                        <div class="row">
                             @foreach ($product->reviews as $item)
-                                <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+                                <div class="col-lg-4 col-sm-6 mb-5">
                                     <div class="d-flex">
                                         <div>
                                             @if (file_exists('images/users-image/'.$item->user_id.'.jpg'))
@@ -611,7 +611,60 @@
         @auth
             @for ($i = 0; $i < count(auth()->user()->orders); $i++)
                 @if (count(auth()->user()->orders[$i]->order_items->where('product_id',$product->id))>0)
-            
+                    <section>
+                        <div class="continer">
+                            <div class="col-lg-12 text-center">
+                                <h4 class="section-title">Submit your review</h4>
+                            </div>
+                            <form class="mb-5" method="POST" action="{{route('review.add')}}">
+                                @csrf
+                                <div class="form-group col-sm-6 col-md-8  mx-auto">
+                                    <textarea type="text" name="review_text" cols="30" rows="10"
+                                        maxlength="495" style="resize: none;"
+                                    class="form-control 
+                                    @error('review_text') border border-danger @enderror" 
+                                    placeholder="Your comment..." value="{{old('review_text')}}"></textarea>
+                                    @error('review_text')
+                                    <div class=" text-danger mt-2 ">
+                                        {{$message}}
+                                    </div>
+                                    @enderror
+                                </div>
+                                
+                                <input type="hidden" name="product_id" value="{{$product->id}}">
+                                <input type="hidden" id="star_number" name="star_number" value="">
+
+                                @error('star_number')
+                                <div class=" text-danger mt-2 ">
+                                    {{$message}}
+                                </div>
+                                @enderror
+                                <div class="form-group col-10 mx-auto text-center">
+                                    <h5 class="pb-1">Your Rating : <span id="ratingText" class="text-warning">Please Select</span></h5>
+                                    <ul class="comment bottom15 top10">
+                                        <li>
+                                            <a href="javascript:void(0)" id="rattingIcon">
+                                                <i class="far fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                                @error('submit_error')
+                                    <div class="text-center text-danger mt-2 ">
+                                        {{$message}}
+                                    </div>
+                                @enderror         
+                            </form>
+                        </div>
+                    </section>
                 @break
                 @endif
             @endfor

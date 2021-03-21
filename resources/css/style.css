@@ -2577,3 +2577,12 @@ blockquote {
 label {
     margin-bottom: 0;
 }
+
+#rattingIcon .fa-star {
+    color: #ffc107;
+    font-size: 16px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}

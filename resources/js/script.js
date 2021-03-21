@@ -216,3 +216,51 @@
 
 
 })(jQuery);
+
+
+/*rating stars*/
+let fadeInStar = () => {
+    let starItem = $('#rattingIcon .fa-star.fas');
+    starItem.addClass('scale-star');
+    setTimeout(function () {
+        starItem.removeClass('scale-star');
+    }, 180);
+}
+let ratingText = $('#ratingText');
+let star_number = $('#star_number');
+let fadeInStarText = n => {
+    ratingText.addClass('scale-price');
+    setTimeout(function () {
+        ratingText.removeClass('scale-price');
+        switch (n) {
+            case 0:
+                ratingText.text('Poor');
+                star_number.val('1');
+                break;
+            case 1:
+                ratingText.text('Average');
+                star_number.val('2');
+                break;
+            case 2:
+                ratingText.text('Good');
+                star_number.val('3');
+                break;
+            case 3:
+                ratingText.text('Very Good');
+                star_number.val('4');
+                break;
+            case 4:
+                star_number.val('5');
+                ratingText.text('Excellent');
+        }
+    }, 180);
+}
+
+$("#rattingIcon .fa-star").on('click', function () {
+    let iconIndex = $(this).index();
+    $(this).addClass("fas").removeClass("far");
+    $(this).prevAll().addClass("fas").removeClass("far");
+    $(this).nextAll().addClass("far").removeClass("fas");
+    fadeInStar();
+    fadeInStarText(iconIndex);
+});

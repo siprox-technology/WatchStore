@@ -21,8 +21,11 @@
                                 <div class="dashboard-wrapper dashboard-user-profile">
                                     <div class="d-md-flex">
                                         <div class="text-center">
-                                            <img class="media-object user-img" src="{{asset('images/users-image/'.auth()->user()->id.'.jpg')}}"
-                                                alt="Image">
+                                            @if (file_exists('images/users-image/'.auth()->user()->id.'.jpg'))
+                                                <img class="rounded-circle mr-4" style="height:75px; width:75px;" src="{{asset('images/users-image/'.auth()->user()->id.'.jpg')}}" alt="customer-img">
+                                            @else
+                                                <img class="rounded-circle mr-4" style="height:75px; width:75px;" src="{{asset('images/users-image/default.jpg')}}" alt="customer-img">
+                                            @endif
                                         </div>
                                         <div class="media-body">
                                             <ul class="user-profile-list">
