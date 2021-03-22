@@ -27,4 +27,4 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
     }
 }
-\Debugbar::disable();
+/* \Debugbar::disable(); */

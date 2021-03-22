@@ -232,8 +232,8 @@
                                 <li class="list-inline-item"><a href="#" class="text-gray ml-3">( {{count($product->reviews)}} Reviews )</a></li>
                             </ul>
                             {{-- price and discount --}}
-                            <h4 class="text-primary h3">${{($product->price)-($product->price)*($product->discount)/100}} <s class="text-color ml-2">${{$product->price}}</s></h4>
-                            <h6 class="mb-4">You save: <span class="text-primary">${{($product->price)-(($product->price)-($product->price)*($product->discount)/100)}} USD ({{$product->discount}}%)</span></h6>
+                            <h4 class="text-primary h3">${{number_format(($product->price)-($product->price)*($product->discount)/100,2)}} <s class="text-color ml-2">${{number_format($product->price,2)}}</s></h4>
+                            <h6 class="mb-4">You save: <span class="text-primary">${{number_format(($product->price)-(($product->price)-($product->price)*($product->discount)/100),2)}} USD ({{$product->discount}}%)</span></h6>
                             {{-- color --}}
                             <div class="row pl-3">
                                 <h4>Color:</h4>
@@ -363,7 +363,7 @@
                                         </div>
                                         <div class="product-info">
                                             <h3 class="h6"><a class="text-color" href="{{route('shop.product_details.index',$items->model_number)}}">{{$items->name}}</a></h3>
-                                            <span class="h6"><b>{{$items->price}}</b></span>
+                                            <span class="h6"><b>{{number_format($items->price,2)}}</b></span>
                                         </div>
                                         <!-- product label badge -->
                                         <div class="product-label sale">

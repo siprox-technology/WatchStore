@@ -29,6 +29,10 @@ class CartController extends Controller
         $cart = Session::get('cart');
         $deletedItem = $cart->items[$id];
         $cart->remove($deletedItem,$id);
+        if(count($cart->items)==0)
+        {
+            Session::forget('cart');
+        }
         return back(); 
     }
 

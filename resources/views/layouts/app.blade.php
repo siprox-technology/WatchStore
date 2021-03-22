@@ -39,38 +39,7 @@
       </div> --}}
 
         {{-- cookie accept message --}}
-        <?php 
-        if(isset($_COOKIE["accepted-user"]))
-        {
-            if($_COOKIE["accepted-user"] != $_SERVER['REMOTE_ADDR'])
-            {
-                setcookie("accepted-user",$_SERVER['REMOTE_ADDR']);
-                echo '<div class="alert alert-secondary fade show rounded-0 mb-0" role="alert">
-                        <div class="d-flex justify-content-center">
-                            <h5 class="text-center text-danger">All cookies in this website are used for providing a better user experience and WILL NOT be shared with other parties.</h5>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <button type="button" style="font-size:11px;" class="btn btn-primary py-2 px-3" data-dismiss="alert" aria-label="Close">
-                            I accept
-                            </button>                                
-                        </div>
-                    </div>';
-            }
-        }
-        else {
-            setcookie("accepted-user",$_SERVER['REMOTE_ADDR']);
-            echo '<div class="alert alert-secondary fade show rounded-0 mb-0" role="alert">
-                        <div class="d-flex justify-content-center">
-                            <h5 class="text-center text-danger">All cookies in this website are used for providing a better user experience and WILL NOT be shared with other parties.</h5>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <button type="button" style="font-size:11px;" class="btn btn-primary py-2 px-3" data-dismiss="alert" aria-label="Close">
-                            I accept
-                            </button>                                
-                        </div>
-                    </div>';
-        }
-        ?>
+
 
     
         <!-- top header -->
@@ -230,7 +199,7 @@
                                     {{Session::has('cart')?Session::get('cart')->totalQty:'0'}}
                             </button>
                                 {{-- cart links --}}
-                            <div class="cart-wrapper">
+                            <div class="cart-wrapper {{Session::has('cart')?'open':''}}">
                                 <i id="cartClose" class="cart-close">X</i>
                                 <h4 class="mb-4">Your Cart</h4>
                                 <ul class="pl-0 mb-3">
@@ -259,10 +228,8 @@
                                     <span class="float-right">{{(Session::has('cart'))?Session::get('cart')->totalPrice:'0'}}</span>
                                 </div>
                                 <div class="text-center">
-                                    <a href="{{route('cart.index')}}" class="btn btn-dark btn-mobile rounded-0
-                                    {{(Session::has('cart'))?'':'d-none'}}">view cart</a>
-                                    <a href="{{route('checkout.index')}}" class="btn btn-dark btn-mobile rounded-0
-                                    {{(Session::has('cart'))?'':'d-none'}}">check out</a>
+                                    <a href="{{route('cart.index')}}" class="btn btn-dark btn-mobile rounded-0 {{Session::has('cart')?'':'d-none'}}">view cart</a>
+                                    <a href="{{route('checkout.index')}}" class="btn btn-dark btn-mobile rounded-0 {{Session::has('cart')?'':'d-none'}}">check out</a>
                                 </div>
                             </div>
                         </div>
