@@ -41,35 +41,6 @@ class ProductController extends Controller
     //display products based on request
     public function show(Request $request)
     {
-        if(count($request->request)<3)
-        {
-            //products
-            $products = Product::latest()
-            ->select('products.id as product_id','products.model_number','products.price','products.discount','products.name as name')
-            ->paginate(9);
-            $brands = DB::table('brands')
-                ->join('products', 'brands.id', '=', 'products.brand_id')
-                ->select('brands.name')->distinct()
-                ->get();
-            //all filters    
-            $categories = DB::table('products')->select('category as name')->distinct()->get();
-            $features = DB::table('products')->select('feature as name')->distinct()->get();
-            $genders = DB::table('products')->select('gender as name')->distinct()->get();
-            $colors = DB::table('products')->select('color as name')->distinct()->get();
-
-            return view('shop.index',
-            [
-                'products'=>$products,
-                'brands'=>$brands,
-                'categories'=>$categories,
-                'features'=>$features,
-                'genders'=>$genders,
-                'colors'=>$colors
-            ]);
-        }
-        else
-        {
-            //all filters
             $brands = DB::table('brands')
             ->join('products', 'brands.id', '=', 'products.brand_id')
             ->select('brands.name')->distinct()
@@ -110,7 +81,7 @@ class ProductController extends Controller
                 'genders'=>$genders,
                 'params' => $params
             ]);
-        }
+        
     }
     //search products
     public function search(Request $request)

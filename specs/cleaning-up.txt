@@ -1,14 +1,9 @@
 - go to optimize guide links
 - remove unnecessary files from project
 - check and optimize db queries on display items
-
-
-
-
--display numbers decimal points
--check to see if all unused get routes can be directed to home page
--change mail server to ssl configuration after getting ssl
+-change mail server to ssl configuration after getting ssl(configuration in email)
 -change email verification link inside the email sent to user to https at the beginning
+
 -countries list in payment form is out of container. 
 -password reset success needs green font
 -product prices decimal point 
