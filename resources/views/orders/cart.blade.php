@@ -67,27 +67,31 @@
                                                     </div>
                                                     <hr>
                                                     <div class="d-flex flex-column flex-md-row align-items-center justify-content-md-between ">
-                                                        <div class="col-lg-4 col-md-6 col-12 mb-2 mb-md-0">
-                                                            <a href="{{route('cart.removeAll')}}" class="btn btn-danger w-100">Delete Cart</a>
-                                                        </div>
+                                                        @if (Session::has('cart'))
+                                                            <div class="col-lg-4 col-md-6 col-12 mb-2 mb-md-0">
+                                                                <a href="{{route('cart.removeAll')}}" class="btn btn-danger w-100">Delete Cart</a>
+                                                            </div>
+                                                        @endif
                                                         <div class="col-lg-4 col-md-6 col-12 ">
                                                             <a href="{{route('shop.index')}}" class="btn btn-dark w-100">Continue shopping</a>
                                                         </div>
                                                     </div>
                                                     <hr>
-                                                    <div class="row">
-                                                        <div class="col-12">
-                                                            <ul class="list-unstyled text-right">
-                                                                 {{-- total price and tax  --}}
-                                                                <li>Sub Total <span
-                                                                        class="d-inline-block w-100px">${{(Session::has('cart'))?Session::get('cart')->totalPrice:'0'}}</span>
-                                                                </li>
-                                                            </ul>
+                                                    @if (Session::has('cart'))
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <ul class="list-unstyled text-right">
+                                                                    {{-- total price and tax  --}}
+                                                                    <li>Sub Total <span
+                                                                            class="d-inline-block w-100px">${{(Session::has('cart'))?Session::get('cart')->totalPrice:'0'}}</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <hr>
-                                                    <a href="{{route('checkout.index')}}"
-                                                        class="btn btn-primary float-right">Checkout</a>
+                                                        <hr>
+                                                        <a href="{{route('checkout.index')}}"
+                                                            class="btn btn-primary float-right">Checkout</a>
+                                                    @endif
                                                 </form>
                                             </div>
                                         </div>

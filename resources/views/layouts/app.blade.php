@@ -194,12 +194,18 @@
                     </div>
                     <!-- cart -->
                         <div class="cart">
-                            <button id="cartOpen" class="cart-btn"><i class="fas fa-shopping-cart"></i><span
-                                    class="d-xs-none">CART</span>
-                                    {{Session::has('cart')?Session::get('cart')->totalQty:'0'}}
+                            <button id="cartOpen" class="cart-btn d-flex">
+                                <i class="fas fa-shopping-cart mt-3"></i><span class="d-xs-none">CART </span>
+
+                                    <div class="shopping-cart">
+                                        <p class="m-0 text-center">
+                                            <!-- get number of items in basket -->
+                                            {{Session::has('cart')?Session::get('cart')->totalQty:'0'}}
+                                        </p>
+                                    </div>
                             </button>
                                 {{-- cart links --}}
-                            <div class="cart-wrapper {{Session::has('cart')?'open':''}}">
+                            <div class="cart-wrapper">
                                 <i id="cartClose" class="cart-close">X</i>
                                 <h4 class="mb-4">Your Cart</h4>
                                 <ul class="pl-0 mb-3">
