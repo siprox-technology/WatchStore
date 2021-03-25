@@ -17,7 +17,7 @@ class ProductSeeder extends Seeder
     public function run()
     {
         //--casio
-        Product::create(
+/*         Product::create(
             [
                 'sub_brand'=>'G Shock',
                 'model_number'=>'GST-B100-1AER',
@@ -666,9 +666,82 @@ class ProductSeeder extends Seeder
                     'brand_id'=>(DB::table('brands')->where('name', 'Swatch')->pluck('id'))[0],
                     'sale_number'=>rand(25,850)
                 ]
-            );
+            ); */
             //--- seeded@ 1/2/2021 9:10am
             
+            Product::create(
+                [
+                    'sub_brand'=>'Swatch',
+                    'model_number'=>'GP171',
+                    'name'=>'Swatch Watch',
+                    'category'=>'Original Gent', 
+                    'feature'=>'Quartz', 
+                    'gender'=>'Ladies', 
+                    'price'=>'67.24',
+                    'discount'=>'5', 
+                    'color'=>'white/red', 
+                    'description'=>'Swatch Botanicose GP171 is an incredible eye-catching Ladies watch from Original Gent collection. Material of the case is Plastic/Resin and the White dial gives the watch that unique look. This model has got 30 metres water resistancy - it can be worn in scenarios where it is likely to be splashed but not immersed in water. It can be worn while washing your hands and will be fine in rain. We ship it with an original box and a guarantee from the manufacturer.', 
+                    'specification'=>'Brand,Swatch,Analogue/Digital,Analogue,Case depth approx.,9.00mm,Primary Material,Plastic/Resin,Case Shape,Circle,Case width approx.,34.00mm,Clasp type,Strap buckle,Dial Colour,White,Multiple Time Zones Display,None,Gender,Ladies,Glass,Acrylic,Model Collection,Original Gent,Model Name,Botanicose,Movement Source,Swiss,Movement,Quartz,Strap colour,Multicolour,Strap Type,Rubber Strap,Water Resistance,30 metres,BARCODE,7610522834996,Guarantee,24 months',
+                    'stock'=>'125',
+                    'brand_id'=>(DB::table('brands')->where('name', 'Swatch')->pluck('id'))[0],
+                    'sale_number'=>rand(25,850)
+                    ]
+            );
+            Product::create(
+                [
+                    'sub_brand'=>'Swatch',
+                    'model_number'=>'SUOZ334',
+                    'name'=>'Swatch Watch',
+                    'category'=>'MoMa', 
+                    'feature'=>'Quartz', 
+                    'gender'=>'Ladies', 
+                    'price'=>'96.22',
+                    'discount'=>'10', 
+                    'color'=>'black/red', 
+                    'description'=>'Swatch The City And Design, The Wonders Of Life SUOZ334 is a great Unisex watch from MoMa collection. Case material is Plastic/Resin while the dial colour is MultiColour. 30 metres water resistancy will protect the watch and allows it to be worn in scenarios where it is likely to be splashed but not immersed in water. It can be worn while washing your hands and will be fine in rain. The watch is shipped with an original box and a guarantee from the manufacturer.', 
+                    'specification'=>'Brand,Swatch,Analogue/Digital,Analogue,Case depth approx.,10.00mm,Primary Material,Plastic/Resin,Case Shape,Circle,Case width approx.,41.00mm,Clasp type,Strap buckle,Dial Colour,MultiColour,Multiple Time Zones Display,None,Gender,Unisex,Glass,Acrylic,Limited Edition,Yes,Model Collection,MoMa,Model Name,The City And Design, The Wonders Of Life,Movement Source,Swiss,Movement,Quartz,Strap colour,Multicolour,Strap Type,Plastic/Resin Strap,Water Resistance,30 metres,BARCODE,7610522833050,Guarantee,24 months',
+                    'stock'=>'125',
+                    'brand_id'=>(DB::table('brands')->where('name', 'Swatch')->pluck('id'))[0],
+                    'sale_number'=>rand(25,850)
+                ]
+            );
+            Product::create(
+                [
+                    'sub_brand'=>'Swatch',
+                    'model_number'=>'GR185',
+                    'name'=>'Swatch Watch',
+                    'category'=>'Original Gent', 
+                    'feature'=>'Quartz', 
+                    'gender'=>'Ladies', 
+                    'price'=>'71.88',
+                    'discount'=>'10', 
+                    'color'=>'red/orange', 
+                    'description'=>'Swatch Retro-Rosso GR185 is an amazing Unisex watch from Original Gent collection. Case is made out of Plastic/Resin while the dial colour is Yellow. This model has got 30 metres water resistancy - it can be worn in scenarios where it is likely to be splashed but not immersed in water. It can be worn while washing your hands and will be fine in rain. The watch is shipped with an original box and a guarantee from the manufacturer.', 
+                    'specification'=>'Brand,Swatch,Analogue/Digital,Analogue,Case depth approx.,9.00mm,Primary Material,Plastic/Resin,Case Shape,Circle,Case width approx.,34.00mm,Clasp type,Strap buckle,Dial Colour,Yellow,Multiple Time Zones Display,None,Gender,Unisex,Glass,Acrylic,Model Collection,Original Gent,Model Name,Retro-Rosso,Movement Source,Swiss,Movement,Quartz,Strap colour,Red,Strap Type,Rubber Strap,Water Resistance,30 metres,BARCODE,7610522837270,Guarantee,24 months',
+                    'stock'=>'125',
+                    'brand_id'=>(DB::table('brands')->where('name', 'Swatch')->pluck('id'))[0],
+                    'sale_number'=>rand(25,850)
+                ]
+            );
+            Product::create(
+                [
+                    'sub_brand'=>'Swatch',
+                    'model_number'=>'LN157',
+                    'name'=>'Swatch Watch',
+                    'category'=>'March Monthly Drop', 
+                    'feature'=>'Quartz', 
+                    'gender'=>'Ladies', 
+                    'price'=>'62.60',
+                    'discount'=>'5', 
+                    'color'=>'blue/green', 
+                    'description'=>'Swatch #Greentouche LN157 is a beautiful and interesting Ladies watch from March Monthly Drop collection. Case material is Plastic/Resin, which stands for a high quality of the item while the dial colour is Blue. This model has got 30 metres water resistancy - it can be worn in scenarios where it is likely to be splashed but not immersed in water. It can be worn while washing your hands and will be fine in rain. We ship it with an original box and a guarantee from the manufacturer.', 
+                    'specification'=>'Brand,Swatch,Analogue/Digital,Analogue,Case depth approx.,7.00mm,Primary Material,Plastic/Resin,Case Shape,Circle,Case width approx.,25.00mm,Clasp type,Strap buckle,Dial Colour,Blue,Multiple Time Zones Display,None,Gender,Ladies,Glass,Acrylic,Model Collection,March Monthly Drop,Model Name,#Greentouche,Movement Source,Swiss,Movement,Quartz,Strap colour,Multicolour,Strap Type,Rubber Strap,Water Resistance,30 metres,BARCODE,7610522833067,Guarantee,24 months',
+                    'stock'=>'125',
+                    'brand_id'=>(DB::table('brands')->where('name', 'Swatch')->pluck('id'))[0],
+                    'sale_number'=>rand(25,850)
+                ]
+            );
+
 /*             Product::create(
                 [
                     'sub_brand'=>'',
@@ -684,57 +757,7 @@ class ProductSeeder extends Seeder
                     'specification'=>'',
                     'stock'=>'',
                     'brand_id'=>'',
-                ]
-            );
-            Product::create(
-                [
-                    'sub_brand'=>'',
-                    'model_number'=>'',
-                    'name'=>'',
-                    'category'=>'', 
-                    'feature'=>'', 
-                    'gender'=>'', 
-                    'price'=>'',
-                    'discount'=>'', 
-                    'color'=>'', 
-                    'description'=>'', 
-                    'specification'=>'',
-                    'stock'=>'',
-                    'brand_id'=>'',
-                ]
-            );
-            Product::create(
-                [
-                    'sub_brand'=>'',
-                    'model_number'=>'',
-                    'name'=>'',
-                    'category'=>'', 
-                    'feature'=>'', 
-                    'gender'=>'', 
-                    'price'=>'',
-                    'discount'=>'', 
-                    'color'=>'', 
-                    'description'=>'', 
-                    'specification'=>'',
-                    'stock'=>'',
-                    'brand_id'=>'',
-                ]
-            );
-            Product::create(
-                [
-                    'sub_brand'=>'',
-                    'model_number'=>'',
-                    'name'=>'',
-                    'category'=>'', 
-                    'feature'=>'', 
-                    'gender'=>'', 
-                    'price'=>'',
-                    'discount'=>'', 
-                    'color'=>'', 
-                    'description'=>'', 
-                    'specification'=>'',
-                    'stock'=>'',
-                    'brand_id'=>'',
+                    'sale_number'
                 ]
             ); */
     }

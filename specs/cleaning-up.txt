@@ -1,5 +1,12 @@
 - go to optimize guide links
 - remove unnecessary files from project
 - check and optimize db queries on display items
--change mail server to ssl configuration after getting ssl(configuration in email)
--change email verification link inside the email sent to user to https at the beginning
+
+
+
+
+-model class relations diagrams
+-fix and adjust styles
+
+
+
