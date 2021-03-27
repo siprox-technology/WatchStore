@@ -39,7 +39,39 @@
       </div> --}}
 
         {{-- cookie accept message --}}
-
+        <?php 
+        //check cookies accepted
+        if(isset($_COOKIE["accepted-user"]))
+        {
+            if($_COOKIE["accepted-user"] != $_SERVER['REMOTE_ADDR'])
+            {
+                setcookie("accepted-user",$_SERVER['REMOTE_ADDR']);
+                echo'<div class="alert alert-secondary alert-dismissible fade show rounded-0 pr-3" role="alert">
+                        <div class="d-flex flex-column mx-auto">
+                            <p class="col-12 text-center">All cookies in this website are used for providing a better user experience and WILL NOT be shared with other parties.</p>
+                            <div class="row justify-content-center">
+                                <button type="button" class="btn btn-sm btn-primary col-sm-3 col-md-4 col-8 text-center" data-dismiss="alert" aria-label="Close">
+                                I understand
+                                </button>
+                            </div>
+                        </div>
+                    </div>';
+            }
+        }
+        else {
+            setcookie("accepted-user",$_SERVER['REMOTE_ADDR']);
+            echo'<div class="alert alert-secondary alert-dismissible fade show rounded-0 pr-3" role="alert">
+                        <div class="d-flex flex-column mx-auto">
+                            <p class="col-12 text-center">All cookies in this website are used for providing a better user experience and WILL NOT be shared with other parties.</p>
+                            <div class="row justify-content-center">
+                                <button type="button" class="btn btn-sm btn-primary col-sm-3 col-md-4 col-8 text-center" data-dismiss="alert" aria-label="Close">
+                                I understand
+                                </button>
+                            </div>
+                        </div>
+                    </div>';
+                }
+    ?>
 
     
         <!-- top header -->
