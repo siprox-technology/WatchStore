@@ -100,3 +100,5 @@ Back end functionalities=>
 **Add and display reviews to items that user has bought.
 **display cookie policy confirmation page.
 *****************************************
+
+-about us

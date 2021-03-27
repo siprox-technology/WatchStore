@@ -76,7 +76,7 @@
     
         <!-- top header -->
         <div class="top-header">
-            <div class="row">
+            <div class="row w-100 mx-auto">
                 <div class="col-lg-6 text-center text-lg-left">
                     <p class="text-white mb-lg-0 mb-1">Free shipping • Free 30 days return • Express delivery</p>
                 </div>
@@ -92,14 +92,6 @@
                             </li>
                             <li class="list-inline-item"><a href="{{route('dashboard.index')}}">Dashboard</a></li> 
                         @endauth
-                        <li class="list-inline-item">
-                            <form action="#">
-                                <select class="country" name="country">
-                                    <option value="USD">USD</option>
-                                    <option value="JPN">JPN</option>
-                                    <option value="BAN">BAN</option>
-                                </select>
-                            </form>
                     </ul>
                 </div>
             </div>
@@ -109,7 +101,7 @@
     
         <!-- navigation -->
         <nav class="navbar navbar-expand-lg navbar-light bg-white w-100" id="navbar">
-            <a class="navbar-brand order-2 order-lg-1" href="index.html"><img class="img-fluid" src="{{asset('images/logo.png')}}"
+            <a class="navbar-brand order-2 order-lg-1 mr-0 ml-3" href="{{route('home')}}"><img class="img-fluid" src="{{asset('images/logo.png')}}"
                     alt="logo"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -145,15 +137,10 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="about.html">About Us</a>
                             <a class="dropdown-item" href="contact.html">Contact Us</a>
-                            <a class="dropdown-item" href="login.html">Login</a>
-                            <a class="dropdown-item" href="signin.html">Signup</a>
-                            <a class="dropdown-item" href="forget-password.html">Forget Password</a>
-                            <a class="dropdown-item" href="dashboard.html">Dashboard</a>
-                            <a class="dropdown-item" href="faq.html">FAQ</a>
-                            <a class="dropdown-item" href="404.html">404 Page</a>
-                            <a class="dropdown-item" href="coming-soon.html">Coming Soon</a>
-                            <a class="dropdown-item" href="blog-grid.html">Blog</a>
-                            <a class="dropdown-item" href="blog-single.html">Blog Single</a>
+                            <a class="dropdown-item" href="{{route('login.index')}}">Login</a>
+                            <a class="dropdown-item @if(auth()->user()) d-none @endif" href="{{route('register.index')}}">Signup</a>
+                            <a class="dropdown-item" href="{{route('forgetPassword.index')}}">Forget Password</a>
+                            <a class="dropdown-item" href="{{route('dashboard.index')}}">Dashboard</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown mega-dropdown">
@@ -162,8 +149,8 @@
                             Mega Menu
                         </a>
                         <div class="dropdown-menu mega-menu">
+                            {{-- brands --}}
                             <div class="mx-3 mega-menu-item">
-                                <h6>Men</h6>
                                 <ul class="pl-0">
                                     <li><a href="shop.html">Jackets & Coats</a></li>
                                     <li><a href="shop.html">Jeans</a></li>
@@ -172,8 +159,8 @@
                                     <li><a href="shop.html">Men Shirts</a></li>
                                 </ul>
                             </div>
+                            {{-- sub brands --}}
                             <div class="mx-3 mega-menu-item">
-                                <h6>Women</h6>
                                 <ul class="pl-0">
                                     <li><a href="shop.html">Blouses & Shirts</a></li>
                                     <li><a href="shop.html">Dresses</a></li>
@@ -182,8 +169,8 @@
                                     <li><a href="shop.html">Jackets & Coats</a></li>
                                 </ul>
                             </div>
+                            {{-- genders --}}
                             <div class="mx-3 mega-menu-item">
-                                <h6>Shoes & Bags</h6>
                                 <ul class="pl-0">
                                     <li><a href="shop.html">Backpacks</a></li>
                                     <li><a href="shop.html">Bum Bags</a></li>
@@ -192,8 +179,8 @@
                                     <li><a href="shop.html">Heeled Shoes</a></li>
                                 </ul>
                             </div>
+                            {{-- feature --}}
                             <div class="mx-3 mega-menu-item">
-                                <h6>Accessories</h6>
                                 <ul class="pl-0">
                                     <li><a href="shop.html">Sunglasses</a></li>
                                     <li><a href="shop.html">Watches</a></li>
@@ -201,9 +188,6 @@
                                     <li><a href="shop.html">Capes & Hats</a></li>
                                     <li><a href="shop.html">Belts</a></li>
                                 </ul>
-                            </div>
-                            <div class="mx-3 mega-megu-image">
-                                <img class="img-fluid h-100" src="{{asset('images/mega-megu.jpg')}}" alt="feature-img">
                             </div>
                         </div>
                     </li>
@@ -216,7 +200,6 @@
                 <div class="search-cart">
                     <!-- search -->
                     <div class="search">
-                        <button id="searchOpen" class="search-btn"><i class="fas fa-search"></i></button>
                         <div class="search-wrapper">
                             <form action="#">
                                 <input class="search-box" id="search" type="search" placeholder="Enter Keywords...">

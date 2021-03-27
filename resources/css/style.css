@@ -89,7 +89,7 @@ h6,
 }
 
 .btn-primary {
-    background: #ff4135;
+    background: #8a898f;
     color: #fff;
 }
 
@@ -106,11 +106,11 @@ h6,
 }
 
 .btn-primary:active {
-    background: #ff4135 !important;
+    background: #8a898f !important;
 }
 
 .btn-primary:hover {
-    background: #ff7168;
+    background: #343a40;
     border-color: transparent;
 }
 
@@ -124,7 +124,7 @@ h6,
 }
 
 .btn-light:hover {
-    background: #ff4135;
+    background: #8a898f;
     color: #fff;
 }
 
@@ -138,7 +138,7 @@ h6,
 }
 
 .btn-dark:hover {
-    background: #ff4135;
+    background: #8a898f;
 }
 
 .btn-outline-primary {
@@ -148,17 +148,17 @@ h6,
 }
 
 .btn-outline-primary:hover {
-    border-color: #ff4135;
-    color: #ff4135;
+    border-color: #8a898f;
+    color: #8a898f;
     background: transparent;
 }
 
 .btn-outline-primary:not(:disabled):not(.disabled).active,
 .btn-outline-primary:not(:disabled):not(.disabled):active,
 .show>.btn-outline-primary.dropdown-toggle {
-    color: #ff4135;
+    color: #8a898f;
     background-color: transparent;
-    border-color: #ff4135;
+    border-color: #8a898f;
 }
 
 .btn-sm {
@@ -178,12 +178,12 @@ body {
 }
 
 ::-moz-selection {
-    background: #ff7168;
+    background: #343a40;
     color: #fff;
 }
 
 ::selection {
-    background: #ff7168;
+    background: #343a40;
     color: #fff;
 }
 
@@ -236,7 +236,7 @@ label:focus {
 }
 
 a:hover {
-    color: #ff4135;
+    color: #8a898f;
 }
 
 .slick-slide {
@@ -311,7 +311,7 @@ a:hover {
 }
 
 .bg-primary {
-    background: #ff4135 !important;
+    background: #8a898f !important;
 }
 
 .bg-gray {
@@ -319,7 +319,7 @@ a:hover {
 }
 
 .text-primary {
-    color: #ff4135 !important;
+    color: #8a898f !important;
 }
 
 .text-dark {
@@ -359,7 +359,7 @@ a:hover {
 }
 
 .border-primary {
-    border-color: #ff4135 !important;
+    border-color: #8a898f !important;
 }
 
 .mb-10 {
@@ -446,7 +446,7 @@ a:hover {
 }
 
 .social-icons li a:hover {
-    background: #ff4135;
+    background: #8a898f;
     text-decoration: none;
 }
 
@@ -485,7 +485,7 @@ a:hover {
 
 .top-header ul li a:hover,
 .top-header ul li a.active {
-    color: #ff4135;
+    color: #8a898f;
 }
 
 .top-header ul li:last-child {
@@ -710,7 +710,7 @@ a:hover {
 }
 
 .cart-wrapper li i:hover {
-    color: #ff4135;
+    color: #8a898f;
 }
 
 .cart-close {
@@ -723,7 +723,7 @@ a:hover {
 }
 
 .cart-close:hover {
-    color: #ff4135;
+    color: #8a898f;
 }
 
 .navbar {
@@ -773,7 +773,7 @@ a:hover {
 @media (max-width: 400px) {
     .navbar-brand {
         top: 10px;
-        max-width: 100px;
+        max-width: 132px;
     }
 }
 
@@ -975,7 +975,7 @@ a:hover {
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-    color: #ff4135;
+    color: #8a898f;
 }
 
 .bg-letter {
@@ -1070,7 +1070,7 @@ a:hover {
 }
 
 .hero-slider .prevArrow:hover {
-    background: #ff4135;
+    background: #8a898f;
 }
 
 .hero-slider .prevArrow:hover::before {
@@ -1131,7 +1131,7 @@ a:hover {
 }
 
 .hero-slider .nextArrow:hover {
-    background: #ff4135;
+    background: #8a898f;
 }
 
 .hero-slider .nextArrow:hover::before {
@@ -1261,7 +1261,7 @@ a:hover {
 }
 
 .product-icon:hover i {
-    color: #ff4135;
+    color: #8a898f;
 }
 
 .product-icon.favorite {
@@ -1447,7 +1447,7 @@ a:hover {
 
 .form-control:focus {
     box-shadow: none;
-    border-color: #ff4135;
+    border-color: #8a898f;
 }
 
 select.form-control {
@@ -1504,7 +1504,7 @@ select.form-control {
 }
 
 .instagram-post ul a:hover {
-    color: #ff4135 !important;
+    color: #8a898f !important;
 }
 
 .instagram-post:hover::before {
@@ -1543,7 +1543,7 @@ select.form-control {
 }
 
 .social-icon-alt li a:hover {
-    color: #ff4135;
+    color: #8a898f;
 }
 
 footer a:hover {
@@ -1704,7 +1704,7 @@ footer a:hover {
     content: "";
     height: 8px;
     width: 8px;
-    background: #ff4135;
+    background: #8a898f;
     border-radius: 50%;
     top: 8px;
     left: -25px;
@@ -2026,9 +2026,9 @@ textarea.form-control {
 }
 
 .dashboard-menu .active {
-    background: #ff4135;
+    background: #8a898f;
     color: #fff;
-    border: 1px solid #ff4135;
+    border: 1px solid #8a898f;
 }
 
 .dashboard-menu li {
@@ -2444,7 +2444,7 @@ textarea.form-control {
 }
 
 .post-title a:hover {
-    color: #ff4135;
+    color: #8a898f;
 }
 
 .post-thumb {
@@ -2473,12 +2473,12 @@ textarea.form-control {
 }
 
 .post-meta ul li a:hover {
-    color: #ff4135;
+    color: #8a898f;
 }
 
 blockquote {
     padding: 20px;
-    border-left: 3px solid #ff4135;
+    border-left: 3px solid #8a898f;
 }
 
 .pagination .page-item .page-link {
@@ -2499,7 +2499,7 @@ blockquote {
 }
 
 .pagination .page-item.active .page-link {
-    background: #ff4135;
+    background: #8a898f;
     color: #fff;
 }
 
@@ -2544,7 +2544,7 @@ blockquote {
 }
 
 .inner-wrapper .nav {
-    border-bottom: 2px solid #ff4135;
+    border-bottom: 2px solid #8a898f;
 }
 
 .inner-wrapper .nav-item {
@@ -2554,11 +2554,11 @@ blockquote {
 
 .inner-wrapper .nav-item i {
     font-size: 20px;
-    color: #ff4135;
+    color: #8a898f;
 }
 
 .inner-wrapper .nav-item.active {
-    background: #ff4135;
+    background: #8a898f;
 }
 
 .inner-wrapper .nav-item.active i,
@@ -2598,8 +2598,40 @@ label {
 }
 
 .shopping-cart p {
-    /*     padding-right: 1px; */
     font-size: 14px;
     color: white;
-    /*     line-height: 21px; */
+
+}
+
+@media (max-width: 400px) {
+    .shopping-cart {
+        margin-top: 6px;
+        margin-left: 7px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #dc3545;
+        z-index: 5;
+    }
+
+    .shopping-cart p {
+        font-size: 12px;
+        color: white;
+        line-height: 21px;
+    }
+
+    .cart-btn {
+        height: 33px;
+        padding: 0px 17px;
+        line-height: 45px;
+        margin-top: 7px;
+        font-size: 13px;
+        border: 0;
+        border-radius: 40px;
+        background: #f2f3f5;
+    }
+
+    #cartOpen i {
+        margin-top: .6rem !important;
+    }
 }

@@ -2,7 +2,6 @@
 
 @section('content')
 <form action="{{route('shop.sort_filter.index')}}" method="GET">
-    @csrf
     <!-- products -->
     <!-- main wrapper -->
     <div class="main-wrapper">

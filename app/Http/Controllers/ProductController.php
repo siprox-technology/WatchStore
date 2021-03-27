@@ -51,7 +51,7 @@ class ProductController extends Controller
             $colors = DB::table('products')->select('color as name')->distinct()->get();
             
             //extract parameters from request
-            $params = $request->except(['_token'],['sortBy']);
+            $params = $request->except(['sortBy']);
 
             $params_brands = isset($params['brand'])?$params['brand']:$brands->pluck('name')->toArray();
             $params_categories = isset($params['category'])?$params['category']:$categories->pluck('name')->toArray();
