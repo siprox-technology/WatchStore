@@ -669,7 +669,7 @@ class ProductSeeder extends Seeder
             ); */
             //--- seeded@ 1/2/2021 9:10am
             
-            Product::create(
+/*             Product::create(
                 [
                     'sub_brand'=>'Swatch',
                     'model_number'=>'GP171',
@@ -740,7 +740,8 @@ class ProductSeeder extends Seeder
                     'brand_id'=>(DB::table('brands')->where('name', 'Swatch')->pluck('id'))[0],
                     'sale_number'=>rand(25,850)
                 ]
-            );
+            ); */
+            //--- seeded@ 3/27/2021 9:10am
 
 /*             Product::create(
                 [
@@ -756,8 +757,8 @@ class ProductSeeder extends Seeder
                     'description'=>'', 
                     'specification'=>'',
                     'stock'=>'',
-                    'brand_id'=>'',
-                    'sale_number'
+                    'brand_id'=>(DB::table('brands')->where('name', '')->pluck('id'))[0],
+                    'sale_number'=>rand(25,850)
                 ]
             ); */
     }

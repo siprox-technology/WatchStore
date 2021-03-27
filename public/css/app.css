@@ -24781,6 +24781,7 @@ readers do not read off random characters that represent icons */
 
 * {
     font-family: 'Montserrat', sans-serif;
+    /*     scroll-behavior: smooth; */
 }
 
 body {

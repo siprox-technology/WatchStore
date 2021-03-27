@@ -98,6 +98,7 @@ class ProductController extends Controller
             ->Orwhere('products.sub_brand','like',$key)
             ->Orwhere('products.category','like',$key)
             ->Orwhere('products.feature','like',$key)
+            ->Orwhere('products.gender','like',$key)
             ->orderBy('price','desc')
             ->paginate(9);
             return view('shop.search',['products'=>$products->appends(request()->input())]);

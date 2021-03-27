@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link href="{{ asset ('css/app.css') }}" rel="stylesheet">
+    <link href="{{asset('css/app.css')}}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link rel="icon" href="{{asset('images/favicon.png')}}" type="image/x-icon">
 </head>
@@ -20,24 +20,8 @@
         </div>
         <!-- preloader end -->
 
-
-    
         <!-- header -->
         <header>
-            <!-- top advertise -->
-{{--        <div class="alert alert-secondary alert-dismissible fade show rounded-0 pb-0 mb-0" role="alert">
-        <div class="d-flex justify-content-between">
-          <p>SAVE UP TO $50</p>
-          <h4>SALE!</h4>
-          <div class="shop-now">
-            <a href="shop.html" class="btn btn-sm btn-primary">Shop Now</a>
-          </div>
-        </div>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div> --}}
-
         {{-- cookie accept message --}}
         <?php 
         //check cookies accepted
@@ -117,17 +101,6 @@
                         <a class="nav-link" href="{{route('shop.index')}}" role="button">
                             shop
                         </a>
-{{--                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{route('shop.index')}}">Shop</a>
-                            <a class="dropdown-item" href="shop-list.html">Shop List</a>
-                            <a class="dropdown-item" href="product-single.html">Product Single</a>
-                            <a class="dropdown-item" href="cart.html">Cart</a>
-                            <a class="dropdown-item" href="shipping.html">Shipping Method</a>
-                            <a class="dropdown-item" href="payment.html">Payment Method</a>
-                            <a class="dropdown-item" href="review.html">Review</a>
-                            <a class="dropdown-item" href="confirmation.html">Confirmation</a>
-                            <a class="dropdown-item" href="track.html">Track Order</a>
-                        </div> --}}
                     </li>
                     <li class="nav-item dropdown view">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
@@ -151,48 +124,49 @@
                         <div class="dropdown-menu mega-menu">
                             {{-- brands --}}
                             <div class="mx-3 mega-menu-item">
+                                <h4>Brands</h4>
                                 <ul class="pl-0">
-                                    <li><a href="shop.html">Jackets & Coats</a></li>
-                                    <li><a href="shop.html">Jeans</a></li>
-                                    <li><a href="shop.html">Top & T-Shirts</a></li>
-                                    <li><a href="shop.html">Dresses</a></li>
-                                    <li><a href="shop.html">Men Shirts</a></li>
+                                    <li><a href="{{route('shop.search',['key'=>'Casio'])}}">Casio</a></li>
+                                    <li><a href="{{route('shop.search',['key'=>'Tissot'])}}">Tissot</a></li>
+                                    <li><a href="{{route('shop.search',['key'=>'Swatch'])}}">Swatch</a></li>
                                 </ul>
                             </div>
-                            {{-- sub brands --}}
+                            {{-- category --}}
                             <div class="mx-3 mega-menu-item">
+                                <h4>Category</h4>
                                 <ul class="pl-0">
-                                    <li><a href="shop.html">Blouses & Shirts</a></li>
-                                    <li><a href="shop.html">Dresses</a></li>
-                                    <li><a href="shop.html">Top & T-Shirts</a></li>
-                                    <li><a href="shop.html">Jeans & Trousers</a></li>
-                                    <li><a href="shop.html">Jackets & Coats</a></li>
+                                    <li><a href="{{route('shop.search',['key'=>'T-Lady'])}}">T-Lady</a></li>
+                                    <li><a href="{{route('shop.search',['key'=>'Supersport'])}}">Supersport</a></li>
+                                    <li><a href="{{route('shop.search',['key'=>'Original Gent'])}}">Original Gent</a></li>
+                                    <li><a href="{{route('shop.search',['key'=>'Masters of G'])}}">Masters of G</a></li>
+                                    <li><a href="{{route('shop.search',['key'=>'Heritage'])}}">Heritage</a></li>
                                 </ul>
                             </div>
                             {{-- genders --}}
                             <div class="mx-3 mega-menu-item">
+                                <h4>Genders</h4>
                                 <ul class="pl-0">
-                                    <li><a href="shop.html">Backpacks</a></li>
-                                    <li><a href="shop.html">Bum Bags</a></li>
-                                    <li><a href="shop.html">Accross Bags</a></li>
-                                    <li><a href="shop.html">Shoes</a></li>
-                                    <li><a href="shop.html">Heeled Shoes</a></li>
+                                    <li><a href="{{route('shop.search',['key'=>'Mens'])}}">Mens</a></li>
+                                    <li><a href="{{route('shop.search',['key'=>'Ladies'])}}">Ladies</a></li>
+                                    <li><a href="{{route('shop.search',['key'=>'Unisex'])}}">Unisex</a></li>
                                 </ul>
                             </div>
-                            {{-- feature --}}
+                            {{-- features --}}
                             <div class="mx-3 mega-menu-item">
+                                <h4>Features</h4>
                                 <ul class="pl-0">
-                                    <li><a href="shop.html">Sunglasses</a></li>
-                                    <li><a href="shop.html">Watches</a></li>
-                                    <li><a href="shop.html">Gloves</a></li>
-                                    <li><a href="shop.html">Capes & Hats</a></li>
-                                    <li><a href="shop.html">Belts</a></li>
+                                    <li><a href="{{route('shop.search',['key'=>'Solar'])}}">Solar Powered</a></li>
+                                    <li><a href="{{route('shop.search',['key'=>'Quartz'])}}">Quartz</a></li>
+                                    <li><a href="{{route('shop.search',['key'=>'Mudmaster'])}}">Mudmaster </a></li>
+                                    <li><a href="{{route('shop.search',['key'=>'Automatic'])}}">Automatic </a></li>
+                                    <li><a href="{{route('shop.search',['key'=>'chronograph'])}}">chronograph</a></li>
+                                    <li><a href="{{route('shop.search',['key'=>'Bluetooth'])}}">Bluetooth</a></li>
                                 </ul>
                             </div>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact Us</a>
+                        <a class="nav-link" href="#site-footer">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -273,7 +247,7 @@
         @yield('content')
 
         <!-- footer -->
-        <footer class="bg-light">
+        <footer class="bg-light" id="site-footer">
             <div class="section">
                 <div class="container">
                     <div class="row">
