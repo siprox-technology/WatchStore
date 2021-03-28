@@ -5,12 +5,12 @@
 
     <!-- main wrapper -->
     <div class="main-wrapper">
-
+        {{-- hero area --}}
         <section class="section bg-gray hero-area">
             <div class="container">
                 <div class="hero-slider">
 
-                    <!-- Start first slide  -->
+                    <!-- Casio G shock -->
                     <div class="slider-item">
                         <div class="row">
                             <div class="col-lg-6 align-self-center text-center text-md-left mb-4 mb-lg-0">
@@ -20,21 +20,20 @@
                                 <!-- Start Title -->
                                 <h1 data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".2"
                                     data-animation-out="fadeOutLeft" data-delay-out="5" data-duration-out=".3">High
-                                    Quality Converse</h1>
+                                    Quality Though Watch</h1>
                                 <!-- end title -->
                                 <!-- Start Subtitle -->
                                 <h3 class="mb-4" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".4"
                                     data-animation-out="fadeOutLeft" data-delay-out="5" data-duration-out=".3">for only
-                                    $59.00</h3>
+                                    $337.80</h3>
                                 <!-- end subtitle -->
                                 <!-- Start description -->
                                 <p class="mb-4" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".6"
-                                    data-animation-out="fadeOutLeft" data-delay-out="5" data-duration-out=".3">Lorem
-                                    ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt
-                                    ut labore et dolore magna aliqua.</p>
+                                    data-animation-out="fadeOutLeft" data-delay-out="5" data-duration-out=".3">
+                                    Mens Casio G-Steel Bluetooth Triple Connect Chronograph Radio Controlled Watch.</p>
                                 <!-- end description -->
                                 <!-- Start button -->
-                                <a href="shop.html" class="btn btn-primary" data-duration-in=".5"
+                                <a href="{{route('shop.product_details.index','GST-B100-1AER')}}" class="btn btn-primary" data-duration-in=".5"
                                     data-animation-in="fadeInLeft" data-delay-in=".8" data-animation-out="fadeOutLeft"
                                     data-delay-out="5" data-duration-out=".3">shop now</a>
                                 <!-- end button -->
@@ -48,17 +47,17 @@
                                         C
                                     </span>
                                     <!-- Slide image -->
-                                    <img class="img-fluid d-unset" src="{{asset('images/hero-area/converse.png')}}" alt="converse"
+                                    <img class="img-fluid d-unset" src="{{asset('images/hero-area/GST-B100-1AER-0.png')}}" alt="converse"
                                         data-duration-in=".5" data-animation-in="fadeInRight" data-delay-in="1"
                                         data-animation-out="fadeOutRight" data-delay-out="5" data-duration-out=".3">
                                 </div>
                             </div>
                             <!-- end slide image  -->
                         </div>
-                    </div> <!-- end slider item -->
+                    </div>
+                    <!-- end slider item -->
 
-
-                    <!-- Start slide  -->
+                    {{-- Tissot T lady --}}
                     <div class="slider-item">
                         <div class="row">
                             <div class="col-lg-6 align-self-center text-center text-md-left mb-4 mb-lg-0">
@@ -67,14 +66,13 @@
                                     Women’s</h3>
                                 <h1 data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".2"
                                     data-animation-out="fadeOutDown" data-delay-out="5.4" data-duration-out=".3">High
-                                    Quality Bag</h1>
+                                    Quality watch</h1>
                                 <h3 class="mb-4" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".4"
                                     data-animation-out="fadeOutDown" data-delay-out="5" data-duration-out=".3">for only
-                                    $37.00</h3>
+                                    $248.99</h3>
                                 <p class="mb-4" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".6"
-                                    data-animation-out="fadeOutDown" data-delay-out="4.6" data-duration-out=".3">Lorem
-                                    ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt
-                                    ut labore et dolore magna aliqua.</p>
+                                    data-animation-out="fadeOutDown" data-delay-out="4.6" data-duration-out=".3">
+                                    Ladies Tissot T-Lady Lovely Square Watch.</p>
                                 <a href="shop.html" class="btn btn-primary" data-duration-in=".5"
                                     data-animation-in="fadeInDown" data-delay-in=".8" data-animation-out="fadeOutDown"
                                     data-delay-out="4.2" data-duration-out=".3">shop now</a>
@@ -84,9 +82,9 @@
                                     <!-- background letter -->
                                     <span data-duration-in=".5" data-animation-in="fadeInRight" data-delay-in="1.2"
                                         data-animation-out="fadeOutRight" data-delay-out="5" data-duration-out=".3">
-                                        B
+                                        T
                                     </span>
-                                    <img class="img-fluid d-unset" src="{{asset('images/hero-area/bag.png')}}" alt="converse"
+                                    <img class="img-fluid d-unset" src="{{asset('images/hero-area/T0581091603100-0.jpg')}}" alt="converse"
                                         data-duration-in=".5" data-animation-in="fadeInRight" data-delay-in="1"
                                         data-animation-out="fadeOutRight" data-delay-out="5" data-duration-out=".3">
                                 </div>
@@ -94,7 +92,6 @@
                         </div>
                     </div>
                     <!-- end slide  -->
-
                 </div>
             </div>
         </section>

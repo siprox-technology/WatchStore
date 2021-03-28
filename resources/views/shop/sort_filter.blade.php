@@ -81,11 +81,11 @@
                                         @endif
                                         {{-- gender --}}
                                         @if (isset($params['gender']))
-                                            @for ($i = 0; $i < count($params['gender']); $i++)
+                                            @foreach ($params['gender'] as $key => $value)
                                                 <span class="text-gray m-0 ml-2 p-2 border">
-                                                    {{$params['gender'][$i]}}
+                                                    {{$value}}
                                                 </span>
-                                            @endfor                                          
+                                            @endforeach                        
                                         @endif
                                         {{-- color --}}
                                         @if (isset($params['color']))
