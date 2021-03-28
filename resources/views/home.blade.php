@@ -47,7 +47,7 @@
                                         C
                                     </span>
                                     <!-- Slide image -->
-                                    <img class="img-fluid d-unset" src="{{asset('images/hero-area/GST-B100-1AER-0.png')}}" alt="converse"
+                                    <img class="img-fluid d-unset w-75" src="{{asset('images/hero-area/GST-B100-1AER-0.png')}}" alt="converse"
                                         data-duration-in=".5" data-animation-in="fadeInRight" data-delay-in="1"
                                         data-animation-out="fadeOutRight" data-delay-out="5" data-duration-out=".3">
                                 </div>
@@ -104,83 +104,83 @@
                     <div class="col-lg-12 text-center">
                         <h2 class="section-title">Top Categories</h2>
                     </div>
+                    <!-- Casio edifice-->
+                    <div class="col-lg-4 col-md-6 mb-50">
+                        <div class="card p-0">
+                            <div class="border-bottom text-center hover-zoom-img">
+                                <a href="{{route('shop.product_details.index','EFR-570BL-1AVUEF')}}"><img src="{{asset('images/categories/EFR-570BL-1AVUEF-0.jpg')}}"
+                                        class="rounded-top img-fluid w-100 p-4" alt="product-img"></a>
+                            </div>
+                            <ul class="d-flex list-unstyled pl-0 categories-list">
+                                <li class="m-0 hover-zoom-img">
+                                    <a href="{{route('shop.product_details.index','ECB-10DB-1AEF')}}"><img src="{{asset('images/categories/ECB-10DB-1AEF-0.jpg')}}"
+                                            class="img-fluid w-100 p-4" alt="product-img"></a>
+                                </li>
+                                <li class="m-0 hover-zoom-img">
+                                    <a href="{{route('shop.product_details.index','EFR-569DB-1AVUEF')}}"><img src="{{asset('images/categories/EFR-569DB-1AVUEF-0.jpg')}}"
+                                            class="img-fluid w-100 p-4" alt="product-img"></a>
+                                </li>
+                                <li class="m-0 hover-zoom-img">
+                                    <a href="{{route('shop.product_details.index','EFR-570DB-1BVUEF')}}"><img src="{{asset('images/categories/EFR-570DB-1BVUEF-0.jpg')}}"
+                                            class="img-fluid w-100 p-4" alt="product-img"></a>
+                                </li>
+                            </ul>
+                            <div class="px-4 py-3 border-top">
+                                <h4 class="d-inline-block mb-0 mt-1">CASIO Edifice</h4>
+                                <a href="{{route('shop.index')}}" class="btn btn-sm btn-outline-primary float-right">view more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tissot Heritage-->
+                    <div class="col-lg-4 col-md-6 mb-50">
+                        <div class="card p-0">
+                            <div class="border-bottom text-center hover-zoom-img">
+                                <a href="{{route('shop.product_details.index','T0194301605101')}}"><img src="{{asset('images/categories/T0194301605101-0.jpg')}}"
+                                        class="rounded-top img-fluid w-100 p-4" alt="product-img"></a>
+                            </div>
+                            <ul class="d-flex list-unstyled pl-0 categories-list">
+                                <li class="m-0 hover-zoom-img">
+                                    <a href="{{route('shop.product_details.index','T1184101605701')}}"><img src="{{asset('images/categories/T1184101605701-0.jpg')}}"
+                                            class="img-fluid w-100 p-4" alt="product-img"></a>
+                                </li>
+                                <li class="m-0 hover-zoom-img">
+                                    <a href="{{route('shop.product_details.index','T0194301104100')}}"><img src="{{asset('images/categories/T0194301104100-0.jpg')}}"
+                                            class="img-fluid w-100 p-4" alt="product-img"></a>
+                                </li>
+                                <li class="m-0 hover-zoom-img">
+                                    <a href="{{route('shop.product_details.index','T66171233')}}"><img src="{{asset('images/categories/T66171233-0.jpg')}}"
+                                            class="img-fluid w-100 p-4" alt="product-img"></a>
+                                </li>
+                            </ul>
+                            <div class="px-4 py-3 border-top">
+                                <h4 class="d-inline-block mb-0 mt-1">Original Gents</h4>
+                                <a href="{{route('shop.index')}}" class="btn btn-sm btn-outline-primary float-right">view more</a>
+                            </div>
+                        </div>
+                    </div>
                     <!-- categories item -->
                     <div class="col-lg-4 col-md-6 mb-50">
                         <div class="card p-0">
                             <div class="border-bottom text-center hover-zoom-img">
                                 <a href="shop.html"><img src="{{asset('images/categories/product-big-1.jpg')}}"
-                                        class="rounded-top img-fluid w-100" alt="product-img"></a>
+                                        class="rounded-top img-fluid w-100 p-4" alt="product-img"></a>
                             </div>
                             <ul class="d-flex list-unstyled pl-0 categories-list">
                                 <li class="m-0 hover-zoom-img">
                                     <a href="shop.html"><img src="{{asset('images/categories/product-sm-1.jpg')}}"
-                                            class="img-fluid w-100" alt="product-img"></a>
+                                            class="img-fluid w-100 p-4" alt="product-img"></a>
                                 </li>
                                 <li class="m-0 hover-zoom-img">
                                     <a href="shop.html"><img src="{{asset('images/categories/product-sm-2.jpg')}}"
-                                            class="img-fluid w-100" alt="product-img"></a>
+                                            class="img-fluid w-100 p-4" alt="product-img"></a>
                                 </li>
                                 <li class="m-0 hover-zoom-img">
                                     <a href="shop.html"><img src="{{asset('images/categories/product-sm-3.jpg')}}"
-                                            class="img-fluid w-100" alt="product-img"></a>
+                                            class="img-fluid w-100 p-4" alt="product-img"></a>
                                 </li>
                             </ul>
                             <div class="px-4 py-3 border-top">
-                                <h4 class="d-inline-block mb-0 mt-1">Clothing</h4>
-                                <a href="shop.html" class="btn btn-sm btn-outline-primary float-right">view more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- categories item -->
-                    <div class="col-lg-4 col-md-6 mb-50">
-                        <div class="card p-0">
-                            <div class="border-bottom text-center hover-zoom-img">
-                                <a href="shop.html"><img src="{{asset('images/categories/product-big-2.jpg')}}"
-                                        class="rounded-top img-fluid w-100" alt="product-img"></a>
-                            </div>
-                            <ul class="d-flex list-unstyled pl-0 categories-list">
-                                <li class="m-0 hover-zoom-img">
-                                    <a href="shop.html"><img src="{{asset('images/categories/product-sm-4.jpg')}}"
-                                            class="img-fluid w-100" alt="product-img"></a>
-                                </li>
-                                <li class="m-0 hover-zoom-img">
-                                    <a href="shop.html"><img src="{{asset('images/categories/product-sm-5.jpg')}}"
-                                            class="img-fluid w-100" alt="product-img"></a>
-                                </li>
-                                <li class="m-0 hover-zoom-img">
-                                    <a href="shop.html"><img src="{{asset('images/categories/product-sm-6.jpg')}}"
-                                            class="img-fluid w-100" alt="product-img"></a>
-                                </li>
-                            </ul>
-                            <div class="px-4 py-3 border-top">
-                                <h4 class="d-inline-block mb-0 mt-1">Shoes</h4>
-                                <a href="shop.html" class="btn btn-sm btn-outline-primary float-right">view more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- categories item -->
-                    <div class="col-lg-4 col-md-6 mb-50">
-                        <div class="card p-0">
-                            <div class="border-bottom text-center hover-zoom-img">
-                                <a href="shop.html"><img src="{{asset('images/categories/product-big-3.jpg')}}"
-                                        class="rounded-top img-fluid w-100" alt="product-img"></a>
-                            </div>
-                            <ul class="d-flex list-unstyled pl-0 categories-list">
-                                <li class="m-0 hover-zoom-img">
-                                    <a href="shop.html"><img src="{{asset('images/categories/product-sm-7.jpg')}}"
-                                            class="img-fluid w-100" alt="product-img"></a>
-                                </li>
-                                <li class="m-0 hover-zoom-img">
-                                    <a href="shop.html"><img src="{{asset('images/categories/product-sm-8.jpg')}}"
-                                            class="img-fluid w-100" alt="product-img"></a>
-                                </li>
-                                <li class="m-0 hover-zoom-img">
-                                    <a href="shop.html"><img src="{{asset('images/categories/product-sm-9.jpg')}}"
-                                            class="img-fluid w-100" alt="product-img"></a>
-                                </li>
-                            </ul>
-                            <div class="px-4 py-3 border-top">
-                                <h4 class="d-inline-block mb-0 mt-1">Accessories</h4>
+                                <h4 class="d-inline-block mb-0 mt-1">Edifice</h4>
                                 <a href="shop.html" class="btn btn-sm btn-outline-primary float-right">view more</a>
                             </div>
                         </div>
