@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Password;
 use App\Http\Controllers\LoginController;
@@ -27,9 +28,7 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 | 
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/',[HomeController::class,'index'])->name('home');
 
 
 //all products list sorted by newest

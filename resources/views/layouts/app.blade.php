@@ -124,43 +124,43 @@
                         <div class="dropdown-menu mega-menu">
                             {{-- brands --}}
                             <div class="mx-3 mega-menu-item">
-                                <h4>Brands</h4>
+                                <h4 class="text-light">Brands</h4>
                                 <ul class="pl-0">
-                                    <li><a href="{{route('shop.search',['key'=>'Casio'])}}">Casio</a></li>
-                                    <li><a href="{{route('shop.search',['key'=>'Tissot'])}}">Tissot</a></li>
-                                    <li><a href="{{route('shop.search',['key'=>'Swatch'])}}">Swatch</a></li>
+                                    <li><a href="{{route('shop.sort_filter.index',['sortBy'=>'created_at','brand'=>['0'=>'Casio'],'price'=>'1000000'])}}">Casio</a></li>
+                                    <li><a href="{{route('shop.sort_filter.index',['sortBy'=>'created_at','brand'=>['0'=>'Tissot'],'price'=>'1000000'])}}">Tissot</a></li>
+                                    <li><a href="{{route('shop.sort_filter.index',['sortBy'=>'created_at','brand'=>['0'=>'Swatch'],'price'=>'1000000'])}}">Swatch</a></li>
                                 </ul>
                             </div>
                             {{-- category --}}
                             <div class="mx-3 mega-menu-item">
-                                <h4>Category</h4>
+                                <h4 class="text-light">Category</h4>
                                 <ul class="pl-0">
-                                    <li><a href="{{route('shop.search',['key'=>'T-Lady'])}}">T-Lady</a></li>
-                                    <li><a href="{{route('shop.search',['key'=>'Supersport'])}}">Supersport</a></li>
-                                    <li><a href="{{route('shop.search',['key'=>'Original Gent'])}}">Original Gent</a></li>
-                                    <li><a href="{{route('shop.search',['key'=>'Masters of G'])}}">Masters of G</a></li>
-                                    <li><a href="{{route('shop.search',['key'=>'Heritage'])}}">Heritage</a></li>
+                                    <li><a href="{{route('shop.sort_filter.index',['sortBy'=>'created_at','category'=>['0'=>'T-Lady'],'price'=>'1000000'])}}">T-Lady</a></li>
+                                    <li><a href="{{route('shop.sort_filter.index',['sortBy'=>'created_at','category'=>['0'=>'Supersport'],'price'=>'1000000'])}}">Supersport</a></li>
+                                    <li><a href="{{route('shop.sort_filter.index',['sortBy'=>'created_at','category'=>['0'=>'Original Gent'],'price'=>'1000000'])}}">Original Gent</a></li>
+                                    <li><a href="{{route('shop.sort_filter.index',['sortBy'=>'created_at','category'=>['0'=>'Masters of G'],'price'=>'1000000'])}}">Masters of G</a></li>
+                                    <li><a href="{{route('shop.sort_filter.index',['sortBy'=>'created_at','category'=>['0'=>'Heritage'],'price'=>'1000000'])}}">Heritage</a></li>
                                 </ul>
                             </div>
                             {{-- genders --}}
                             <div class="mx-3 mega-menu-item">
-                                <h4>Genders</h4>
+                                <h4 class="text-light">Genders</h4>
                                 <ul class="pl-0">
-                                    <li><a href="{{route('shop.search',['key'=>'Mens'])}}">Mens</a></li>
-                                    <li><a href="{{route('shop.search',['key'=>'Ladies'])}}">Ladies</a></li>
-                                    <li><a href="{{route('shop.search',['key'=>'Unisex'])}}">Unisex</a></li>
+                                    <li><a href="{{route('shop.sort_filter.index',['sortBy'=>'created_at','gender'=>['0'=>'Mens'],'price'=>'1000000'])}}">Mens</a></li>
+                                    <li><a href="{{route('shop.sort_filter.index',['sortBy'=>'created_at','gender'=>['0'=>'Ladies'],'price'=>'1000000'])}}">Ladies</a></li>
+                                    <li><a href="{{route('shop.sort_filter.index',['sortBy'=>'created_at','gender'=>['0'=>'Unisex'],'price'=>'1000000'])}}">Unisex</a></li>
                                 </ul>
                             </div>
                             {{-- features --}}
                             <div class="mx-3 mega-menu-item">
-                                <h4>Features</h4>
+                                <h4 class="text-light">Features</h4>
                                 <ul class="pl-0">
-                                    <li><a href="{{route('shop.search',['key'=>'Solar'])}}">Solar Powered</a></li>
-                                    <li><a href="{{route('shop.search',['key'=>'Quartz'])}}">Quartz</a></li>
-                                    <li><a href="{{route('shop.search',['key'=>'Mudmaster'])}}">Mudmaster </a></li>
-                                    <li><a href="{{route('shop.search',['key'=>'Automatic'])}}">Automatic </a></li>
-                                    <li><a href="{{route('shop.search',['key'=>'chronograph'])}}">chronograph</a></li>
-                                    <li><a href="{{route('shop.search',['key'=>'Bluetooth'])}}">Bluetooth</a></li>
+                                    <li><a href="{{route('shop.sort_filter.index',['sortBy'=>'created_at','feature'=>['0'=>'Solar Powered'],'price'=>'1000000'])}}">Solar Powered</a></li>
+                                    <li><a href="{{route('shop.sort_filter.index',['sortBy'=>'created_at','feature'=>['0'=>'Quartz'],'price'=>'1000000'])}}">Quartz</a></li>
+                                    <li><a href="{{route('shop.sort_filter.index',['sortBy'=>'created_at','feature'=>['0'=>'Mudmaster'],'price'=>'1000000'])}}">Mudmaster </a></li>
+                                    <li><a href="{{route('shop.sort_filter.index',['sortBy'=>'created_at','feature'=>['0'=>'Automatic'],'price'=>'1000000'])}}">Automatic </a></li>
+                                    <li><a href="{{route('shop.sort_filter.index',['sortBy'=>'created_at','feature'=>['0'=>'Chronograph'],'price'=>'1000000'])}}">Chronograph</a></li>
+                                    <li><a href="{{route('shop.sort_filter.index',['sortBy'=>'created_at','feature'=>['0'=>'Bluetooth'],'price'=>'1000000'])}}">Bluetooth</a></li>
                                 </ul>
                             </div>
                         </div>

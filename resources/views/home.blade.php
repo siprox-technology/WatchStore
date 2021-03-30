@@ -158,30 +158,30 @@
                             </div>
                         </div>
                     </div>
-                    <!-- categories item -->
+                    <!-- ladies -->
                     <div class="col-lg-4 col-md-6 mb-50">
                         <div class="card p-0">
                             <div class="border-bottom text-center hover-zoom-img">
-                                <a href="shop.html"><img src="{{asset('images/categories/product-big-1.jpg')}}"
+                                <a href="{{route('shop.product_details.index','GN254')}}"><img src="{{asset('images/categories/GN254-0.jpg')}}"
                                         class="rounded-top img-fluid w-100 p-4" alt="product-img"></a>
                             </div>
                             <ul class="d-flex list-unstyled pl-0 categories-list">
                                 <li class="m-0 hover-zoom-img">
-                                    <a href="shop.html"><img src="{{asset('images/categories/product-sm-1.jpg')}}"
+                                    <a href="{{route('shop.product_details.index','GP171')}}"><img src="{{asset('images/categories/GP171-0.jpg')}}"
                                             class="img-fluid w-100 p-4" alt="product-img"></a>
                                 </li>
                                 <li class="m-0 hover-zoom-img">
-                                    <a href="shop.html"><img src="{{asset('images/categories/product-sm-2.jpg')}}"
+                                    <a href="{{route('shop.product_details.index','LN157')}}"><img src="{{asset('images/categories/LN157-0.jpg')}}"
                                             class="img-fluid w-100 p-4" alt="product-img"></a>
                                 </li>
                                 <li class="m-0 hover-zoom-img">
-                                    <a href="shop.html"><img src="{{asset('images/categories/product-sm-3.jpg')}}"
+                                    <a href="{{route('shop.product_details.index','SUON700')}}"><img src="{{asset('images/categories/SUON700-0.jpg')}}"
                                             class="img-fluid w-100 p-4" alt="product-img"></a>
                                 </li>
                             </ul>
                             <div class="px-4 py-3 border-top">
-                                <h4 class="d-inline-block mb-0 mt-1">Edifice</h4>
-                                <a href="shop.html" class="btn btn-sm btn-outline-primary float-right">view more</a>
+                                <h4 class="d-inline-block mb-0 mt-1">Ladies</h4>
+                                <a href="{{route('shop.index')}}" class="btn btn-sm btn-outline-primary float-right">view more</a>
                             </div>
                         </div>
                     </div>
@@ -195,48 +195,16 @@
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <h1 class="text-white mb-2">End of Season Sale</h1>
-                        <p class="text-white mb-4">Take 25% off all sweaters and knits. Discount applied at checkout.
+                        <p class="text-white mb-4">Up to 30% off all watches.
                         </p>
-                        <a href="shop.html" class="btn btn-light">shop now</a>
+                        <a href="{{route('shop.sort_filter.index',['sortBy'=>'discount','price'=>'1000000'])}}" class="btn btn-light">shop now</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <div id="quickView" class="quickview">
-            <div class="row w-100">
-                <div class="col-lg-6 col-md-6 mb-5 mb-md-0 pl-5 pt-4 pt-lg-0 pl-lg-0">
-                    <img src="{{asset('images/feature/product.png')}}" alt="product-img" class="img-fluid">
-                </div>
-                <div class="col-lg-5 col-md-6 text-center text-md-left align-self-center pl-5">
-                    <h3 class="mb-lg-2 mb-2">Woven Crop Cami</h3>
-                    <span class="mb-lg-4 mb-3 h5">$90.00</span>
-                    <p class="mb-lg-4 mb-3 text-gray">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                        officia deserunt mollit anim id est laborum. sed ut perspic atis unde omnis iste natus</p>
-                    <form action="#">
-                        <select class="form-control w-100 mb-2" name="color">
-                            <option value="brown">Brown Color</option>
-                            <option value="gray">Gray Color</option>
-                            <option value="black">Black Color</option>
-                        </select>
-                        <select class="form-control w-100 mb-3" name="size">
-                            <option value="small">Small Size</option>
-                            <option value="medium">Medium Size</option>
-                            <option value="large">Large Size</option>
-                        </select>
-                        <button class="btn btn-primary w-100 mb-lg-4 mb-3">add to cart</button>
-                    </form>
-                    <ul class="list-inline social-icon-alt">
-                        <li class="list-inline-item"><a href="#"><i class="ti-facebook"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="ti-twitter-alt"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="ti-vimeo-alt"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="ti-google"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         <!-- collection -->
-        <section class="section">
+        <section class="section bg-gray" id="collection">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
@@ -244,288 +212,37 @@
                     </div>
                     <div class="col-12">
                         <div class="collection-slider">
-                            <!-- product -->
-                            <div class="col-lg-4 col-sm-6">
+                            <!-- products -->
+                            @foreach ($collection as $items)
+                            <div class="col-lg-4 col-sm-6 mb-4">
                                 <div class="product text-center">
                                     <div class="product-thumb">
                                         <div class="overflow-hidden position-relative">
-                                            <a href="product-single.html">
+                                            <a href="{{route('shop.product_details.index',$items->model_number)}}">
                                                 <img class="img-fluid w-100 mb-3 img-first"
-                                                    src="{{asset('images/collection/product-1.jpg')}}" alt="product-img">
+                                                    src="{{asset('images/product-images/'.$items->model_number.'/'.$items->model_number.'-0.jpg')}}" alt="product-img">
                                                 <img class="img-fluid w-100 mb-3 img-second"
-                                                    src="{{asset('images/collection/product-4.jpg')}}" alt="product-img">
+                                                    src="{{asset('images/product-images/'.$items->model_number.'/'.$items->model_number.'-1.jpg')}}" alt="product-img">
                                             </a>
                                             <div class="btn-cart">
-                                                <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
+                                                <a href="{{route('cart.add',$items->id)}}" class="btn btn-primary btn-sm">Add To Cart</a>
                                             </div>
-                                        </div>
-                                        <div class="product-hover-overlay">
-                                            <a href="#" class="product-icon favorite" data-toggle="tooltip"
-                                                data-placement="left" title="Wishlist"><i class="ti-heart"></i></a>
-                                            <a href="#" class="product-icon cart" data-toggle="tooltip"
-                                                data-placement="left" title="Compare"><i
-                                                    class="ti-direction-alt"></i></a>
-                                            <a data-vbtype="inline" href="#quickView" class="product-icon view venobox"
-                                                data-toggle="tooltip" data-placement="left" title="Quick View"><i
-                                                    class="ti-search"></i></a>
                                         </div>
                                     </div>
                                     <div class="product-info">
-                                        <h3 class="h5"><a class="text-color" href="product-single.html">Leather
-                                                Backpack</a></h3>
-                                        <span class="h5">$320.79</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- //end of product -->
-                            <!-- product -->
-                            <div class="col-lg-4 col-sm-6">
-                                <div class="product text-center">
-                                    <div class="product-thumb">
-                                        <div class="overflow-hidden position-relative">
-                                            <a href="product-single.html">
-                                                <img class="img-fluid w-100 mb-3 img-first"
-                                                    src="{{asset('images/collection/product-2.jpg')}}" alt="product-img">
-                                                <img class="img-fluid w-100 mb-3 img-second"
-                                                    src="{{asset('images/collection/product-5.jpg')}}" alt="product-img">
-                                            </a>
-                                            <div class="btn-cart">
-                                                <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="product-hover-overlay">
-                                            <a href="#" class="product-icon favorite" data-toggle="tooltip"
-                                                data-placement="left" title="Wishlist"><i class="ti-heart"></i></a>
-                                            <a href="#" class="product-icon cart" data-toggle="tooltip"
-                                                data-placement="left" title="Compare"><i
-                                                    class="ti-direction-alt"></i></a>
-                                            <a data-vbtype="inline" href="#quickView" class="product-icon view venobox"
-                                                data-toggle="tooltip" data-placement="left" title="Quick View"><i
-                                                    class="ti-search"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <h3 class="h5"><a class="text-color" href="product-single.html">Box Leather
-                                                Shoulder Bag</a></h3>
-                                        <span class="h5">$520.79</span>
-                                    </div>
-                                    <!-- product label badge -->
-                                    <div class="product-label new">
-                                        new
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- //end of product -->
-                            <!-- product -->
-                            <div class="col-lg-4 col-sm-6">
-                                <div class="product text-center">
-                                    <div class="product-thumb">
-                                        <div class="overflow-hidden position-relative">
-                                            <a href="product-single.html">
-                                                <img class="img-fluid w-100 mb-3 img-first"
-                                                    src="{{asset('images/collection/product-3.jpg')}}" alt="product-img">
-                                                <img class="img-fluid w-100 mb-3 img-second"
-                                                    src="{{asset('images/collection/product-6.jpg')}}" alt="product-img">
-                                            </a>
-                                            <div class="btn-cart">
-                                                <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="product-hover-overlay">
-                                            <a href="#" class="product-icon favorite" data-toggle="tooltip"
-                                                data-placement="left" title="Wishlist"><i class="ti-heart"></i></a>
-                                            <a href="#" class="product-icon cart" data-toggle="tooltip"
-                                                data-placement="left" title="Compare"><i
-                                                    class="ti-direction-alt"></i></a>
-                                            <a data-vbtype="inline" href="#quickView" class="product-icon view venobox"
-                                                data-toggle="tooltip" data-placement="left" title="Quick View"><i
-                                                    class="ti-search"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <h3 class="h5"><a class="text-color" href="product-single.html">Sneaky Leather
-                                                Sneakers</a></h3>
-                                        <span class="h5">$270.79</span>
-                                    </div>
-                                    <!-- product label badge -->
-                                </div>
-                            </div>
-                            <!-- //end of product -->
-                            <!-- product -->
-                            <div class="col-lg-4 col-sm-6">
-                                <div class="product text-center">
-                                    <div class="product-thumb">
-                                        <div class="overflow-hidden position-relative">
-                                            <a href="product-single.html">
-                                                <img class="img-fluid w-100 mb-3 img-first"
-                                                    src="{{asset('images/collection/product-4.jpg')}}" alt="product-img">
-                                                <img class="img-fluid w-100 mb-3 img-second"
-                                                    src="{{asset('images/collection/product-2.jpg')}}" alt="product-img">
-                                            </a>
-                                            <div class="btn-cart">
-                                                <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="product-hover-overlay">
-                                            <a href="#" class="product-icon favorite" data-toggle="tooltip"
-                                                data-placement="left" title="Wishlist"><i class="ti-heart"></i></a>
-                                            <a href="#" class="product-icon cart" data-toggle="tooltip"
-                                                data-placement="left" title="Compare"><i
-                                                    class="ti-direction-alt"></i></a>
-                                            <a data-vbtype="inline" href="#quickView" class="product-icon view venobox"
-                                                data-toggle="tooltip" data-placement="left" title="Quick View"><i
-                                                    class="ti-search"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <h3 class="h5"><a class="text-color" href="product-single.html">Puzzle leather
-                                                shoulder bag</a></h3>
-                                        <span class="h5">$400.79</span>
+                                        <h3 class="h6"><a class="text-color" href="{{route('shop.product_details.index',$items->model_number)}}">{{$items->name}}</a></h3>
+                                        <span class="h6"><b>{{$items->price}}</b></span>
                                     </div>
                                     <!-- product label badge -->
                                     <div class="product-label sale">
-                                        -10%
+                                        @if ($items->discount !== '0')
+                                        -{{$items->discount}}%
+                                        @endif
                                     </div>
                                 </div>
                             </div>
-                            <!-- //end of product -->
-                            <!-- product -->
-                            <div class="col-lg-4 col-sm-6">
-                                <div class="product text-center">
-                                    <div class="product-thumb">
-                                        <div class="overflow-hidden position-relative">
-                                            <a href="product-single.html">
-                                                <img class="img-fluid w-100 mb-3 img-first"
-                                                    src="{{asset('images/collection/product-5.jpg')}}" alt="product-img">
-                                                <img class="img-fluid w-100 mb-3 img-second"
-                                                    src="{{asset('images/collection/product-3.jpg')}}" alt="product-img">
-                                            </a>
-                                            <div class="btn-cart">
-                                                <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="product-hover-overlay">
-                                            <a href="#" class="product-icon favorite" data-toggle="tooltip"
-                                                data-placement="left" title="Wishlist"><i class="ti-heart"></i></a>
-                                            <a href="#" class="product-icon cart" data-toggle="tooltip"
-                                                data-placement="left" title="Compare"><i
-                                                    class="ti-direction-alt"></i></a>
-                                            <a data-vbtype="inline" href="#quickView" class="product-icon view venobox"
-                                                data-toggle="tooltip" data-placement="left" title="Quick View"><i
-                                                    class="ti-search"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <h3 class="h5"><a class="text-color" href="product-single.html">Puzzle leather
-                                                shoulder bag</a></h3>
-                                        <span class="h5">$400.79</span>
-                                    </div>
-                                    <!-- product label badge -->
-                                </div>
-                            </div>
-                            <!-- //end of product -->
-                            <!-- product -->
-                            <div class="col-lg-4 col-sm-6">
-                                <div class="product text-center">
-                                    <div class="product-thumb">
-                                        <div class="overflow-hidden position-relative">
-                                            <a href="product-single.html">
-                                                <img class="img-fluid w-100 mb-3 img-first"
-                                                    src="{{asset('images/collection/product-6.jpg')}}" alt="product-img">
-                                                <img class="img-fluid w-100 mb-3 img-second"
-                                                    src="{{asset('images/collection/product-1.jpg')}}" alt="product-img">
-                                            </a>
-                                            <div class="btn-cart">
-                                                <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="product-hover-overlay">
-                                            <a href="#" class="product-icon favorite" data-toggle="tooltip"
-                                                data-placement="left" title="Wishlist"><i class="ti-heart"></i></a>
-                                            <a href="#" class="product-icon cart" data-toggle="tooltip"
-                                                data-placement="left" title="Compare"><i
-                                                    class="ti-direction-alt"></i></a>
-                                            <a data-vbtype="inline" href="#quickView" class="product-icon view venobox"
-                                                data-toggle="tooltip" data-placement="left" title="Quick View"><i
-                                                    class="ti-search"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <h3 class="h5"><a class="text-color" href="product-single.html">Puzzle leather
-                                                shoulder bag</a></h3>
-                                        <span class="h5">$400.79</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- //end of product -->
-                            <!-- product -->
-                            <div class="col-lg-4 col-sm-6">
-                                <div class="product text-center">
-                                    <div class="product-thumb">
-                                        <div class="overflow-hidden position-relative">
-                                            <a href="product-single.html">
-                                                <img class="img-fluid w-100 mb-3 img-first"
-                                                    src="{{asset('images/collection/product-7.jpg')}}" alt="product-img">
-                                                <img class="img-fluid w-100 mb-3 img-second"
-                                                    src="{{asset('images/collection/product-3.jpg')}}" alt="product-img">
-                                            </a>
-                                            <div class="btn-cart">
-                                                <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="product-hover-overlay">
-                                            <a href="#" class="product-icon favorite" data-toggle="tooltip"
-                                                data-placement="left" title="Wishlist"><i class="ti-heart"></i></a>
-                                            <a href="#" class="product-icon cart" data-toggle="tooltip"
-                                                data-placement="left" title="Compare"><i
-                                                    class="ti-direction-alt"></i></a>
-                                            <a data-vbtype="inline" href="#quickView" class="product-icon view venobox"
-                                                data-toggle="tooltip" data-placement="left" title="Quick View"><i
-                                                    class="ti-search"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <h3 class="h5"><a class="text-color" href="product-single.html">Puzzle leather
-                                                shoulder bag</a></h3>
-                                        <span class="h5">$400.79</span>
-                                    </div>
-                                    <!-- product label badge -->
-                                </div>
-                            </div>
-                            <!-- //end of product -->
-                            <!-- product -->
-                            <div class="col-lg-4 col-sm-6">
-                                <div class="product text-center">
-                                    <div class="product-thumb">
-                                        <div class="overflow-hidden position-relative">
-                                            <a href="product-single.html">
-                                                <img class="img-fluid w-100 mb-3 img-first"
-                                                    src="{{asset('images/collection/product-8.jpg')}}" alt="product-img">
-                                                <img class="img-fluid w-100 mb-3 img-second"
-                                                    src="{{asset('images/collection/product-5.jpg')}}" alt="product-img">
-                                            </a>
-                                            <div class="btn-cart">
-                                                <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="product-hover-overlay">
-                                            <a href="#" class="product-icon favorite" data-toggle="tooltip"
-                                                data-placement="left" title="Wishlist"><i class="ti-heart"></i></a>
-                                            <a href="#" class="product-icon cart" data-toggle="tooltip"
-                                                data-placement="left" title="Compare"><i
-                                                    class="ti-direction-alt"></i></a>
-                                            <a data-vbtype="inline" href="#quickView" class="product-icon view venobox"
-                                                data-toggle="tooltip" data-placement="left" title="Quick View"><i
-                                                    class="ti-search"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <h3 class="h5"><a class="text-color" href="product-single.html">Puzzle leather
-                                                shoulder bag</a></h3>
-                                        <span class="h5">$400.79</span>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
+
                             <!-- //end of product -->
                         </div>
                     </div>
@@ -535,113 +252,24 @@
         <!-- /collection -->
 
         <!-- deal -->
-        <section class="section bg-cover" data-background="images/backgrounds/deal.jpg')}}">
+        <section class="section " data-background="images/backgrounds/deal.jpg')}}">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-left mb-4 mb-md-0">
                         <h1>Deal of the day</h1>
-                        <h4 class="mb-40">Get at discounted price!</h4>
                         <!-- syo-timer -->
                         <div class="syotimer large">
                             <div id="simple-timer" data-year="2019" data-month="12" data-day="1" data-hour="1"></div>
                         </div>
-                        <a href="shop.html" class="btn btn-primary">shop now</a>
+                        <a href="{{route('shop.product_details.index',$deal->model_number)}}" class="btn btn-primary">shop now</a>
                     </div>
                     <div class="col-md-6 text-center text-md-left align-self-center">
-                        <img src="{{asset('images/deal/product.png')}}" alt="product-img" class="img-fluid up-down">
+                        <img src="{{asset('images/product-images/'.$deal->model_number.'/'.$deal->model_number.'-0.jpg')}}" alt="product-img" class="img-fluid up-down">
                     </div>
                 </div>
             </div>
         </section>
         <!-- /deal -->
-
-        <!-- instagram -->
-        <section class="section">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <h2 class="mb-2">Follow Us On Instagram</h2>
-                        <p class="mb-5">@ Occaecat Cupidatat</p>
-                    </div>
-                </div>
-                <!-- instafeed -->
-                <!-- <div class="row" id="instafeed" data-userId="4044026246" data-accessToken="4044026246.1677ed0.8896752506ed4402a0519d23b8f50a17"></div> -->
-                <!-- for linking to instagram, just uncomment this line and change data-userid with your instagram user id andata-accesstoken with your instagram access token -->
-
-                <!-- without instagram image -->
-                <!-- remove this section after link with your instagram account -->
-                <div class="row">
-                    <div class="col-lg-2 col-md-3 col-sm-4 col-6 px-0 mb-4">
-                        <div class="instagram-post mx-2"><img class="img-fluid w-100" src="{{asset('images/instagram/item-1.png')}}"
-                                alt="instagram-image">
-                            <ul class="list-inline text-center">
-                                <li class="list-inline-item"><a href="" target="_blank" class="text-white"><i
-                                            class="ti-heart mr-2"></i>40</a></li>
-                                <li class="list-inline-item"><a href="" target="_blank" class="text-white"><i
-                                            class="ti-comments mr-2"></i>24</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-sm-4 col-6 px-0 mb-4">
-                        <div class="instagram-post mx-2"><img class="img-fluid w-100" src="{{asset('images/instagram/item-2.png')}}"
-                                alt="instagram-image">
-                            <ul class="list-inline text-center">
-                                <li class="list-inline-item"><a href="" target="_blank" class="text-white"><i
-                                            class="ti-heart mr-2"></i>65</a></li>
-                                <li class="list-inline-item"><a href="" target="_blank" class="text-white"><i
-                                            class="ti-comments mr-2"></i>11</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-sm-4 col-6 px-0 mb-4">
-                        <div class="instagram-post mx-2"><img class="img-fluid w-100" src="{{asset('images/instagram/item-3.png')}}"
-                                alt="instagram-image">
-                            <ul class="list-inline text-center">
-                                <li class="list-inline-item"><a href="" target="_blank" class="text-white"><i
-                                            class="ti-heart mr-2"></i>33</a></li>
-                                <li class="list-inline-item"><a href="" target="_blank" class="text-white"><i
-                                            class="ti-comments mr-2"></i>78</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-sm-4 col-6 px-0 mb-4">
-                        <div class="instagram-post mx-2"><img class="img-fluid w-100" src="{{asset('images/instagram/item-4.png')}}"
-                                alt="instagram-image">
-                            <ul class="list-inline text-center">
-                                <li class="list-inline-item"><a href="" target="_blank" class="text-white"><i
-                                            class="ti-heart mr-2"></i>32</a></li>
-                                <li class="list-inline-item"><a href="" target="_blank" class="text-white"><i
-                                            class="ti-comments mr-2"></i>77</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-sm-4 col-6 px-0 mb-4">
-                        <div class="instagram-post mx-2"><img class="img-fluid w-100" src="{{asset('images/instagram/item-5.png')}}"
-                                alt="instagram-image">
-                            <ul class="list-inline text-center">
-                                <li class="list-inline-item"><a href="" target="_blank" class="text-white"><i
-                                            class="ti-heart mr-2"></i>80</a></li>
-                                <li class="list-inline-item"><a href="" target="_blank" class="text-white"><i
-                                            class="ti-comments mr-2"></i>38</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-sm-4 col-6 px-0 mb-4">
-                        <div class="instagram-post mx-2"><img class="img-fluid w-100" src="{{asset('images/instagram/item-6.png')}}"
-                                alt="instagram-image">
-                            <ul class="list-inline text-center">
-                                <li class="list-inline-item"><a href="" target="_blank" class="text-white"><i
-                                            class="ti-heart mr-2"></i>22</a></li>
-                                <li class="list-inline-item"><a href="" target="_blank" class="text-white"><i
-                                            class="ti-comments mr-2"></i>57</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- /without instagram image -->
-            </div>
-        </section>
-        <!-- /instagram -->
 
         <!-- service -->
         <section class="section-sm border-top">
@@ -692,25 +320,6 @@
         </section>
         <!-- /service -->
 
-        <!-- newsletter -->
-        <section class="section bg-gray">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-title">Our Newsletter</h2>
-                        <p class="mb-4">Subscribe to our Newsletter to receive early discount offers</p>
-                    </div>
-                    <div class="col-lg-6 col-md-8 col-sm-9 col-10 mx-auto">
-                        <form action="#" class="d-flex flex-column flex-sm-row">
-                            <input type="email" class="form-control rounded-0 border-0 mr-3 mb-4 mb-sm-0" id="mail"
-                                placeholder="Enter your email">
-                            <button type="submit" value="send" class="btn btn-primary">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- /newsletter -->
 
         <!-- Newsletter Modal -->
         <!--         <div class="modal fade subscription-modal" id="subscriptionModal" tabindex="-1">
