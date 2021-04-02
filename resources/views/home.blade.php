@@ -255,7 +255,7 @@
         <section class="section " data-background="images/backgrounds/deal.jpg')}}">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 text-center text-md-left mb-4 mb-md-0">
+                    <div class="col-md-8 text-center text-md-left mb-4 mb-md-0">
                         <h1>Deal of the day</h1>
                         <!-- syo-timer -->
                         <div class="syotimer large">
@@ -263,8 +263,8 @@
                         </div>
                         <a href="{{route('shop.product_details.index',$deal->model_number)}}" class="btn btn-primary">shop now</a>
                     </div>
-                    <div class="col-md-6 text-center text-md-left align-self-center">
-                        <img src="{{asset('images/product-images/'.$deal->model_number.'/'.$deal->model_number.'-0.jpg')}}" alt="product-img" class="img-fluid up-down">
+                    <div class="col-md-4 text-center text-md-left align-self-center">
+                        <img style="max-width: 250px; max-height:250px;" src="{{asset('images/product-images/'.$deal->model_number.'/'.$deal->model_number.'-0.jpg')}}" alt="product-img" class="img-fluid up-down">
                     </div>
                 </div>
             </div>
@@ -319,39 +319,6 @@
             </div>
         </section>
         <!-- /service -->
-
-
-        <!-- Newsletter Modal -->
-        <!--         <div class="modal fade subscription-modal" id="subscriptionModal" tabindex="-1">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            <div class="col-lg-6 px-0">
-                                <div class="image"><img src="{{asset('images/newsletter-popup.jpg')}}" alt="products"
-                                        class="img-fluid w-100 rounded-left"></div>
-                            </div>
-                            <div class="col-lg-6 align-self-center p-5">
-                                <div class="text-center align-self-center">
-                                    <h3 class="mb-lg-5 mb-4">Lucky You!</h3>
-                                    <h4>Want an Instant</h4>
-                                    <h2 class="mb-lg-5 mb-4">10% OFF?</h2>
-                                    <div class="form">
-                                        <input type="email" class="form-control mb-3" name="email" id="email"
-                                            placeholder="Email Address">
-                                        <button class="btn btn-primary w-100" type="submit">Join Us</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- /Newsletter Modal -->
 
     </div>
 

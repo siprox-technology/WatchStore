@@ -7,8 +7,3 @@
 
 -model class relations diagrams
 -fix and adjust styles
-
-UPDATE `siproxte_precisionlaps`.`products` SET `feature` = 'Mudmaster' WHERE (`id` = '3');
-UPDATE `siproxte_precisionlaps`.`products` SET `category` = 'Chronograph' WHERE (`id` = '9');
-UPDATE `siproxte_precisionlaps`.`products` SET `category` = 'Chronograph' WHERE (`id` = '10');
-UPDATE `siproxte_precisionlaps`.`products` SET `category` = 'Chronograph' WHERE (`id` = '11');

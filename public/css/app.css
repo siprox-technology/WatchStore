@@ -2677,7 +2677,7 @@ fieldset:disabled a.btn {
 .btn-primary:hover {
     color: #fff;
     background-color: #0069d9;
-    border-color: #343a40 
+    border-color: #343a40
 }
 
 .btn-primary.focus,
@@ -2696,7 +2696,7 @@ fieldset:disabled a.btn {
 .btn-primary:not(:disabled):not(.disabled):active,
 .show>.btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #343a40 ;
+    background-color: #343a40;
     border-color: #005cbf
 }
 
@@ -3546,7 +3546,7 @@ input[type=submit].btn-block {
 .dropdown-item:active {
     color: #fff;
     text-decoration: none;
-    background-color: #007bff
+    background-color: #8a898f
 }
 
 .dropdown-item.disabled,
@@ -5199,7 +5199,7 @@ input[type=submit].btn-block {
 .badge-primary[href]:hover {
     color: #fff;
     text-decoration: none;
-    background-color: #343a40 
+    background-color: #343a40
 }
 
 .badge-secondary {
@@ -6525,7 +6525,7 @@ a.bg-primary:focus,
 a.bg-primary:hover,
 button.bg-primary:focus,
 button.bg-primary:hover {
-    background-color: #343a40  !important
+    background-color: #343a40 !important
 }
 
 .bg-secondary {
@@ -9757,7 +9757,7 @@ button.bg-dark:hover {
 
 a.text-primary:focus,
 a.text-primary:hover {
-    color: #343a40  !important
+    color: #343a40 !important
 }
 
 .text-secondary {
@@ -9953,6 +9953,7 @@ a.text-dark:hover {
         border-color: #dee2e6
     }
 }
+
 /* Slider */
 .slick-slider {
     position: relative;
@@ -24781,7 +24782,6 @@ readers do not read off random characters that represent icons */
 
 * {
     font-family: 'Montserrat', sans-serif;
-    /*     scroll-behavior: smooth; */
 }
 
 body {
