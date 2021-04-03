@@ -102,24 +102,10 @@
                             shop
                         </a>
                     </li>
-                    <li class="nav-item dropdown view">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            pages
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="about.html">About Us</a>
-                            <a class="dropdown-item" href="contact.html">Contact Us</a>
-                            <a class="dropdown-item" href="{{route('login.index')}}">Login</a>
-                            <a class="dropdown-item @if(auth()->user()) d-none @endif" href="{{route('register.index')}}">Signup</a>
-                            <a class="dropdown-item" href="{{route('forgetPassword.index')}}">Forget Password</a>
-                            <a class="dropdown-item" href="{{route('dashboard.index')}}">Dashboard</a>
-                        </div>
-                    </li>
                     <li class="nav-item dropdown mega-dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            Mega Menu
+                            Categories
                         </a>
                         <div class="dropdown-menu mega-menu">
                             {{-- brands --}}
@@ -163,6 +149,18 @@
                                     <li><a href="{{route('shop.sort_filter.index',['sortBy'=>'created_at','feature'=>['0'=>'Bluetooth'],'price'=>'1000000'])}}">Bluetooth</a></li>
                                 </ul>
                             </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown view">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Users
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{route('login.index')}}">Login</a>
+                            <a class="dropdown-item @if(auth()->user()) d-none @endif" href="{{route('register.index')}}">Signup</a>
+                            <a class="dropdown-item" href="{{route('forgetPassword.index')}}">Forget Password</a>
+                            <a class="dropdown-item" href="{{route('dashboard.index')}}">Dashboard</a>
                         </div>
                     </li>
                     <li class="nav-item">
