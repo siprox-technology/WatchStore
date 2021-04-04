@@ -22,7 +22,7 @@
                                 </div>
                             </div>
                             {{-- sort products --}}
-                            <div class="col-md-3 col-6 my-auto border-right border-left text-center">
+                            <div class="col-md-3 col-6 pr-0 my-auto border-right border-left text-center">
                                 <select class="select" name="sortBy" id="sortBy" onchange="this.form.submit()">
                                     <option value="created_at"
                                         @if (request()->sortBy == 'created_at')
@@ -53,8 +53,8 @@
                         <div class="d-flex border">
                             <div class="col-12 my-auto align-self-sm-center px-0">
                                 <div class="row w-100 m-0 p-0">
-                                    <p class="text-dark m-0 p-2 border">Filters :</p>
-                                    <p class="text-gray m-0 ml-2 p-2 border">All</p>
+                                    <p class="text-dark m-0 p-2 ">Filters :</p>
+                                    <p class="text-gray m-0 ml-2 p-2">All</p>
                                </div>
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                             <!-- filter by Brand -->
                             <div class="mb-30 mt-3">
                                 <h4 class="mb-3">Brands</h4>
-                                <ul class="pl-0 shop-list list-unstyled">
+                                <ul class="pl-0 shop-list list-unstyled pr-3" style="max-height: 120px; overflow-y:auto;">
                                     @for ($i=0; $i<count($brands);$i++)
                                         <li class="d-flex py-2 text-gray justify-content-between">
                                             <span>{{$brands[$i]->name}}</span>
@@ -83,7 +83,7 @@
                             <!-- filter by categories -->
                             <div class="mb-30">
                                 <h4 class="mb-3">Categories</h4>
-                                <ul class="pl-0 shop-list list-unstyled">
+                                <ul class="pl-0 shop-list list-unstyled pr-3" style="max-height: 300px; overflow-y:auto;">
                                     @for ($i=0; $i<count($categories);$i++)
                                         <li class="d-flex py-2 text-gray justify-content-between">
                                             <span>{{$categories[$i]->name}}</span>
@@ -99,7 +99,7 @@
                             <!-- filter by features -->
                             <div class="mb-30">
                                 <h4 class="mb-3">Features</h4>
-                                <ul class="pl-0 shop-list list-unstyled">
+                                <ul class="pl-0 shop-list list-unstyled pr-3" style="max-height: 150px; overflow-y:auto;">
                                     @for ($i=0; $i<count($features);$i++)
                                         <li class="d-flex py-2 text-gray justify-content-between">
                                             <span>{{$features[$i]->name}}</span>
@@ -115,8 +115,8 @@
                             <!-- filter by gender -->
                             <div class="mb-30">
                                 <h4 class="mb-3">Gender</h4>
-                                <ul class="pl-0 shop-list list-unstyled">
-                                    <li class="d-flex py-2 text-gray justify-content-between">
+                                <ul class="pl-0 shop-list list-unstyled pr-3" style="max-height: 120px; overflow-y:auto;">
+                                    <li class="d-flex py-2 text-gray justify-content-between" >
                                         <span>Mens</span>
                                         <input class="mt-1" type= "checkbox" autocomplete='off' name="gender[0]" value="Mens" id="" onclick="this.form.submit()"
                                         @if ((request()['gender0']))
@@ -142,7 +142,7 @@
                             <!-- filter by price range -->
                             <div class="mb-30">
                                 <h4 class="mb-4">Shop by Price</h4>
-                                <select class="select" name="price" id="price" onchange="this.form.submit()">
+                                <select class="select pr-3" name="price" id="price" onchange="this.form.submit()">
                                     <option value="1000000"
                                         @if (request()->price == '1000000')
                                             selected = "selected"
@@ -171,15 +171,15 @@
                                 </select>   
                             </div>
                             <!-- color selector -->
-                            <div class="color">
+                            <div class="color pr-3" style="max-height: 150px; overflow-y:auto;">
                                 <h4 class="mb-3">Shop by Color</h4>
                                 <ul class="list-inline">
                                     @for ($i = 0; $i < count($colors); $i++)
                                         <li class="d-flex py-2 text-gray">
                                             <span class="mr-auto">{{(explode('/',$colors[$i]->name))[0].'-'.(explode('/',$colors[$i]->name))[1]}}</span>
                                             <span  style="
-                                            height: 30px;
-                                            width: 30px;
+                                            height: 25px;
+                                            width: 25px;
                                             border-radius: 20px;
                                             background-color :{{(explode('/',$colors[$i]->name))[0]}};
                                             @if ((explode('/',$colors[$i]->name))[0]=='white')
@@ -187,8 +187,8 @@
                                             @endif
                                             "></span>
                                              <span  style="
-                                            height: 30px;
-                                            width: 30px;
+                                            height: 25px;
+                                            width: 25px;
                                             border-radius: 20px;
                                             background-color:{{(explode('/',$colors[$i]->name))[1]}};
                                             @if ((explode('/',$colors[$i]->name))[0]=='white')
@@ -261,7 +261,6 @@
   
     <!-- filter product Moda(mobile view))  -->
     <form action="{{route('shop.sort_filter.index')}}" method="GET">
-        @csrf
         <div class="modal fade p-4" id="filterProductModal" tabindex="-1" aria-labelledby="filterProductModal" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -269,11 +268,11 @@
                         <button class="btn btn-primary"  data-dismiss="modal" aria-label="Close" style="padding: 5px 11px;">X</button>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <div class="col-10 p-4">
+                        <div class="col-10 p-2">
                             <!-- filter by Brand -->
-                            <div class="mb-30 mt-3">
+                            <div class="mb-30 mt-3" >
                                 <h4 class="mb-3">Brands</h4>
-                                <ul class="pl-0 shop-list list-unstyled">
+                                <ul class="pl-0 shop-list list-unstyled pr-2" style="max-height: 120px; overflow-y:auto;">
                                     @for ($i=0; $i<count($brands);$i++)
                                         <li class="d-flex py-2 text-gray justify-content-between">
                                             <span>{{$brands[$i]->name}}</span>
@@ -294,7 +293,7 @@
                             <!-- filter by categories -->
                             <div class="mb-30">
                                 <h4 class="mb-3">Categories</h4>
-                                <ul class="pl-0 shop-list list-unstyled">
+                                <ul class="pl-0 shop-list list-unstyled pr-2" style="max-height: 200px; overflow-y:auto;">
                                     @for ($i=0; $i<count($categories);$i++)
                                         <li class="d-flex py-2 text-gray justify-content-between">
                                             <span>{{$categories[$i]->name}}</span>
@@ -312,7 +311,7 @@
                             <!-- filter by features -->
                             <div class="mb-30">
                                 <h4 class="mb-3">Features</h4>
-                                <ul class="pl-0 shop-list list-unstyled">
+                                <ul class="pl-0 shop-list list-unstyled pr-2" style="max-height: 200px; overflow-y:auto;">
                                     @for ($i=0; $i<count($features);$i++)
                                         <li class="d-flex py-2 text-gray justify-content-between">
                                             <span>{{$features[$i]->name}}</span>
@@ -331,7 +330,7 @@
                             <!-- filter by gender -->
                             <div class="mb-30">
                                 <h4 class="mb-3">Gender</h4>
-                                <ul class="pl-0 shop-list list-unstyled">
+                                <ul class="pl-0 shop-list list-unstyled pr-2" style="max-height: 120px; overflow-y:auto;">
                                     <li class="d-flex py-2 text-gray justify-content-between">
                                         <span>Mens</span>
                                         <input class="mt-1" type= "checkbox" autocomplete='off' name="gender[0]" value="Mens" id=""
@@ -395,13 +394,13 @@
                             <!-- color selector -->
                             <div class="color mb-30">
                                 <h4 class="mb-3">Shop by Color</h4>
-                                <ul class="list-inline">
+                                <ul class="list-inline" style="max-height: 200px; overflow-y:auto;">
                                     @for ($i = 0; $i < count($colors); $i++)
                                         <li class="d-flex py-2 text-gray">
                                             <span class="mr-auto">{{(explode('/',$colors[$i]->name))[0].'-'.(explode('/',$colors[$i]->name))[1]}}</span>
                                             <span  style="
-                                            height: 30px;
-                                            width: 30px;
+                                            height: 25px;
+                                            width: 25px;
                                             border-radius: 20px;
                                             background-color :{{(explode('/',$colors[$i]->name))[0]}};
                                             @if ((explode('/',$colors[$i]->name))[0]=='white')
@@ -409,8 +408,8 @@
                                             @endif
                                             "></span>
                                              <span  style="
-                                            height: 30px;
-                                            width: 30px;
+                                            height: 25px;
+                                            width: 25px;
                                             border-radius: 20px;
                                             background-color:{{(explode('/',$colors[$i]->name))[1]}};
                                             @if ((explode('/',$colors[$i]->name))[0]=='white')
@@ -456,7 +455,7 @@
                                 </select> 
                             </div>
 
-                            <div class="d-flex justify-content-center mt-5">
+                            <div class="d-flex justify-content-center mb-3">
                                 <button type="submit" class="btn btn-sm btn-primary">Filter</button>
                             </div>
                         </div>

@@ -170,15 +170,6 @@
             </div>
             <div class="order-3 navbar-right-elements">
                 <div class="search-cart">
-                    <!-- search -->
-                    <div class="search">
-                        <div class="search-wrapper">
-                            <form action="#">
-                                <input class="search-box" id="search" type="search" placeholder="Enter Keywords...">
-                                <button class="search-icon" type="submit"><i class="ti-search"></i></button>
-                            </form>
-                        </div>
-                    </div>
                     <!-- cart -->
                         <div class="cart">
                             <button id="cartOpen" class="cart-btn d-flex">
@@ -234,7 +225,7 @@
         <!-- breadcrumb -->
         <nav class="bg-gray py-3">
             <!-- search product -->
-            <div class="row justify-content-center w-100">
+            <div class="row justify-content-center w-100 mx-auto">
                 <form class="col-10 col-md-6 " action="{{route('shop.search')}}">
                     <input type="search" class="form-control" id="search-product"
                         placeholder="Search..." name="key" value="{{old('key')}}">
