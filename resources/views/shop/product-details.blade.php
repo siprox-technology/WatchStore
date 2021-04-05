@@ -6,35 +6,36 @@
         <!-- main wrapper -->
         <div class="main-wrapper">
 
-            <section class="section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 mb-4 mb-lg-0">
-                            <!-- product image slider -->
-                            <div id="product-gallary-images" class="carousel slide w-100" data-ride="imgList">
-                                <div class="carousel-inner text-center" id="imgList">
-                                    @for ($i = 0; $i < $numOfImages; $i++)
-                                        <div class="carousel-item {{($i==0)?'active':''}}">
-                                            <img class="w-100"
-                                            src="{{asset('images/product-images/'.$product->model_number.'/'.$product->model_number.'-'.$i.'.jpg')}}" alt="">
-                                        </div>
-                                    @endfor
-                               </div>
-                                <!-- Left and right controls -->
-                                <a class="carousel-control-prev " href="" data-target="#product-gallary-images"
-                                    data-slide="prev">
-                                    <i class="fas fa-arrow-left text-white" id="product-galary-icons"></i>
-                                </a>
-                                <a class="carousel-control-next" href="" data-target="#product-gallary-images"
-                                    data-slide="next">
-                                    <i class="fas fa-arrow-right text-white" id="product-galary-icons"></i>
-                                </a>
+        <section class="section pb-0" style="padding-top: 6rem">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 mb-5 mb-lg-0">
+                        <!-- product image slider -->
+                        <div id="product-gallary-images" class="carousel slide w-100" data-ride="imgList">
+                            <div class="carousel-inner text-center" id="imgList">
+                                @for ($i = 0; $i < $numOfImages; $i++)
+                                    <div class="carousel-item {{($i==0)?'active':''}}">
+                                        <img class="w-50" src="{{asset('images/product-images/'.$product->model_number.'/'.$product->model_number.'-'.$i.'.jpg')}}" alt="">
+                                    </div>
+                                @endfor
                             </div>
+                            <!-- Left and right controls -->
+                            <a class="carousel-control-prev " href="" data-target="#product-gallary-images"
+                                data-slide="prev">
+                                <i class="fas fa-arrow-left text-dark" id="product-galary-icons"></i>
+                            </a>
+                            <a class="carousel-control-next" href="" data-target="#product-gallary-images"
+                                data-slide="next">
+                                <i class="fas fa-arrow-right text-dark" id="product-galary-icons"></i>
+                            </a>
                         </div>
-                        <!-- produt details -->
-                        <div class="col-lg-6 mb-5">
+                    </div>
+                    <!-- produt details -->
+                    <div class="col-sm-6 mb-5">
+                        <div class="text-sm-left text-center">
                             {{-- name and model number --}}
-                            <h2>{{$product->name}} ({{$product->model_number}})</h2>
+                            <h4 class="d-none d-lg-block">{{$product->name}} ({{$product->model_number}})</h4>
+                            <h5 class="d-lg-none">{{$product->name}} ({{$product->model_number}})</h4>
                             <i class="ti-check-box text-success"></i>
                             <span class="{{(($product->stock) > 0 )? 'text-success':'text-danger'}}">{{(($product->stock) > 0 )? 'instock':'sold out'}}</span>
                             <ul class="list-inline mb-4">
@@ -232,12 +233,12 @@
                                 <li class="list-inline-item"><a href="#" class="text-gray ml-3">( {{count($product->reviews)}} Reviews )</a></li>
                             </ul>
                             {{-- price and discount --}}
-                            <h4 class="text-primary h3">${{number_format(($product->price)-($product->price)*($product->discount)/100,2)}} <s class="text-color ml-2">${{number_format($product->price,2)}}</s></h4>
-                            <h6 class="mb-4">You save: <span class="text-primary">${{number_format(($product->price)-(($product->price)-($product->price)*($product->discount)/100),2)}} USD ({{$product->discount}}%)</span></h6>
+                            <h4 class="text-dark h3">${{number_format(($product->price)-($product->price)*($product->discount)/100,2)}} <s class="text-danger ml-2">${{number_format($product->price,2)}}</s></h4>
+                            <h6 class="mb-4">You save: <span class="text-danger">${{number_format(($product->price)-(($product->price)-($product->price)*($product->discount)/100),2)}} USD ({{$product->discount}}%)</span></h6>
                             {{-- color --}}
-                            <div class="row pl-3">
+                            <div class="row pl-3 justify-content-center justify-content-sm-start">
                                 <h4>Color:</h4>
-                                <span class="mb-2"  style="
+                                <span class="mb-2 ml-2"  style="
                                 height: 30px;
                                 width: 30px;
                                 border-radius: 20px;
@@ -246,7 +247,7 @@
                                 border: 1px solid black;
                                 @endif
                                 "></span>
-                                    <span  style="
+                                <span class="ml-2" style="
                                 height: 30px;
                                 width: 30px;
                                 border-radius: 20px;
@@ -256,101 +257,99 @@
                                 @endif
                                 "></span>
                             </div>
-
-                            <a href="{{route('cart.add',$product->id)}}" class="btn btn-primary mb-4">add to cart</a>
-                            <h4 class="mb-3"><span class="text-primary">Harry up!</span> Sale ends in</h4>
-                            <!-- syo-timer -->
-                            <div class="syotimer dark">
-                                <div id="sale-timer" data-year="2019" data-month="5" data-day="1" data-hour="1"
-                                    class="syotimer">
-                                    <div class="syotimer__head"></div>
-                                    <div class="syotimer__body">
-                                        <p style="font-size: 1.2em;">The countdown is finished!</p>
-                                    </div>
-                                    <div class="syotimer__footer"></div>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="payment-option border border-primary mt-5 mb-4">
-                                <h5 class="bg-white">Guaranted Safe Checkout</h5>
-                                <img class="img-fluid w-100 p-3" src="{{asset("images/payment-card/all-card.png")}}"
-                                    alt="payment-card">
-                            </div>
-                            <h5 class="mb-3">4 Great Reason to Buy From Us</h5>
-                            <div class="row">
-                                <!-- service item -->
-                                <div class="col-lg-3 col-6 mb-4 mb-lg-0">
-                                    <div class="d-flex">
-                                        <i class="fas fa-truck icon-md mr-3"></i>
-                                        <div class="align-items-center">
-                                            <h6>Free Shipping</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- service item -->
-                                <div class="col-lg-3 col-6 mb-4 mb-lg-0">
-                                    <div class="d-flex">
-                                        <i class="fa fa-link icon-md mr-3"></i>
-                                        <div class="align-items-center">
-                                            <h6>Secure Payment</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- service item -->
-                                <div class="col-lg-3 col-6 mb-4 mb-lg-0">
-                                    <div class="d-flex">
-                                        <i class="fas fa-dollar-sign icon-md mr-3"></i>
-                                        <div class="align-items-center">
-                                            <h6>Lowest Price</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- service item -->
-                                <div class="col-lg-3 col-6 mb-4 mb-lg-0">
-                                    <div class="d-flex">
-                                        <i class="fas fa-sync icon-md mr-3"></i>
-                                        <div class="align-items-center">
-                                            <h6>30 Days Return</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12 p-4">
-                            {{-- description --}}
-                            <h3 class="mb-3">Product Description</h3>
-                            <p class="text-gray mb-4">{{$product->description}}</p>
-                            {{-- specification --}}
-                            <h4>Product Specification</h4>
-            
-                            <ul class="features-list ml-3">
-                                @foreach ($specs as $key => $value)
-                                    <li class="row">
-                                        <p class="mr-2"><b>{{$key}} :</b></p>
-                                        <p>{{$value}}</p>
-                                    </li>
-                                @endforeach
-                            </ul>
+                            <a href="{{route('cart.add',$product->id)}}" class="btn btn-primary mb-4 mt-4">add to cart</a>
                         </div>
                     </div>
+                    <div class="col-12">
+                        <hr class="mb-5">
+                        <div class="row">
+                            <div class="col-sm-6 pt-0 pt-sm-5">
+                                <h5 class="mb-4 text-center text-sm-left">4 Great Reason to Buy From Us</h5>
+                                <div class="row">
+                                    <!-- service item -->
+                                    <div class="col-lg-3 col-6 mb-4 mb-lg-0">
+                                        <div class="d-flex">
+                                            <i class="fas fa-truck icon-md mr-3"></i>
+                                            <div class="align-items-center">
+                                                <h6>Free Shipping</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- service item -->
+                                    <div class="col-lg-3 col-6 mb-4 mb-lg-0">
+                                        <div class="d-flex">
+                                            <i class="fa fa-link icon-md mr-3"></i>
+                                            <div class="align-items-center">
+                                                <h6>Secure Payment</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- service item -->
+                                    <div class="col-lg-3 col-6 mb-4 mb-lg-0">
+                                        <div class="d-flex">
+                                            <i class="fas fa-dollar-sign icon-md mr-3"></i>
+                                            <div class="align-items-center">
+                                                <h6>Lowest Price</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- service item -->
+                                    <div class="col-lg-3 col-6 mb-4 mb-lg-0">
+                                        <div class="d-flex">
+                                            <i class="fas fa-sync icon-md mr-3"></i>
+                                            <div class="align-items-center">
+                                                <h6>30 Days Return</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="payment-option border border-primary mt-5 mb-4">
+                                    <h5 class="bg-white">Guaranted Safe Checkout</h5>
+                                    <img class="img-fluid w-100 p-3" src="{{asset("images/payment-card/all-card.png")}}"
+                                        alt="payment-card">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 p-4 mt-3">
+                        {{-- description --}}
+                        <hr class="mb-5">
+                        <h4 class="mb-4">Product Description</h4>
+                        <h6 class="text-gray mb-5 ml-2" style="line-height: 1.6">{{$product->description}}</h6>
+                        {{-- specification --}}
+                        <hr class="mb-5">
+                        <h4 class="mb-4">Product Specification</h4>
+                        <ul class="pl-0 row">
+                            @foreach ($specs as $key => $value)
+                                <li class="row mx-4">
+                                    <h6 class="mr-2"><b>{{$key}} :</b></h6>
+                                    <h6>{{$value}}</h6>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
                 </div>
-            </section>
+            </div>
+        </section>
         <!-- related products -->
-        <section class="section">
+        <section class="section pb-0 pt-0">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <h2 class="section-title">Related products</h2>
+                        <hr class="mb-5">
+                        <h4 class="section-title">Related products</h4>
                     </div>
                     <div class="col-12">
                         <div class="collection-slider">
                             <!-- product -->
                             @foreach ($related_products as $items)
-                                <div class="col-sm-6 mb-4">
+                                <div class="col-sm-6 mb-0 p-5">
                                     <div class="product text-center">
                                         <div class="product-thumb">
                                             <div class="overflow-hidden position-relative">
-                                                <a href="{{route('shop.product_details.index',$items->model_number)}}">
+                                                <a class="" href="{{route('shop.product_details.index',$items->model_number)}}">
                                                     <img class="img-fluid w-100 mb-3 img-first"
                                                         src="{{asset('images/product-images/'.$items->model_number.'/'.$items->model_number.'-0.jpg')}}" alt="product-img">
                                                     <img class="img-fluid w-100 mb-3 img-second"
@@ -381,11 +380,13 @@
         </section>
         <!-- /collection -->
         {{-- product reviews --}}
-        <section class="section">
+        @if (count($product->reviews)>0)
+        <section class="section py-0">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <h2 class="section-title">What our customer think</h2>
+                        <hr class="mb-5">
+                        <h4 class="section-title mb-5">What our customer think</h4>
                     </div>
                     <div class="col-12">
                         <div class="row">
@@ -607,6 +608,8 @@
                 </div>
             </div>
         </section>
+        @endif
+
         {{-- submit review form --}}
         @auth
             @for ($i = 0; $i < count(auth()->user()->orders); $i++)

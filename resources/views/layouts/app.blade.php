@@ -260,16 +260,16 @@
                             <h4 class="mb-4"><b>Useful Link</b></h4>
                             <ul class="pl-0 list-unstyled">
                                 @guest
-                                    <li class="list-inline-item"><a class="dropdown-item" href="about.html">About Us</a></li>
-                                    <li class="list-inline-item"><a class="dropdown-item" href="{{route('register.index')}}">Register</a></li>
-                                    <li class="list-inline-item"><a class="dropdown-item" href="{{route('login.index')}}">Login</a></li> 
-                                    <li class="list-inline-item"><a class="dropdown-item" href="{{route('forgetPassword.index')}}">Forget Password</a></li>
-                                    <li class="list-inline-item"><a class="dropdown-item" href="{{route('shop.index')}}">Our Shop</a></li>   
+                                    <li class="mb-2"><a class="dropdown-item" href="about.html">About Us</a></li>
+                                    <li class="mb-2"><a class="dropdown-item" href="{{route('register.index')}}">Register</a></li>
+                                    <li class="mb-2"><a class="dropdown-item" href="{{route('login.index')}}">Login</a></li> 
+                                    <li class="mb-2"><a class="dropdown-item" href="{{route('forgetPassword.index')}}">Forget Password</a></li>
+                                    <li class="mb-2"><a class="dropdown-item" href="{{route('shop.index')}}">Our Shop</a></li>   
                                 @endguest
                                 @auth
-                                    <li class="list-inline-item"><a class="dropdown-item" href="about.html">About Us</a></li>
-                                    <li class="list-inline-item"><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
-                                    <li class="list-inline-item"><a class="dropdown-item" href="{{route('shop.index')}}">Our Shop</a></li> 
+                                    <li class="mb-2"><a class="dropdown-item" href="about.html">About Us</a></li>
+                                    <li class="mb-2"><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
+                                    <li class="mb-2"><a class="dropdown-item" href="{{route('shop.index')}}">Our Shop</a></li> 
                                 @endauth
                             </ul>
                         </div>
