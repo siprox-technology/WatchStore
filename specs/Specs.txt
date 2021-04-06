@@ -102,3 +102,5 @@ Back end functionalities=>
 *****************************************
 
 -about us
+
+UPDATE `precisionlaps`.`products` SET `specification` = 'Brand,Swatch,Analogue/Digital,Analogue,Case depth approx.,10.00mm,Primary Material,Plastic/Resin,Case Shape,Circle,Case width approx.,41.00mm,Clasp type,Strap buckle,Dial Colour,MultiColour,Multiple Time Zones Display,None,Gender,Unisex,Glass,Acrylic,Limited Edition,Yes,Model Collection,MoMa,Model Name,The City And Design,Movement Source,Swiss,Movement,Quartz,Strap colour,Multicolour,Strap Type,Plastic/Resin Strap,Water Resistance,30 metres,BARCODE,7610522833050,Guarantee,24 months' WHERE (`id` = '33');

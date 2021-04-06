@@ -260,8 +260,7 @@
                             <a href="{{route('cart.add',$product->id)}}" class="btn btn-primary mb-4 mt-4">add to cart</a>
                         </div>
                     </div>
-                    <div class="col-12">
-                        <hr class="mb-5">
+                    <div class="col-12 bg-gray px-5">
                         <div class="row">
                             <div class="col-sm-6 pt-0 pt-sm-5">
                                 <h5 class="mb-4 text-center text-sm-left">4 Great Reason to Buy From Us</h5>
@@ -334,11 +333,10 @@
             </div>
         </section>
         <!-- related products -->
-        <section class="section pb-0 pt-0">
+        <section class="section pb-0 pt-0 bg-gray">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <hr class="mb-5">
+                    <div class="col-lg-12 text-center mt-5">
                         <h4 class="section-title">Related products</h4>
                     </div>
                     <div class="col-12">
@@ -385,8 +383,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <hr class="mb-5">
-                        <h4 class="section-title mb-5">What our customer think</h4>
+                        <h4 class="section-title my-5">What our customer think</h4>
                     </div>
                     <div class="col-12">
                         <div class="row">
