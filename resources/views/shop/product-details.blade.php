@@ -31,7 +31,7 @@
                         </div>
                     </div>
                     <!-- produt details -->
-                    <div class="col-sm-6 mb-5">
+                    <div class="col-sm-6 mb-5 p-4 bg-gray">
                         <div class="text-sm-left text-center">
                             {{-- name and model number --}}
                             <h4 class="d-none d-lg-block">{{$product->name}} ({{$product->model_number}})</h4>
@@ -257,53 +257,45 @@
                                 @endif
                                 "></span>
                             </div>
-                            <a href="{{route('cart.add',$product->id)}}" class="btn btn-primary mb-4 mt-4">add to cart</a>
+                            <a href="{{route('cart.add',$product->id)}}" class="btn btn-primary mt-3 px-4 py-3">add to cart</a>
                         </div>
                     </div>
-                    <div class="col-12 bg-gray px-5">
+                    <div class="col-12 bg-gray px-4">
                         <div class="row">
-                            <div class="col-sm-6 pt-0 pt-sm-5">
+                            <div class="col-sm-7 pt-4">
                                 <h5 class="mb-4 text-center text-sm-left">4 Great Reason to Buy From Us</h5>
                                 <div class="row">
                                     <!-- service item -->
                                     <div class="col-lg-3 col-6 mb-4 mb-lg-0">
-                                        <div class="d-flex">
-                                            <i class="fas fa-truck icon-md mr-3"></i>
-                                            <div class="align-items-center">
-                                                <h6>Free Shipping</h6>
-                                            </div>
+                                        <div class="d-flex flex-row">
+                                            <i class="fas fa-truck icon-md mx-3"></i>
+                                            <h6>Free Shipping</h6>
                                         </div>
                                     </div>
                                     <!-- service item -->
                                     <div class="col-lg-3 col-6 mb-4 mb-lg-0">
-                                        <div class="d-flex">
-                                            <i class="fa fa-link icon-md mr-3"></i>
-                                            <div class="align-items-center">
-                                                <h6>Secure Payment</h6>
-                                            </div>
+                                        <div class="d-flex flex-row">
+                                            <i class="fa fa-link icon-md mx-3"></i>
+                                            <h6>Secure Payment</h6>
                                         </div>
                                     </div>
                                     <!-- service item -->
                                     <div class="col-lg-3 col-6 mb-4 mb-lg-0">
-                                        <div class="d-flex">
-                                            <i class="fas fa-dollar-sign icon-md mr-3"></i>
-                                            <div class="align-items-center">
-                                                <h6>Lowest Price</h6>
-                                            </div>
+                                        <div class="d-flex flex-row">
+                                            <i class="fas fa-dollar-sign icon-md mx-3"></i>
+                                            <h6>Lowest Price</h6>
                                         </div>
                                     </div>
                                     <!-- service item -->
                                     <div class="col-lg-3 col-6 mb-4 mb-lg-0">
-                                        <div class="d-flex">
-                                            <i class="fas fa-sync icon-md mr-3"></i>
-                                            <div class="align-items-center">
-                                                <h6>30 Days Return</h6>
-                                            </div>
+                                        <div class="d-flex flex-row">
+                                            <i class="fas fa-sync icon-md mx-3"></i>
+                                            <h6>30 Days Return</h6>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-5">
                                 <div class="payment-option border border-primary mt-5 mb-4">
                                     <h5 class="bg-white">Guaranted Safe Checkout</h5>
                                     <img class="img-fluid w-100 p-3" src="{{asset("images/payment-card/all-card.png")}}"
