@@ -16,8 +16,8 @@
                                 <li class="list-inline-item m-1"><a href="{{route('changeAddress.index')}}">Address</a></li>
                                 <li class="list-inline-item m-1"><a href="{{route('orders.index')}}">Orders</a></li>
                             </ul>
-                            <div class="col-lg-6 col-md-8 col-sm-10 mx-auto">
-                                <div class="block text-center border border-grey mt-5 py-5 px-sm-5 px-2">
+                            <div class="col-lg-6 col-md-8 col-sm-10 mx-auto ">
+                                <div class="block text-center border border-grey bg-gray mt-5 py-5 px-sm-5 px-2">
                                     <h3 class="text-center mb-5">Change current password</h3>
                                     @if (session('status'))
                                         <div class=" text-success mb-5">

@@ -18,7 +18,7 @@
                                     <li class="list-inline-item m-1"><a href="{{route('changeAddress.index')}}">Address</a></li>
                                     <li class="list-inline-item m-1"><a href="{{route('orders.index')}}">Orders</a></li>
                                 </ul>
-                                <div class="dashboard-wrapper dashboard-user-profile">
+                                <div class="dashboard-wrapper dashboard-user-profile bg-gray">
                                     <div class="d-md-flex">
                                         <div class="text-center">
                                             @if (file_exists('images/users-image/'.auth()->user()->id.'.jpg'))
@@ -58,7 +58,7 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        <div class="text-center mt-5 mt-md-3 dashboard-menu">
+                                        <div class="text-center mt-5 mb-2 mt-md-3 dashboard-menu">
                                             <a class="bg-primary text-white p-3" data-toggle="modal"
                                                 data-target="#edit_acc_details_modal">Edit
                                                 details</a>
@@ -70,19 +70,25 @@
                     </div>
                 </section>
                 
-                <div class="container mb-5">
-                    <form action="{{ route('user.uploadImage') }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <h4 class="ml-3">Upload profile image</h4>
-                        <div class="row justify-content-center">
-                            <div class="col-sm-6">
-                                <input type="file" name="image" class="py-2 px-3 w-100">
-                            </div>
-                            <div class="col-sm-6 mt-2 mt-sm-0 ml-3 ml-sm-0 dashboard-menu">
-                                <button type="submit" class="py-2 px-3 border-0 btn-primary">Upload</button>
+                <div class="section pt-0" >
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form action="{{ route('user.uploadImage') }}" class="bg-gray p-3"style="border: 1px solid #e5e5e5;" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <h4 class="ml-3">Upload profile image</h4>
+                                    <div class="row justify-content-center">
+                                        <div class="col-sm-6">
+                                            <input type="file" name="image" class="py-2 px-3 w-100">
+                                        </div>
+                                        <div class="col-sm-6 mt-2 mt-sm-0 ml-3 ml-sm-0 dashboard-menu">
+                                            <button type="submit" class="py-2 px-3 border-0 btn-primary">Upload</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
 
                 <!-- edit account details modal -->

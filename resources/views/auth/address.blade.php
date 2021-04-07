@@ -10,17 +10,17 @@
                 <section class="user-dashboard section">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-12">
-                                <ul class="list-inline dashboard-menu text-center">
+                            <div class="col-md-12 ">
+                                <ul class="list-inline dashboard-menu text-center mb-5">
                                     <li class="list-inline-item m-1"><a  href="{{route('dashboard.index')}}">Profile
                                             Details</a></li>
                                     <li class="list-inline-item m-1"><a href="{{route('changePass.index')}}">Change password</a></li>
                                     <li class="list-inline-item m-1"><a class="active" href="{{route('changeAddress.index')}}">Address</a></li>
                                     <li class="list-inline-item m-1"><a href="{{route('orders.index')}}">Orders</a></li>
                                 </ul>
-                                <div class="row">
+                                <div class="row bg-gray">
                                     {{-- current address --}}
-                                    <div class="{{(auth()->user()->address)?'col-md-4 col-12 text-center border border-grey mt-5 py-5 px-sm-5 px-2':'d-none'}}">
+                                    <div class="{{(auth()->user()->address)?'col-md-4 col-12 text-center border border-grey pt-4 pb-3 px-sm-3 px-2':'d-none'}}">
                                         <h3 class="text-center mb-5">Current address</h3>
                                         <p class="p-2">{{auth()->user()->address}}</p>
                                         <p class="p-2">{{auth()->user()->city}}</p>
@@ -30,8 +30,8 @@
                                     </div>
                                     {{-- new address --}}
                                     <div class="{{(auth()->user()->address)?
-                                    'col-md-8 col-12 text-center border border-grey mt-5 py-5 px-sm-5 px-2':
-                                    ' col-12 text-center border border-grey mt-5 py-5 px-sm-5 px-2'}}">
+                                    'col-md-8 col-12 text-center border border-grey pt-4 pb-3 px-sm-3 px-2':
+                                    ' col-12 text-center border border-grey py-5 px-sm-5 px-2'}}">
                                         <h3 class="text-center mb-5">{{(auth()->user()->address)?'Change current address':'Enter address details'}}
                                         </h3>
                                         <form class="text-left clearfix m-auto" style="max-width:350px" action="{{route('user.changeAddress')}}" method="POST">

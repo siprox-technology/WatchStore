@@ -1,14 +1,12 @@
 @extends('layouts.app')
 @section('content')
-
-
         <!-- orders-->
         <!-- main wrapper -->
         <div class="main-wrapper">
             <section class="user-dashboard section">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-12 ">
                             <ul class="list-inline dashboard-menu text-center">
                                 <li class="list-inline-item m-1"><a  href="{{route('dashboard.index')}}">Profile
                                         Details</a></li>
@@ -23,8 +21,8 @@
                                             <thead>
                                                 <tr>
                                                     <th class="darkcolor p-2">Order ID</th>
-                                                    <th class="darkcolor p-2">Total Price</th>
-                                                    <th class="darkcolor p-2">Date</th>                                 
+                                                    <th class="darkcolor p-2">Total price</th>
+                                                    <th class="darkcolor p-2">Last updated</th>                                 
                                                     <th class="darkcolor p-2">Payment method</th>
                                                     <th class="darkcolor p-2">Payment reference</th> 
                                                     <th class="darkcolor p-2">Status</th>  
@@ -41,7 +39,7 @@
                                                         <h6 class="default-color text-center mt-1">{{$payment->order->total_price}}</h6>
                                                     </td>
                                                     <td class="p-2">
-                                                        <h6 class="default-color text-center mt-1">{{$payment->order->created_at}}</h6>
+                                                        <h6 class="default-color text-center mt-1">{{$payment->order->updated_at}}</h6>
                                                     </td>
                                                     <td class="p-2">
                                                         <h6 class="default-color text-center mt-1">{{$payment->payment_method}}****{{$payment->last_four_digit}}</h6>
