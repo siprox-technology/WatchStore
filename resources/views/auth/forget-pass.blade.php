@@ -6,7 +6,7 @@
     <section class="signin-page account bg-gray">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 mx-auto">
+                <div class="col-lg-6 col-md-8 col-sm-10 mx-auto">
                     <div class="block text-center">
                         <a class="logo" href="index.html">
                             <img src="{{asset('images/logo.png')}}" alt="logo">
@@ -25,7 +25,7 @@
                                 @enderror
                             </div>
                             @if (session('status'))
-                                <div class=" text-success mt-2">
+                                <div class="text-success my-2 text-center">
                                     {{session('status')}}
                                 </div>
                             @endif

@@ -6,7 +6,7 @@
     <section class="signin-page account bg-gray">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 mx-auto">
+                <div class="col-lg-6 col-md-8 col-sm-10  mx-auto">
                     <div class="block text-center">
                         <a class="logo" href="index.html">
                             <img src="{{asset('images/logo.png')}}" alt="logo">
@@ -80,7 +80,6 @@
                                 <button type="submit" class="btn btn-primary ">Register</button>
                             </div>
                         </form>
-                        <p class="mt-3"><a href="forget-password.html"> Forgot your password?</a></p>
                     </div>
                 </div>
             </div>

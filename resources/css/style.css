@@ -1439,7 +1439,6 @@ a:hover {
 }
 
 .form-control {
-    border-radius: 40px;
     padding: 0 30px;
     height: 55px;
     width: 100%;
@@ -2023,6 +2022,11 @@ textarea.form-control {
 .account .block form input[type="text"] {
     border-radius: 0;
     box-shadow: none;
+}
+
+.dashboard-menu a,
+.dashboard-menu button {
+    border-radius: 40px;
 }
 
 .dashboard-menu .active {

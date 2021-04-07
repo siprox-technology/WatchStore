@@ -22,9 +22,9 @@
                                     <div class="d-md-flex">
                                         <div class="text-center">
                                             @if (file_exists('images/users-image/'.auth()->user()->id.'.jpg'))
-                                                <img class="rounded-circle mr-4" style="height:75px; width:75px;" src="{{asset('images/users-image/'.auth()->user()->id.'.jpg')}}" alt="customer-img">
+                                                <img class="rounded-circle mr-4" style="height:90px; width:90px;" src="{{asset('images/users-image/'.auth()->user()->id.'.jpg')}}" alt="customer-img">
                                             @else
-                                                <img class="rounded-circle mr-4" style="height:75px; width:75px;" src="{{asset('images/users-image/default.jpg')}}" alt="customer-img">
+                                                <img class="rounded-circle mr-4" style="height:90px; width:90px;" src="{{asset('images/users-image/default.jpg')}}" alt="customer-img">
                                             @endif
                                         </div>
                                         <div class="media-body">
@@ -32,7 +32,7 @@
                                                 <li><span>Full Name:</span>{{auth()->user()->name}}</li>
                                                 <li><span>Email:</span>{{auth()->user()->email}}</li>
                                                 @if (!auth()->user()->email_verified_at)
-                                                    <p class="text-danger">please verify emails address</p>
+                                                    <p class="text-danger">Please verify emails address</p>
                                                     <form action="{{route('verification.send')}}" method="POST">
                                                         @csrf
                                                         <button type="submit">resend verification email</button>
@@ -41,7 +41,7 @@
                                                         <p class="text-success">{{session('message')}}</p>
                                                     @endif
                                                 @else
-                                                <p class="text-success">email verified</p>
+                                                <p class="text-success">Email verified</p>
                                                 @endif
                                                 <li></li>
                                                 <li><span>Phone:</span>{{auth()->user()->phone}}</li>
@@ -58,7 +58,7 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        <div class="text-center mt-5 mt-md-0">
+                                        <div class="text-center mt-5 mt-md-3 dashboard-menu">
                                             <a class="bg-primary text-white p-3" data-toggle="modal"
                                                 data-target="#edit_acc_details_modal">Edit
                                                 details</a>
@@ -76,9 +76,9 @@
                         <h4 class="ml-3">Upload profile image</h4>
                         <div class="row justify-content-center">
                             <div class="col-sm-6">
-                                <input type="file" name="image" class="py-2 px-3">
+                                <input type="file" name="image" class="py-2 px-3 w-100">
                             </div>
-                            <div class="col-sm-6 mt-2 mt-sm-0 ml-3 ml-sm-0">
+                            <div class="col-sm-6 mt-2 mt-sm-0 ml-3 ml-sm-0 dashboard-menu">
                                 <button type="submit" class="py-2 px-3 border-0 btn-primary">Upload</button>
                             </div>
                         </div>
