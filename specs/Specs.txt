@@ -1,104 +1,118 @@
-Precision Laps watch store website
+PrecisionLaps watch store website
 ------------------------------
 
-Database tables => Product, Brand, Review, 
-User, Order, order_items,Payment
+Database tables => Products, Brands, Reviews, 
+Users, Orders, order_items,Payments
 ---------------------------------------------
-Database diagram => (DataBaseDiagram.vsdx)
+class (models) diagram => (Class_Model.vsdx)
 ---------------------------------------------
 
 Database tables details =>
 
-Product:
-id,brand,model_number,
+Products:
+
+id,brand_id(FK)
+sub_brand,model_number,
 name
-category, type, 
-gender, price,discount, color, 
+category, feature, 
+gender, price ,discount, color, 
 description, 
 specifications,
 stock,
-sale_number
-brand_id(FK)
+sale_number,
+created_at, updated_at
 
 ------------------------------
-Brand:
-id, Name, company_info
+Brands:
+
+id, Name, company_info, created_at,
+updated_at
 
 ------------------------------
-Review:
-id,star_number,date
+Reviews:
+
+id,star_number
 text,
-FK_product_id_review_prod,
-FK_user_id_review_user
+product_id(FK),
+user_id(FK),
+created_at, updated_at 
 
 ---------------------------------
-User has:
+Users:
+
 id,email,name,phone,
 address,city,state,country,post_code
-,password,contact_pref,created_at,update_at,act_code
+,password,contact_pref,
+email_verified_at, remember_token
+created_at,update_at
 
 --------------------------------
-Order:
-id,created_at,updated_at,status,
+Orders:
+
+id,status,
 delivery_price,
-deliver_address, deliver_city,delivery_state, deliver_postal_code, delivery_country
+delivery_address, delivery_city,delivery_state,
+delivery_postal_code, delivery_country
 total_price,
-FK_user_id_order_user,
+user_id(FK),created_at,updated_at,
 
 --------------------------------
 order_items:
+
 id,
 ,quantity,price,
-FK_order_id_items_order,
-FK_product_id_items_product
+order_id(FK),
+product_id(FK), created_at, updated_at
 
 ----------------------------------------
-Payment:
+Payments:
+
 id,amount,paymen_method,last_four_digit,
-payment_ref,FK_order_id_pay_order
-FK_user_id_pay_user
+payment_ref,order_id(FK),
+user_id(FK), created_at, updated_at
 ---------------------------------------
+
 dynamic objects in session:
 
 Cart:
 items =>Product:class,
 totalQty,
 totalPrice,
+
 *****************************************
 Back end functionalities=>
 
-**User registration and activation by email
-**User log in\log out and session time tracking by 5 mins.---
-**Resend activation email if not received.
-**User reset forgotten password through email.
-**User profile 
-    **Update account details. 
-    **Change password.
-    **Address Details. add or remove. 
-    **View shopping basket. remove items.
-    **Order history.
-    **Change contact Preferences.
-    **change account image
+-User registration and activation by email
+-User log in\log out and session time tracking by 5 mins.---
+-Resend activation email if not received.
+-User reset forgotten password through email.
+-User profile 
+    -Update account details. 
+    -Change password.
+    -Address Details. add or remove. 
+    -View shopping basket. remove items.
+    -Order history.
+    -Change contact Preferences.
+    -change account image
 
-**Search products by brand,category,name, feature.
-**Display best selling items.
-**Sort products by brands,gender,category,type,color,price and discount.
--**Display product details page:
-**brand,*category,*product number(product_id),*name,*model_number,
+-Search products by brand,category,name, feature.
+-Display best selling items.
+-Sort products by brands,gender,category,type,color,price and discount.
+--Display product details page:
+-brand,*category,*product number(product_id),*name,*model_number,
      *type,*gender,*price,*discount,*color,*description,*specifications
      *reviews, *Images, *stock availability.
-**Display related products in product details page.
-**User add,remove items in shopping basket.
+-Display related products in product details page.
+-User add,remove items in shopping basket.
 
 
-**User makes payment using Stripe payment(sandbox) api with a visa card (test card=> '4242 4242 4242 4242' any 'zip' and any 'date').
+-User makes payment using Stripe payment(sandbox) api with a visa card (test card=> '4242 4242 4242 4242' any 'zip' and any 'date').
 -add user email to payment form or email the payer the payment confirmation info
-**Display Payment information if failed or success.
-**Retry payment for failed orders.
-**Display order history and orders with failed payment.
+-Display Payment information if failed or success.
+-Retry payment for failed orders.
+-Display order history and orders with failed payment.
 
-**Add and display reviews to items that user has bought.
-**display cookie policy confirmation page.
+-Add and display reviews to items that user has bought.
+-display cookie policy confirmation page.
 *****************************************
 
--about us

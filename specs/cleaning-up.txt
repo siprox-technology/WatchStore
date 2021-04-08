@@ -1,9 +1,0 @@
-- go to optimize guide links
-- remove unnecessary files from project
-- check and optimize db queries on display items
-
-
-
-
--model class relations diagrams
--fix and adjust styles

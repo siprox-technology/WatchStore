@@ -242,9 +242,9 @@
                     <div class="row">
                         <div class="col-md-3 col-sm-6 mb-5 mb-md-0 text-center text-sm-left">
                             <h4 class="mb-4"><b>Contact</b></h4>
-                            <p>No 33 Woodbridge avenue Clifton</p>
-                            <p>+44 798 5505 786</p>
-                            <p>admin@siprox-tech.com</p>
+                            <p><b>Address:</b> No 33 Woodbridge avenue Clifton, UK, NG11 8GP</p>
+                            <p><b>Phone:</b> +44 798 5505 786</p>
+                            <p><b>Email:</b> admin@siprox-tech.com</p>
                         </div>
                         <div class="col-md-3 col-sm-6 mb-5 mb-md-0 text-center text-sm-left">
                             <h4 class="mb-4"><b>Category</b></h4>
