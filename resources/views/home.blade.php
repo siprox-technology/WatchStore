@@ -6,7 +6,7 @@
     <!-- main wrapper -->
     <div class="main-wrapper">
         {{-- hero area --}}
-        <section class="section bg-gray hero-area">
+        <section class="section bg-gray hero-area pt-5">
             <div class="container">
                 <div class="hero-slider">
 
