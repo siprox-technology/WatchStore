@@ -30,13 +30,15 @@
             if($_COOKIE["accepted-user"] != $_SERVER['REMOTE_ADDR'])
             {
                 setcookie("accepted-user",$_SERVER['REMOTE_ADDR']);
-                echo'<div class="alert alert-secondary alert-dismissible fade show rounded-0 pr-0 pr-sm-2" role="alert">
-                        <div class="row mx-auto">
-                            <p class="col-sm-10 col-8 text-left">All cookies in this website are used for providing a better user experience and WILL NOT be shared with other parties.</p>
-                            <div class="col-sm-2 col-4">
-                                <button type="button" class="btn btn-sm btn-primary  text-center" data-dismiss="alert" aria-label="Close">
-                                OK
-                                </button>
+                echo'<div class="alert alert-secondary alert-dismissible fade show rounded-0 pr-4" role="alert">
+                        <div class="row mx-auto justify-content-center">
+                            <p class="col-lg-11 col-md-10 col-sm-9 col-8">All cookies in this website are used for providing a better user experience and WILL NOT be shared with other parties.</p>
+                            <div class="col-lg-1 col-md-1 col-sm-3 col-4 ">
+                                <div class="row justify-content-center">
+                                    <button type="button" class="btn btn-sm btn-primary ml-auto text-center" data-dismiss="alert" aria-label="Close">
+                                    OK
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>';
@@ -44,13 +46,15 @@
         }
         else {
             setcookie("accepted-user",$_SERVER['REMOTE_ADDR']);
-            echo'<div class="alert alert-secondary alert-dismissible fade show rounded-0 pr-0 pr-sm-2" role="alert">
-                <div class="row mx-auto">
-                            <p class="col-sm-10 col-8 text-left">All cookies in this website are used for providing a better user experience and WILL NOT be shared with other parties.</p>
-                            <div class="col-sm-2 col-4">
-                                <button type="button" class="btn btn-sm btn-primary  text-center" data-dismiss="alert" aria-label="Close">
-                                OK
-                                </button>
+            echo'<div class="alert alert-secondary alert-dismissible fade show rounded-0 pr-4" role="alert">
+                <div class="row mx-auto justify-content-center">
+                            <p class="col-lg-11 col-md-10 col-sm-9 col-8">All cookies in this website are used for providing a better user experience and WILL NOT be shared with other parties.</p>
+                            <div class="col-lg-1 col-md-1 col-sm-3 col-4">
+                                <div class="row justify-content-center">
+                                    <button type="button" class="btn btn-sm btn-primary ml-auto text-center" data-dismiss="alert" aria-label="Close">
+                                    OK
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>';
