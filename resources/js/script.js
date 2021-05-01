@@ -3,7 +3,7 @@
 
     // Subscription Modal Show
     var show = function () {
-        $('#subscriptionModal').modal('show');
+        $('#accept-cookie-modal').modal('show');
     };
     // Preloader
     $(window).on('load', function () {

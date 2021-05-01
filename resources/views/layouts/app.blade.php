@@ -14,15 +14,14 @@
 </head>
 
 <body>
-        <!-- preloader start -->
-        <div class="preloader">
-            <img src="{{asset('images/preloader.gif')}}" alt="preloader">
-        </div>
-        <!-- preloader end -->
 
         <!-- header -->
         <header>
-        {{-- cookie accept message --}}
+        <!-- preloader start -->
+        <div class="preloader" style="z-index: 30000">
+            <img src="{{asset('images/preloader.gif')}}" alt="preloader">
+        </div>
+        <!-- preloader end -->
         <?php 
         //check cookies accepted
         if(isset($_COOKIE["accepted-user"]))
@@ -30,38 +29,49 @@
             if($_COOKIE["accepted-user"] != $_SERVER['REMOTE_ADDR'])
             {
                 setcookie("accepted-user",$_SERVER['REMOTE_ADDR']);
-                echo'<div class="alert alert-secondary alert-dismissible fade show rounded-0 pr-4" role="alert">
-                        <div class="row mx-auto justify-content-center">
-                            <p class="col-lg-11 col-md-10 col-sm-9 col-8">All cookies in this website are used for providing a better user experience and WILL NOT be shared with other parties.</p>
-                            <div class="col-lg-1 col-md-1 col-sm-3 col-4 ">
-                                <div class="row justify-content-center">
-                                    <button type="button" class="btn btn-sm btn-primary ml-auto text-center" data-dismiss="alert" aria-label="Close">
-                                    OK
-                                    </button>
-                                </div>
+                echo'<div class="modal fade subscription-modal" id="accept-cookie-modal" tabindex="-1"
+                style="padding-right: 0px; display: block;">
+                    <div class="modal-dialog modal-lg" style="top:202px">
+                        <div class="modal-content">
+                            <div class="modal-header bg-gray">
+                            <h3 class="heading bottom30 font-light2 pt-1 m-auto"><span class="font-normal">Your</span>
+                                privacy
+                                <span class="divider-center"></span>
+                            </h3>
+                            </div>
+                            <div class="modal-body">
+                                <p class="text-center">All cookies in this website are used for providing a better user experience and WILL NOT be shared with other parties.</p>
+                                <button id="accept-cookie-btn" class="button gradient-btn w-100" data-toggle="modal" data-target="#accept-cookie-modal">I understand</button>
                             </div>
                         </div>
-                    </div>';
+                    </div>
+                </div>';
             }
         }
         else {
             setcookie("accepted-user",$_SERVER['REMOTE_ADDR']);
-            echo'<div class="alert alert-secondary alert-dismissible fade show rounded-0 pr-4" role="alert">
-                <div class="row mx-auto justify-content-center">
-                            <p class="col-lg-11 col-md-10 col-sm-9 col-8">All cookies in this website are used for providing a better user experience and WILL NOT be shared with other parties.</p>
-                            <div class="col-lg-1 col-md-1 col-sm-3 col-4">
-                                <div class="row justify-content-center">
-                                    <button type="button" class="btn btn-sm btn-primary ml-auto text-center" data-dismiss="alert" aria-label="Close">
-                                    OK
-                                    </button>
-                                </div>
+            echo'<div class="modal fade subscription-modal" id="accept-cookie-modal" tabindex="-1"
+                style="padding-right: 0px; display: block;">
+                    <div class="modal-dialog modal-lg" style="top:202px">
+                        <div class="modal-content">
+                            <div class="modal-header bg-gray">
+                            <h3 class="heading bottom30 font-light2 pt-1 m-auto"><span class="font-normal">Your</span>
+                                privacy
+                                <span class="divider-center"></span>
+                            </h3>
+                            </div>
+                            <div class="modal-body">
+                                <p class="text-center">All cookies in this website are used for providing a better user experience and WILL NOT be shared with other parties.</p>
+                                <button id="accept-cookie-btn" class="button gradient-btn w-100" data-toggle="modal" data-target="#accept-cookie-modal">I understand</button>
                             </div>
                         </div>
-                    </div>';
+                    </div>
+                </div>';
                 }
     ?>
 
-    
+
+
         <!-- top header -->
         <div class="top-header">
             <div class="row w-100 mx-auto">
