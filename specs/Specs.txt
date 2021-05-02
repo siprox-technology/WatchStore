@@ -7,6 +7,7 @@ Users, Orders, order_items,Payments
 class (models) diagram => (Class_Model.vsdx)
 ---------------------------------------------
 
+
 Database tables details =>
 
 Products:
