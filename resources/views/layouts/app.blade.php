@@ -26,9 +26,9 @@
         //check cookies accepted
         if(isset($_COOKIE["accepted-user"]))
         {
-            if($_COOKIE["accepted-user"] != $_SERVER['REMOTE_ADDR'])
+            if($_COOKIE["accepted-user"] != 'OK')
             {
-                setcookie("accepted-user",$_SERVER['REMOTE_ADDR']);
+                setcookie("accepted-user",'OK');
                 echo'<div class="modal fade subscription-modal" id="accept-cookie-modal" tabindex="-1"
                 style="padding-right: 0px; display: block;">
                     <div class="modal-dialog modal-lg" style="top:202px">
@@ -49,7 +49,7 @@
             }
         }
         else {
-            setcookie("accepted-user",$_SERVER['REMOTE_ADDR']);
+            setcookie("accepted-user",'OK');
             echo'<div class="modal fade subscription-modal" id="accept-cookie-modal" tabindex="-1"
                 style="padding-right: 0px; display: block;">
                     <div class="modal-dialog modal-lg" style="top:202px">
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                 </div>';
-                }
+            }
     ?>
 
 
