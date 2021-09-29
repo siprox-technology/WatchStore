@@ -271,7 +271,7 @@
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-6 mb-5 mb-md-0 text-center text-sm-left">
-                            <h4 class="mb-4"><b>Useful Link</b></h4>
+                            <h4 class="mb-4"><b>Useful links</b></h4>
                             <ul class="pl-0 list-unstyled">
                                 @guest
                                     <li class="mb-2"><a class="dropdown-item" href="about.html">About Us</a></li>
