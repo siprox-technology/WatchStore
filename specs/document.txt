@@ -1,5 +1,9 @@
 Project challenges:
 
-product owner wanted a full product search functionality in his website.
-he wanted his customers to be able to search product by name, category, feature and gender.
-I used laravel pagination in order to show a set number of products based on user input key.
+the product owner had an old website to sell his watch products. he says that his websites product search functionality was
+not working and sometimes returns invalid results. I proposed to do the projects with Laravel framework
+I managed to developed a product search functionality that works by imputing keywords like
+product name, feature color or gender, then I developed a function to search the 
+database based on the keyword and display the product in the front end using Laravel pagination
+which displays a set number of products in each page. I also developed product sort functionality
+for all products based on the same categories.
