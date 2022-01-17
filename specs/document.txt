@@ -1,0 +1,5 @@
+Project challenges:
+
+product owner wanted a full product search functionality in his website.
+he wanted his customers to be able to search product by name, category, feature and gender.
+I used laravel pagination in order to show a set number of products based on user input key.
