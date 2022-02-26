@@ -24,11 +24,11 @@
         <!-- preloader end -->
         <?php 
         //check cookies accepted
-        if(isset($_COOKIE["accepted-user"]))
+        if(isset($_COOKIE["cookies-accepted"]))
         {
-            if($_COOKIE["accepted-user"] != 'OK')
+            if($_COOKIE["cookies-accepted"] != 'OK')
             {
-                setcookie("accepted-user",'OK');
+                setcookie("cookies-accepted",'OK');
                 echo'<div class="modal fade subscription-modal" id="accept-cookie-modal" tabindex="-1"
                 style="padding-right: 0px; display: block;">
                     <div class="modal-dialog modal-lg" style="top:202px">
@@ -49,7 +49,7 @@
             }
         }
         else {
-            setcookie("accepted-user",'OK');
+            setcookie("cookies-accepted",'OK');
             echo'<div class="modal fade subscription-modal" id="accept-cookie-modal" tabindex="-1"
                 style="padding-right: 0px; display: block;">
                     <div class="modal-dialog modal-lg" style="top:202px">

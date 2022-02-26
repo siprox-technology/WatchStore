@@ -81,22 +81,21 @@ totalQty,
 totalPrice,
 
 *****************************************
-Back end functionalities=>
+Back end feature:
 
 -User registration and activation by email
--User log in\log out and session time tracking by 5 mins.---
+-User log in\log out and session time tracking by 5 mins.
 -Resend activation email if not received.
 -User reset forgotten password through email.
 -User profile 
     -Update account details. 
     -Change password.
     -Address Details. add or remove. 
-    -View shopping basket. remove items.
-    -Order history.
+    -View Order history.
     -Change contact Preferences.
     -change account image
 
--Search products by brand,category,name, feature.
+-Search products by brand,category,name,feature.
 -Display best selling items.
 -Sort products by brands,gender,category,type,color,price and discount.
 --Display product details page:
@@ -104,10 +103,10 @@ Back end functionalities=>
      *type,*gender,*price,*discount,*color,*description,*specifications
      *reviews, *Images, *stock availability.
 -Display related products in product details page.
--User add,remove items in shopping basket.
 
-
--User makes payment using Stripe payment(sandbox) api with a visa card (test card=> '4242 4242 4242 4242' any 'zip' and any 'date').
+-User add,remove items to and from shopping basket.
+-User makes payment using a visa card connecting Stripe payment api(sandbox)  
+    with(test card=> '4242 4242 4242 4242' any 'zip' and any 'date').
 -add user email to payment form or email the payer the payment confirmation info
 -Display Payment information if failed or success.
 -Retry payment for failed orders.

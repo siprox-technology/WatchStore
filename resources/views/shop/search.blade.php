@@ -41,7 +41,7 @@
                                                     src="{{asset('images/product-images/'.$product->model_number.'/'.$product->model_number.'-1.jpg')}}" alt="product-img">
                                             </a>
                                             <div class="btn-cart">
-                                                <a href="{{'cart.add',$product->product_id}}" class="btn btn-primary btn-sm">Add To Cart</a>
+                                                <a href="{{route('cart.add',$product->product_id)}}" class="btn btn-primary btn-sm">Add To Cart</a>
                                             </div>
                                         </div>
                                     </div>

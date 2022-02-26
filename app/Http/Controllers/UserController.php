@@ -18,7 +18,7 @@ class UserController extends Controller
         //validate user inputs
         $this->validate($request,[
             'name'=>'max:50',
-            'phone'=>'integer|min:11',
+            'phone'=>'min:11',
             'contact_pref'=>'integer|between:0,2'
         ]);
         //update user details
