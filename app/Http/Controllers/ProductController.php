@@ -38,48 +38,62 @@ class ProductController extends Controller
             'genders'=>$genders
         ]);
     }
-    //display products based on request
+    //get available filters from DB
+    public function getAvailableFilters(){
+        //get available filters from DB
+        $filters['brands'] = DB::table('brands')
+        ->join('products', 'brands.id', '=', 'products.brand_id')
+        ->select('brands.name')->distinct()
+        ->get();
+        $filters['categories'] = DB::table('products')->select('category as name')->distinct()->get();
+        $filters['features'] = DB::table('products')->select('feature as name')->distinct()->get();
+        $filters['genders'] = DB::table('products')->select('gender as name')->distinct()->get();
+        $filters['colors'] = DB::table('products')->select('color as name')->distinct()->get();
+        return $filters;
+    }
+    //find products based on selected filters
+    public function findProducts($filters){
+        $products = DB::table('products')
+        ->join('brands', 'products.brand_id', '=', 'brands.id')
+        ->select('products.id as product_id','products.model_number','products.price','products.discount','products.name as name')
+        ->whereIn('brands.name',$filters['brands'])
+        ->whereIn('products.category',$filters['categories'])
+        ->whereIn('products.feature',$filters['features'])
+        ->whereIn('products.color',$filters['colors'])
+        ->whereIn('products.gender',$filters['gender'])
+        ->where('products.price', '<', $filters['price'])
+        ->orderBy('products.'.$filters['sortBy'],'desc');        
+        return $products;
+    }
+    //display products based on requested filters
     public function show(Request $request)
     {
-            $brands = DB::table('brands')
-            ->join('products', 'brands.id', '=', 'products.brand_id')
-            ->select('brands.name')->distinct()
-            ->get();
-            $categories = DB::table('products')->select('category as name')->distinct()->get();
-            $features = DB::table('products')->select('feature as name')->distinct()->get();
-            $genders = DB::table('products')->select('gender as name')->distinct()->get();
-            $colors = DB::table('products')->select('color as name')->distinct()->get();
-            
-            //extract parameters from request
-            $params = $request->except(['sortBy']);
+            //all availbe filters
+            $availableFilters = $this->getAvailableFilters();
+            //selected filters from request
+            $selectedFilters = $request->input();
 
-            $params_brands = isset($params['brand'])?$params['brand']:$brands->pluck('name')->toArray();
-            $params_categories = isset($params['category'])?$params['category']:$categories->pluck('name')->toArray();
-            $params_features = isset($params['feature'])?$params['feature']:$features->pluck('name')->toArray();
-            $params_gender = isset($params['gender'])?$params['gender']:$genders->pluck('name')->toArray();
-            $params_colors = isset($params['color'])?$params['color']:$colors->pluck('name')->toArray();
+            //DB params to get products based on filters
+            $DbQueryParams = [];
 
+            $DbQueryParams['brands'] = isset($selectedFilters['brand'])?$selectedFilters['brand']:$availableFilters['brands']->pluck('name')->toArray();
+            $DbQueryParams['categories'] = isset($selectedFilters['category'])?$selectedFilters['category']:$availableFilters['categories']->pluck('name')->toArray();
+            $DbQueryParams['features'] = isset($selectedFilters['feature'])?$selectedFilters['feature']:$availableFilters['features']->pluck('name')->toArray();
+            $DbQueryParams['colors'] = isset($selectedFilters['color'])?$selectedFilters['color']:$availableFilters['colors']->pluck('name')->toArray();
+            $DbQueryParams['gender'] = isset($selectedFilters['gender'])?$selectedFilters['gender']:$availableFilters['genders']->pluck('name')->toArray();
+            $DbQueryParams['price'] = $selectedFilters['price'];
+            $DbQueryParams['sortBy'] = $selectedFilters['sortBy'];
             //filter sort and paginate products to display
-            $products = DB::table('products')
-            ->join('brands', 'products.brand_id', '=', 'brands.id')
-            ->select('products.id as product_id','products.model_number','products.price','products.discount','products.name as name')
-            ->whereIn('brands.name',$params_brands)
-            ->whereIn('products.category',$params_categories)
-            ->whereIn('products.feature',$params_features)
-            ->whereIn('products.color',$params_colors)
-            ->whereIn('products.gender',$params_gender)
-            ->where('products.price', '<', $request->price)
-            ->orderBy('products.'.$request->sortBy,'desc')
-            ->paginate(9);
+            $products = $this->findProducts($DbQueryParams)->paginate(9);
             return view('shop.sort_filter',
             [
-                'products'=>$products->appends(request()->input()),
-                'brands'=>$brands,
-                'colors'=>$colors,
-                'categories'=>$categories,
-                'features'=>$features,
-                'genders'=>$genders,
-                'params' => $params
+                'products'=>$products->appends($selectedFilters),
+                'brands'=>$availableFilters['brands'],
+                'colors'=>$availableFilters['colors'],
+                'categories'=>$availableFilters['categories'],
+                'features'=>$availableFilters['features'],
+                'genders'=>$availableFilters['genders'],
+                'selectedFilters' => $selectedFilters
             ]);
         
     }

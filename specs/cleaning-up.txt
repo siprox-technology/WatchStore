@@ -1,5 +1,5 @@
 phone number is saved without 0 in DB
-updste user details check validation rules
+update user details check validation rules
 
-
+-add to cart user items primary key (security issue???)
 -error custom page

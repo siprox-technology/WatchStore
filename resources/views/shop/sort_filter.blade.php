@@ -55,53 +55,53 @@
                                     <div class="row w-100 m-0 p-0">
                                         <p class="text-dark m-0 p-2 ">Filters :</p>
                                         {{-- brands filter --}}
-                                        @if (isset($params['brand']))
-                                            @for ($i = 0; $i < count($params['brand']); $i++)
+                                        @if (isset($selectedFilters['brand']))
+                                            @for ($i = 0; $i < count($selectedFilters['brand']); $i++)
                                                 <span class="text-gray m-0 ml-2 p-2">
-                                                    {{$params['brand'][$i]}}
+                                                    {{$selectedFilters['brand'][$i]}}
                                                 </span>
                                             @endfor
                                         @endif
                                         {{-- categories filter --}}
-                                        @if (isset($params['category']))
-                                            @for ($i = 0; $i < count($params['category']); $i++)
+                                        @if (isset($selectedFilters['category']))
+                                            @for ($i = 0; $i < count($selectedFilters['category']); $i++)
                                                 <span class="text-gray m-0 ml-2 p-2 ">
-                                                    {{$params['category'][$i]}}
+                                                    {{$selectedFilters['category'][$i]}}
                                                 </span>
                                             @endfor
                                         @endif     
                                         {{-- features --}}
-                                        @if (isset($params['feature']))
-                                            @for ($i = 0; $i < count($params['feature']); $i++)
+                                        @if (isset($selectedFilters['feature']))
+                                            @for ($i = 0; $i < count($selectedFilters['feature']); $i++)
                                                 <span class="text-gray m-0 ml-2 p-2 ">
-                                                    {{$params['feature'][$i]}}
+                                                    {{$selectedFilters['feature'][$i]}}
                                                 </span>
                                             @endfor
                                         @endif
                                         {{-- gender --}}
-                                        @if (isset($params['gender']))
-                                            @foreach ($params['gender'] as $key => $value)
+                                        @if (isset($selectedFilters['gender']))
+                                            @foreach ($selectedFilters['gender'] as $key => $value)
                                                 <span class="text-gray m-0 ml-2 p-2 ">
                                                     {{$value}}
                                                 </span>
                                             @endforeach                        
                                         @endif
                                         {{-- color --}}
-                                        @if (isset($params['color']))
-                                            @for ($i = 0; $i < count($params['color']); $i++)
+                                        @if (isset($selectedFilters['color']))
+                                            @for ($i = 0; $i < count($selectedFilters['color']); $i++)
                                                 <span class="text-gray m-0 ml-2 p-2 ">
-                                                    {{$params['color'][$i]}}
+                                                    {{$selectedFilters['color'][$i]}}
                                                 </span>
                                             @endfor                                          
                                         @endif
                                         {{-- price filters --}}
-                                        @if ($params['price']!='1000000')
+                                        @if ($selectedFilters['price']!='1000000')
                                             <span class="text-gray m-0 ml-2 p-2 ">
-                                                {{'up to $'.$params['price']}}
+                                                {{'up to $'.$selectedFilters['price']}}
                                             </span>
                                         @endif
                                         {{-- clear all filter --}}
-                                        @if (count($params)<2)
+                                        @if (count($selectedFilters)<2)
                                             <p class="text-gray m-0 ml-2 p-2">All</p>
                                         @else
                                             <a href="{{route('shop.index')}}" class="text-warning px-4 py-2">Clear all filters</a>
@@ -127,7 +127,7 @@
                                         name="brand[]" 
                                         value="{{$brands[$i]->name}}" 
                                         onclick="this.form.submit()"
-                                        @if(isset($params['brand'])&&(array_search($brands[$i]->name,$params['brand'])!==false))
+                                        @if(isset($selectedFilters['brand'])&&(array_search($brands[$i]->name,$selectedFilters['brand'])!==false))
                                             checked = "checked"
                                         @endif 
                                         id="">
@@ -144,7 +144,7 @@
                                         <span>{{$categories[$i]->name}}</span>
                                         <input class="mt-1" type= "checkbox" autocomplete='off' name="category[]" value="{{$categories[$i]->name}}" onclick="this.form.submit()"
                                         id=""                                            
-                                        @if (isset($params['category'])&&(array_search($categories[$i]->name,$params['category'])!==false))
+                                        @if (isset($selectedFilters['category'])&&(array_search($categories[$i]->name,$selectedFilters['category'])!==false))
                                         checked = "checked"
                                         @endif >
                                     </li>
@@ -160,7 +160,7 @@
                                         <span>{{$features[$i]->name}}</span>
                                         <input class="mt-1" type= "checkbox" autocomplete='off' name="feature[]" value="{{$features[$i]->name}}" onclick="this.form.submit()" 
                                         id=""
-                                        @if (isset($params['feature'])&&(array_search($features[$i]->name,$params['feature'])!==false))
+                                        @if (isset($selectedFilters['feature'])&&(array_search($features[$i]->name,$selectedFilters['feature'])!==false))
                                             checked = "checked"
                                         @endif>
                                     </li>
@@ -174,21 +174,21 @@
                                 <li class="d-flex py-2 text-gray justify-content-between">
                                     <span>Mens</span>
                                     <input class="mt-1" type= "checkbox" autocomplete='off' name="gender[0]" value="Mens" id="" onclick="this.form.submit()"
-                                    @if (isset($params['gender'][0]))                                           
+                                    @if (isset($selectedFilters['gender'][0]))                                           
                                         checked = "checked"
                                     @endif>
                                 </li>
                                 <li class="d-flex py-2 text-gray justify-content-between">
                                     <span>Ladies</span>
                                         <input class="mt-1" type= "checkbox" autocomplete='off' name="gender[1]"value="Ladies" id="" onclick="this.form.submit()"
-                                    @if (isset($params['gender'][1]))
+                                    @if (isset($selectedFilters['gender'][1]))
                                         checked = "checked"
                                     @endif>
                                 </li>
                                 <li class="d-flex py-2 text-gray justify-content-between">
                                     <span>Unisex</span>
                                     <input class="mt-1" type= "checkbox" autocomplete='off' name="gender[2]" value="Unisex" id="" onclick="this.form.submit()"
-                                    @if (isset($params['gender'][2]))
+                                    @if (isset($selectedFilters['gender'][2]))
                                         checked = "checked"
                                     @endif>
                                 </li>
@@ -199,27 +199,27 @@
                             <h4 class="mb-4">Shop by Price</h4>
                             <select class="select pr-3" name="price" id="price"  onchange="this.form.submit()">
                                 <option value="1000000"
-                                    @if ($params['price'] == '1000000')
+                                    @if ($selectedFilters['price'] == '1000000')
                                         selected = "selected"
                                     @endif
                                 >All prices</option>
                                 <option value="100"
-                                    @if ($params['price'] == '100')
+                                    @if ($selectedFilters['price'] == '100')
                                         selected = "selected"
                                     @endif
                                 >Up to $100</option>
                                 <option value="200"
-                                    @if ($params['price'] == '200')
+                                    @if ($selectedFilters['price'] == '200')
                                         selected = "selected"
                                     @endif
                                 >Up to $200</option>
                                 <option value="500"
-                                    @if ($params['price'] == '500')
+                                    @if ($selectedFilters['price'] == '500')
                                         selected = "selected"
                                     @endif
                                 >Up to $500</option>
                                 <option value="1000"
-                                    @if ($params['price'] == '1000')
+                                    @if ($selectedFilters['price'] == '1000')
                                         selected = "selected"
                                     @endif
                                 >Up to $1000</option>
@@ -251,7 +251,7 @@
                                         @endif
                                         "></span>
                                         <input class="mt-1 ml-4" type= "checkbox" autocomplete='off' name="color[]" value="{{$colors[$i]->name}}" id="" onclick="this.form.submit()"
-                                        @if (isset($params['color'])&&(array_search($colors[$i]->name,$params['color'])!==false))
+                                        @if (isset($selectedFilters['color'])&&(array_search($colors[$i]->name,$selectedFilters['color'])!==false))
                                             checked = "checked"
                                         @endif>
                                     </li>
@@ -334,7 +334,7 @@
                                             <input class="mt-1" type= "checkbox" autocomplete='off' 
                                             name="brand[]" 
                                             value="{{$brands[$i]->name}}" 
-                                            @if(isset($params['brand'])&&(array_search($brands[$i]->name,$params['brand'])!==false))
+                                            @if(isset($selectedFilters['brand'])&&(array_search($brands[$i]->name,$selectedFilters['brand'])!==false))
                                                 checked = "checked"
                                             @endif 
                                             id="">
@@ -353,7 +353,7 @@
                                         <li class="d-flex py-2 text-gray justify-content-between">
                                             <span>{{$categories[$i]->name}}</span>
                                             <input class="mt-1" type= "checkbox" autocomplete='off' name="category[]" value="{{$categories[$i]->name}}" id=""                                            
-                                            @if (isset($params['category'])&&(array_search($categories[$i]->name,$params['category'])!==false))
+                                            @if (isset($selectedFilters['category'])&&(array_search($categories[$i]->name,$selectedFilters['category'])!==false))
                                               checked = "checked"
                                             @endif >
                                         </li>
@@ -372,7 +372,7 @@
                                             <span>{{$features[$i]->name}}</span>
                                             <input class="mt-1" type= "checkbox" autocomplete='off' name="feature[]" value="{{$features[$i]->name}}" 
                                              id=""
-                                             @if (isset($params['feature'])&&(array_search($features[$i]->name,$params['feature'])!==false))
+                                             @if (isset($selectedFilters['feature'])&&(array_search($features[$i]->name,$selectedFilters['feature'])!==false))
                                                 checked = "checked"
                                              @endif>
                                         </li>
@@ -389,21 +389,21 @@
                                     <li class="d-flex py-2 text-gray justify-content-between">
                                         <span>Mens</span>
                                         <input class="mt-1" type= "checkbox" autocomplete='off' name="gender[0]" value="Mens" id=""
-                                        @if (isset($params['gender'][0]))                                           
+                                        @if (isset($selectedFilters['gender'][0]))                                           
                                             checked = "checked"
                                         @endif>
                                     </li>
                                     <li class="d-flex py-2 text-gray justify-content-between">
                                         <span>Ladies</span>
                                             <input class="mt-1" type= "checkbox" autocomplete='off' name="gender[1]"value="Ladies" id=""
-                                        @if (isset($params['gender'][1]))
+                                        @if (isset($selectedFilters['gender'][1]))
                                             checked = "checked"
                                         @endif>
                                     </li>
                                     <li class="d-flex py-2 text-gray justify-content-between">
                                         <span>Unisex</span>
                                         <input class="mt-1" type= "checkbox" autocomplete='off' name="gender[2]" value="Unisex" id=""
-                                        @if (isset($params['gender'][2]))
+                                        @if (isset($selectedFilters['gender'][2]))
                                             checked = "checked"
                                         @endif>
                                     </li>
@@ -416,27 +416,27 @@
                             <div class="mb-30">
                                 <select class="select" name="price" id="price">
                                     <option value="1000000"
-                                        @if ($params['price'] == '1000000')
+                                        @if ($selectedFilters['price'] == '1000000')
                                             selected = "selected"
                                         @endif
                                     >All prices</option>
                                     <option value="100"
-                                        @if ($params['price'] == '100')
+                                        @if ($selectedFilters['price'] == '100')
                                             selected = "selected"
                                         @endif
                                     >Up to $100</option>
                                     <option value="200"
-                                        @if ($params['price'] == '200')
+                                        @if ($selectedFilters['price'] == '200')
                                             selected = "selected"
                                         @endif
                                     >Up to $200</option>
                                     <option value="500"
-                                        @if ($params['price'] == '500')
+                                        @if ($selectedFilters['price'] == '500')
                                             selected = "selected"
                                         @endif
                                     >Up to $500</option>
                                     <option value="1000"
-                                        @if ($params['price'] == '1000')
+                                        @if ($selectedFilters['price'] == '1000')
                                             selected = "selected"
                                         @endif
                                     >Up to $1000</option>
@@ -471,7 +471,7 @@
                                             @endif
                                             "></span>
                                             <input class="mt-1 ml-4" type= "checkbox" autocomplete='off' name="color[]" value="{{$colors[$i]->name}}" id=""
-                                            @if (isset($params['color'])&&(array_search($colors[$i]->name,$params['color'])!==false))
+                                            @if (isset($selectedFilters['color'])&&(array_search($colors[$i]->name,$selectedFilters['color'])!==false))
                                                 checked = "checked"
                                             @endif>
                                         </li>

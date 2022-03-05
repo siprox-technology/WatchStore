@@ -15,13 +15,13 @@ class CartController extends Controller
         return view('orders.cart');
     }
 
-    public function store(Request $request, $id)
+    public function store($id)
     {
         $product = Product::find($id);
         $oldCart = Session::has('cart') ? Session::get('cart'): null;
         $cart = new Cart($oldCart);
         $cart->add($product,$id);
-        $request->session()->put('cart',$cart);
+        Session::put('cart',$cart);
         return back();  
     }
     public function destroy($id)
